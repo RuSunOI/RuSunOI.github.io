@@ -129,17 +129,17 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">575</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">600</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">158</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">162</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -251,14 +251,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>1 分钟</span>
             </span>
           
           <div>
@@ -288,29 +288,21 @@
 
 </details>
 
-<h2 id="Double-Connected-Component"><a href="#Double-Connected-Component" class="headerlink" title="Double Connected Component"></a>Double Connected Component</h2><h3 id="Edge-Double-Connected-Component"><a href="#Edge-Double-Connected-Component" class="headerlink" title="Edge Double Connected Component"></a>Edge Double Connected Component</h3><details>
+<h2 id="Double-Connected-Component"><a href="#Double-Connected-Component" class="headerlink" title="Double Connected Component"></a>Double Connected Component</h2><details>
 <summary> 查看代码 </summary>
 
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dfn[x] = low[x] = ++stmp;</span><br><span class="line">    stk.<span class="built_in">push</span>(x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = hd[x]; ~i; i = nxt[i])</span><br><span class="line">        <span class="keyword">if</span> (!dfn[edg[i]])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">tarjan</span>(edg[i]);</span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], low[edg[i]]);</span><br><span class="line">            <span class="keyword">if</span> (dfn[x] &lt; low[edg[i]])</span><br><span class="line">            &#123;</span><br><span class="line">                bridge[i] = bridge[i ^ <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">int</span> y = stk.<span class="built_in">top</span>();</span><br><span class="line">                <span class="keyword">while</span> (y != x)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">//</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], dfn[edg[i]]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dfn[x] = low[x] = ++stmp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = hd[x]; ~i; i = nxt[i]) <span class="keyword">if</span> (i ^ fa ^ <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> (!dfn[edg[i]])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">tarjan</span>(edg[i], i);</span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], low[edg[i]]);</span><br><span class="line">            <span class="keyword">if</span> (dfn[x] &lt; low[edg[i]]) bridge[i] = bridge[i ^ <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], dfn[edg[i]]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </details>
 
-<h3 id="Vertex-Double-Connected-Component"><a href="#Vertex-Double-Connected-Component" class="headerlink" title="Vertex Double Connected Component"></a>Vertex Double Connected Component</h3><h4 id="Product-DAG"><a href="#Product-DAG" class="headerlink" title="Product DAG"></a>Product DAG</h4><details>
-<summary> 查看代码 </summary>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> frm)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dfn[x] = low[x] = ++stmp;</span><br><span class="line">    stk.<span class="built_in">push</span>(x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = hd[x]; ~i; i = nxt[i])</span><br><span class="line">        <span class="keyword">if</span> (!dfn[edg[i]])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">tarjan</span>(edg[i], i);</span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], low[edg[i]]);</span><br><span class="line">            <span class="keyword">if</span> (dfn[x] &lt; low[edg[i]])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> y;</span><br><span class="line">                cnt++;</span><br><span class="line">                <span class="keyword">do</span></span><br><span class="line">                &#123;</span><br><span class="line">                    y = stk.<span class="built_in">top</span>();</span><br><span class="line">                    stk.<span class="built_in">pop</span>();</span><br><span class="line">                    v[cnt].<span class="built_in">push_back</span>(y);</span><br><span class="line">                    <span class="comment">//</span></span><br><span class="line">                &#125; <span class="keyword">while</span> (y != edg[i]);</span><br><span class="line">                v[cnt].<span class="built_in">push_back</span>(x);</span><br><span class="line">                <span class="comment">//</span></span><br><span class="line">                cut[x] = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">add</span>(x, n + cnt);</span><br><span class="line">                <span class="built_in">add</span>(n + cnt, x);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (i != (frm ^ <span class="number">1</span>))</span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], dfn[edg[i]]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</details>
-
-<h4 id="Calculate-Cut-Point"><a href="#Calculate-Cut-Point" class="headerlink" title="Calculate Cut Point"></a>Calculate Cut Point</h4><p>Check the root point specially.</p>
+<h3 id="Vertex-Double-Connected-Component"><a href="#Vertex-Double-Connected-Component" class="headerlink" title="Vertex Double Connected Component"></a>Vertex Double Connected Component</h3><p>Check the root point specially.</p>
+<p>因为判断可以取等，所以不必考虑来边。</p>
 <details>
 <summary> 查看代码 </summary>
 
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> rt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dfn[x] = low[x] = ++stmp;</span><br><span class="line">    <span class="keyword">int</span> son = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = hd[x]; ~i; i = nxt[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (dfn[edg[i]])</span><br><span class="line">        &#123;</span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], dfn[edg[i]]);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        son++;</span><br><span class="line">        <span class="built_in">tarjan</span>(edg[i], rt);</span><br><span class="line">        low[x] = <span class="built_in">min</span>(low[x], low[edg[i]]);</span><br><span class="line">        <span class="keyword">if</span> (low[edg[i]] &gt;= dfn[x] &amp;&amp; x != rt)</span><br><span class="line">            flag[x] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x == rt &amp;&amp; son &gt;= <span class="number">2</span>)</span><br><span class="line">        flag[x] = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> rt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dfn[x] = low[x] = ++stmp;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : g[x])</span><br><span class="line">        <span class="keyword">if</span> (!dfn[i])</span><br><span class="line">        &#123;</span><br><span class="line">            ++cnt;</span><br><span class="line">            <span class="built_in">tarjan</span>(i, rt);</span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], low[i]);</span><br><span class="line">            <span class="keyword">if</span> (low[i] &gt;= dfn[x] &amp;&amp; x ^ rt) cut[x] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> low[x] = <span class="built_in">min</span>(low[x], dfn[i]);</span><br><span class="line">    <span class="keyword">if</span> (x == rt &amp;&amp; cnt &gt; <span class="number">1</span>) cut[x] = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </details>
-
-
     </div>
 
     
@@ -429,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Strongly-Connected-Component"><span class="nav-number">1.</span> <span class="nav-text">Strongly Connected Component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Double-Connected-Component"><span class="nav-number">2.</span> <span class="nav-text">Double Connected Component</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Edge-Double-Connected-Component"><span class="nav-number">2.1.</span> <span class="nav-text">Edge Double Connected Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vertex-Double-Connected-Component"><span class="nav-number">2.2.</span> <span class="nav-text">Vertex Double Connected Component</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Product-DAG"><span class="nav-number">2.2.1.</span> <span class="nav-text">Product DAG</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calculate-Cut-Point"><span class="nav-number">2.2.2.</span> <span class="nav-text">Calculate Cut Point</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Strongly-Connected-Component"><span class="nav-number">1.</span> <span class="nav-text">Strongly Connected Component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Double-Connected-Component"><span class="nav-number">2.</span> <span class="nav-text">Double Connected Component</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vertex-Double-Connected-Component"><span class="nav-number">2.1.</span> <span class="nav-text">Vertex Double Connected Component</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -445,20 +437,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">575</span>
+          <span class="site-state-item-count">600</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">158</span>
+        <span class="site-state-item-count">162</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
