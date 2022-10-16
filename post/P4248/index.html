@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -32,6 +32,7 @@
 <meta property="article:author" content="RuSun">
 <meta property="article:tag" content="单调栈">
 <meta property="article:tag" content="数学">
+<meta property="article:tag" content="后缀树">
 <meta property="article:tag" content="省选">
 <meta property="article:tag" content="SA">
 <meta name="twitter:card" content="summary">
@@ -131,7 +132,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">602</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">644</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -141,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">162</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">168</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -253,14 +254,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.3k</span>
+              <span>5.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>5 分钟</span>
             </span>
           
           <div>
@@ -269,6 +270,8 @@
                <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="tag"><i class="fa fa-tag"></i> 单调栈</a>
                &nbsp &nbsp
                <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+               &nbsp &nbsp
+               <a href="/tags/%E5%90%8E%E7%BC%80%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 后缀树</a>
                &nbsp &nbsp
                <a href="/tags/%E7%9C%81%E9%80%89/" rel="tag"><i class="fa fa-tag"></i> 省选</a>
                &nbsp &nbsp
@@ -287,7 +290,7 @@
         <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4248">P4248 [AHOI2013]差异</a></p>
 <span id="more"></span>
 
-<p>注意到 $\sum _ {1 \le i &lt; j \le n} i + j$ 为定值：<br>$$<br>\begin {aligned}<br>&amp; \sum _ {i \le i &lt; j \le n} i + j \\<br>&#x3D; &amp; \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; i + 1} ^ n i + j \\<br>&#x3D; &amp; \sum _ {i &#x3D; 1} ^ n (n - i)i + \frac {(i + 1 + n) (n - i)} 2 \\<br>&#x3D; &amp; \sum _ {i &#x3D; 1} ^ n \frac {n ^ 2 + n + 2i n - 3i ^ 2 - i} 2 \\<br>&#x3D; &amp; \frac {n ^ 3 + n ^ 2 + 2n \frac {n(n + 1)} 2 - 3\frac {n (n + 1) (2n + 1)} 6 - \frac {n (n + 1)} 2} 2 \\<br>&#x3D; &amp; \frac {n ^ 3 - n} 2<br>\end {aligned}<br>$$<br>需要求任意两个后缀 $lcp$ 之和。考虑求出 $height$ 后，即任意两个区间的最小值的和，可以用单调栈做。</p>
+<h2 id="Algorithm-I-后缀数组"><a href="#Algorithm-I-后缀数组" class="headerlink" title="Algorithm I 后缀数组"></a>Algorithm I 后缀数组</h2><p>注意到 $\sum _ {1 \le i &lt; j \le n} i + j$ 为定值：<br>$$<br>\begin {aligned}<br>&amp; \sum _ {i \le i &lt; j \le n} i + j \\<br>&#x3D; &amp; \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; i + 1} ^ n i + j \\<br>&#x3D; &amp; \sum _ {i &#x3D; 1} ^ n (n - i)i + \frac {(i + 1 + n) (n - i)} 2 \\<br>&#x3D; &amp; \sum _ {i &#x3D; 1} ^ n \frac {n ^ 2 + n + 2i n - 3i ^ 2 - i} 2 \\<br>&#x3D; &amp; \frac {n ^ 3 + n ^ 2 + 2n \frac {n(n + 1)} 2 - 3\frac {n (n + 1) (2n + 1)} 6 - \frac {n (n + 1)} 2} 2 \\<br>&#x3D; &amp; \frac {n ^ 3 - n} 2<br>\end {aligned}<br>$$<br>需要求任意两个后缀 $lcp$ 之和。考虑求出 $height$ 后，即任意两个区间的最小值的和，可以用单调栈做。</p>
 <p>注意细节，最后一定要把栈内答案加上。</p>
 <details>
 
@@ -297,6 +300,12 @@
 
 </details>
 
+<h2 id="后缀树"><a href="#后缀树" class="headerlink" title="后缀树"></a>后缀树</h2><p>注意到形式和树上差分很相似，发现答案即后缀树上后缀距离之和。建出后缀树，将反串建 SAM 即可。一个点上可能是多个字符，字符数有 $len _ i - len _ p$ 个，即边长。记录子树中有多少个点，对于每条边统计答案即可。</p>
+<details>
+
+<summary> 查看代码 </summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">Type</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span> <span class="params">(Type &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> ((c = <span class="built_in">getchar</span>()) &lt; <span class="string">&#x27;0&#x27;</span> || c &gt; <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">        c == <span class="string">&#x27;-&#x27;</span> &amp;&amp; (flag = <span class="literal">true</span>);</span><br><span class="line">    x = c - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">while</span> ((c = <span class="built_in">getchar</span>()) &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; c &lt;= <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">        x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + c - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    flag &amp;&amp; (x = ~x + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">Type</span>, <span class="keyword">class</span> ...<span class="title">rest</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span> <span class="params">(Type &amp;x, rest &amp;...y)</span> </span>&#123; <span class="built_in">read</span>(x), <span class="built_in">read</span>(y...); &#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">Type</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span> <span class="params">(Type x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x &lt; <span class="number">0</span> &amp;&amp; (<span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>), x = ~x + <span class="number">1</span>);</span><br><span class="line">    x &gt; <span class="number">9</span> &amp;&amp; (<span class="built_in">write</span>(x / <span class="number">10</span>), <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">&#x27;0&#x27;</span> + x % <span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> str[N];</span><br><span class="line">vector &lt;<span class="keyword">int</span>&gt; g[N];</span><br><span class="line">LL ans;</span><br><span class="line"><span class="keyword">int</span> n, last = <span class="number">1</span>, cnt = <span class="number">1</span>, sz[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span> <span class="keyword">int</span> p, len, nxt[<span class="number">26</span>]; &#125; tr[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend</span> <span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = last, np = ++cnt;</span><br><span class="line">    sz[cnt] = <span class="number">1</span>;</span><br><span class="line">    tr[np].len = tr[p].len + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; p &amp;&amp; !tr[p].nxt[c]; p = tr[p].p) tr[p].nxt[c] = np;</span><br><span class="line">    last = np;</span><br><span class="line">    <span class="keyword">if</span> (!p) <span class="keyword">return</span> <span class="built_in"><span class="keyword">void</span></span>(tr[np].p = <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> q = tr[p].nxt[c];</span><br><span class="line">    <span class="keyword">if</span> (tr[q].len == tr[p].len + <span class="number">1</span>) <span class="keyword">return</span> <span class="built_in"><span class="keyword">void</span></span>(tr[np].p = q);</span><br><span class="line">    <span class="keyword">int</span> nq = ++cnt;</span><br><span class="line">    tr[nq] = tr[q], tr[nq].len = tr[p].len + <span class="number">1</span>;</span><br><span class="line">    tr[q].p = tr[np].p = nq;</span><br><span class="line">    <span class="keyword">for</span> (; p &amp;&amp; tr[p].nxt[c] == q; p = tr[p].p) tr[p].nxt[c] = nq;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span> <span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> v : g[u])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">dfs</span>(v);</span><br><span class="line">        ans += (LL)(n - sz[v]) * sz[v] * (tr[v].len - tr[u].len);</span><br><span class="line">        sz[u] += sz[v];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, str);</span><br><span class="line">    n = <span class="built_in">strlen</span>(str);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; ~i; --i) <span class="built_in">extend</span>(str[i] - <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= cnt; ++i) g[tr[i].p].<span class="built_in">push_back</span>(i);</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">write</span>(ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -415,6 +424,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm-I-%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">Algorithm I 后缀数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BC%80%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">后缀树</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -430,7 +440,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">602</span>
+          <span class="site-state-item-count">644</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -443,7 +453,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-count">168</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

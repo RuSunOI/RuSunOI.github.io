@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -130,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">602</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">644</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">162</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">168</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -286,46 +286,28 @@
 
 <h2 id="斯特林-Stirling-数"><a href="#斯特林-Stirling-数" class="headerlink" title="斯特林(Stirling)数"></a>斯特林(Stirling)数</h2><h3 id="第一类斯特林数"><a href="#第一类斯特林数" class="headerlink" title="第一类斯特林数"></a>第一类斯特林数</h3><p>默认为无符号。有符号有系数 $(-1) ^ {n - k}$ 。</p>
 <ul>
-<li><p>定义：将 $1 \ldots n$ 划分为 $k$ 个圆排列的方案数。</p>
-</li>
-<li><p>记作 $s(n, k)$ 或 ${n \brack k}$ 。</p>
-</li>
-<li><p>求法：${n \brack k} &#x3D; {n - 1 \brack k - 1}+(n - 1) {n - 1 \brack k}$ 。 $n$ 可以划入一个新的圆中，即 ${n - 1 \brack k - 1}$ ；也可以划入之前任意一个元素后，即 ${n - 1 \brack k - 1}+(n - 1) {n - 1 \brack k}$ 。</p>
-</li>
-<li><p>性质：</p>
-<ul>
-<li><p>${0 \brack 0} &#x3D; 1$ ；</p>
-</li>
-<li><p>${n \brack 0} &#x3D; 0$ ；</p>
-</li>
-<li><p>${n \brack n} &#x3D; 1$ ；</p>
-</li>
-<li><p>${n \brack 1} &#x3D; (n - 1)!$ ；</p>
-</li>
-<li><p>${n \brack n - 1} &#x3D; \binom n 2$ ；</p>
-</li>
-<li><p>${n \brack 2} &#x3D; (n - 1)! \sum _ {i &#x3D; 1} ^ {n - 1} \frac 1 i$ ；</p>
-</li>
-<li><p>${n \brack n - 2} &#x3D; 2 \binom n 3 + 3 \binom n 4$ ；</p>
-</li>
-<li><p>$\displaystyle \sum _ {k &#x3D; 0} ^ n {n \brack k} &#x3D; n!$ ；</p>
-</li>
-<li><p>$k ^ {\overline n} &#x3D; \sum _ {i &#x3D; 0} ^ n {n \brack i} k ^ i$；</p>
-</li>
-<li><p>$k ^ {\underline n} &#x3D; \sum _ {i &#x3D; 0} ^ n (-1) ^ {n - i} {n \brack i} k ^ i$ 。</p>
-</li>
+<li>定义：将 $1 \ldots n$ 划分为 $k$ 个圆排列的方案数。</li>
+<li>记作 $s(n, k)$ 或 ${n \brack k}$ 。</li>
+<li>求法：${n \brack k} &#x3D; {n - 1 \brack k - 1}+(n - 1) {n - 1 \brack k}$ 。 $n$ 可以划入一个新的圆中，即 ${n - 1 \brack k - 1}$ ；也可以划入之前任意一个元素后，即 ${n - 1 \brack k - 1}+(n - 1) {n - 1 \brack k}$ 。</li>
+<li>性质：<ul>
+<li>${0 \brack 0} &#x3D; 1$ ；</li>
+<li>${n \brack 0} &#x3D; 0$ ；</li>
+<li>${n \brack n} &#x3D; 1$ ；</li>
+<li>${n \brack 1} &#x3D; (n - 1)!$ ；</li>
+<li>${n \brack n - 1} &#x3D; \binom n 2$ ；</li>
+<li>${n \brack 2} &#x3D; (n - 1)! \sum _ {i &#x3D; 1} ^ {n - 1} \frac 1 i$ ；</li>
+<li>${n \brack n - 2} &#x3D; 2 \binom n 3 + 3 \binom n 4$ ；</li>
+<li>$\displaystyle \sum _ {k &#x3D; 0} ^ n {n \brack k} &#x3D; n!$ ；</li>
+<li>$k ^ {\overline n} &#x3D; \sum _ {i &#x3D; 0} ^ n {n \brack i} k ^ i$；</li>
+<li>$k ^ {\underline n} &#x3D; \sum _ {i &#x3D; 0} ^ n (-1) ^ {n - i} {n \brack i} k ^ i$ 。</li>
 </ul>
 </li>
 </ul>
 <h3 id="第二类斯特林数"><a href="#第二类斯特林数" class="headerlink" title="第二类斯特林数"></a>第二类斯特林数</h3><ul>
-<li><p>定义：将 $1\ldots n$ 划分为 $k$ 个相同集合的方案数。</p>
-</li>
-<li><p>记作 $S(n, k)$ 或 $n \brace k$ 。</p>
-</li>
-<li><p>求法：${n \brace k} &#x3D; {n - 1 \brace k - 1} + k {n - 1 \brace k}$。 $n$ 可以放入一个新的集合中，即 $n - 1 \brace k - 1$ ；也可以划入之前的集合中，即 $k {n - 1 \brace k}$ 。</p>
-</li>
-<li><p>性质：</p>
-<ul>
+<li>定义：将 $1\ldots n$ 划分为 $k$ 个相同集合的方案数。</li>
+<li>记作 $S(n, k)$ 或 $n \brace k$ 。</li>
+<li>求法：${n \brace k} &#x3D; {n - 1 \brace k - 1} + k {n - 1 \brace k}$。 $n$ 可以放入一个新的集合中，即 $n - 1 \brace k - 1$ ；也可以划入之前的集合中，即 $k {n - 1 \brace k}$ 。</li>
+<li>性质：<ul>
 <li>${n \brace 0} &#x3D; 0 ^ n$ ；</li>
 <li>${n \brace 1} &#x3D; 1$ ；</li>
 <li>${n \brace n} &#x3D; 1$ ；</li>
@@ -339,8 +321,7 @@
 <li>$k ^ n &#x3D; \sum _ {i &#x3D; 0} ^ n {n \brace i} k ^ {\underline i}$。</li>
 </ul>
 </li>
-<li><p>通项公式：${n \brace k} &#x3D; \sum _ {i &#x3D; 0} ^ k \frac {(-1) ^ {k - i} i ^ n}{i! (k - i)!}$ 。</p>
-</li>
+<li>通项公式：${n \brace k} &#x3D; \sum _ {i &#x3D; 0} ^ k \frac {(-1) ^ {k - i} i ^ n}{i! (k - i)!}$ 。</li>
 </ul>
 <h2 id="斯特林反演"><a href="#斯特林反演" class="headerlink" title="斯特林反演"></a>斯特林反演</h2><p>$$<br>F(n) &#x3D; \sum _ {i &#x3D; 0} ^ n {n \brace i} G(i) \Longleftrightarrow G(n) &#x3D; \sum _ {i &#x3D; 0} ^ n (-1) ^ {n - i} {n \brack i} F(i) \tag 1<br>$$</p>
 <p>$$<br>F(n) &#x3D; \sum _ {i &#x3D; 0} ^ n (-1) ^ {n - i} {n \brace i} G(i) \Longleftrightarrow G(n) &#x3D; \sum _ {i &#x3D; 0} ^ n {n \brack i}F(i) \tag 2<br>$$</p>
@@ -481,7 +462,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">602</span>
+          <span class="site-state-item-count">644</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -494,7 +475,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-count">168</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

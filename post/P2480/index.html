@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">602</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">644</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -139,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">162</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">168</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -283,9 +283,7 @@
 
 <p>计算 $g ^ {\sum _ {d | n} \binom n d } \mod 999911659$</p>
 <p>拓展欧拉定理：</p>
-<p>$$<br>a^b\equiv<br>\begin{cases}<br>a^{b\ mod\ \varphi(m)}&amp;gcd(a,m)&#x3D;1\</p>
-<p>a^b&amp;b&lt;\varphi(m)\</p>
-<p>a^{b\ mod\ \varphi(m)+\varphi(m)}&amp;b\geq \varphi(m)<br>\end{cases}\ (mod\ m)<br>$$</p>
+<p>$$<br>a^b\equiv<br>\begin{cases}<br>a^{b\ mod\ \varphi(m)}&amp;(a,m)&#x3D;1\\<br>a^b&amp;b&lt;\varphi(m)\\<br>a^{b\ mod\ \varphi(m)+\varphi(m)}&amp;b\geq \varphi(m)<br>\end{cases}\ \pmod m<br>$$</p>
 <p>考虑计算 $\sum _ {d | n} \binom n d \mod 999911658$ 。$n$ 太大了，不能直接算。注意到 $999911659 &#x3D; 2 \times 3 \times 4679 \times 35617$ 。如果将 $\binom n d$ 分别在 $4$ 个质数下计算，用 CRT 合并后刚好就是模 $999911658$ 剩余系下的答案。</p>
 <details>
 
@@ -428,7 +426,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">602</span>
+          <span class="site-state-item-count">644</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -441,7 +439,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-count">168</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

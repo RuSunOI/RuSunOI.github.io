@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">602</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">644</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -139,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">162</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">168</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -251,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>991</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -282,6 +282,7 @@
 <p>求每一个 $s _ i$ 。</p>
 <span id="more"></span>
 
+<p>复杂度 $O(n \log \log n)$ 。</p>
 <details>
 
 <summary> 查看代码 </summary>
@@ -299,6 +300,8 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; ++i)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = n / p[i]; j; --j)</span><br><span class="line">        s[j] += s[p[i] * j];</span><br></pre></td></tr></table></figure>
 
 </details>
+
+<p>一个 trick ，求对于 $i \in [1, n]$ 求 $\gcd(i, n)$ ，可以在 $O(n \log \log n)$ 的时间内完成。$O(\sqrt n)$ 枚举 $n$ 的约数，标记 $f _ i &#x3D; i$ ，否则 $f _ i &#x3D; 1$ ，做狄利克雷前缀最大值即可。</p>
 
     </div>
 
@@ -433,7 +436,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">602</span>
+          <span class="site-state-item-count">644</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -446,7 +449,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-count">168</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
