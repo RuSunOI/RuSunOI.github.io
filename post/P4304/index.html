@@ -131,7 +131,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">644</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -141,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">168</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">170</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -253,7 +253,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.7k</span>
+              <span>3.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -293,7 +293,7 @@
 <ul>
 <li>最小点覆盖 &#x3D; 最大匹配（换一种方式理解：中间连接 $inf$ 的边，对于一条边要么将左部割掉，要么将右部割掉）</li>
 <li>最大独立集 &#x3D; 总点数 - 最小点覆盖 &#x3D; 总点数 - 最大匹配（换一种方式理解：中间连接 $inf$ 的边，对于一条边只能将左部割掉，或只能将右部割掉）</li>
-<li>求方案，做完最大匹配后，从源点开始搜索，经过所有还有可以有流量的边，将访问过的点标记。对于最小点覆盖，选择左部中没有访问过的点和右部中访问过的点；对于最大独立集，选择左部中访问过的点和右部中没有访问过的点。不难发现，搜索的一定是如下进行的：从左部没有匹配的点出发，沿着非匹配边（到右部）-&gt;匹配边（到左部）-&gt;非匹配边（到右部）进行遍历，可以感性的理解一下答案。</li>
+<li>求方案，做完最大匹配后，从源点开始搜索，经过所有还有可以有流量的边，将访问过的点标记。这样，每次标记的右部点都是有匹配的，否则会存在增广路。对于最小点覆盖，选择左部中没有访问过的点和右部中访问过的点（对于左部没有被匹配的点 $x$ 不选，选择 $x$ 所有出边 $y$ ，对于所有 $y$ 的匹配 $z$ 不选 ，对于 $z$ 的出边不选 ……这样一对匹配只选择了一个）；对于最大独立集，选择左部中访问过的点和右部中没有访问过的点（先选出左部没有被匹配的点 $x$ ，对于所有出边 $y$ 不选，选择所有 $y$ 的匹配 $z$，对于所有 $z$ 的出边不选……这样一对匹配只有一个点没有被选）。</li>
 </ul>
 <p>这类问题通常先做二分图的染色（保证这是一个二分图）。</p>
 <p>常见的四连通、日字形八连通染色后都是棋盘状的。所有的点 <code>(x, y)</code> ，<code> x + y &amp; 1</code> 的属于一部，剩下的属于另一部，这样可以跳过染色步骤。</p>
@@ -438,7 +438,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">644</span>
+          <span class="site-state-item-count">664</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -451,7 +451,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">168</span>
+        <span class="site-state-item-count">170</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

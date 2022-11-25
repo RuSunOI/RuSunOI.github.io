@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">644</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -139,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">168</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">170</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -283,7 +283,7 @@
 
 <p>在一般的斜率优化问题中，因为 $x$ 是单调的，所以可以用单调队列维护凸包；因为 $k$ 是单调的，所以可以用单调队列求答案。如果不满足前者，需要用 <strong>cdq分治</strong> ；如果不满足后者，需要二分斜率。</p>
 <p>对于当前分治的区间 $[l, r]$ ，考虑从 $[l, mid]$ 转移对 $[mid + 1, r]$ 答案的影响。我们需要左侧 $x$ 是单调的，那么可以单调队列维护凸包；我们需要右侧 $k$ 是单调的，那么可以用单调队列得到答案。所以每次将左侧按照 $x$ 排序，右侧按照 $k$ 排序，做完后将右侧还原。</p>
-<p>虽然这样做比起整个序列排序，再分出来，常数更大；但是更本质。</p>
+<p>这种写法在 CDQ 内部要排序，复杂度 $O(n \log ^ 2n)$ ；一种写法是先将整个序列排序，再分出来，CDQ 内部可以归并排序，复杂度 $O(n \log n)$ 。</p>
 <details>
 
 <summary> 查看代码 </summary>
@@ -313,7 +313,7 @@
       <div class="popular-posts-title"><a href="\post\P2717\" rel="bookmark">P2717 寒假作业</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\P5459\" rel="bookmark">P5459 [BJOI2016]回转寿司</a></div>
+      <div class="popular-posts-title"><a href="\post\P4027\" rel="bookmark">P4027 [NOI2007] 货币兑换</a></div>
     </li>
   </ul>
 
@@ -425,7 +425,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">644</span>
+          <span class="site-state-item-count">664</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -438,7 +438,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">168</span>
+        <span class="site-state-item-count">170</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
