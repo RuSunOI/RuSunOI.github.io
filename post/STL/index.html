@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"rusunoi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":0,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="介绍一些 STL 的基本常识和使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STL的妙用">
+<meta property="og:url" content="https://rusunoi.github.io/post/STL/index.html">
+<meta property="og:site_name" content="Blog of RuSun">
+<meta property="og:description" content="介绍一些 STL 的基本常识和使用。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-08T14:04:05.000Z">
+<meta property="article:modified_time" content="2022-03-08T14:04:05.000Z">
+<meta property="article:author" content="RuSun">
+<meta property="article:tag" content="STL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://rusunoi.github.io/post/STL/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>STL的妙用 | Blog of RuSun</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss.xml" title="Blog of RuSun" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog of RuSun</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">\begin {array}{c} \mathfrak {One Problem Is Difficult} \\\\ \mathfrak {Because You Don't Know} \\\\ \mathfrak {Why It Is Diffucult} \end {array}</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">170</span></a>
+
+  </li>
+        <li class="menu-item menu-item-书籍">
+
+    <a href="/books/" rel="section"><i class="fa fa-book fa-fw"></i>书籍</a>
+
+  </li>
+        <li class="menu-item menu-item-捐赠">
+
+    <a href="/donate/" rel="section"><i class="fa fa-thumbs-up fa-fw"></i>捐赠</a>
+
+  </li>
+        <li class="menu-item menu-item-友链">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rusunoi.github.io/post/STL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="RuSun">
+      <meta itemprop="description" content="颓废无能的 oier ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of RuSun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          STL的妙用
+        </h1>
+
+        <div class="post-meta">
+    
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-08 22:04:05" itemprop="dateCreated datePublished" datetime="2022-03-08T22:04:05+08:00">2022-03-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a>
+                </span>
+            </span>
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+          
+          <div>
+          <i class="fa fa-tag"></i> 标签：
+               &nbsp &nbsp
+               <a href="/tags/STL/" rel="tag"><i class="fa fa-tag"></i> STL</a>
+          </div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>介绍一些 STL 的基本常识和使用。</p>
+<span id="more"></span>
+
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>迭代器是 STL 容器中类似指针的东西。在很多时候善于利用迭代器可以让 STL 更加强大。</p>
+<p>对于一个容器 <code>s</code> ，可以通过 <code>s.begin()</code> 和 <code>s.end()</code> 得到内存区间。</p>
+<p>不同容器的迭代器在这种容器的命名空间中，如定义一个迭代器 <code>set &lt;int&gt; :: iterator it = s.begin()</code> 。</p>
+<p>获得这个迭代器 <code>it</code> 对应的值，使用 <code>*it</code> ，如一个 <code>set</code> 中最小的元素为 <code>*s.begin()</code> ，最大的元素为 <code>*--s.end()</code>  。</p>
+<p>双向容器支持 <code>it++</code> ，<code>it--</code> ，单向容器只支持 <code>it++</code> 。</p>
+<p>例如在 <code>vector &lt;int&gt; </code> 中，需要遍历所有的元素。</p>
+<p>因为它支持随机访问元素，所以可以这样写：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++)</span><br><span class="line">    <span class="comment">// v[i]</span></span><br></pre></td></tr></table></figure>
+
+<p>因为它支持单向迭代，所以可以这样写：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (vector &lt;<span class="keyword">int</span>&gt; :: iterator i = v.<span class="built_in">begin</span>(); i != v.<span class="built_in">end</span>(); i++)</span><br><span class="line">    <span class="comment">// *i</span></span><br></pre></td></tr></table></figure>
+
+<p>注意迭代器不支持 <code>&lt;</code> <code>&gt;</code> 运算，所以使用 <code>!=</code> 。</p>
+<p>大多数容器也可以这样写：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i : v)</span><br><span class="line">    <span class="comment">// i</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="STL-算法"><a href="#STL-算法" class="headerlink" title="STL 算法"></a>STL 算法</h2><p>大多数容器都可以用的。</p>
+<ul>
+<li><code>sort(s.begin(), s.end())</code> </li>
+<li><code>reverse(s.begin(), s.end())</code> </li>
+<li><code>unique(s.begin(), s.end())</code> </li>
+<li><code>erase(s.begin(), s.end())</code></li>
+</ul>
+<h3 id="lower-bound-与-upper-bound"><a href="#lower-bound-与-upper-bound" class="headerlink" title="lower_bound 与 upper_bound"></a><code>lower_bound</code> 与 <code>upper_bound</code></h3><p>用法 <code>lower_bound(s.begin(), s.end(), v)</code> </p>
+<p>前者返回第一个值大于等于 <code>v</code> 的迭代器，后者返回第一个大于 <code>v</code> 的迭代器，通过这两个函数可以实现后继查询。</p>
+<p>通过 <code>--lower_bound(s.begin(), s.end(), v)</code> 和 <code>--upper_bound(s.begin(), s.end(), v)</code> 可以实现前驱查询。</p>
+<p>在有序的容器下复杂度为 $O(\log n)$ ，一般在排好序的 <code>vector</code> 中使用，因为 <code>vector</code> 的迭代器支持 <code>+</code> <code>-</code> 运算。</p>
+<p>注意，<code>set</code> 中需要使用 <code>s.lower_bound(v)</code> 和 <code>s.upper_bound(v)</code> 才能保证复杂度为 $O(\log n)$ ，否则会退化到 $O(n)$ 。</p>
+<h3 id="离散化的实现"><a href="#离散化的实现" class="headerlink" title="离散化的实现"></a>离散化的实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vector &lt;<span class="keyword">int</span>&gt; ws;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    ws.<span class="built_in">push_back</span>(w[i]);</span><br><span class="line"><span class="built_in">sort</span>(ws.<span class="built_in">begin</span>(), ws.<span class="built_in">end</span>());</span><br><span class="line"><span class="keyword">int</span> m = ws.<span class="built_in">erase</span>(<span class="built_in">unique</span>(ws.<span class="built_in">begin</span>(), ws.<span class="built_in">end</span>()), ws.<span class="built_in">begin</span>()) - ws.<span class="built_in">begin</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    w[i] = <span class="built_in">lower_bound</span>(ws.<span class="built_in">begin</span>(), ws.<span class="built_in">end</span>(), w[i]) - ws.<span class="built_in">begin</span>() + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a><code>list</code></h2><p>不想写链表？使用 <code>list</code> ！</p>
+<ul>
+<li><p>头文件：<code>#include &lt;list&gt;</code> 。</p>
+</li>
+<li><p>左边插入 <code>s.push_front()</code> ，删除 <code>s.pop_front()</code> 。</p>
+</li>
+<li><p>右边插入 <code>s.push_back()</code> ，删除 <code>s.pop_back()</code> 。</p>
+</li>
+<li><p>定位到这个元素的迭代器后 <code>s.erase(it)</code> 。注意，删除后不能继续迭代，因为当前迭代器被删除了，就不能正确地找到下一个迭代器了。正确的写法是这样：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (list&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;::iterator i = s.<span class="built_in">begin</span>(); i != s.<span class="built_in">end</span>();)</span><br><span class="line">    <span class="keyword">if</span> ((*i).first == <span class="number">3</span>)</span><br><span class="line">        i = s.<span class="built_in">erase</span>(i);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    i++;</span><br></pre></td></tr></table></figure>
+
+<p>因为 <code>s.erase()</code> 会返回下一个删除的迭代器。</p>
+<p>当然也支持区间删除，这意味着你还是需要找到两个迭代器。</p>
+</li>
+</ul>
+<p><code>list</code> 并不能替代链表的所有功能，但在简单的应用上很方便。</p>
+<h2 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a><code>priority_queue</code></h2><p>优先队列不是线性的。</p>
+<p>本质是堆，操作有一个 $\log$ 。</p>
+<p>配合结构体使用会很强大。</p>
+<p>注意默认是大根堆，需要重载运算符 <code>&gt;</code> 。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> t, k;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &gt; (<span class="keyword">const</span> Node &amp;x, <span class="keyword">const</span> Node &amp;y) &#123; <span class="keyword">return</span> x.k &lt; y.k; &#125;</span><br><span class="line">&#125;</span><br><span class="line">priority_queue &lt;Node&gt; q;</span><br></pre></td></tr></table></figure>
+
+<p>或者这样写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct Node &#123;</span><br><span class="line">    int t, k;</span><br><span class="line">    friend bool operator &lt; (const Node &amp;x, const Node &amp;y) &#123; return x.k &gt; y.k; &#125;</span><br><span class="line">&#125;</span><br><span class="line">priority_queue &lt;Node, vector &lt;Node&gt;, greater&lt;Node&gt; &gt; q;</span><br></pre></td></tr></table></figure>
+
+<p>还可以写 lambda 函数自定义 Compare</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">bool</span> cmp = [](<span class="keyword">const</span> PII &amp;x, <span class="keyword">const</span> PII &amp;y) &#123; <span class="keyword">return</span> x.second &lt; y.second; &#125;;</span><br><span class="line">priority_queue&lt;PII, std::vector&lt;PII&gt;, <span class="keyword">decltype</span>(cmp)&gt; <span class="built_in">q</span>(cmp);</span><br></pre></td></tr></table></figure>
+
+<p>在其他的 STL 中，如 <code>set</code> 中，不能写 lambda 函数。</p>
+<p>必须写在一个类里面，因此，可以这样写：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmp</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a &gt; b; &#125;</span><br><span class="line">&#125;;</span><br><span class="line">set&lt;<span class="keyword">int</span>, cmp&gt; s;</span><br></pre></td></tr></table></figure>
+
+<h2 id="string"><a href="#string" class="headerlink" title="string"></a><code>string</code></h2><p>几个常见的函数：</p>
+<ul>
+<li><code>s.find(t)</code> 。</li>
+<li><code>s.substr(st, len)</code> 。</li>
+<li><code>s.insert(st, t)</code> 。</li>
+<li><code>s.erase(st, len)</code> 。</li>
+</ul>
+<p>还支持 <code>s += t</code> <code>s + t</code> 。</p>
+<p>但是注意复杂度和字符串长度线性相关，并且输入输出必须用 <code>cin</code> <code>cout</code> ，所以比较慢。</p>
+<p>一般尽量用 <code>char</code> ，遇到字符串的题，做不来，可以用 <code>string</code> 的函数打暴力。</p>
+<h2 id="bitset"><a href="#bitset" class="headerlink" title="bitset"></a><code>bitset</code></h2><p>相当于 <code>vector&lt;bool&gt;</code> 但是强大得多；相当于用于状压的 <code>int</code> ，但是没有 $32$ 位的限制。</p>
+<p>定义： <code>bitset&lt;N&gt; f</code> ，位数为 $N$ 。</p>
+<p>一般用于优化暴力，比如</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    f[k][i] &amp;= f[k <span class="number">-1</span>][i];</span><br></pre></td></tr></table></figure>
+
+<p>可以写作</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f[k] &amp;= f[k - <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p>复杂度可以从 $O(n)$ 优化到 $O(\frac n \omega)$ 。</p>
+<p>支持所有位运算，但是不能和 <code>int</code> 计算，支持 <code>cin</code> <code>cout</code> 。</p>
+<h2 id="unordered-map-和-unordered-set"><a href="#unordered-map-和-unordered-set" class="headerlink" title="unordered_map 和 unordered_set"></a><code>unordered_map</code> 和 <code>unordered_set</code></h2><p>这是两个坑，千万不要用。遇到大值域问题，优先考虑离散化，实在不行另可多一个 $\log$ 用 <code>map</code> 或 <code>set</code> ，因为这两个坑最坏情况下单次操作为 $O(n)$ 。</p>
+<h2 id="deque"><a href="#deque" class="headerlink" title="deque"></a><code>deque</code></h2><p>可以完全用 <code>list</code> 代替了。</p>
+<h2 id="stack-和-queue"><a href="#stack-和-queue" class="headerlink" title="stack 和 queue"></a><code>stack</code> 和 <code>queue</code></h2><p>推荐手写，如果操作中不能确定需要多大空间，就用 STL。</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\CF1642\" rel="bookmark">CF1642</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\P1903\" rel="bookmark">P1903 [国家集训队] 数颜色 / 维护队列</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\P3157\" rel="bookmark">P3157 [CQOI2011]动态逆序对</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\P4774\" rel="bookmark">P4774 [NOI2018] 屠龙勇士</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\P7834\" rel="bookmark">P7834 [ONTAK2010] Peaks 加强版</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>RuSun
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://rusunoi.github.io/post/STL/" title="STL的妙用">https://rusunoi.github.io/post/STL/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/Maximum-Matching-of-General-Graphs-Template/" rel="prev" title="一般图的最大匹配模板">
+      <i class="fa fa-chevron-left"></i> 一般图的最大匹配模板
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/CF1649/" rel="next" title="CF1649">
+      CF1649 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STL-%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">STL 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lower-bound-%E4%B8%8E-upper-bound"><span class="nav-number">2.1.</span> <span class="nav-text">lower_bound 与 upper_bound</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E5%8C%96%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">离散化的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">3.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue"><span class="nav-number">4.</span> <span class="nav-text">priority_queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string"><span class="nav-number">5.</span> <span class="nav-text">string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bitset"><span class="nav-number">6.</span> <span class="nav-text">bitset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered-map-%E5%92%8C-unordered-set"><span class="nav-number">7.</span> <span class="nav-text">unordered_map 和 unordered_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deque"><span class="nav-number">8.</span> <span class="nav-text">deque</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack-%E5%92%8C-queue"><span class="nav-number">9.</span> <span class="nav-text">stack 和 queue</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="RuSun"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">RuSun</p>
+  <div class="site-description" itemprop="description">颓废无能的 oier </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">170</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/RuSunOI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;RuSunOI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kl42chn@outlook.com" title="E-Mail → mailto:kl42chn@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:live:.cid.49c3a98aa5cfd7b6?chat" title="Skype → skype:live:.cid.49c3a98aa5cfd7b6?chat" rel="noopener" target="_blank"><i class="fab fa-skype fa-fw"></i>Skype</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://sighttp.qq.com/msgrd?v=1&uin=1123093895" title="QQ → https:&#x2F;&#x2F;sighttp.qq.com&#x2F;msgrd?v&#x3D;1&amp;uin&#x3D;1123093895" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/185726" title="LuoGu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;185726" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>LuoGu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/rusun" title="CodeForces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>CodeForces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/rusun" title="AtCoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>AtCoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss.xml" title="RSS → &#x2F;rss.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RuSun</span>
+</div>
+
+<div>
+<span id="timeDate">loading...</span><span id="times">loading...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("11/17/2021 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "The site has running for "+dnum+" days ";
+        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '/mathjax/tex-mml-svg.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="/gitalk/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('/gitalk/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'b2630d09f5ebf3199765',
+      clientSecret: '845e1928cb154b8dfc4a3ad8b2ee977df2de55b5',
+      repo        : 'RuSunOI.github.io',
+      owner       : 'RuSunOI',
+      admin       : ['RuSunOI'],
+      id          : '1df47023a74044a8d96e90f28f185ebd',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

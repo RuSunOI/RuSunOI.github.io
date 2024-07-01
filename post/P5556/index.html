@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"rusunoi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":0,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="P5556 圣剑护符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P5556 圣剑护符">
+<meta property="og:url" content="https://rusunoi.github.io/post/P5556/index.html">
+<meta property="og:site_name" content="Blog of RuSun">
+<meta property="og:description" content="P5556 圣剑护符">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-30T07:31:46.000Z">
+<meta property="article:modified_time" content="2022-03-30T07:31:46.000Z">
+<meta property="article:author" content="RuSun">
+<meta property="article:tag" content="树链剖分">
+<meta property="article:tag" content="线性基">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://rusunoi.github.io/post/P5556/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>P5556 圣剑护符 | Blog of RuSun</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss.xml" title="Blog of RuSun" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog of RuSun</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">\begin {array}{c} \mathfrak {One Problem Is Difficult} \\\\ \mathfrak {Because You Don't Know} \\\\ \mathfrak {Why It Is Diffucult} \end {array}</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">170</span></a>
+
+  </li>
+        <li class="menu-item menu-item-书籍">
+
+    <a href="/books/" rel="section"><i class="fa fa-book fa-fw"></i>书籍</a>
+
+  </li>
+        <li class="menu-item menu-item-捐赠">
+
+    <a href="/donate/" rel="section"><i class="fa fa-thumbs-up fa-fw"></i>捐赠</a>
+
+  </li>
+        <li class="menu-item menu-item-友链">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rusunoi.github.io/post/P5556/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="RuSun">
+      <meta itemprop="description" content="颓废无能的 oier ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of RuSun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          P5556 圣剑护符
+        </h1>
+
+        <div class="post-meta">
+    
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-30 15:31:46" itemprop="dateCreated datePublished" datetime="2022-03-30T15:31:46+08:00">2022-03-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a>
+                </span>
+            </span>
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+          
+          <div>
+          <i class="fa fa-tag"></i> 标签：
+               &nbsp &nbsp
+               <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" rel="tag"><i class="fa fa-tag"></i> 树链剖分</a>
+               &nbsp &nbsp
+               <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9F%BA/" rel="tag"><i class="fa fa-tag"></i> 线性基</a>
+          </div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5556">P5556 圣剑护符</a></p>
+<span id="more"></span>
+
+<p>路径修改，树剖即可；路径询问是否存在两个子集异或和相同。两个子集异或和相同则一定存在一个集合异或和为 $0$ ，即不为一个线性基。线性基最多有 $30$ 个位置，那么考虑一条路径如果元素个数大于 $30$ ，那么答案一定为 $YES$ 。否则暴力插入线性基。复杂度 $O(n \log n \log a)$  。</p>
+<details>
+
+<summary> 查看代码 </summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">Type</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(Type &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> ((c = <span class="built_in">getchar</span>()) &lt; <span class="string">&#x27;0&#x27;</span> || c &gt; <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">        c == <span class="string">&#x27;-&#x27;</span> &amp;&amp; (flag = <span class="literal">true</span>);</span><br><span class="line">    x = c - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">while</span> ((c = <span class="built_in">getchar</span>()) &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; c &lt;= <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">        x = (x &lt;&lt; <span class="number">3</span>) + (x &lt;&lt; <span class="number">1</span>) + c - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    flag &amp;&amp; (x = ~x + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">Type</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(Type x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x &lt; <span class="number">0</span> &amp;&amp; (<span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>), x = ~x + <span class="number">1</span>);</span><br><span class="line">    x &gt; <span class="number">9</span> &amp;&amp; (<span class="built_in">write</span>(x / <span class="number">10</span>), <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>, M = <span class="number">30</span>;</span><br><span class="line">vector &lt;<span class="keyword">int</span>&gt; g[N];</span><br><span class="line"><span class="keyword">int</span> n, m, w[N], d[N], p[N];</span><br><span class="line"><span class="keyword">int</span> stmp, dfn[N], rnk[N], sz[N], son[N], top[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, v, tag;</span><br><span class="line">&#125; tr[N &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tr[x].v ^= k, tr[x].tag ^= k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span> <span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">add</span>(x &lt;&lt; <span class="number">1</span>, tr[x].tag), <span class="built_in">add</span>(x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, tr[x].tag);</span><br><span class="line">    tr[x].tag = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span> <span class="params">(<span class="keyword">int</span> l = <span class="number">1</span>, <span class="keyword">int</span> r = n, <span class="keyword">int</span> x = <span class="number">1</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tr[x].l = l, tr[x].r = r;</span><br><span class="line">    <span class="keyword">if</span> (l == r)</span><br><span class="line">        <span class="keyword">return</span> tr[x].v = w[rnk[l]], <span class="built_in"><span class="keyword">void</span></span>();</span><br><span class="line">    <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">build</span>(l, mid, x &lt;&lt; <span class="number">1</span>) , <span class="built_in">build</span>(mid + <span class="number">1</span>, r, x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span> <span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> k, <span class="keyword">int</span> x = <span class="number">1</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (tr[x].l &gt; r || l &gt; tr[x].r)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (tr[x].l &gt;= l &amp;&amp; tr[x].r &lt;= r)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">add</span>(x, k);</span><br><span class="line">    <span class="built_in">pushdown</span>(x);</span><br><span class="line">    <span class="built_in">modify</span>(l, r, k, x &lt;&lt; <span class="number">1</span>), <span class="built_in">modify</span>(l, r, k, x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span> <span class="params">(<span class="keyword">int</span> t, <span class="keyword">int</span> x = <span class="number">1</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (tr[x].l == tr[x].r)</span><br><span class="line">        <span class="keyword">return</span> tr[x].v;</span><br><span class="line">    <span class="built_in">pushdown</span>(x);</span><br><span class="line">    <span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">query</span>(t, t &lt;= mid ? x &lt;&lt; <span class="number">1</span> : x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ModifyPath</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (top[x] ^ top[y])</span><br><span class="line">    &#123;</span><br><span class="line">        d[top[x]] &lt; d[top[y]] &amp;&amp; (<span class="built_in">swap</span>(x, y), <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">modify</span>(dfn[top[x]], dfn[x], k);</span><br><span class="line">        x = p[top[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    d[x] &gt; d[y] &amp;&amp; (<span class="built_in">swap</span>(x, y), <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">modify</span>(dfn[x], dfn[y], k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (top[x] ^ top[y])</span><br><span class="line">    &#123;</span><br><span class="line">        d[top[x]] &lt; d[top[y]] &amp;&amp; (<span class="built_in">swap</span>(x, y), <span class="number">0</span>);</span><br><span class="line">        x = p[top[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    d[x] &gt; d[y] &amp;&amp; (<span class="built_in">swap</span>(x, y), <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span> <span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    sz[x] = <span class="number">1</span>;</span><br><span class="line">    son[x] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : g[x])</span><br><span class="line">        <span class="keyword">if</span> (!d[i])</span><br><span class="line">        &#123;</span><br><span class="line">            d[i] = d[x] + <span class="number">1</span>;</span><br><span class="line">            p[i] = x;</span><br><span class="line">            <span class="built_in">dfs1</span>(i);</span><br><span class="line">            sz[x] += sz[i];</span><br><span class="line">            <span class="keyword">if</span> (son[x] == <span class="number">-1</span> || sz[i] &gt; sz[son[x]])</span><br><span class="line">                son[x] = i;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    rnk[dfn[x] = ++stmp] = x;</span><br><span class="line">    top[x] = t;</span><br><span class="line">    ~son[x] &amp;&amp; (<span class="built_in">dfs2</span>(son[x], t), <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : g[x])</span><br><span class="line">        i ^ son[x] &amp;&amp; i ^ p[x] &amp;&amp; (<span class="built_in">dfs2</span>(i, i), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> bs[M];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert</span> <span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = M - <span class="number">1</span>; ~i; i--)</span><br><span class="line">        <span class="keyword">if</span> (x &gt;&gt; i &amp; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!bs[i])</span><br><span class="line">                <span class="keyword">return</span> bs[i] = x, <span class="literal">true</span>;</span><br><span class="line">            x ^= bs[i];</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">calc</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="built_in">lca</span>(x, y);</span><br><span class="line">    <span class="keyword">if</span> (d[x] + d[y] - <span class="number">2</span> * d[t] + <span class="number">1</span> &gt; M)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++)</span><br><span class="line">        bs[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">insert</span>(<span class="built_in">query</span>(dfn[t])))</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span> (x ^ t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="built_in">insert</span>(<span class="built_in">query</span>(dfn[x])))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        x = p[x];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (y ^ t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="built_in">insert</span>(<span class="built_in">query</span>(dfn[y])))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        y = p[y];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">read</span>(n), <span class="built_in">read</span>(m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">read</span>(w[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, a, b; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">read</span>(a), <span class="built_in">read</span>(b);</span><br><span class="line">        g[a].<span class="built_in">push_back</span>(b);</span><br><span class="line">        g[b].<span class="built_in">push_back</span>(a);</span><br><span class="line">    &#125;</span><br><span class="line">    d[<span class="number">1</span>] = <span class="number">1</span>, <span class="built_in">dfs1</span>(<span class="number">1</span>), <span class="built_in">dfs2</span>(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">build</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> op[<span class="number">8</span>]; m; m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, op);</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        <span class="built_in">read</span>(x), <span class="built_in">read</span>(y);</span><br><span class="line">        <span class="keyword">if</span> (op[<span class="number">0</span>] == <span class="string">&#x27;Q&#x27;</span>)</span><br><span class="line">            <span class="built_in">puts</span>(<span class="built_in">calc</span>(x, y) ? <span class="string">&quot;YES&quot;</span> : <span class="string">&quot;NO&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (op[<span class="number">0</span>] == <span class="string">&#x27;U&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> k;</span><br><span class="line">            <span class="built_in">read</span>(k);</span><br><span class="line">            <span class="built_in">ModifyPath</span>(x, y, k);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\CF343D\" rel="bookmark">CF343D Water Tree</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\CF487E\" rel="bookmark">CF487E Tourists</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\K-Father-on-Tree\" rel="bookmark">树上 k 级祖先</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\LCA-Template\" rel="bookmark">LCA模板</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\P1505\" rel="bookmark">P1505 [国家集训队]旅游</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>RuSun
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://rusunoi.github.io/post/P5556/" title="P5556 圣剑护符">https://rusunoi.github.io/post/P5556/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/P4301/" rel="prev" title="P4301 [CQOI2013] 新Nim游戏">
+      <i class="fa fa-chevron-left"></i> P4301 [CQOI2013] 新Nim游戏
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/P4111/" rel="next" title="P4111 [HEOI2015]小 Z 的房间">
+      P4111 [HEOI2015]小 Z 的房间 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="RuSun"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">RuSun</p>
+  <div class="site-description" itemprop="description">颓废无能的 oier </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">170</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/RuSunOI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;RuSunOI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kl42chn@outlook.com" title="E-Mail → mailto:kl42chn@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:live:.cid.49c3a98aa5cfd7b6?chat" title="Skype → skype:live:.cid.49c3a98aa5cfd7b6?chat" rel="noopener" target="_blank"><i class="fab fa-skype fa-fw"></i>Skype</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://sighttp.qq.com/msgrd?v=1&uin=1123093895" title="QQ → https:&#x2F;&#x2F;sighttp.qq.com&#x2F;msgrd?v&#x3D;1&amp;uin&#x3D;1123093895" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/185726" title="LuoGu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;185726" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>LuoGu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/rusun" title="CodeForces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>CodeForces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/rusun" title="AtCoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>AtCoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss.xml" title="RSS → &#x2F;rss.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RuSun</span>
+</div>
+
+<div>
+<span id="timeDate">loading...</span><span id="times">loading...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("11/17/2021 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "The site has running for "+dnum+" days ";
+        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '/mathjax/tex-mml-svg.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="/gitalk/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('/gitalk/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'b2630d09f5ebf3199765',
+      clientSecret: '845e1928cb154b8dfc4a3ad8b2ee977df2de55b5',
+      repo        : 'RuSunOI.github.io',
+      owner       : 'RuSunOI',
+      admin       : ['RuSunOI'],
+      id          : '0f5a1493d539ca145be93831f94f6a79',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

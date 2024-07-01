@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"rusunoi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":0,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="CSP-S2021爆炸记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSP-S 2021 游记">
+<meta property="og:url" content="https://rusunoi.github.io/post/CSP-S-2021-tour/index.html">
+<meta property="og:site_name" content="Blog of RuSun">
+<meta property="og:description" content="CSP-S2021爆炸记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-17T01:05:02.000Z">
+<meta property="article:modified_time" content="2021-11-17T01:05:02.000Z">
+<meta property="article:author" content="RuSun">
+<meta property="article:tag" content="Blog RuSun OI Computer Science">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://rusunoi.github.io/post/CSP-S-2021-tour/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CSP-S 2021 游记 | Blog of RuSun</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss.xml" title="Blog of RuSun" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog of RuSun</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">\begin {array}{c} \mathfrak {One Problem Is Difficult} \\\\ \mathfrak {Because You Don't Know} \\\\ \mathfrak {Why It Is Diffucult} \end {array}</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">170</span></a>
+
+  </li>
+        <li class="menu-item menu-item-书籍">
+
+    <a href="/books/" rel="section"><i class="fa fa-book fa-fw"></i>书籍</a>
+
+  </li>
+        <li class="menu-item menu-item-捐赠">
+
+    <a href="/donate/" rel="section"><i class="fa fa-thumbs-up fa-fw"></i>捐赠</a>
+
+  </li>
+        <li class="menu-item menu-item-友链">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rusunoi.github.io/post/CSP-S-2021-tour/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="RuSun">
+      <meta itemprop="description" content="颓废无能的 oier ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of RuSun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSP-S 2021 游记
+        </h1>
+
+        <div class="post-meta">
+    
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-17 09:05:02" itemprop="dateCreated datePublished" datetime="2021-11-17T09:05:02+08:00">2021-11-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">游记</span></a>
+                </span>
+            </span>
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="CSP-S2021爆炸记"><a href="#CSP-S2021爆炸记" class="headerlink" title="CSP-S2021爆炸记"></a>CSP-S2021爆炸记</h1><span id="more"></span>
+
+<p>蒟蒻第一次参加CSP-S，不必说，自然是炸了，机房还有 $A$ 了第一二题的巨佬 @mydcwfy，便更让蒟蒻瑟瑟发抖。</p>
+<p>此刻，夜色已深，机房里的取得好成绩的巨佬们正在玩 <a href="generals.io">generals</a>，只留下蒟蒻一个人在默默地写下这篇记录蒟蒻在 $CSP-S2021$ 赛场上自闭的游记。</p>
+<h2 id="Day-inf"><a href="#Day-inf" class="headerlink" title="$Day -inf$"></a>$Day -inf$</h2><p>蒟蒻在弱省弱校，自然并没有很好的教育资源，教练将视频发给大家，大家便开始卷。蒟蒻自然没法赶上巨佬，在学习进度上一直落后于巨佬们。最后一周晚上停课，从星期三下午开始全天停课，连着之前国庆节 $7$ 天，一直在考试，蒟蒻一次比一次考得差，在考试的前两天，一次考试中只得了 $35$ 分，直接自闭了，但是巨佬们依然稳定在两百多分，下一届是从小学开始学的，参加提高组的初三同学都过了初赛，而蒟蒻昨年连初赛都没过，我觉得我要被单调队列了。</p>
+<h2 id="Day-0"><a href="#Day-0" class="headerlink" title="$Day 0$"></a>$Day 0$</h2><p>上午还在考试，考到中午食堂都没饭了，便去学校对面的商场里吃烤肉自助餐，导致今天上午肚子很痛，还好考试的时候没有发作。</p>
+<p>下午去现场试机，三道图论题，一道很多巨佬都想出来的题，蒟蒻没有想到，只打了暴力。还好试机没有成绩，不然蒟蒻又要考前自闭了。</p>
+<p>吃完饭到九点钟，在机房里听了一场 $Beyond$ 的演唱会。</p>
+<p>晚上和托管的同学玩大富翁，玩了两局，都是第一个破产的，心情跌落到了谷底。他们聊天聊到了两点钟，蒟蒻没有睡好。</p>
+<h2 id="Day-1"><a href="#Day-1" class="headerlink" title="$Day 1$"></a>$Day 1$</h2><p>早上边听歌边复习，感觉什么都没复习到，尝试把扫描线打出来，$WA$ 了，只有二十分，心想就摆烂了。</p>
+<p>下午早早地到了考场，学校的门前放了宣传海报，所有人等着两点钟进考试，便只能看这个。机子和键盘还是蛮熟悉的，所以没有太紧张或好奇。</p>
+<p>拿到题了之后，便开始看。虚拟机里面如所料的没有完整的 $vscode$ $c++$ 拓展，所以没法用，连基本的补全功能都没有，所以虚拟机的唯一用处便成了编译。</p>
+<p>看到第一题，首先想到的是贪心 + 动态规划，但是想不出来怎么做，便先放一放，<code>n &lt;= 5000</code> 只有 $40$ 分，这个暴力分实在是给的太少了，磨磨蹭蹭终于横下心来放弃了想正解，就去看第二题了。</p>
+<p>结果第二题更毒瘤，事实上，如果由符号 <code>*</code> 的题目，我们是之前练习过的，动态规划／记忆化搜索是完全线性时间可以做的，但是有了 <code>*</code> 之后，合法规则立刻变得十分复杂，最暴力的做法 $ 3 ^ n$ 的复杂度，只有 <code>15</code> 分，便再放一放，去看第三题。</p>
+<p>第三题，感觉应该是有一些规律可以寻，因为一共只有 <code>n</code> 种数，每种数出现两次，当一个数的位置确定了，另一个一定是可以确定的，我的思路大概到此结束了，于是先把这个题放一放，去看第四题。</p>
+<p>至此大概用了半小时。</p>
+<p>我耐心地读完了第四题（后来才知道一些巨佬根本没有看这个题），想到的大概是类似于 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2598">P2598</a> 的模型，要计算所有黑点和白点交界的边的权值和的最小值，可以想象到，这些边一定将黑色和白色分割成若干部分，但其中一些权值是可以避免的，如果只分成为两部分，那么一些边可以节省，依然是合法的（即将一些颜色令为相同），那么我们就想到了将黑色和白色两种点切开，中间的边就是答案。便自然而然的想到了最小割（正在写的此刻完全不知道正解是什么，巨佬们不要嘲笑蒟蒻），将黑点和超级源点连边，白点和超级汇点连边，中间就是矩阵中的边，跑最小割（最大流）即可。大概在考试前几天，在完成随机绿题 $100$ 道，里面一道树形 $DP$ 的题我用了最小割，就恰巧复习道了网络流，于是我在考场两分钟就打出了正确的 $Dinic$ ，最开始用的 $vector$ 存边，因为有多组数据， $vector$ 可以方便地 $pop_back$ 但后面打网络流的时候想起了双向边编号 <code>^1</code> 的性质，<code>vector.pop_back</code> 就没法用了，所有最后的解决方案是存两张图。几个稍大的样例都可以过了，最后一个在 $Windows$ 下我自己数了要跑五六秒，心里有点悬（忘记可以开 $O2$），于是就在虚拟机又跑，想起开 $O2$ ，使用系统里的 <code>time</code> 命令，得到时间大概 <code>2.7</code> 秒左右，觉得可以接受了，就走了。</p>
+<p>离考试开始过了一个半小时了。</p>
+<p>回头看第三题，不想再想正解，就打了搜索。有一个优化，当一个数的位置确定了，与它相同的那个数的位置也可以确定了，如果搜索到结果不合法，直接结束，可以过“大样例”，觉得 <code>40pts</code> 可以水到。做了近一个小时。</p>
+<p>第二题就直接放了，再看第一题，我猛然发现暴力的复杂度是 $n^3$ ，连 <code>40pts</code> 都拿不到了，枚举两种各分配多少个，枚举每个飞机，枚举所有可用的（那个东西叫什么记不到了），最后的枚举可以用堆优化，选择上个结束时间最小的，复杂度是 $n ^ 2 \log n$ 。半个小时打完就走了。</p>
+<p>第二题太毒瘤了，即使是指数级的暴力我都不知道怎么判读一个串是否合法，就索性直接打表样例，如果不是样例输出 $3 ^ {num(?)} $ ，即随便填的方案。</p>
+<h2 id="估分"><a href="#估分" class="headerlink" title="估分"></a>估分</h2><p>$ 20 - 40 + 0 + 20 - 40 + 80 - 100 &#x3D; 120- 180$，这是在第四题是正确的情况下，虽然所有样例过了，但我依然觉得很悬。</p>
+<p>各个网站的成绩</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LuoGu</td>
+<td>40</td>
+<td>0</td>
+<td>40</td>
+<td>100</td>
+<td>180</td>
+</tr>
+<tr>
+<td>INF</td>
+<td>50</td>
+<td>5</td>
+<td>52</td>
+<td>60</td>
+<td>167</td>
+</tr>
+<tr>
+<td>Hydro</td>
+<td>60</td>
+<td>0</td>
+<td>40</td>
+<td>100</td>
+<td>200</td>
+</tr>
+<tr>
+<td>YouDao</td>
+<td>40</td>
+<td>0</td>
+<td>50</td>
+<td>75</td>
+<td>165</td>
+</tr>
+<tr>
+<td>JiSuanKe</td>
+<td>40</td>
+<td>5</td>
+<td>40</td>
+<td>100</td>
+<td>185</td>
+</tr>
+<tr>
+<td><strong>Min</strong></td>
+<td><strong>40</strong></td>
+<td><strong>0</strong></td>
+<td><strong>40</strong></td>
+<td><strong>60</strong></td>
+<td><strong>140</strong></td>
+</tr>
+<tr>
+<td><strong>Ave</strong></td>
+<td><strong>46</strong></td>
+<td><strong>2</strong></td>
+<td><strong>44.4</strong></td>
+<td><strong>87</strong></td>
+<td><strong>179.4</strong></td>
+</tr>
+</tbody></table>
+<p>实际成绩：45 + 0 + 44 + 60 &#x3D; 149</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>RuSun
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://rusunoi.github.io/post/CSP-S-2021-tour/" title="CSP-S 2021 游记">https://rusunoi.github.io/post/CSP-S-2021-tour/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/P2774/" rel="prev" title="P2774 方格取数问题">
+      <i class="fa fa-chevron-left"></i> P2774 方格取数问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/P2868/" rel="next" title="P2868 [USACO07DEC]Sightseeing Cows G">
+      P2868 [USACO07DEC]Sightseeing Cows G <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSP-S2021%E7%88%86%E7%82%B8%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">CSP-S2021爆炸记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-inf"><span class="nav-number">1.1.</span> <span class="nav-text">$Day -inf$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-0"><span class="nav-number">1.2.</span> <span class="nav-text">$Day 0$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-number">1.3.</span> <span class="nav-text">$Day 1$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B0%E5%88%86"><span class="nav-number">1.4.</span> <span class="nav-text">估分</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="RuSun"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">RuSun</p>
+  <div class="site-description" itemprop="description">颓废无能的 oier </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">170</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/RuSunOI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;RuSunOI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kl42chn@outlook.com" title="E-Mail → mailto:kl42chn@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:live:.cid.49c3a98aa5cfd7b6?chat" title="Skype → skype:live:.cid.49c3a98aa5cfd7b6?chat" rel="noopener" target="_blank"><i class="fab fa-skype fa-fw"></i>Skype</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://sighttp.qq.com/msgrd?v=1&uin=1123093895" title="QQ → https:&#x2F;&#x2F;sighttp.qq.com&#x2F;msgrd?v&#x3D;1&amp;uin&#x3D;1123093895" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/185726" title="LuoGu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;185726" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>LuoGu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/rusun" title="CodeForces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>CodeForces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/rusun" title="AtCoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>AtCoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss.xml" title="RSS → &#x2F;rss.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RuSun</span>
+</div>
+
+<div>
+<span id="timeDate">loading...</span><span id="times">loading...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("11/17/2021 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "The site has running for "+dnum+" days ";
+        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '/mathjax/tex-mml-svg.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="/gitalk/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('/gitalk/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'b2630d09f5ebf3199765',
+      clientSecret: '845e1928cb154b8dfc4a3ad8b2ee977df2de55b5',
+      repo        : 'RuSunOI.github.io',
+      owner       : 'RuSunOI',
+      admin       : ['RuSunOI'],
+      id          : 'dfd9073584eb3a46f176cd759502c900',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

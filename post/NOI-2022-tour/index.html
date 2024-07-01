@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"rusunoi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":0,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="寄了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NOI 2022 游记">
+<meta property="og:url" content="https://rusunoi.github.io/post/NOI-2022-tour/index.html">
+<meta property="og:site_name" content="Blog of RuSun">
+<meta property="og:description" content="寄了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-03T05:53:27.000Z">
+<meta property="article:modified_time" content="2022-09-03T05:53:27.000Z">
+<meta property="article:author" content="RuSun">
+<meta property="article:tag" content="Blog RuSun OI Computer Science">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://rusunoi.github.io/post/NOI-2022-tour/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>NOI 2022 游记 | Blog of RuSun</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss.xml" title="Blog of RuSun" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog of RuSun</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">\begin {array}{c} \mathfrak {One Problem Is Difficult} \\\\ \mathfrak {Because You Don't Know} \\\\ \mathfrak {Why It Is Diffucult} \end {array}</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">170</span></a>
+
+  </li>
+        <li class="menu-item menu-item-书籍">
+
+    <a href="/books/" rel="section"><i class="fa fa-book fa-fw"></i>书籍</a>
+
+  </li>
+        <li class="menu-item menu-item-捐赠">
+
+    <a href="/donate/" rel="section"><i class="fa fa-thumbs-up fa-fw"></i>捐赠</a>
+
+  </li>
+        <li class="menu-item menu-item-友链">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rusunoi.github.io/post/NOI-2022-tour/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="RuSun">
+      <meta itemprop="description" content="颓废无能的 oier ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of RuSun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NOI 2022 游记
+        </h1>
+
+        <div class="post-meta">
+    
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-03 13:53:27" itemprop="dateCreated datePublished" datetime="2022-09-03T13:53:27+08:00">2022-09-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">游记</span></a>
+                </span>
+            </span>
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>寄了。</p>
+<span id="more"></span>
+
+<p>D类，是去耍耍耍的。</p>
+<h2 id="Day-59-June-25th"><a href="#Day-59-June-25th" class="headerlink" title="Day -59 June 25th ~"></a>Day -59 June 25th ~</h2><p>认为动车有充电插座，选择了坐一天动车，但是事实证明我错了，坐了一天牢。</p>
+<p>去了 XJ 一起训练。神仙 @mydcwfy 已经去了一个月了。每天生活得很不健康，经常熬夜，经常吃外卖。XJ 食堂比较便宜，但是口味很不能适应。神仙特别多，模拟赛经常被吊打。杭州应该有不少旅游景点的，去过两次西湖，心情还是很愉悦的。</p>
+<h2 id="Day-38-July-16th"><a href="#Day-38-July-16th" class="headerlink" title="Day -38 July 16th"></a>Day -38 July 16th</h2><p>要求提前一个月回到所在省，于是回去了。</p>
+<p>过了两天回到学校，有神仙 @JKLover 讲课，有一定收获。</p>
+<p>22号班主任（化学教练）带着同学去济南了，没有人管我们，生活比较愉快。</p>
+<h2 id="Day-10-Augest-12th"><a href="#Day-10-Augest-12th" class="headerlink" title="Day -10 Augest 12th"></a>Day -10 Augest 12th</h2><p>出发去昆山了，和绵中一个飞机，午饭也没有吃继续赶路，晚饭去酒店附近吃，遇到了成外的。今天继续耍。</p>
+<h2 id="Day-9-Augest-13th"><a href="#Day-9-Augest-13th" class="headerlink" title="Day -9 Augest 13th"></a>Day -9 Augest 13th</h2><p>继续耍，晚上长沙一中的到了。</p>
+<h2 id="Day-8-Augest-14th"><a href="#Day-8-Augest-14th" class="headerlink" title="Day -8 Augest 14th"></a>Day -8 Augest 14th</h2><p>继续耍，因为长沙一中的昨晚 10 点才到，需要休整一天。</p>
+<h2 id="Day-7-Augest-15th"><a href="#Day-7-Augest-15th" class="headerlink" title="Day -7 Augest 15th"></a>Day -7 Augest 15th</h2><p>模拟赛，被吊打。觉得长沙一中的讨论氛围很好。</p>
+<h2 id="Day-6-Augest-16th"><a href="#Day-6-Augest-16th" class="headerlink" title="Day -6 Augest 16th"></a>Day -6 Augest 16th</h2><p>模拟赛，被吊打。</p>
+<h2 id="Day-5-Augest-17th"><a href="#Day-5-Augest-17th" class="headerlink" title="Day -5 Augest 17th"></a>Day -5 Augest 17th</h2><p>休息一天，耍耍耍。</p>
+<h2 id="Day-4-Augest-18th"><a href="#Day-4-Augest-18th" class="headerlink" title="Day -4 Augest 18th"></a>Day -4 Augest 18th</h2><p>模拟赛，被吊打。</p>
+<h2 id="Day-3-Augest-19th"><a href="#Day-3-Augest-19th" class="headerlink" title="Day -3 Augest 19th"></a>Day -3 Augest 19th</h2><p>模拟赛，被吊打。</p>
+<h2 id="Day-2-Augest-20th"><a href="#Day-2-Augest-20th" class="headerlink" title="Day -2 Augest 20th"></a>Day -2 Augest 20th</h2><p>一早就去，到的时候，绵中也刚好正在进去。教练 Z （报了名）要 22 号才来（但是因为疫情原因进不来），教练 L （没有报名）是一直带我们的教练，因此，没有教练能和我们一起进去。</p>
+<p>和我一个寝室的是成七的 cs ，特别强，经常在敲代码。</p>
+<h2 id="Day-1-Augest-21st"><a href="#Day-1-Augest-21st" class="headerlink" title="Day -1 Augest 21st"></a>Day -1 Augest 21st</h2><p>领取物资，感觉东西比较多，比较有意思，那个吉祥物现在就放在我面前，比较可爱。很多人都不太认识，也不擅长社交。</p>
+<h2 id="Day-0-Augest-22nd"><a href="#Day-0-Augest-22nd" class="headerlink" title="Day 0 Augest 22nd"></a>Day 0 Augest 22nd</h2><p>下午是笔试，试机题目是 NOIP2021 ，5 min 内把笔试做完了，就一直检查，有一个题不确定，后来知道是考场门口的《竞赛须知》，但是最后还是猜对了。没法查成绩，成绩是通过最后公布的总成绩算出来的。</p>
+<p>每天晚上，教练来学校门口和我们交流。</p>
+<h2 id="Day-1-Augest-23rd"><a href="#Day-1-Augest-23rd" class="headerlink" title="Day 1 Augest 23rd"></a>Day 1 Augest 23rd</h2><p>T1 想到一个启发式合并的做法，用 <code>list</code> 维护所有序列（为什么不是 <code>deque</code> ，因为一直就没有用这个的习惯，确实也不知道被卡瓜了），维护摩尔投票的时候偷了懒，用 <code>mx - (n - mx &amp; 1)</code> 作为投票的结果，当时以为没有问题，后来发现挂了十分，仔细一想可能是错误的，应该将其单独维护出来。T1写完大概过了 2h，后面在坐牢。</p>
+<p>看样子大家分差不大，大概是和联合省选的情形一样了。</p>
+<h2 id="Day-1-5-Augest-24th"><a href="#Day-1-5-Augest-24th" class="headerlink" title="Day 1.5 Augest 24th"></a>Day 1.5 Augest 24th</h2><p>在耍。开幕式有幸坐在了神仙 zzh 旁边。</p>
+<h2 id="Day-2-Augest-25th"><a href="#Day-2-Augest-25th" class="headerlink" title="Day 2 Augest 25th"></a>Day 2 Augest 25th</h2><p>T1 发现不会树哈希，随便编了一个，发现怎么都过不了大样例，就摆烂了，最后得了 48pts ，有点可惜。T2 一直没有想到性质分怎么做。T3写了 10pts ，但是挂了，听说暴力可以得 17pts ，我没有写，比较可惜。</p>
+<p>一结束，就通知马上离开昆山，晚上的飞机。</p>
+<h2 id="Day-inf"><a href="#Day-inf" class="headerlink" title="Day inf"></a>Day inf</h2><p>Day2 打得太臭了。差 12 pts Ag ，比较可惜。神仙 @mydcwfy 挂了 18pts ，差一点 Au ，特别可惜。</p>
+<p>被赶去学文化课，但是我去杭州的时候已经开始期末复习，并没有缺文化课，但是以为就几天，忍一下就算了，结果要等到其他竞赛联赛结束才准我们走，因为现在文化课老师特别闲。大抵是教练认为我的水平和 @mydcwfy 相当，不需要为 NOIP 着急，但是我却十分着急又无能为力。 @mydcwfy 去年就 NOIP 全省 rank6 ，而且现在又有 Ag 。而我什么都没有。他确实缺了不少课，但我需要陪他补文化课。有自习课，我自习课来机房都要被班主任 B 。现在觉得特别难受，但确实只有挨着。</p>
+<p>因为疫情，只准老师出去聚餐，不准学生周末放假，在学校关了近两周了，特别难受，似乎确凿要去斗争了。</p>
+<p>先提一句，感觉快要退役了。希望结局不要这么快被我猜中。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>RuSun
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://rusunoi.github.io/post/NOI-2022-tour/" title="NOI 2022 游记">https://rusunoi.github.io/post/NOI-2022-tour/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/P5518/" rel="prev" title="P5518 [MtOI2019]幽灵乐团 / 莫比乌斯反演基础练习题">
+      <i class="fa fa-chevron-left"></i> P5518 [MtOI2019]幽灵乐团 / 莫比乌斯反演基础练习题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/CF1706E/" rel="next" title="CF1706E Qpwoeirut and Vertices">
+      CF1706E Qpwoeirut and Vertices <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-59-June-25th"><span class="nav-number">1.</span> <span class="nav-text">Day -59 June 25th ~</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-38-July-16th"><span class="nav-number">2.</span> <span class="nav-text">Day -38 July 16th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-10-Augest-12th"><span class="nav-number">3.</span> <span class="nav-text">Day -10 Augest 12th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-9-Augest-13th"><span class="nav-number">4.</span> <span class="nav-text">Day -9 Augest 13th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-8-Augest-14th"><span class="nav-number">5.</span> <span class="nav-text">Day -8 Augest 14th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-7-Augest-15th"><span class="nav-number">6.</span> <span class="nav-text">Day -7 Augest 15th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-6-Augest-16th"><span class="nav-number">7.</span> <span class="nav-text">Day -6 Augest 16th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-5-Augest-17th"><span class="nav-number">8.</span> <span class="nav-text">Day -5 Augest 17th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-4-Augest-18th"><span class="nav-number">9.</span> <span class="nav-text">Day -4 Augest 18th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-3-Augest-19th"><span class="nav-number">10.</span> <span class="nav-text">Day -3 Augest 19th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2-Augest-20th"><span class="nav-number">11.</span> <span class="nav-text">Day -2 Augest 20th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-Augest-21st"><span class="nav-number">12.</span> <span class="nav-text">Day -1 Augest 21st</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-0-Augest-22nd"><span class="nav-number">13.</span> <span class="nav-text">Day 0 Augest 22nd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-Augest-23rd"><span class="nav-number">14.</span> <span class="nav-text">Day 1 Augest 23rd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-5-Augest-24th"><span class="nav-number">15.</span> <span class="nav-text">Day 1.5 Augest 24th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2-Augest-25th"><span class="nav-number">16.</span> <span class="nav-text">Day 2 Augest 25th</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-inf"><span class="nav-number">17.</span> <span class="nav-text">Day inf</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="RuSun"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">RuSun</p>
+  <div class="site-description" itemprop="description">颓废无能的 oier </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">170</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/RuSunOI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;RuSunOI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kl42chn@outlook.com" title="E-Mail → mailto:kl42chn@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:live:.cid.49c3a98aa5cfd7b6?chat" title="Skype → skype:live:.cid.49c3a98aa5cfd7b6?chat" rel="noopener" target="_blank"><i class="fab fa-skype fa-fw"></i>Skype</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://sighttp.qq.com/msgrd?v=1&uin=1123093895" title="QQ → https:&#x2F;&#x2F;sighttp.qq.com&#x2F;msgrd?v&#x3D;1&amp;uin&#x3D;1123093895" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/185726" title="LuoGu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;185726" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>LuoGu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/rusun" title="CodeForces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>CodeForces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/rusun" title="AtCoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>AtCoder</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss.xml" title="RSS → &#x2F;rss.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RuSun</span>
+</div>
+
+<div>
+<span id="timeDate">loading...</span><span id="times">loading...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("11/17/2021 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "The site has running for "+dnum+" days ";
+        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '/mathjax/tex-mml-svg.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="/gitalk/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('/gitalk/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'b2630d09f5ebf3199765',
+      clientSecret: '845e1928cb154b8dfc4a3ad8b2ee977df2de55b5',
+      repo        : 'RuSunOI.github.io',
+      owner       : 'RuSunOI',
+      admin       : ['RuSunOI'],
+      id          : '5da34a89a7b9b7499b7a2c8c0a67d5ef',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
