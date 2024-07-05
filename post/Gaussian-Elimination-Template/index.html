@@ -130,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">665</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -301,7 +301,7 @@
 
 <details>
 <summary> 异或 </summary>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">bitset&lt;N&gt; A[N]; <span class="comment">// 方程 1 ~ n，第 0 项为常数项</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Gauss</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; ++k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = k;</span><br><span class="line">        <span class="keyword">while</span> (t &lt;= n &amp;&amp; !A[t][k]) ++t;</span><br><span class="line">        <span class="keyword">if</span> (t &gt; n) <span class="keyword">continue</span>; <span class="comment">// No Only-one Solution</span></span><br><span class="line">        <span class="built_in">swap</span>(A[t], A[k]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">            i ^ k &amp;&amp; A[i][k] &amp;&amp; (A[i] ^= A[k], <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">bitset&lt;N&gt; A[N]; <span class="comment">// 方程 1 ~ n，第 0 项为常数项</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Gauss</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; ++k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = k;</span><br><span class="line">        <span class="keyword">while</span> (t &lt;= n &amp;&amp; !A[t][k]) ++t;</span><br><span class="line">        <span class="keyword">if</span> (t &gt; n) <span class="keyword">continue</span>; <span class="comment">// No Only-one Solution</span></span><br><span class="line">        <span class="built_in">swap</span>(A[t], A[k]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">            <span class="keyword">if</span> (i ^ k &amp;&amp; A[i][k]) A[i] ^= A[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </details>
 
     </div>
@@ -437,7 +437,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-count">665</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

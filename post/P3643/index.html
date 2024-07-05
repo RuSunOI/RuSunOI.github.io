@@ -131,7 +131,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">665</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -289,7 +289,7 @@
 
 <p>设 $f _ {i, j}$ 表示最后一个选择了第 $i$ 个学校，值为 $j$ 。那么有转移方程：</p>
 <p>$$<br>f _ {i, j} &#x3D; \sum _ {t &lt; i} \sum _ {s &lt; j} f _ {t, s}<br>$$</p>
-<p>发现 $j$ 值域很大，考虑将其离散化，那么共有不超过 $2n$ 个区间。注意到转移中关于 $j$ 的顺序，记录一个位置 $&lt;j$ 的前缀和，对于每个点 $a$，转移时找到前一个选择上一段值域的点 $b$，那么中间 $[b + 1, a)$ 的范围内，如果不包含该区间，那么在该区间一定不选；否则，可以选。那么设 $[b + 1, a]$ 中有 $c$ 个包含该区间，区间大小为 $l$ ，那么即在 $0, 0, \ldots, 0(c - 1 0s), 1, 2, \ldots, l$ 选择 $c$ 个数，即 $\binom {c + l - 1} c$ ，可以预处理出来。</p>
+<p>发现 $j$ 值域很大，考虑将其离散化，那么共有不超过 $2n$ 个区间。注意到转移中关于 $j$ 的顺序，记录一个位置 $&lt;j$ 的前缀和。依此枚举每个区间，考虑第 $i$ 个点从第 $j$ 点的转移， 但是考虑到中间有一些点也包含了这个区间，那么考虑加上这些点会产生什么样的影响，这些点可以选择或者不选择，如果要选择的话，那么与当前点构成一个单增子序列，考虑这个序列的种数。。那么设 $[b + 1, a]$ 中有 $c$ 个包含该区间，区间大小为 $l$ ，那么即在 $0, 0, \ldots, 0(c个), 1, 2, \ldots, l$ 选择 $c$ 个数，即 $\binom {c + l - 1} c$ ，（当前这个一定要选，所以减一个），可以预处理出来。</p>
 <details>
 
 <summary> 查看代码 </summary>
@@ -431,7 +431,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-count">665</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

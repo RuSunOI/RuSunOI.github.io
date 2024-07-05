@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">665</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -251,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
+              <span>2.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -283,7 +283,7 @@
 <span id="more"></span>
 
 <p>考虑求出恰好使用了 $i$ 个值的方案数 $g _ i$ ，那么有答案 $\sum _ {i &#x3D; 1} ^ n \binom m i g _ i$ ，其中 $\binom m  i$ 可以 $O(n)$ 暴力算。</p>
-<p>注意到虽然 $m$ 很大，但是实际上用到的不超过 $n$ 个，那么考虑 DP ，$f _ {i, j}$ 表示在 $i$ 点，选择了第 $j$ 大的数的方案数。方程 $f _ {u, i} &#x3D; \prod _ v \sum _ {k &#x3D; 1} ^ i f _ {v, k}$ 。枚举哪些值可以和前一个值一样，那么可以发现 $\sum _ {k &#x3D; 1} ^ i \binom {i - 1} {i - k} g _ i &#x3D; f _ {1, i}$ 。递推得到答案。</p>
+<p>注意到虽然 $m$ 很大，但是实际上用到的不超过 $n$ 个，不妨令用 $n$ 个数，那么考虑 DP ，$f _ {i, j}$ 表示在 $i$ 点，选择了数 $j$ 的方案数。方程 $f _ {u, i} &#x3D; \prod _ v \sum _ {k &#x3D; 1} ^ i f _ {v, k}$ 。除了最大数 $i$ 以外的 $i - 1$ 个数中，若恰好使用了 $k$ 个数的种类数为 $g _ k$ ，那么在 $f _ {1, i}$ 中贡献了 $\binom { i - 1 } { k - 1} $ 次，那么可以发现 $\sum _ {k &#x3D; 1} ^ i \binom {i - 1} {i - k} g _ k &#x3D; f _ {1, i}$ 。容斥找到最后的答案。</p>
 <details>
 
 <summary> 查看代码 </summary>
@@ -425,7 +425,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-count">665</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

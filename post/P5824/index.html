@@ -131,7 +131,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">665</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -289,11 +289,11 @@
 
 <h2 id="球不同，盒不同"><a href="#球不同，盒不同" class="headerlink" title="球不同，盒不同"></a>球不同，盒不同</h2><h3 id="text-I"><a href="#text-I" class="headerlink" title="$\text I$"></a>$\text I$</h3><p>每个球都是独立的，各有 $m$ 个选择。答案为 $m ^ n$ 。</p>
 <h3 id="text-II"><a href="#text-II" class="headerlink" title="$\text {II}$"></a>$\text {II}$</h3><p>每选择一个盒子后，可以选择的方案少一个，即 $m ^ {\underline n}$  。</p>
-<h3 id="text-III"><a href="#text-III" class="headerlink" title="$\text {III}$"></a>$\text {III}$</h3><p>记 $f (x)$ 表示钦定 $x$ 个盒子为空的方案数，$g(x)$ 表示恰有 $x$ 个盒子为空的答案。那么有 $f(x) &#x3D; (m - x) ^ n &#x3D; \sum _ {i &#x3D; x} \binom i x g(i)$ 。由二项式反演，$g(x) &#x3D; \sum _ {i &#x3D; x} (-1) ^ {i - x}\binom i x f(i) $ ，那么 $g(0) &#x3D; \sum _ {i &#x3D; 0} (-1) ^ i \binom i x (m - i) ^ n$ 。</p>
+<h3 id="text-III"><a href="#text-III" class="headerlink" title="$\text {III}$"></a>$\text {III}$</h3><p>记 $f (x)$ 表示钦定使用 $x$ 个盒子的种数，那么有 $f (x) &#x3D; x ^ n$ ，且 $f (x) &#x3D; \sum _ {i &#x3D; 0} ^ m \binom x i g (i)$ 。由二项式反演，有 $g(x) &#x3D; \sum _ {i &#x3D; 0} ^ x (-1) ^ {x - i} \binom x i i ^ n$ ，答案为 $g(m) &#x3D; \sum _ {i &#x3D; 0} ^m (-1) ^ {m - i} \binom m i i ^ n$ 。也可以理解为在盒子相同的基础上，将盒子打乱，即 ${ n \brace m} m!$ 。</p>
 <h2 id="球不同，盒相同"><a href="#球不同，盒相同" class="headerlink" title="球不同，盒相同"></a>球不同，盒相同</h2><h3 id="text-IV"><a href="#text-IV" class="headerlink" title="$\text {IV}$"></a>$\text {IV}$</h3><p>枚举有多少个集合为空，集合非空时即为第二类斯特林数，答案为 $\sum _ {i &#x3D; 1} ^ m {n \brace i}$ 。</p>
 <h3 id="text-V"><a href="#text-V" class="headerlink" title="$\text V$"></a>$\text V$</h3><p>对于 $n &gt; m$ ，答案为 $0$ 。对于 $n &lt; m$ ，所有盒子相同，方案为 $1$ 。</p>
 <h3 id="text-VI"><a href="#text-VI" class="headerlink" title="$\text {VI}$"></a>$\text {VI}$</h3><p>即第二类斯特林数 ${n \brace m}$ 。</p>
-<h2 id="球相同，盒不同"><a href="#球相同，盒不同" class="headerlink" title="球相同，盒不同"></a>球相同，盒不同</h2><h3 id="text-VII"><a href="#text-VII" class="headerlink" title="$\text {VII}$"></a>$\text {VII}$</h3><p>插板法，答案为 $binom {n + m - 1} {m - 1}$ 。</p>
+<h2 id="球相同，盒不同"><a href="#球相同，盒不同" class="headerlink" title="球相同，盒不同"></a>球相同，盒不同</h2><h3 id="text-VII"><a href="#text-VII" class="headerlink" title="$\text {VII}$"></a>$\text {VII}$</h3><p>插板法，答案为 $\binom {n + m - 1} {m - 1}$ 。</p>
 <h3 id="text-VIII"><a href="#text-VIII" class="headerlink" title="$\text {VIII}$"></a>$\text {VIII}$</h3><p>$m$ 个盒子里面选择 $n$ 个不为空，答案为 $\binom m n $ 。</p>
 <h3 id="text-IX"><a href="#text-IX" class="headerlink" title="$\text {IX}$"></a>$\text {IX}$</h3><p>插板法，答案为 $\binom {n - 1} {m - 1}$ 。</p>
 <h2 id="球相同，盒相同"><a href="#球相同，盒相同" class="headerlink" title="球相同，盒相同"></a>球相同，盒相同</h2><h3 id="text-X"><a href="#text-X" class="headerlink" title="$\text X$"></a>$\text X$</h3><p>直接统计是困难的。考虑按照这样的办法统计答案：每一次操作选择前 $i \in [1, m]$ 个盒子使球的个数 +1 。这样只用 $m$ 种操作即可刻画出答案。那么问题变化为使用体积为 $[1, m]$ 的物品装满体积为 $n$ 的背包的方案数，那么和 付公主的背包 是一样的了。</p>
@@ -441,7 +441,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-count">665</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

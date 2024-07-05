@@ -130,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">665</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -286,7 +286,7 @@
 
 <p>如果 $x | i \wedge y | j$ ，那么一定有 $xy |ij$ ， 即 $xy$ 是 $ij$ 的约数，对答案有贡献。但是如果直接这样计算可能会出现重复的，如 $4 \times 6 &#x3D; 24$ ，$3 \times 8 &#x3D; 24$ ，所以我们要求 $x \bot y$ 时才计算答案，对于 $i, j$ 均有的质因子，尽可能在 $i$ 中取得，如果不够在 $j$ 中取（此时 $i$ 中取完了，不妨令其这个质因子的指数为 $0$ ），这样，每一个约数都可以被不重不漏地表示出来。因此 $d(i j) &#x3D; \displaystyle \sum_{x |i} \sum _{y | j} [gcd(x, y) &#x3D; 1]$ 。</p>
 <p>答案为：</p>
-<p>$$<br>\begin {aligned}<br>\sum _ {i &#x3D; 1} ^ N \sum _ {j &#x3D; 1} ^ M d(i j) &#x3D; &amp; \sum _ {i &#x3D; 1} ^ N \sum _ {j &#x3D; 1} ^ M \sum _ {x | i} \sum _ {y | j} [gcd(x, y) &#x3D; 1]\\<br>&#x3D; &amp;  \sum _ {i &#x3D; 1} ^ N \sum _ {j &#x3D; 1} ^ M \sum _ {d &#x3D; 1} ^{min(N, M)} \mu (d) \sum _ {x | i \wedge x | d} \sum_{y | j \wedge y | d} \\<br>&#x3D; &amp;\sum _ {d &#x3D; 1} ^ {min(N, M)} \mu(d) \sum _ {i &#x3D; 1} ^ {\frac M d} \left \lfloor \frac M {di} \right \rfloor \sum _ {j &#x3D; 1} ^{\frac N d}\left \lfloor \frac N {j d} \right \rfloor<br>\end {aligned}<br>$$</p>
+<p>$$<br>\begin {aligned}<br>\sum _ {i &#x3D; 1} ^ N \sum _ {j &#x3D; 1} ^ M d(i j) &#x3D; &amp; \sum _ {i &#x3D; 1} ^ N \sum _ {j &#x3D; 1} ^ M \sum _ {x | i} \sum _ {y | j} [gcd(x, y) &#x3D; 1]\\<br>&#x3D; &amp;  \sum _ {i &#x3D; 1} ^ N \sum _ {j &#x3D; 1} ^ M \sum _ {d &#x3D; 1} ^{min(N, M)} \mu (d) \sum _ {x | i \wedge d | x} \sum_{y | j \wedge d | y} \\<br>&#x3D; &amp;\sum _ {d &#x3D; 1} ^ {min(N, M)} \mu(d) \sum _ {i &#x3D; 1} ^ {\frac M d} \left \lfloor \frac M {di} \right \rfloor \sum _ {j &#x3D; 1} ^{\frac N d}\left \lfloor \frac N {j d} \right \rfloor<br>\end {aligned}<br>$$</p>
 <p>记 $h(x) &#x3D; \displaystyle \sum_{i &#x3D; 1} ^ x \left \lfloor \frac x i \right \rfloor$ ，则答案为：</p>
 <p>$$<br>\sum_{i &#x3D; 1} ^ n \sum_{j &#x3D; 1} ^ m d(i j) &#x3D; \sum_{d &#x3D; 1} ^ {min(N, M)} \mu(d) h(\frac N d) h (\frac M d)<br>$$<br>其中 $h _ i$ 可以用数论分块预处理，最终计算答案的时候可以用数论分块计算。</p>
 <details>
@@ -430,7 +430,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-count">665</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

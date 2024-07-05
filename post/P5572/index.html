@@ -130,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">664</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">665</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -252,14 +252,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5k</span>
+              <span>4.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>4 分钟</span>
             </span>
           
           <div>
@@ -284,7 +284,7 @@
         <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5572">P5572 [CmdOI2019]简单的数论题</a></p>
 <span id="more"></span>
 
-<p>$$<br>\begin {aligned}<br>\sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \varphi (\frac {\mathrm{lcm}(i, j)} {(i, j)}) &amp; &#x3D; \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \varphi (\frac i {(i, j)} \frac j {(i, j)}) \\<br>&amp; &#x3D; \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \frac {\varphi(\frac i {(i, j)})\varphi(\frac j {(i, j)})(\frac i {(i, j)}, \frac j {(i, j)})}{\varphi((\frac i {(i, j)}, \frac j {(i, j)}))} \\<br>&amp; &#x3D; \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \varphi(\frac i {(i, j)})\varphi(\frac j {(i, j)}) \\<br>&amp; &#x3D; \sum _ {d &#x3D; 1} ^ n \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \varphi(\frac i d)\varphi(\frac j d) [(i, j) &#x3D; d] \\<br>&amp; &#x3D; \sum _ {d &#x3D; 1} ^ n \sum _ {i &#x3D; 1} ^ {\lfloor \frac n d \rfloor } \sum _ {j &#x3D; 1} ^ {\lfloor \frac m d \rfloor } \varphi(i)\varphi(j) [(i, j) &#x3D; 1] \\<br>&amp; &#x3D; \sum _ {d &#x3D; 1} ^ n \sum _ {i &#x3D; 1} ^ {\lfloor \frac n d \rfloor } \sum _ {j &#x3D; 1} ^ {\lfloor \frac m d \rfloor } \varphi(i)\varphi(j) \sum _ {k | (i, j)} \mu(k) \\<br>&amp; &#x3D; \sum _ {d &#x3D; 1} ^ n \sum _{k &#x3D; 1} ^ n \mu(k) \sum _ {i &#x3D; 1} ^ {\lfloor \frac n {kd} \rfloor } \sum _ {j &#x3D; 1} ^ {\lfloor \frac m {kd} \rfloor } \varphi(ik)\varphi(jk) \\<br>&amp; &#x3D; \sum _ {T &#x3D; 1} ^ n \sum _ {d | T} \mu(d) \sum _ {i &#x3D; 1} ^ {\lfloor \frac n T \rfloor } \varphi(id) \sum _ {j &#x3D; 1} ^ {\lfloor \frac m T \rfloor } \varphi(jd) \\<br>\end {aligned}<br>$$</p>
+<p>$$<br>\begin {aligned}<br>\sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \varphi (\frac {\mathrm{lcm}(i, j)} {(i, j)}) &amp; &#x3D; \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \varphi (\frac i {(i, j)} \frac j {(i, j)}) \\<br>&amp; &#x3D; \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \varphi(\frac i {(i, j)})\varphi(\frac j {(i, j)}) \\<br>&amp; &#x3D; \sum _ {d &#x3D; 1} ^ n \sum _ {i &#x3D; 1} ^ n \sum _ {j &#x3D; 1} ^ m \varphi(\frac i d)\varphi(\frac j d) [(i, j) &#x3D; d] \\<br>&amp; &#x3D; \sum _ {d &#x3D; 1} ^ n \sum _ {i &#x3D; 1} ^ {\lfloor \frac n d \rfloor } \sum _ {j &#x3D; 1} ^ {\lfloor \frac m d \rfloor } \varphi(i)\varphi(j) [(i, j) &#x3D; 1] \\<br>&amp; &#x3D; \sum _ {d &#x3D; 1} ^ n \sum _ {i &#x3D; 1} ^ {\lfloor \frac n d \rfloor } \sum _ {j &#x3D; 1} ^ {\lfloor \frac m d \rfloor } \varphi(i)\varphi(j) \sum _ {k | (i, j)} \mu(k) \\<br>&amp; &#x3D; \sum _ {d &#x3D; 1} ^ n \sum _{k &#x3D; 1} ^ n \mu(k) \sum _ {i &#x3D; 1} ^ {\lfloor \frac n {kd} \rfloor } \sum _ {j &#x3D; 1} ^ {\lfloor \frac m {kd} \rfloor } \varphi(ik)\varphi(jk) \\<br>&amp; &#x3D; \sum _ {T &#x3D; 1} ^ n \sum _ {d | T} \mu(d) \sum _ {i &#x3D; 1} ^ {\lfloor \frac n T \rfloor } \varphi(id) \sum _ {j &#x3D; 1} ^ {\lfloor \frac m T \rfloor } \varphi(jd) \\<br>\end {aligned}<br>$$</p>
 <p>记 $g(a, b) &#x3D; \sum _ {i &#x3D; 1} ^ b \varphi(ia)$ ，状态共 $n \ln n$ 种，可以直接预处理出来。这样暴力可以得到一个 $O(Tn\ln n)$ 的算法。</p>
 <p>记 $c(x, i, j) &#x3D; \sum _ {d | x} \mu(d) g(d, \lfloor \frac n x \rfloor) g(d, \lfloor \frac m x \rfloor)$ 。</p>
 <p>考虑数论分块，对于每一组 $(\lfloor \frac n x \rfloor, \lfloor \frac m x \rfloor)$ ，维护 $c(x, \lfloor \frac n x \rfloor, \lfloor \frac m x \rfloor)$ 的前缀和，时空复杂度为 $O(B n \ln B)$。考虑维护 $\lfloor \frac n x \rfloor &lt; B$ 的部分，剩下的暴力计算，将 $i$ 的约数个数级别视为 $\sqrt i$ ，那么复杂度级别为 $O((\frac n B) ^ {\frac 3 2})$。$B &#x3D; \sqrt[3]T$ 左右最优。</p>
@@ -429,7 +429,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">664</span>
+          <span class="site-state-item-count">665</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
