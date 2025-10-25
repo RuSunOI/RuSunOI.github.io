@@ -31,6 +31,7 @@
 <meta property="article:modified_time" content="2022-03-28T12:40:39.000Z">
 <meta property="article:author" content="RuSun">
 <meta property="article:tag" content="高斯消元">
+<meta property="article:tag" content="meet in middle">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://rusunoi.github.io/post/P2962/">
@@ -128,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">671</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">672</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -138,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">170</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">171</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -250,20 +251,22 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
           
           <div>
           <i class="fa fa-tag"></i> 标签：
                &nbsp &nbsp
                <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" rel="tag"><i class="fa fa-tag"></i> 高斯消元</a>
+               &nbsp &nbsp
+               <a href="/tags/meet-in-middle/" rel="tag"><i class="fa fa-tag"></i> meet in middle</a>
           </div>
 
         </div>
@@ -288,6 +291,14 @@
 
 </details>
 
+<p>另外一种双向搜索的做法，将第一次搜索的中间状态塞进一个 map 里面，第二次再来查询。</p>
+<details>
+
+<summary> 查看代码 </summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> L;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">35</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, ans = N;</span><br><span class="line">L ed, op[N];</span><br><span class="line">map &lt;L, <span class="keyword">int</span>&gt; f;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">chkmin</span> <span class="params">(<span class="keyword">int</span> &amp;x, <span class="keyword">int</span> k)</span> </span>&#123; <span class="keyword">if</span> (k &lt; x) x = k; &#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span> <span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, L s, <span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x == y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (y == n)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (f.<span class="built_in">count</span>(s))</span><br><span class="line">				<span class="built_in">chkmin</span>(ans, f[s] + t);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (f.<span class="built_in">count</span>(s)) <span class="built_in">chkmin</span>(f[s], t);</span><br><span class="line">			<span class="keyword">else</span> f[s] = t;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">dfs</span>(x + <span class="number">1</span>, y, s ^ op[x], t + <span class="number">1</span>);</span><br><span class="line">	<span class="built_in">dfs</span>(x + <span class="number">1</span>, y, s, t);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	ed = (<span class="number">1ll</span> &lt;&lt; n) - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">		op[i] |= <span class="number">1ll</span> &lt;&lt; i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, a, b; i &lt;= m; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">		--a, --b;</span><br><span class="line">		op[a] |= <span class="number">1ll</span> &lt;&lt; b;</span><br><span class="line">		op[b] |= <span class="number">1ll</span> &lt;&lt; a;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//	for (int i = 0; i &lt; n; ++i)</span></span><br><span class="line"><span class="comment">//		printf(&quot;%lld\n&quot;, op[i]);</span></span><br><span class="line"><span class="comment">//	return 0;</span></span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">0</span>, n &gt;&gt; <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">dfs</span>(n &gt;&gt; <span class="number">1</span>, n, ed, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line"> 	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
     </div>
 
     
@@ -421,7 +432,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">671</span>
+          <span class="site-state-item-count">672</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -434,7 +445,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">170</span>
+        <span class="site-state-item-count">171</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

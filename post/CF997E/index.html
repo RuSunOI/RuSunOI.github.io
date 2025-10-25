@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">671</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">672</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -139,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">170</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">171</span></a>
 
   </li>
         <li class="menu-item menu-item-书籍">
@@ -251,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
+              <span>4.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -288,6 +288,7 @@
 <p>考虑怎么将这个答案留下，将整个线段树都遍历一次显然复杂度是错误的。发现很多情况下并没有用到这个信息，或者随着 $r$ 的增加答案并没有改变，只有用到的时候才需要将其继续递归。考虑增加一种标记，表示当前答案需要将此时 $0$ 的个数算几次。这样想着似乎很简单，但实际实现的时候需要考虑其中是否有冲突。</p>
 <p>首先这样做的时候一定要保证 $cnt$ 需要是正确的，也就是 $cnt$ 发生变化的时候一定需要把标记下放了。</p>
 <p>接着考虑这样一种情况，此时父节点需要向两个子节点下放，但是其中一个子节点原来并不是 $0$ ，也就是不算作答案。可能会想先下放答案标记判断是否是 $0$ 再下放最小值标记，但事实是这样判断得到的最小值不是真实的最小值，因为还有上一次修改没有下放；如果先下放最小值标记，再下放答案标记，因为这次修改也算上了，那么不能判断是否是合法的。我们需要正确地处理两种标记的矛盾。事实上，我们发现，每次 $r$ 移动完成后，贡献答案的是值为 $0$ 的，其父节点区间的最小值也一定为 $0$ ，在区间加后，该节点一定和父节点同时加上一个数，也就是说，如果移动前需要将答案更新，那么此时子节点和父节点最小值相同，并且位置没有发生变化。我们先将最小值标记下放，再下放答案标记，那么上次的修改完全完成了，而本次的修改不影响我们判断子节点是否贡献答案。</p>
+<p>UPD：不知道当时为什么废话这么多。简而言之，先修改最小值，不影响最小值的个数。父节点的 $mn$ 通过 pushup 得到，现在需要 pushdown 说明这中间没有影响其他子树的节点，理应答案标记只修改造成贡献的点。</p>
 <details>
 <summary> 查看代码 </summary>
 
@@ -428,7 +429,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">671</span>
+          <span class="site-state-item-count">672</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -441,7 +442,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">170</span>
+        <span class="site-state-item-count">171</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
