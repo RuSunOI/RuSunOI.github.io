@@ -1,234 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
-  <link rel="mask-icon" href="/images/favicon.jpg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"rusunoi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":0,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="ThermoPlace-P 交互式 Floorplan Demo        :root {       color-scheme: light;       --ink: #172033;       --muted: #667085;       --line: #d9e0ea;       --panel: rgba(255,255,255,.94);       -">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog of RuSun">
-<meta property="og:url" content="https://rusunoi.github.io/wireless/demo.html">
-<meta property="og:site_name" content="Blog of RuSun">
-<meta property="og:description" content="ThermoPlace-P 交互式 Floorplan Demo        :root {       color-scheme: light;       --ink: #172033;       --muted: #667085;       --line: #d9e0ea;       --panel: rgba(255,255,255,.94);       -">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-08-02T16:35:56.886Z">
-<meta property="article:modified_time" content="2026-08-02T16:35:56.886Z">
-<meta property="article:author" content="RuSun">
-<meta property="article:tag" content="Blog RuSun OI Computer Science">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://rusunoi.github.io/wireless/demo">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title> | Blog of RuSun
-</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-<link rel="alternate" href="/rss.xml" title="Blog of RuSun" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Blog of RuSun</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">\begin {array}{c} \mathfrak {One Problem Is Difficult} \\\\ \mathfrak {Because You Don't Know} \\\\ \mathfrak {Why It Is Diffucult} \end {array}</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">672</span></a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">171</span></a>
-
-  </li>
-        <li class="menu-item menu-item-书籍">
-
-    <a href="/books/" rel="section"><i class="fa fa-book fa-fw"></i>书籍</a>
-
-  </li>
-        <li class="menu-item menu-item-捐赠">
-
-    <a href="/donate/" rel="section"><i class="fa fa-thumbs-up fa-fw"></i>捐赠</a>
-
-  </li>
-        <li class="menu-item menu-item-友链">
-
-    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-  
-  
-
-          <div class="content page posts-expand">
-            
-
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">
-</h1>
-
-<div class="post-meta">
-  
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <!doctype html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
@@ -320,6 +90,8 @@
     .metric span { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
     .metric strong { display: block; margin: 8px 0 4px; font-size: 21px; font-variant-numeric: tabular-nums; }
     .metric small { font-size: 10px; }
+    .metrics.suspended .metric { background: #fff8f7; }
+    .metrics.suspended .metric strong { color: var(--red); font-size: 16px; }
     .visual-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
     .visual-head strong { font-size: 16px; }
     .visual-head label { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
@@ -331,9 +103,11 @@
     .board-shell { padding: 16px; border-right: 1px solid var(--line); }
     .board { position: relative; width: min(100%, 720px); aspect-ratio: 1; margin: auto; overflow: hidden; border: 1px solid #bfc9d6; border-radius: 10px; background: #eef2f6; }
     #heatCanvas, #floorplanSvg { position: absolute; inset: 0; width: 100%; height: 100%; }
-    #floorplanSvg { overflow: visible; }
+    #heatCanvas { z-index: 0; }
+    #floorplanSvg { z-index: 1; overflow: visible; }
     .module rect { stroke: white; stroke-width: .055; vector-effect: non-scaling-stroke; filter: drop-shadow(0 1px 1px rgba(0,0,0,.18)); }
     .module.selected rect { stroke: #fef08a; stroke-width: .14; }
+    .module.overlap rect { stroke: #ff453a; stroke-width: 4px; filter: drop-shadow(0 0 4px rgba(180,35,24,.9)); }
     .module text { fill: white; font-size: .26px; font-weight: 800; text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: rgba(0,0,0,.38); stroke-width: .035px; }
     .flow-halo, .flow { fill: none; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linecap: round; stroke-linejoin: round; }
     .flow-halo { stroke: rgba(7,25,45,.68); stroke-width: var(--flow-halo, 5px); }
@@ -345,6 +119,8 @@
     .result-side { min-width: 0; padding: 15px; }
     .result-callout { padding: 12px; margin-bottom: 12px; border-radius: 11px; background: #eef8f6; color: #185b55; font-size: 12px; }
     .result-callout.stale { background: #fff7ed; color: #9a3412; }
+    .result-callout.invalid { border: 1px solid #f4b4ae; background: #fef3f2; color: var(--red); font-weight: 700; }
+    .layout-invalid-banner { position: absolute; z-index: 3; top: 10px; left: 50%; width: max-content; max-width: calc(100% - 20px); padding: 8px 11px; transform: translateX(-50%); border: 1px solid rgba(255,255,255,.75); border-radius: 9px; color: white; background: rgba(180,35,24,.94); box-shadow: 0 5px 16px rgba(122,24,18,.28); font-size: 11px; font-weight: 800; text-align: center; pointer-events: none; }
     .table-wrap { overflow: auto; max-height: 410px; border: 1px solid var(--line); border-radius: 10px; }
     table { width: 100%; border-collapse: collapse; font-size: 12px; }
     th, td { padding: 9px 10px; border-bottom: 1px solid #edf0f4; text-align: right; white-space: nowrap; }
@@ -474,7 +250,7 @@
           </div>
         </section>
 
-        <section class="panel metrics" aria-label="鲁棒指标">
+        <section class="panel metrics" id="metricsPanel" aria-label="鲁棒指标">
           <div class="metric"><span>Worst Tmax</span><strong id="mTmax">--</strong><small>启用工况最坏峰温</small></div>
           <div class="metric"><span>Max Hotspot</span><strong id="mHotspot">--</strong><small>≥75 ℃ 最大面积</small></div>
           <div class="metric"><span>Soft Hotspot</span><strong id="mSoft">--</strong><small>软阈值最大面积</small></div>
@@ -497,6 +273,7 @@
               <div class="board" id="board">
                 <canvas id="heatCanvas" width="560" height="560"></canvas>
                 <svg id="floorplanSvg" viewBox="0 0 14 14" role="img" aria-label="SoC floorplan"></svg>
+                <div class="layout-invalid-banner" id="layoutInvalidBanner" role="alert" hidden>当前排布不合法 · 性能数据已暂停</div>
               </div>
               <div class="legend"><span id="tempMin">--</span><span class="heatbar"></span><span id="tempMax">--</span></div>
             </div>
@@ -556,7 +333,6 @@
           </div>
           <div class="actions manual-actions">
             <button class="secondary" id="rotateBtn" disabled>旋转 90°</button>
-            <button class="secondary" id="legalizeBtn" disabled>合法化布局</button>
             <button class="secondary" id="restoreLayoutBtn" disabled>恢复算法结果</button>
           </div>
           <p class="note" id="layoutHint">求解后可拖动画布模块，或输入 X/Y 坐标；松开后由 WASM 精确重算。</p>
@@ -625,7 +401,8 @@
     const state = {
       modules: [], ambient:0, cooling:1, traffic:1, weights:[1,1,1,1,1,1], seed:7, budget:"auto", selected:"GPU", activeAlgorithm:3,
       revision:0, solutions:{}, current:null, worker:null, ready:false, solving:false,
-      requestId:0, elapsedTimer:null, startedAt:0, viewWorkload:"", focusWorkload:0, showFlows:false, lastLayout:[], readyStatus:"", operation:"solve", drag:null, manualTimer:null, pendingLayout:null
+      requestId:0, elapsedTimer:null, startedAt:0, viewWorkload:"", focusWorkload:0, showFlows:false, lastLayout:[], readyStatus:"", operation:"solve", drag:null, manualTimer:null, pendingLayout:null,
+      performanceSuspended:false, transientInvalid:false
     };
     const $ = id => document.getElementById(id);
     const fmt = (v,d=2) => Number.isFinite(Number(v)) ? Number(v).toFixed(d) : "--";
@@ -634,6 +411,38 @@
     const iterationsForAlgorithm = a => a.id===0 ? 0 : state.budget==="auto" ? a.iterations : Number(state.budget);
     const chosenIterations = () => iterationsForAlgorithm(algorithm());
     const activeWorkloadCount = () => state.weights.filter(w=>w>0).length;
+    const LEGAL_EPS = 1e-9;
+
+    function layoutViolations(layout=[]) {
+      let overlapArea=0,boundaryViolation=0;const overlapModules=new Set();
+      for(const m of layout){boundaryViolation+=Math.max(0,-m.x)+Math.max(0,-m.y)+Math.max(0,m.x+m.width-14)+Math.max(0,m.y+m.height-14);}
+      for(let i=0;i<layout.length;i++)for(let j=i+1;j<layout.length;j++){
+        const a=layout[i],b=layout[j],ox=Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x),oy=Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y);
+        if(ox>LEGAL_EPS&&oy>LEGAL_EPS){overlapArea+=ox*oy;overlapModules.add(a.name);overlapModules.add(b.name);}
+      }
+      return {invalid:overlapArea>LEGAL_EPS||boundaryViolation>LEGAL_EPS,overlapArea,boundaryViolation,overlapModules:[...overlapModules]};
+    }
+    function resultIsLegal(result=state.current) { return Boolean(result)&&result.robust.overlap_area<=LEGAL_EPS&&result.robust.boundary_violation<=LEGAL_EPS; }
+    function performanceAvailable() { return resultIsLegal()&&!state.performanceSuspended; }
+    function updateLayoutValidityUI(layout=state.current?.layout||[]) {
+      const violations=layoutViolations(layout),banner=$("layoutInvalidBanner");
+      banner.hidden=!violations.invalid;
+      if(violations.invalid)banner.textContent=violations.overlapModules.length?`当前排布不合法：${violations.overlapModules.join(" / ")} 发生重叠 · 性能数据已暂停`:`当前排布越界 · 性能数据已暂停`;
+      const names=new Set(violations.overlapModules);document.querySelectorAll("#floorplanSvg .module").forEach(group=>group.classList.toggle("overlap",names.has(group.dataset.name)));
+      return violations;
+    }
+    function suspendPerformanceDisplay(layout) {
+      const violations=layoutViolations(layout),stateChanged=!state.performanceSuspended||state.transientInvalid!==violations.invalid;
+      state.performanceSuspended=true;state.transientInvalid=violations.invalid;updateLayoutValidityUI(layout);
+      document.querySelectorAll("#floorplanSvg .flow-link").forEach(link=>link.style.display="none");
+      if(!stateChanged)return;
+      const canvas=$("heatCanvas"),ctx=canvas.getContext("2d");ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle="#e9eef4";ctx.fillRect(0,0,canvas.width,canvas.height);$("tempMin").textContent="--";$("tempMax").textContent="--";
+      clearMetrics("暂停");$("metricsPanel").classList.add("suspended");
+      $("resultCallout").className=`result-callout ${violations.invalid?"invalid":"stale"}`;
+      $("resultCallout").textContent=violations.invalid?"当前排布存在元件重叠，所有当前布局性能数据已暂停显示。请继续移动元件消除重叠，或恢复算法结果。":"布局正在编辑；旧布局性能数据已暂停，提交后将由 WASM 精确重算。";
+      $("resultFootnote").textContent=violations.invalid?"重叠布局不具有有效的物理意义，因此不展示温度、热点、降频风险、性能、拥塞或 Common Score。":"当前位置尚未完成重算，不沿用旧布局的性能数据。";
+      $("workloadView").disabled=true;$("exportBtn").disabled=true;renderModuleTable();drawHistory();renderWorkloadImpact();renderWorkloadResults();updateFlowControl();
+    }
 
     function effectivePowers(profile) {
       const raw=state.modules.map((m,i)=>m.power*profile.multipliers[i]),total=raw.reduce((a,b)=>a+b,0)||1;
@@ -652,21 +461,22 @@
       renderWorkloadImpact();renderWorkloadResults();
     }
     function renderWorkloadImpact() {
-      const profile=WORKLOAD_PROFILES[state.focusWorkload]||WORKLOAD_PROFILES[0],index=WORKLOAD_PROFILES.indexOf(profile),result=workloadResult(profile);
+      const profile=WORKLOAD_PROFILES[state.focusWorkload]||WORKLOAD_PROFILES[0],index=WORKLOAD_PROFILES.indexOf(profile),valid=performanceAvailable(),result=valid?workloadResult(profile):null,currentInvalid=state.transientInvalid||Boolean(state.current&&!resultIsLegal());
       document.querySelectorAll(".workload-focus").forEach((button,i)=>button.classList.toggle("active",i===index));
       const powers=result?.module_powers||effectivePowers(profile),ranked=state.modules.map((m,i)=>({name:m.name,power:powers[i]})).sort((a,b)=>b.power-a.power),top=ranked.slice(0,5),maxPower=top[0]?.power||1;
       const flows=(result?.flows||profile.flows.map(([src,dst,bandwidth,latency_weight])=>({src,dst,bandwidth:bandwidth*state.traffic,latency_weight}))).slice().sort((a,b)=>b.bandwidth*b.latency_weight-a.bandwidth*a.latency_weight).slice(0,3);
       const ambient=result?.ambient??profile.ambient+state.ambient,sink=result?.package_sink_scale??profile.sink*state.cooling,weight=state.weights[index];
-      const resultText=result?`精确结果：Tmax ${fmt(result.metrics.tmax,1)} ℃ · Soft Hotspot ${fmt(result.metrics.soft_hotspot_ratio*100,1)}% · 降频风险 ${fmt(result.metrics.throttle_risk,3)} · Perf ${fmt(result.metrics.perf_cost,4)} · 拥塞 ${fmt(result.metrics.congestion,4)}`:"求解后这里会显示该工况的精确温度、热点、降频风险、性能和拥塞结果。";
+      const resultText=currentInvalid?"当前排布不合法：该工况的温度、热点、降频风险、性能和拥塞数据已暂停显示。":state.performanceSuspended?"布局正在编辑或重算：旧布局性能数据已暂停显示。":result?`精确结果：Tmax ${fmt(result.metrics.tmax,1)} ℃ · Soft Hotspot ${fmt(result.metrics.soft_hotspot_ratio*100,1)}% · 降频风险 ${fmt(result.metrics.throttle_risk,3)} · Perf ${fmt(result.metrics.perf_cost,4)} · 拥塞 ${fmt(result.metrics.congestion,4)}`:"求解后这里会显示该工况的精确温度、热点、降频风险、性能和拥塞结果。";
       $("workloadImpact").innerHTML=`<div class="impact-head"><div><strong>${profile.label}</strong><small>${weight>0?`参与聚合 · 权重 ${Math.round(weight*100)}`:"仅单独计算 · 不参与聚合"}</small></div><span class="pill ${weight>0?"ok":"warn"}">${weight>0?"已启用":"权重 0"}</span></div><p class="impact-copy">${profile.summary}</p><div class="impact-facts"><div class="impact-fact"><span>SoC 工况功耗</span><strong>${fmt(profile.budget,1)} W</strong></div><div class="impact-fact"><span>环境 / 散热系数</span><strong>${fmt(ambient,1)} ℃ / ${fmt(sink,2)}×</strong></div><div class="impact-fact"><span>软 / 硬阈值</span><strong>${fmt(profile.soft,1)} / ${fmt(profile.hard,1)} ℃</strong></div><div class="impact-fact"><span>通信强度</span><strong>${fmt(state.traffic,2)}×</strong></div></div><div class="impact-subhead">当前模块参数下的主要有效功耗</div><div class="power-list">${top.map(item=>`<div class="power-row"><span>${item.name}</span><span class="power-track"><span class="power-fill" style="display:block;width:${100*item.power/maxPower}%"></span></span><strong>${fmt(item.power,2)} W</strong></div>`).join("")}</div><div class="impact-subhead">最关键通信流</div><div class="flow-list">${flows.map(flow=>`<span class="flow-chip">${flow.src} → ${flow.dst} · ${fmt(flow.bandwidth,1)}</span>`).join("")}</div><div class="impact-result">${resultText}</div>`;
     }
     function renderWorkloadResults() {
+      const valid=performanceAvailable(),currentInvalid=state.transientInvalid||Boolean(state.current&&!resultIsLegal()),pendingLabel=currentInvalid?"布局无效":state.performanceSuspended?"重算中":"待求解";
       $("workloadResultRows").innerHTML=WORKLOAD_PROFILES.map((profile,i)=>{
-        const result=workloadResult(profile),powers=result?.module_powers||effectivePowers(profile),top=state.modules.map((m,j)=>({name:m.name,power:powers[j]})).sort((a,b)=>b.power-a.power).slice(0,3).map(v=>v.name).join(" / "),weight=state.weights[i];
-        return `<tr data-workload="${i}" class="${i===state.focusWorkload?"active-row":""}"><td><strong>${profile.label}</strong></td><td>${weight>0?Math.round(weight*100):"0 · 不聚合"}</td><td>${top}</td><td>${fmt(result?.soc_power_budget??profile.budget,1)} W</td><td>${fmt(result?.ambient??profile.ambient+state.ambient,1)} ℃</td><td>${result?`${fmt(result.metrics.tmax,1)} ℃`:"待求解"}</td><td>${result?`${fmt(result.metrics.soft_hotspot_ratio*100,1)}%`:"--"}</td><td>${result?fmt(result.metrics.throttle_risk,3):"--"}</td><td>${result?fmt(result.metrics.perf_cost,4):"--"}</td><td>${result?fmt(result.metrics.congestion,4):"--"}</td></tr>`;
+        const result=valid?workloadResult(profile):null,powers=result?.module_powers||effectivePowers(profile),top=state.modules.map((m,j)=>({name:m.name,power:powers[j]})).sort((a,b)=>b.power-a.power).slice(0,3).map(v=>v.name).join(" / "),weight=state.weights[i];
+        return `<tr data-workload="${i}" class="${i===state.focusWorkload?"active-row":""}"><td><strong>${profile.label}</strong></td><td>${weight>0?Math.round(weight*100):"0 · 不聚合"}</td><td>${top}</td><td>${fmt(result?.soc_power_budget??profile.budget,1)} W</td><td>${fmt(result?.ambient??profile.ambient+state.ambient,1)} ℃</td><td>${result?`${fmt(result.metrics.tmax,1)} ℃`:pendingLabel}</td><td>${result?`${fmt(result.metrics.soft_hotspot_ratio*100,1)}%`:"--"}</td><td>${result?fmt(result.metrics.throttle_risk,3):"--"}</td><td>${result?fmt(result.metrics.perf_cost,4):"--"}</td><td>${result?fmt(result.metrics.congestion,4):"--"}</td></tr>`;
       }).join("");
-      $("workloadResultRows").querySelectorAll("tr[data-workload]").forEach(row=>row.onclick=()=>focusWorkload(Number(row.dataset.workload),Boolean(state.current)));
-      setBadge($("workloadResultBadge"),state.current?"6 个精确工况":"模型预览",state.current?"ready":"");
+      $("workloadResultRows").querySelectorAll("tr[data-workload]").forEach(row=>row.onclick=()=>focusWorkload(Number(row.dataset.workload),valid));
+      setBadge($("workloadResultBadge"),currentInvalid?"当前布局无效":state.performanceSuspended?"等待重算":valid?"6 个精确工况":"模型预览",currentInvalid?"error":valid?"ready":"");
     }
 
     function defaultModules() {
@@ -676,7 +486,7 @@
     function markStale(reason) {
       clearTimeout(state.manualTimer);state.pendingLayout=null;
       state.revision += 1; state.solutions = {}; state.current = null; state.viewWorkload = "";
-      state.lastLayout = []; state.readyStatus="";
+      state.lastLayout = []; state.readyStatus="";state.performanceSuspended=false;state.transientInvalid=false;$("metricsPanel").classList.remove("suspended");$("layoutInvalidBanner").hidden=true;
       setBadge($("sourceBadge"), "参数已更改 · 待求解", "busy");
       $("resultCallout").className = "result-callout stale"; $("resultCallout").textContent = `${reason}；请重新运行求解器。`;
       $("resultFootnote").textContent = "当前参数尚无结果；页面不会沿用旧参数的数值。";
@@ -685,10 +495,10 @@
       $("workloadView").disabled = true; $("exportBtn").disabled = true;
       clearMetrics(); renderComparison(); renderConstraints(); draw(); drawHistory(); syncInputs(false); updateStrategies(); setManualControls();
     }
-    function clearMetrics() { ["mTmax","mHotspot","mSoft","mRisk","mPerf","mCongestion","mScore"].forEach(id => $(id).textContent = "--"); }
+    function clearMetrics(value="--") { ["mTmax","mHotspot","mSoft","mRisk","mPerf","mCongestion","mScore"].forEach(id => $(id).textContent = value); }
     function setManualControls() {
       const enabled=Boolean(state.current)&&!state.solving;
-      for(const id of ["moduleX","moduleY","rotateBtn","legalizeBtn","restoreLayoutBtn"]) $(id).disabled=!enabled;
+      for(const id of ["moduleX","moduleY","rotateBtn","restoreLayoutBtn"]) $(id).disabled=!enabled;
       $("restoreLayoutBtn").disabled=!enabled||!state.solutions[state.activeAlgorithm];
     }
     function updateFlowControl() {
@@ -696,7 +506,7 @@
       toggle.checked=state.showFlows;
       toggle.disabled=state.solving||!available;
       control.classList.toggle("active",available&&state.showFlows);
-      $("flowToggleText").textContent=state.solving&&available?"通信流 · 计算中":!available?"通信流 · 求解后可用":state.showFlows?`通信流 · 已显示 ${workload.flows.length} 条`:"通信流 · 已隐藏";
+      $("flowToggleText").textContent=state.performanceSuspended?"通信流 · 重算后可用":state.current&&!resultIsLegal()?"通信流 · 布局无效":state.solving&&available?"通信流 · 计算中":!available?"通信流 · 求解后可用":state.showFlows?`通信流 · 已显示 ${workload.flows.length} 条`:"通信流 · 已隐藏";
     }
 
     function createWorker(readyStatus="") {
@@ -762,25 +572,26 @@
       }, 250);
       state.worker.postMessage({type:"solve",requestId:state.requestId,algorithm:state.activeAlgorithm,seed:state.seed,config:solverConfig([])});
     }
-    function evaluateManual(layout,legalize=false) {
+    function evaluateManual(layout) {
       if(!state.ready||state.solving||!state.current)return;
       try{validateInputs();}catch(error){failSolve(error.message);return;}
+      suspendPerformanceDisplay(layout);
       state.operation="evaluate";state.readyStatus="";state.solving=true;state.requestId+=1;state.startedAt=performance.now();setSolving(true);
-      $("solveProgress").value=8;setBadge($("engineBadge"),legalize?"WASM 合法化中":"WASM 重算中","busy");
-      $("solveStatus").textContent=legalize?"正在合法化布局并精确重算六个工况…":"正在精确重算编辑后的布局…";
-      state.worker.postMessage({type:"evaluate",requestId:state.requestId,algorithm:state.activeAlgorithm,seed:state.seed,legalize,config:solverConfig(layout)});
+      $("solveProgress").value=8;setBadge($("engineBadge"),"WASM 重算中","busy");
+      $("solveStatus").textContent="正在精确重算编辑后的布局…";
+      state.worker.postMessage({type:"evaluate",requestId:state.requestId,algorithm:state.activeAlgorithm,seed:state.seed,legalize:false,config:solverConfig(layout)});
     }
     function setSolving(active) {
       document.querySelectorAll("input,select,button").forEach(el => { if (el.id !== "cancelBtn") el.disabled = active; });
       $("cancelBtn").hidden = !active; $("cancelBtn").disabled = !active;
       if (!active) {
-        $("solveBtn").disabled = !state.ready; $("workloadView").disabled = !state.current; $("exportBtn").disabled = !state.current;
+        $("solveBtn").disabled = !state.ready; $("workloadView").disabled = !performanceAvailable(); $("exportBtn").disabled = !performanceAvailable();
         $("budgetSelect").disabled=algorithm().id===0;setManualControls();updateFlowControl();
       }
     }
     function finishSolve(result) {
       clearInterval(state.elapsedTimer); state.solving = false;
-      state.solutions[state.activeAlgorithm] = {revision:state.revision,result}; state.current = result; state.lastLayout = result.layout;
+      state.solutions[state.activeAlgorithm] = {revision:state.revision,result}; state.current = result; state.lastLayout = result.layout;state.performanceSuspended=false;state.transientInvalid=false;
       const enabled=result.workloads.filter(w=>w.weight>0),worst=(enabled.length?enabled:result.workloads).reduce((a,b) => b.metrics.tmax > a.metrics.tmax ? b : a);
       state.viewWorkload = worst.name; state.focusWorkload=Math.max(0,WORKLOAD_PROFILES.findIndex(w=>w.name===worst.name)); $("solveProgress").value = 100;
       setBadge($("engineBadge"), "WASM 就绪", "ready"); setBadge($("sourceBadge"), "优化结果 · WASM", "ready");
@@ -788,30 +599,31 @@
       setSolving(false); populateWorkloads(); renderResult(); renderComparison(); updateStrategies(); syncInputs(false);
     }
     function finishManual(result){
-      clearInterval(state.elapsedTimer);state.solving=false;state.current=result;state.lastLayout=result.layout;
+      clearInterval(state.elapsedTimer);state.solving=false;state.current=result;state.lastLayout=result.layout;state.performanceSuspended=false;state.transientInvalid=false;
       const enabled=result.workloads.filter(w=>w.weight>0),worst=(enabled.length?enabled:result.workloads).reduce((a,b)=>b.metrics.tmax>a.metrics.tmax?b:a);
       state.viewWorkload=state.viewWorkload&&result.workloads.some(w=>w.name===state.viewWorkload)?state.viewWorkload:worst.name;
       state.focusWorkload=Math.max(0,WORKLOAD_PROFILES.findIndex(w=>w.name===state.viewWorkload));
-      $("solveProgress").value=100;setBadge($("engineBadge"),"WASM 就绪","ready");
-      setBadge($("sourceBadge"),result.solution_kind==="legalized"?"已合法化 · WASM 重算":"手动布局 · WASM 重算","ready");
-      $("solveStatus").textContent=result.solution_kind==="legalized"?`布局已合法化并完成精确重算（${fmt(result.total_seconds,2)} s）。`:`手动布局已完成精确重算（${fmt(result.total_seconds,2)} s）。`;
+      const legal=resultIsLegal(result);$("solveProgress").value=100;setBadge($("engineBadge"),"WASM 就绪","ready");
+      setBadge($("sourceBadge"),legal?"手动布局 · WASM 重算":"排布不合法 · WASM 已确认",legal?"ready":"error");
+      $("solveStatus").textContent=legal?`手动布局已完成精确重算（${fmt(result.total_seconds,2)} s）。`:`WASM 已确认当前布局存在重叠（${fmt(result.robust.overlap_area,4)} mm²）；性能数据已暂停。`;
       setSolving(false);populateWorkloads();renderResult();renderComparison();updateStrategies();syncInputs();
     }
     function failSolve(message) {
-      clearInterval(state.elapsedTimer); state.solving = false; $("solveProgress").value = 0; setSolving(false);
+      clearInterval(state.elapsedTimer); state.solving = false;state.performanceSuspended=false;state.transientInvalid=false; $("solveProgress").value = 0; setSolving(false);
       setBadge($("engineBadge"), state.ready ? "WASM 就绪" : "WASM 错误", state.ready ? "ready" : "error");
-      $("solveStatus").textContent = `${state.operation==="evaluate"?"布局重算":"求解"}失败：${message}`;draw();
+      $("solveStatus").textContent = `${state.operation==="evaluate"?"布局重算":"求解"}失败：${message}`;if(state.current){populateWorkloads();renderResult();}else draw();
     }
     function cancelSolve() {
       if (!state.solving) return; clearInterval(state.elapsedTimer); state.solving = false; state.requestId += 1;
+      state.performanceSuspended=false;state.transientInvalid=false;
       const status = "操作已取消；已保留取消前的当前参数和缓存结果。";
-      $("solveProgress").value = 0; $("solveStatus").textContent = status; setSolving(false); createWorker(status);
+      $("solveProgress").value = 0; $("solveStatus").textContent = status; setSolving(false);if(state.current){populateWorkloads();renderResult();}createWorker(status);
     }
 
     function loadSolution(id) {
       const entry = state.solutions[id]; if (!entry || entry.revision !== state.revision || state.solving) return;
       state.readyStatus = "";
-      state.activeAlgorithm = id; state.current = entry.result; state.lastLayout = entry.result.layout;
+      state.activeAlgorithm = id; state.current = entry.result; state.lastLayout = entry.result.layout;state.performanceSuspended=false;state.transientInvalid=false;
       const enabled=state.current.workloads.filter(w=>w.weight>0),worst=(enabled.length?enabled:state.current.workloads).reduce((a,b) => b.metrics.tmax > a.metrics.tmax ? b : a); state.viewWorkload = worst.name;state.focusWorkload=Math.max(0,WORKLOAD_PROFILES.findIndex(w=>w.name===worst.name));
       setBadge($("sourceBadge"), "优化结果 · WASM", "ready");
       $("solveProgress").value = 100;
@@ -822,7 +634,7 @@
       if (state.solving) return; state.readyStatus = ""; state.activeAlgorithm = id;
       const cached = state.solutions[id]; if (cached?.revision === state.revision) loadSolution(id);
       else {
-        state.current = null; state.lastLayout = []; state.viewWorkload = "";
+        state.current = null; state.lastLayout = []; state.viewWorkload = "";state.performanceSuspended=false;state.transientInvalid=false;
         setBadge($("sourceBadge"), "等待求解", "busy");
         $("solveProgress").value = 0;
         $("solveStatus").textContent = `${algorithm().label} 将执行 ${chosenIterations()} 次迭代。`;
@@ -842,21 +654,28 @@
     }
 
     function populateWorkloads() {
-      const select = $("workloadView"); select.innerHTML = state.current.workloads.map(w => `<option value="${w.name}">${w.label}${w.weight<=0?" · 未计入聚合":""} · ${fmt(w.metrics.tmax,1)} ℃</option>`).join("");
-      select.value = state.viewWorkload; select.disabled = false;
+      const select = $("workloadView"),valid=performanceAvailable(); select.innerHTML = state.current.workloads.map(w => `<option value="${w.name}">${w.label}${w.weight<=0?" · 未计入聚合":""} · ${valid?`${fmt(w.metrics.tmax,1)} ℃`:"布局无效"}</option>`).join("");
+      select.value = state.viewWorkload; select.disabled = !valid;
     }
-    function currentWorkload() { return state.current?.workloads.find(w => w.name === state.viewWorkload) || null; }
+    function currentWorkload() { return performanceAvailable()?state.current?.workloads.find(w => w.name === state.viewWorkload)||null:null; }
     function renderResult() {
       if (!state.current) return;
+      if(!performanceAvailable()){
+        const r=state.current.robust;clearMetrics("暂停");$("metricsPanel").classList.add("suspended");$("resultCallout").className="result-callout invalid";
+        $("resultCallout").textContent=`当前排布不合法：重叠 ${fmt(r.overlap_area,4)} mm²，越界 ${fmt(r.boundary_violation,4)} mm。性能数据已暂停显示。`;
+        $("resultFootnote").textContent="请继续移动重叠元件使其恢复合法，或点击“恢复算法结果”。恢复合法后，WASM 会重新计算并恢复全部性能数据。";
+        renderConstraints();draw();drawHistory();renderWorkloadImpact();renderWorkloadResults();$("workloadView").disabled=true;$("exportBtn").disabled=true;return;
+      }
       const r = state.current.robust;
+      $("metricsPanel").classList.remove("suspended");$("layoutInvalidBanner").hidden=true;
       $("mTmax").textContent = `${fmt(r.worst_tmax,1)} ℃`; $("mHotspot").textContent = `${fmt(r.max_hotspot_ratio*100,1)}%`;
       $("mSoft").textContent = `${fmt(r.max_soft_hotspot_ratio*100,1)}%`; $("mRisk").textContent = fmt(r.max_throttle_risk,3);
       $("mPerf").textContent = fmt(r.mean_perf_cost,4); $("mCongestion").textContent = fmt(r.worst_congestion,4); $("mScore").textContent = fmt(r.common_score,4);
       $("resultCallout").className = "result-callout";
-      const kind=state.current.solution_kind==="optimized"?"优化结果":state.current.solution_kind==="legalized"?"合法化布局":"手动布局";
+      const kind=state.current.solution_kind==="optimized"?"优化结果":"手动布局";
       $("resultCallout").textContent = `${kind} · ${state.current.algorithm} · seed ${state.current.seed} · 56×56 · ${state.current.iterations} 次迭代`;
       $("resultFootnote").textContent = `C++/WASM Float64 结果；热方程、泄漏反馈、路由拥塞、物理约束和搜索流程使用统一数值核心。计算 ${fmt(state.current.runtime_seconds,2)} s，矩阵准备 ${fmt(state.current.setup_seconds,2)} s。`;
-      renderConstraints(); draw(); drawHistory(); $("exportBtn").disabled = false;
+      renderConstraints(); draw(); drawHistory(); $("exportBtn").disabled = false;$("workloadView").disabled=false;
     }
     function renderConstraints() {
       const box = $("constraintBadges");
@@ -884,10 +703,10 @@
       const drag=state.drag;if(!drag||event.pointerId!==drag.pointerId)return;const point=pointerToChip(event,$("floorplanSvg")),m=drag.module;
       m.x=Math.max(0,Math.min(14-m.width,point.x-drag.dx));m.y=Math.max(0,Math.min(14-m.height,point.y-drag.dy));
       const rect=drag.group.querySelector("rect"),text=drag.group.querySelector("text"),sy=14-m.y-m.height;rect.setAttribute("x",m.x);rect.setAttribute("y",sy);text.setAttribute("x",m.x+m.width/2);text.setAttribute("y",sy+m.height/2+.09);
-      $("moduleX").value=fmt(m.x,3);$("moduleY").value=fmt(m.y,3);
+      $("moduleX").value=fmt(m.x,3);$("moduleY").value=fmt(m.y,3);suspendPerformanceDisplay(drag.layout);
     }
     function endModuleDrag(event){
-      const drag=state.drag;if(!drag||event.pointerId!==drag.pointerId)return;drag.group.classList.remove("dragging");state.drag=null;evaluateManual(drag.layout,false);
+      const drag=state.drag;if(!drag||event.pointerId!==drag.pointerId)return;drag.group.classList.remove("dragging");state.drag=null;evaluateManual(drag.layout);
     }
     function draw() {
       const canvas=$("heatCanvas"), ctx=canvas.getContext("2d"), svg=$("floorplanSvg"), workload=currentWorkload();
@@ -905,16 +724,17 @@
         const maxImportance=Math.max(1,...workload.flows.map(f=>f.bandwidth*f.latency_weight));
         for(const f of workload.flows){const a=byName[f.src],b=byName[f.dst];if(!a||!b)continue;const ax=a.x+a.width/2,ay=14-(a.y+a.height/2),bx=b.x+b.width/2,by=14-(b.y+b.height/2),importance=Math.sqrt(f.bandwidth*f.latency_weight/maxImportance),width=1.8+1.4*importance,halo=width+3.2,d=`M ${ax} ${ay} L ${bx} ${by}`,style=`--flow-width:${fmt(width,2)}px;--flow-halo:${fmt(halo,2)}px`;content+=`<g class="flow-link" data-src="${f.src}" data-dst="${f.dst}"><path class="flow-halo" d="${d}" style="${style}"/><path class="flow" d="${d}" style="${style}"><title>${f.src} → ${f.dst} · 带宽 ${fmt(f.bandwidth,1)} · 时延权重 ${fmt(f.latency_weight,1)}</title></path></g>`;}
       }
-      for(const m of layout){const meta=state.modules.find(x=>x.name===m.name)||m;const y=14-m.y-m.height;content+=`<g class="module ${m.name===state.selected?"selected":""}" data-name="${m.name}" tabindex="0"><rect x="${m.x}" y="${y}" width="${m.width}" height="${m.height}" rx=".08" fill="${TYPE_COLORS[meta.type]||"#475569"}" fill-opacity=".86"/><text x="${m.x+m.width/2}" y="${y+m.height/2+.09}">${m.name}</text></g>`;}
+      const overlapNames=new Set(layoutViolations(layout).overlapModules);
+      for(const m of layout){const meta=state.modules.find(x=>x.name===m.name)||m;const y=14-m.y-m.height;content+=`<g class="module ${m.name===state.selected?"selected":""} ${overlapNames.has(m.name)?"overlap":""}" data-name="${m.name}" tabindex="0"><rect x="${m.x}" y="${y}" width="${m.width}" height="${m.height}" rx=".08" fill="${TYPE_COLORS[meta.type]||"#475569"}" fill-opacity=".86"/><text x="${m.x+m.width/2}" y="${y+m.height/2+.09}">${m.name}</text></g>`;}
       svg.innerHTML=content; svg.querySelectorAll(".module").forEach(g=>{g.onpointerdown=e=>beginModuleDrag(e,g);g.onkeydown=e=>{if(e.key==="Enter"||e.key===" ")selectModule(g.dataset.name);};});
-      renderModuleTable();updateFlowControl();
+      renderModuleTable();updateFlowControl();updateLayoutValidityUI(layout);
     }
     function renderModuleTable() {
       const w=currentWorkload(), layout=state.current?.layout||state.lastLayout;
       $("moduleRows").innerHTML=layout.map((m,i)=>`<tr class="selectable ${m.name===state.selected?"selected-row":""}" data-name="${m.name}"><td>${m.name}</td><td>${w?fmt(w.module_powers[i],2):"--"}</td><td>${w?fmt(w.module_temperatures[i],1):"--"}</td><td>${fmt(m.width,2)}×${fmt(m.height,2)}</td></tr>`).join("") || '<tr><td colspan="4">求解后显示模块结果</td></tr>';
       $("moduleRows").querySelectorAll("tr[data-name]").forEach(tr=>tr.onclick=()=>selectModule(tr.dataset.name));
     }
-    function drawHistory(){const svg=$("historyPlot"),h=state.current?.history||[];if(h.length<2){svg.innerHTML="";return;}const xs=h.map(p=>p.iteration),ys=h.map(p=>p.best_cost),xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);const pts=h.map(p=>`${12+476*(p.iteration-xmin)/Math.max(1,xmax-xmin)},${10+72*(ymax-p.best_cost)/Math.max(1e-9,ymax-ymin)}`).join(" ");svg.innerHTML=`<line x1="12" y1="82" x2="488" y2="82" stroke="#d0d5dd"/><polyline points="${pts}" fill="none" stroke="#0f766e" stroke-width="2.3" vector-effect="non-scaling-stroke"/><text x="15" y="16" fill="#667085" font-size="10">${fmt(ymax,3)}</text><text x="15" y="78" fill="#667085" font-size="10">${fmt(ymin,3)}</text>`;}
+    function drawHistory(){const svg=$("historyPlot"),h=performanceAvailable()?state.current?.history||[]:[];if(h.length<2){svg.innerHTML="";return;}const xs=h.map(p=>p.iteration),ys=h.map(p=>p.best_cost),xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);const pts=h.map(p=>`${12+476*(p.iteration-xmin)/Math.max(1,xmax-xmin)},${10+72*(ymax-p.best_cost)/Math.max(1e-9,ymax-ymin)}`).join(" ");svg.innerHTML=`<line x1="12" y1="82" x2="488" y2="82" stroke="#d0d5dd"/><polyline points="${pts}" fill="none" stroke="#0f766e" stroke-width="2.3" vector-effect="non-scaling-stroke"/><text x="15" y="16" fill="#667085" font-size="10">${fmt(ymax,3)}</text><text x="15" y="78" fill="#667085" font-size="10">${fmt(ymin,3)}</text>`;}
 
     function renderComparison(){let count=0;$("comparisonRows").innerHTML=ALGORITHMS.map(a=>{const e=state.solutions[a.id];if(!e||e.revision!==state.revision)return`<tr><td><strong>${a.label}</strong></td><td>未求解</td><td>${iterationsForAlgorithm(a)}</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td></td></tr>`;count++;const r=e.result.robust;return`<tr><td><strong>${a.label}</strong></td><td>WASM 优化</td><td>${e.result.iterations}</td><td>${fmt(r.common_score,4)}</td><td>${fmt(r.worst_tmax,1)} ℃</td><td>${fmt(r.mean_perf_cost,4)}</td><td>${fmt(r.worst_congestion,4)}</td><td>${fmt(e.result.total_seconds,2)} s</td><td><button data-view="${a.id}">查看</button></td></tr>`;}).join("");$("comparisonRows").querySelectorAll("button").forEach(b=>b.onclick=()=>loadSolution(Number(b.dataset.view)));setBadge($("comparisonBadge"),`${count} / 4`,count?"ready":"");}
 
@@ -952,351 +772,16 @@
         };
         $(id).oninput=commit;$(id).onchange=commit;
       }
-      for(const [id,key] of [["moduleX","x"],["moduleY","y"]]){const commit=e=>{if(!state.current)return;const value=Number(e.target.value);if(!Number.isFinite(value))return;const layout=(state.pendingLayout||state.current.layout).map(m=>({...m})),m=layout.find(x=>x.name===state.selected);if(!m)return;const limit=14-(key==="x"?m.width:m.height);m[key]=Math.max(0,Math.min(limit,value));state.pendingLayout=layout;clearTimeout(state.manualTimer);state.manualTimer=setTimeout(()=>{const pending=state.pendingLayout;state.pendingLayout=null;if(pending)evaluateManual(pending,false);},350);};$(id).oninput=commit;$(id).onchange=commit;}
-      $("rotateBtn").onclick=()=>{if(!state.current)return;clearTimeout(state.manualTimer);state.pendingLayout=null;const layout=state.current.layout.map(m=>({...m})),m=layout.find(x=>x.name===state.selected);if(!m)return;[m.width,m.height]=[m.height,m.width];m.rotated=!m.rotated;m.x=Math.min(m.x,14-m.width);m.y=Math.min(m.y,14-m.height);evaluateManual(layout,false);};
-      $("legalizeBtn").onclick=()=>{if(state.current)evaluateManual(state.current.layout.map(m=>({...m})),true);};
+      for(const [id,key] of [["moduleX","x"],["moduleY","y"]]){const commit=e=>{if(!state.current)return;const value=Number(e.target.value);if(!Number.isFinite(value))return;const layout=(state.pendingLayout||state.current.layout).map(m=>({...m})),m=layout.find(x=>x.name===state.selected);if(!m)return;const limit=14-(key==="x"?m.width:m.height);m[key]=Math.max(0,Math.min(limit,value));state.pendingLayout=layout;suspendPerformanceDisplay(layout);clearTimeout(state.manualTimer);state.manualTimer=setTimeout(()=>{const pending=state.pendingLayout;state.pendingLayout=null;if(pending)evaluateManual(pending);},350);};$(id).oninput=commit;$(id).onchange=commit;}
+      $("rotateBtn").onclick=()=>{if(!state.current)return;clearTimeout(state.manualTimer);state.pendingLayout=null;const layout=state.current.layout.map(m=>({...m})),m=layout.find(x=>x.name===state.selected);if(!m)return;[m.width,m.height]=[m.height,m.width];m.rotated=!m.rotated;m.x=Math.min(m.x,14-m.width);m.y=Math.min(m.y,14-m.height);suspendPerformanceDisplay(layout);evaluateManual(layout);};
       $("restoreLayoutBtn").onclick=()=>loadSolution(state.activeAlgorithm);
       $("workloadView").onchange=e=>{state.viewWorkload=e.target.value;const index=WORKLOAD_PROFILES.findIndex(w=>w.name===state.viewWorkload);if(index>=0)state.focusWorkload=index;draw();renderWorkloadImpact();renderWorkloadResults();};$("flowToggle").onchange=e=>{state.showFlows=e.target.checked;draw();};
       $("solveBtn").onclick=startSolve;$("cancelBtn").onclick=cancelSolve;$("resetBtn").onclick=resetDefaults;$("exportBtn").onclick=exportResult;
     }
     function resetDefaults(){if(state.solving)return;state.modules=defaultModules();state.ambient=0;state.cooling=1;state.traffic=1;state.weights=[1,1,1,1,1,1];state.seed=7;state.budget="auto";state.selected="GPU";state.activeAlgorithm=3;state.focusWorkload=0;state.lastLayout=[];$("ambientSlider").value=0;$("coolingSlider").value=1;$("trafficSlider").value=1;markStale("已恢复默认参数");syncInputs();}
-    function exportResult(){if(!state.current)return;const payload={generated_at:new Date().toISOString(),input:{modules:state.modules,ambient_offset_degC:state.ambient,cooling_scale:state.cooling,traffic_scale:state.traffic,workload_weights:Object.fromEntries(WORKLOADS.map(([key],i)=>[key,state.weights[i]])),seed:state.seed,iterations:chosenIterations()},result:state.current};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));const a=document.createElement("a");a.href=url;a.download=`thermoplace_${state.current.algorithm}_seed${state.seed}.json`;a.click();URL.revokeObjectURL(url);}
+    function exportResult(){if(!performanceAvailable())return;const payload={generated_at:new Date().toISOString(),input:{modules:state.modules,ambient_offset_degC:state.ambient,cooling_scale:state.cooling,traffic_scale:state.traffic,workload_weights:Object.fromEntries(WORKLOADS.map(([key],i)=>[key,state.weights[i]])),seed:state.seed,iterations:chosenIterations()},result:state.current};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));const a=document.createElement("a");a.href=url;a.download=`thermoplace_${state.current.algorithm}_seed${state.seed}.json`;a.click();URL.revokeObjectURL(url);}
     function init(){state.modules=defaultModules();$("moduleSelect").innerHTML=state.modules.map(m=>`<option>${m.name}</option>`).join("");renderWorkloadControls();bindInputs();syncInputs();updateStrategies();renderComparison();renderConstraints();draw();createWorker();}
     init();
   </script>
-</body>
-</html>
-
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
-
-
-          </div>
-          
-    <div class="comments" id="gitalk-container"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">ThermoPlace-P 交互式 Floorplan Demo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">1统一数值引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">2选择算法并求解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text">收敛历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">3六工况影响与结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">4同参数算法比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.1.</span> <span class="nav-text">工作负载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.2.</span> <span class="nav-text">环境与系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.3.</span> <span class="nav-text">模块参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.4.</span> <span class="nav-text">约束与结果来源</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="RuSun"
-      src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">RuSun</p>
-  <div class="site-description" itemprop="description">颓废无能的 oier </div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">672</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">171</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/RuSunOI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;RuSunOI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:kl42chn@outlook.com" title="E-Mail → mailto:kl42chn@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="skype:live:.cid.49c3a98aa5cfd7b6?chat" title="Skype → skype:live:.cid.49c3a98aa5cfd7b6?chat" rel="noopener" target="_blank"><i class="fab fa-skype fa-fw"></i>Skype</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://sighttp.qq.com/msgrd?v=1&uin=1123093895" title="QQ → https:&#x2F;&#x2F;sighttp.qq.com&#x2F;msgrd?v&#x3D;1&amp;uin&#x3D;1123093895" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.luogu.com.cn/user/185726" title="LuoGu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;185726" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>LuoGu</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/rusun" title="CodeForces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>CodeForces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/rusun" title="AtCoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;rusun" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>AtCoder</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/rss.xml" title="RSS → &#x2F;rss.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-      </span>
-  </div>
-
-
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 2021 – 
-  <span itemprop="copyrightYear">2026</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">RuSun</span>
-</div>
-
-<div>
-<span id="timeDate">loading...</span><span id="times">loading...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("11/17/2021 00:00:00");
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "The site has running for "+dnum+" days ";
-        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds";
-    }
-setInterval("createtime()",250);
-</script>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-<script src="/js/bookmark.js"></script>
-
-
-
-
-  
-  <script>
-    (function(){
-      var canonicalURL, curProtocol;
-      //Get the <link> tag
-      var x=document.getElementsByTagName("link");
-		//Find the last canonical URL
-		if(x.length > 0){
-			for (i=0;i<x.length;i++){
-				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
-					canonicalURL=x[i].href;
-				}
-			}
-		}
-    //Get protocol
-	    if (!canonicalURL){
-	    	curProtocol = window.location.protocol.split(':')[0];
-	    }
-	    else{
-	    	curProtocol = canonicalURL.split(':')[0];
-	    }
-      //Get current URL if the canonical URL does not exist
-	    if (!canonicalURL) canonicalURL = window.location.href;
-	    //Assign script content. Replace current URL with the canonical URL
-      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
-  </script>
-
-
-
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '/mathjax/tex-mml-svg.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
-
-  
-
-<link rel="stylesheet" href="/gitalk/dist/gitalk.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('/gitalk/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : 'b2630d09f5ebf3199765',
-      clientSecret: '845e1928cb154b8dfc4a3ad8b2ee977df2de55b5',
-      repo        : 'RuSunOI.github.io',
-      owner       : 'RuSunOI',
-      admin       : ['RuSunOI'],
-      id          : '3e2657ce14636c8b668ada07e71d618f',
-        language: 'zh-CN',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
-
 </body>
 </html>
