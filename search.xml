@@ -4268,9 +4268,9 @@
       
         <tags>
             
-            <tag> DP </tag>
-            
             <tag> Min-Max反演 </tag>
+            
+            <tag> DP </tag>
             
         </tags>
       
@@ -4322,11 +4322,11 @@
       
         <tags>
             
+            <tag> Min-Max反演 </tag>
+            
             <tag> DP </tag>
             
             <tag> 组合数学 </tag>
-            
-            <tag> Min-Max反演 </tag>
             
         </tags>
       
@@ -4351,9 +4351,9 @@
       
         <tags>
             
-            <tag> DP </tag>
-            
             <tag> Min-Max反演 </tag>
+            
+            <tag> DP </tag>
             
         </tags>
       
@@ -5218,9 +5218,9 @@
             
             <tag> 二分 </tag>
             
-            <tag> ST表 </tag>
-            
             <tag> SAM </tag>
+            
+            <tag> ST表 </tag>
             
         </tags>
       
@@ -6465,9 +6465,9 @@
             
             <tag> DP </tag>
             
-            <tag> 状态压缩 </tag>
-            
             <tag> 双指针 </tag>
+            
+            <tag> 状态压缩 </tag>
             
         </tags>
       
@@ -8685,9 +8685,9 @@
       
         <tags>
             
-            <tag> Burnside引理/Pólya定理 </tag>
-            
             <tag> 省选 </tag>
+            
+            <tag> Burnside引理/Pólya定理 </tag>
             
         </tags>
       
@@ -9571,11 +9571,11 @@
             
             <tag> 树上倍增 </tag>
             
-            <tag> 差分约束 </tag>
+            <tag> 双指针 </tag>
             
             <tag> 状态压缩 </tag>
             
-            <tag> 双指针 </tag>
+            <tag> 差分约束 </tag>
             
             <tag> 省选 </tag>
             
@@ -10049,9 +10049,9 @@
       
         <tags>
             
-            <tag> 斜率优化DP </tag>
-            
             <tag> WQS二分 </tag>
+            
+            <tag> 斜率优化DP </tag>
             
         </tags>
       
@@ -10103,9 +10103,9 @@
       
         <tags>
             
-            <tag> 斜率优化DP </tag>
-            
             <tag> WQS二分 </tag>
+            
+            <tag> 斜率优化DP </tag>
             
         </tags>
       
