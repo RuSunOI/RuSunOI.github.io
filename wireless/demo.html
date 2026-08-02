@@ -143,11 +143,13 @@
     .solver-options { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
     .solver-options label { display: grid; min-width: 150px; gap: 4px; color: var(--muted); font-size: 11px; }
     .workload-grid { display: grid; gap: 9px; margin-top: 12px; }
-    .workload-row { display: grid; grid-template-columns: 82px 1fr 34px; gap: 8px; align-items: center; color: #344054; font-size: 11px; }
-    .workload-row output { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .workload-row { display: grid; grid-template-columns: 82px 1fr; gap: 8px; align-items: center; color: #344054; font-size: 11px; }
     .workload-focus { padding: 2px 4px; border: 0; border-radius: 6px; color: #344054; background: transparent; text-align: left; font-size: 11px; }
     .workload-focus:hover, .workload-focus.active { color: var(--teal-dark); background: #e7f7f4; font-weight: 750; }
-    .weight-help { margin: 12px 0 0; padding: 9px 10px; border-radius: 9px; color: #475467; background: #f8fafc; font-size: 11px; }
+    .workload-toggle { min-height: 32px; padding: 6px 10px; border: 1px solid #d0d5dd; border-radius: 9px; color: #667085; background: #fff; font-size: 11px; font-weight: 750; text-align: center; }
+    .workload-toggle:hover { border-color: #8ab8b3; }
+    .workload-toggle.enabled { border-color: var(--teal); color: var(--teal-dark); background: #edf9f7; box-shadow: inset 0 0 0 1px rgba(15,118,110,.08); }
+    .selection-help { margin: 12px 0 0; padding: 9px 10px; border-radius: 9px; color: #475467; background: #f8fafc; font-size: 11px; }
     .effect-chain { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 9px; color: var(--muted); font-size: 9px; }
     .effect-chain span { padding: 4px 6px; border: 1px solid #dce6e4; border-radius: 7px; color: #185b55; background: white; font-weight: 700; }
     .impact-card { margin-top: 12px; padding: 12px; border: 1px solid #cfe3e0; border-radius: 12px; background: linear-gradient(145deg,#f5fbfa,#f8fafc); }
@@ -222,7 +224,7 @@
           <div class="paper-settings">
             <div class="paper-card"><span>热模型网格</span><strong>56 × 56 Float64</strong></div>
             <div class="paper-card"><span>随机种子</span><strong id="seedSummary">seed 7</strong></div>
-            <div class="paper-card"><span>工作负载</span><strong id="workloadSummary">6 工况可加权</strong></div>
+            <div class="paper-card"><span>工作负载</span><strong id="workloadSummary">6 工况已启用</strong></div>
             <div class="paper-card"><span>执行位置</span><strong>Web Worker + WASM</strong></div>
           </div>
           <div class="chip-list" style="margin-top:10px">
@@ -237,7 +239,7 @@
           </div>
           <div class="solver-options">
             <label>随机种子<input type="number" id="seedInput" min="0" max="4294967295" step="1" value="7"></label>
-            <label>搜索预算<select id="budgetSelect"><option value="auto">算法默认</option><option value="60">快速 · 60 次</option><option value="180">标准 · 180 次</option><option value="260">深入 · 260 次</option><option value="360">精细 · 360 次</option></select></label>
+            <label>搜索预算<select id="budgetSelect"><option value="60">快速 · 60 次</option><option value="180">标准 · 180 次</option><option value="260" selected>论文统一 · 260 次</option><option value="360">精细 · 360 次</option></select></label>
           </div>
           <div class="strategy-grid" id="strategyGrid"></div>
           <div class="solve-row">
@@ -255,7 +257,7 @@
           <div class="metric"><span>Max Hotspot</span><strong id="mHotspot">--</strong><small>≥75 ℃ 最大面积</small></div>
           <div class="metric"><span>Soft Hotspot</span><strong id="mSoft">--</strong><small>软阈值最大面积</small></div>
           <div class="metric"><span>Throttle Risk</span><strong id="mRisk">--</strong><small>论文降频风险代理</small></div>
-          <div class="metric"><span>Mean Perf Cost</span><strong id="mPerf">--</strong><small>加权平均通信代价</small></div>
+          <div class="metric"><span>Mean Perf Cost</span><strong id="mPerf">--</strong><small>启用工况平均通信代价</small></div>
           <div class="metric"><span>Congestion</span><strong id="mCongestion">--</strong><small>启用工况最坏拥塞</small></div>
           <div class="metric"><span>Common Score</span><strong id="mScore">--</strong><small>统一 RobustTP 口径</small></div>
         </section>
@@ -290,8 +292,8 @@
         </section>
 
         <section class="panel panel-pad workload-results">
-          <div class="panel-head"><div><h2><span class="step">3</span>六工况影响与结果</h2><p>同一布局下逐工况比较；点击任一行可切换温度场和通信流。</p></div><span class="badge" id="workloadResultBadge">待求解</span></div>
-          <div class="table-wrap"><table><thead><tr><th>工况</th><th>权重</th><th>主要发热模块</th><th>SoC 功耗</th><th>环境</th><th>Tmax</th><th>Soft Hotspot</th><th>降频风险</th><th>Perf</th><th>拥塞</th></tr></thead><tbody id="workloadResultRows"></tbody></table></div>
+          <div class="panel-head"><div><h2><span class="step">3</span>六工况影响与结果</h2><p>同一布局下逐工况比较；只有已启用工况进入鲁棒指标。</p></div><span class="badge" id="workloadResultBadge">待求解</span></div>
+          <div class="table-wrap"><table><thead><tr><th>工况</th><th>评价状态</th><th>主要发热模块</th><th>SoC 功耗</th><th>环境</th><th>Tmax</th><th>Soft Hotspot</th><th>降频风险</th><th>Perf</th><th>拥塞</th></tr></thead><tbody id="workloadResultRows"></tbody></table></div>
         </section>
 
         <section class="panel panel-pad comparison">
@@ -302,10 +304,10 @@
 
       <aside>
         <section class="panel panel-pad">
-          <div class="panel-head"><div><h3>工作负载</h3><p>选择预设或分别调整六类工况权重</p></div></div>
+          <div class="panel-head"><div><h3>工作负载</h3><p>选择需要纳入鲁棒评价的工况</p></div></div>
           <div class="field"><label for="workloadPreset">负载预设</label><select id="workloadPreset"><option value="robust">混合鲁棒</option><option value="gaming">游戏渲染</option><option value="ai">端侧 AI</option><option value="video">视频录制</option><option value="comm">5G 通信</option><option value="navigation">导航融合</option><option value="charging">充电后台</option><option value="custom">自定义</option></select></div>
-          <div class="workload-grid" id="workloadWeights"></div>
-          <p class="weight-help"><strong>权重不是功耗倍率。</strong> 权重大于 0 时该工况进入 Worst 指标；数值大小决定它在加权平均指标中的占比。</p>
+          <div class="workload-grid" id="workloadSelection"></div>
+          <p class="selection-help"><strong>按钮只控制是否纳入鲁棒评价。</strong> 已启用工况共同决定 Worst 指标和平均通信代价；至少保留一个工况。六个工况仍分别计算，不表示并发运行。</p>
           <div class="effect-chain" aria-label="工作负载影响链"><span>模块活动 / 通信流 / 热边界</span><b>→</b><span>温度 / 热点 / 性能 / 拥塞</span><b>→</b><span>综合目标与布局</span></div>
           <div class="impact-card" id="workloadImpact" aria-live="polite"></div>
         </section>
@@ -368,8 +370,8 @@
     ];
     const ALGORITHMS = [
       {id:0,key:"random",label:"Random",iterations:0,desc:"单次随机合法构造；不执行退火。"},
-      {id:1,key:"wire",label:"Wirelength",iterations:180,desc:"通信与拥塞优先目标。"},
-      {id:2,key:"thermal",label:"ThermalOnly",iterations:220,desc:"热安全优先目标。"},
+      {id:1,key:"wire",label:"Wirelength",iterations:260,desc:"通信与拥塞优先目标。"},
+      {id:2,key:"thermal",label:"ThermalOnly",iterations:260,desc:"热安全优先目标。"},
       {id:3,key:"robust",label:"RobustTP",iterations:260,desc:"热—性能鲁棒联合目标。"}
     ];
     const WORKLOAD_PROFILES = [
@@ -394,12 +396,12 @@
     ];
     const WORKLOADS = WORKLOAD_PROFILES.map(w => [w.name,w.label]);
     const WORKLOAD_PRESETS = {
-      robust:[1,1,1,1,1,1], gaming:[1,0,0,0,0,0], ai:[0,1,0,0,0,0],
-      video:[0,0,1,0,0,0], comm:[0,0,0,1,0,0], navigation:[0,0,0,0,1,0], charging:[0,0,0,0,0,1]
+      robust:[true,true,true,true,true,true], gaming:[true,false,false,false,false,false], ai:[false,true,false,false,false,false],
+      video:[false,false,true,false,false,false], comm:[false,false,false,true,false,false], navigation:[false,false,false,false,true,false], charging:[false,false,false,false,false,true]
     };
     const TYPE_COLORS = {compute:"#0f766e",media:"#2563eb",memory:"#64748b",comm:"#7c3aed",analog:"#be123c",power:"#ca8a04",io:"#475569"};
     const state = {
-      modules: [], ambient:0, cooling:1, traffic:1, weights:[1,1,1,1,1,1], seed:7, budget:"auto", selected:"GPU", activeAlgorithm:3,
+      modules: [], ambient:0, cooling:1, traffic:1, workloadEnabled:[true,true,true,true,true,true], seed:7, budget:"260", selected:"GPU", activeAlgorithm:3,
       revision:0, solutions:{}, current:null, worker:null, ready:false, solving:false,
       requestId:0, elapsedTimer:null, startedAt:0, viewWorkload:"", focusWorkload:0, showFlows:false, lastLayout:[], readyStatus:"", operation:"solve", drag:null, manualTimer:null, pendingLayout:null,
       performanceSuspended:false, transientInvalid:false
@@ -408,9 +410,9 @@
     const fmt = (v,d=2) => Number.isFinite(Number(v)) ? Number(v).toFixed(d) : "--";
     const algorithm = () => ALGORITHMS.find(a => a.id === state.activeAlgorithm);
     const selectedModule = () => state.modules.find(m => m.name === state.selected);
-    const iterationsForAlgorithm = a => a.id===0 ? 0 : state.budget==="auto" ? a.iterations : Number(state.budget);
+    const iterationsForAlgorithm = a => a.id===0 ? 0 : Number(state.budget);
     const chosenIterations = () => iterationsForAlgorithm(algorithm());
-    const activeWorkloadCount = () => state.weights.filter(w=>w>0).length;
+    const activeWorkloadCount = () => state.workloadEnabled.filter(Boolean).length;
     const LEGAL_EPS = 1e-9;
 
     function layoutViolations(layout=[]) {
@@ -465,18 +467,18 @@
       document.querySelectorAll(".workload-focus").forEach((button,i)=>button.classList.toggle("active",i===index));
       const powers=result?.module_powers||effectivePowers(profile),ranked=state.modules.map((m,i)=>({name:m.name,power:powers[i]})).sort((a,b)=>b.power-a.power),top=ranked.slice(0,5),maxPower=top[0]?.power||1;
       const flows=(result?.flows||profile.flows.map(([src,dst,bandwidth,latency_weight])=>({src,dst,bandwidth:bandwidth*state.traffic,latency_weight}))).slice().sort((a,b)=>b.bandwidth*b.latency_weight-a.bandwidth*a.latency_weight).slice(0,3);
-      const ambient=result?.ambient??profile.ambient+state.ambient,sink=result?.package_sink_scale??profile.sink*state.cooling,weight=state.weights[index];
+      const ambient=result?.ambient??profile.ambient+state.ambient,sink=result?.package_sink_scale??profile.sink*state.cooling,enabled=state.workloadEnabled[index];
       const resultText=currentInvalid?"当前排布不合法：该工况的温度、热点、降频风险、性能和拥塞数据已暂停显示。":state.performanceSuspended?"布局正在编辑或重算：旧布局性能数据已暂停显示。":result?`精确结果：Tmax ${fmt(result.metrics.tmax,1)} ℃ · Soft Hotspot ${fmt(result.metrics.soft_hotspot_ratio*100,1)}% · 降频风险 ${fmt(result.metrics.throttle_risk,3)} · Perf ${fmt(result.metrics.perf_cost,4)} · 拥塞 ${fmt(result.metrics.congestion,4)}`:"求解后这里会显示该工况的精确温度、热点、降频风险、性能和拥塞结果。";
-      $("workloadImpact").innerHTML=`<div class="impact-head"><div><strong>${profile.label}</strong><small>${weight>0?`参与聚合 · 权重 ${Math.round(weight*100)}`:"仅单独计算 · 不参与聚合"}</small></div><span class="pill ${weight>0?"ok":"warn"}">${weight>0?"已启用":"权重 0"}</span></div><p class="impact-copy">${profile.summary}</p><div class="impact-facts"><div class="impact-fact"><span>SoC 工况功耗</span><strong>${fmt(profile.budget,1)} W</strong></div><div class="impact-fact"><span>环境 / 散热系数</span><strong>${fmt(ambient,1)} ℃ / ${fmt(sink,2)}×</strong></div><div class="impact-fact"><span>软 / 硬阈值</span><strong>${fmt(profile.soft,1)} / ${fmt(profile.hard,1)} ℃</strong></div><div class="impact-fact"><span>通信强度</span><strong>${fmt(state.traffic,2)}×</strong></div></div><div class="impact-subhead">当前模块参数下的主要有效功耗</div><div class="power-list">${top.map(item=>`<div class="power-row"><span>${item.name}</span><span class="power-track"><span class="power-fill" style="display:block;width:${100*item.power/maxPower}%"></span></span><strong>${fmt(item.power,2)} W</strong></div>`).join("")}</div><div class="impact-subhead">最关键通信流</div><div class="flow-list">${flows.map(flow=>`<span class="flow-chip">${flow.src} → ${flow.dst} · ${fmt(flow.bandwidth,1)}</span>`).join("")}</div><div class="impact-result">${resultText}</div>`;
+      $("workloadImpact").innerHTML=`<div class="impact-head"><div><strong>${profile.label}</strong><small>${enabled?"参与鲁棒评价":"仅单独计算 · 不参与鲁棒评价"}</small></div><span class="pill ${enabled?"ok":"warn"}">${enabled?"已启用":"未启用"}</span></div><p class="impact-copy">${profile.summary}</p><div class="impact-facts"><div class="impact-fact"><span>SoC 工况功耗</span><strong>${fmt(profile.budget,1)} W</strong></div><div class="impact-fact"><span>环境 / 散热系数</span><strong>${fmt(ambient,1)} ℃ / ${fmt(sink,2)}×</strong></div><div class="impact-fact"><span>软 / 硬阈值</span><strong>${fmt(profile.soft,1)} / ${fmt(profile.hard,1)} ℃</strong></div><div class="impact-fact"><span>通信强度</span><strong>${fmt(state.traffic,2)}×</strong></div></div><div class="impact-subhead">当前模块参数下的主要有效功耗</div><div class="power-list">${top.map(item=>`<div class="power-row"><span>${item.name}</span><span class="power-track"><span class="power-fill" style="display:block;width:${100*item.power/maxPower}%"></span></span><strong>${fmt(item.power,2)} W</strong></div>`).join("")}</div><div class="impact-subhead">最关键通信流</div><div class="flow-list">${flows.map(flow=>`<span class="flow-chip">${flow.src} → ${flow.dst} · ${fmt(flow.bandwidth,1)}</span>`).join("")}</div><div class="impact-result">${resultText}</div>`;
     }
     function renderWorkloadResults() {
       const valid=performanceAvailable(),currentInvalid=state.transientInvalid||Boolean(state.current&&!resultIsLegal()),pendingLabel=currentInvalid?"布局无效":state.performanceSuspended?"重算中":"待求解";
       $("workloadResultRows").innerHTML=WORKLOAD_PROFILES.map((profile,i)=>{
-        const result=valid?workloadResult(profile):null,powers=result?.module_powers||effectivePowers(profile),top=state.modules.map((m,j)=>({name:m.name,power:powers[j]})).sort((a,b)=>b.power-a.power).slice(0,3).map(v=>v.name).join(" / "),weight=state.weights[i];
-        return `<tr data-workload="${i}" class="${i===state.focusWorkload?"active-row":""}"><td><strong>${profile.label}</strong></td><td>${weight>0?Math.round(weight*100):"0 · 不聚合"}</td><td>${top}</td><td>${fmt(result?.soc_power_budget??profile.budget,1)} W</td><td>${fmt(result?.ambient??profile.ambient+state.ambient,1)} ℃</td><td>${result?`${fmt(result.metrics.tmax,1)} ℃`:pendingLabel}</td><td>${result?`${fmt(result.metrics.soft_hotspot_ratio*100,1)}%`:"--"}</td><td>${result?fmt(result.metrics.throttle_risk,3):"--"}</td><td>${result?fmt(result.metrics.perf_cost,4):"--"}</td><td>${result?fmt(result.metrics.congestion,4):"--"}</td></tr>`;
+        const result=valid?workloadResult(profile):null,powers=result?.module_powers||effectivePowers(profile),top=state.modules.map((m,j)=>({name:m.name,power:powers[j]})).sort((a,b)=>b.power-a.power).slice(0,3).map(v=>v.name).join(" / "),enabled=state.workloadEnabled[i];
+        return `<tr data-workload="${i}" class="${i===state.focusWorkload?"active-row":""}"><td><strong>${profile.label}</strong></td><td>${enabled?"已启用":"未启用"}</td><td>${top}</td><td>${fmt(result?.soc_power_budget??profile.budget,1)} W</td><td>${fmt(result?.ambient??profile.ambient+state.ambient,1)} ℃</td><td>${result?`${fmt(result.metrics.tmax,1)} ℃`:pendingLabel}</td><td>${result?`${fmt(result.metrics.soft_hotspot_ratio*100,1)}%`:"--"}</td><td>${result?fmt(result.metrics.throttle_risk,3):"--"}</td><td>${result?fmt(result.metrics.perf_cost,4):"--"}</td><td>${result?fmt(result.metrics.congestion,4):"--"}</td></tr>`;
       }).join("");
       $("workloadResultRows").querySelectorAll("tr[data-workload]").forEach(row=>row.onclick=()=>focusWorkload(Number(row.dataset.workload),valid));
-      setBadge($("workloadResultBadge"),currentInvalid?"当前布局无效":state.performanceSuspended?"等待重算":valid?"6 个精确工况":"模型预览",currentInvalid?"error":valid?"ready":"");
+      setBadge($("workloadResultBadge"),currentInvalid?"当前布局无效":state.performanceSuspended?"等待重算":valid?`${activeWorkloadCount()} 个已启用 · 6 个已计算`:"模型预览",currentInvalid?"error":valid?"ready":"");
     }
 
     function defaultModules() {
@@ -551,13 +553,13 @@
       }
       if (area > 196) throw new Error(`模块总面积 ${fmt(area,2)} mm² 超过芯片面积 196 mm²`);
       if(!Number.isInteger(state.seed)||state.seed<0||state.seed>4294967295) throw new Error("随机种子必须是 0–4294967295 的整数");
-      if(state.weights.reduce((a,b)=>a+b,0)<=0) throw new Error("至少启用一个工作负载");
+      if(activeWorkloadCount()<=0) throw new Error("至少启用一个工作负载");
       if(chosenIterations()<0||chosenIterations()>1000) throw new Error("搜索预算超出 0–1000 范围");
     }
     function solverConfig(layout=state.current?.layout||[]) {
       const byName=Object.fromEntries(layout.map(m=>[m.name,m]));
       return [...state.modules.flatMap(m => [m.w,m.h,m.power]), state.ambient,state.cooling,state.traffic,
-        ...state.weights, chosenIterations(), ...state.modules.flatMap(m=>{const p=byName[m.name];return p?[p.x,p.y,p.rotated?1:0]:[0,0,0];})];
+        ...state.workloadEnabled.map(Boolean).map(Number), chosenIterations(), ...state.modules.flatMap(m=>{const p=byName[m.name];return p?[p.x,p.y,p.rotated?1:0]:[0,0,0];})];
     }
     function startSolve() {
       if (!state.ready || state.solving) return;
@@ -592,7 +594,7 @@
     function finishSolve(result) {
       clearInterval(state.elapsedTimer); state.solving = false;
       state.solutions[state.activeAlgorithm] = {revision:state.revision,result}; state.current = result; state.lastLayout = result.layout;state.performanceSuspended=false;state.transientInvalid=false;
-      const enabled=result.workloads.filter(w=>w.weight>0),worst=(enabled.length?enabled:result.workloads).reduce((a,b) => b.metrics.tmax > a.metrics.tmax ? b : a);
+      const enabled=result.workloads.filter(w=>w.enabled),worst=(enabled.length?enabled:result.workloads).reduce((a,b) => b.metrics.tmax > a.metrics.tmax ? b : a);
       state.viewWorkload = worst.name; state.focusWorkload=Math.max(0,WORKLOAD_PROFILES.findIndex(w=>w.name===worst.name)); $("solveProgress").value = 100;
       setBadge($("engineBadge"), "WASM 就绪", "ready"); setBadge($("sourceBadge"), "优化结果 · WASM", "ready");
       $("solveStatus").textContent = `${result.algorithm} 完成：${result.iterations} 次迭代，WASM 总耗时 ${fmt(result.total_seconds,2)} s。`;
@@ -600,7 +602,7 @@
     }
     function finishManual(result){
       clearInterval(state.elapsedTimer);state.solving=false;state.current=result;state.lastLayout=result.layout;state.performanceSuspended=false;state.transientInvalid=false;
-      const enabled=result.workloads.filter(w=>w.weight>0),worst=(enabled.length?enabled:result.workloads).reduce((a,b)=>b.metrics.tmax>a.metrics.tmax?b:a);
+      const enabled=result.workloads.filter(w=>w.enabled),worst=(enabled.length?enabled:result.workloads).reduce((a,b)=>b.metrics.tmax>a.metrics.tmax?b:a);
       state.viewWorkload=state.viewWorkload&&result.workloads.some(w=>w.name===state.viewWorkload)?state.viewWorkload:worst.name;
       state.focusWorkload=Math.max(0,WORKLOAD_PROFILES.findIndex(w=>w.name===state.viewWorkload));
       const legal=resultIsLegal(result);$("solveProgress").value=100;setBadge($("engineBadge"),"WASM 就绪","ready");
@@ -624,7 +626,7 @@
       const entry = state.solutions[id]; if (!entry || entry.revision !== state.revision || state.solving) return;
       state.readyStatus = "";
       state.activeAlgorithm = id; state.current = entry.result; state.lastLayout = entry.result.layout;state.performanceSuspended=false;state.transientInvalid=false;
-      const enabled=state.current.workloads.filter(w=>w.weight>0),worst=(enabled.length?enabled:state.current.workloads).reduce((a,b) => b.metrics.tmax > a.metrics.tmax ? b : a); state.viewWorkload = worst.name;state.focusWorkload=Math.max(0,WORKLOAD_PROFILES.findIndex(w=>w.name===worst.name));
+      const enabled=state.current.workloads.filter(w=>w.enabled),worst=(enabled.length?enabled:state.current.workloads).reduce((a,b) => b.metrics.tmax > a.metrics.tmax ? b : a); state.viewWorkload = worst.name;state.focusWorkload=Math.max(0,WORKLOAD_PROFILES.findIndex(w=>w.name===worst.name));
       setBadge($("sourceBadge"), "优化结果 · WASM", "ready");
       $("solveProgress").value = 100;
       $("solveStatus").textContent = `${entry.result.algorithm} 已载入当前参数版本的 WASM 结果（${fmt(entry.result.total_seconds,2)} s）。`;
@@ -654,7 +656,7 @@
     }
 
     function populateWorkloads() {
-      const select = $("workloadView"),valid=performanceAvailable(); select.innerHTML = state.current.workloads.map(w => `<option value="${w.name}">${w.label}${w.weight<=0?" · 未计入聚合":""} · ${valid?`${fmt(w.metrics.tmax,1)} ℃`:"布局无效"}</option>`).join("");
+      const select = $("workloadView"),valid=performanceAvailable(); select.innerHTML = state.current.workloads.map(w => `<option value="${w.name}">${w.label}${!w.enabled?" · 未纳入评价":""} · ${valid?`${fmt(w.metrics.tmax,1)} ℃`:"布局无效"}</option>`).join("");
       select.value = state.viewWorkload; select.disabled = !valid;
     }
     function currentWorkload() { return performanceAvailable()?state.current?.workloads.find(w => w.name === state.viewWorkload)||null:null; }
@@ -738,19 +740,24 @@
 
     function renderComparison(){let count=0;$("comparisonRows").innerHTML=ALGORITHMS.map(a=>{const e=state.solutions[a.id];if(!e||e.revision!==state.revision)return`<tr><td><strong>${a.label}</strong></td><td>未求解</td><td>${iterationsForAlgorithm(a)}</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td></td></tr>`;count++;const r=e.result.robust;return`<tr><td><strong>${a.label}</strong></td><td>WASM 优化</td><td>${e.result.iterations}</td><td>${fmt(r.common_score,4)}</td><td>${fmt(r.worst_tmax,1)} ℃</td><td>${fmt(r.mean_perf_cost,4)}</td><td>${fmt(r.worst_congestion,4)}</td><td>${fmt(e.result.total_seconds,2)} s</td><td><button data-view="${a.id}">查看</button></td></tr>`;}).join("");$("comparisonRows").querySelectorAll("button").forEach(b=>b.onclick=()=>loadSolution(Number(b.dataset.view)));setBadge($("comparisonBadge"),`${count} / 4`,count?"ready":"");}
 
-    function matchingPreset(){for(const [name,weights] of Object.entries(WORKLOAD_PRESETS))if(weights.every((v,i)=>v===state.weights[i]))return name;return"custom";}
+    function matchingPreset(){for(const [name,selection] of Object.entries(WORKLOAD_PRESETS))if(selection.every((v,i)=>v===state.workloadEnabled[i]))return name;return"custom";}
     function renderWorkloadControls(){
-      $("workloadWeights").innerHTML=WORKLOADS.map(([key,label],i)=>`<div class="workload-row"><button type="button" class="workload-focus" data-focus="${i}" id="workloadLabel-${key}">${label}</button><input type="range" id="weight-${key}" data-weight="${i}" min="0" max="100" step="5" value="100" aria-labelledby="workloadLabel-${key}"><output id="weightValue-${i}">100</output></div>`).join("");
-      $("workloadWeights").querySelectorAll("button[data-focus]").forEach(button=>button.onclick=()=>focusWorkload(Number(button.dataset.focus),false));
-      $("workloadWeights").querySelectorAll("input").forEach(input=>input.oninput=e=>{const i=Number(e.target.dataset.weight);state.focusWorkload=i;state.weights[i]=Number(e.target.value)/100;const fallback=state.weights.every(v=>v===0);if(fallback){state.weights[0]=1;state.focusWorkload=0;}markStale(fallback?"至少需要一个工况，已保留游戏渲染":`${WORKLOADS[i][1]}权重已改变`);});
+      $("workloadSelection").innerHTML=WORKLOADS.map(([key,label],i)=>`<div class="workload-row"><button type="button" class="workload-focus" data-focus="${i}" id="workloadLabel-${key}">${label}</button><button type="button" class="workload-toggle" id="workloadToggle-${key}" data-workload="${i}" aria-pressed="true">已纳入评价</button></div>`).join("");
+      $("workloadSelection").querySelectorAll("button[data-focus]").forEach(button=>button.onclick=()=>focusWorkload(Number(button.dataset.focus),false));
+      $("workloadSelection").querySelectorAll("button[data-workload]").forEach(button=>button.onclick=()=>{
+        const i=Number(button.dataset.workload);state.focusWorkload=i;
+        if(state.workloadEnabled[i]&&activeWorkloadCount()===1){syncInputs(false);$("solveStatus").textContent="至少需要保留一个参与鲁棒评价的工况。";return;}
+        state.workloadEnabled[i]=!state.workloadEnabled[i];
+        markStale(`${WORKLOADS[i][1]}已${state.workloadEnabled[i]?"纳入":"移出"}鲁棒评价`);
+      });
     }
     function selectModule(name){if(!state.modules.some(m=>m.name===name))return;state.selected=name;syncInputs();draw();}
     function currentLayoutModule(){return state.current?.layout.find(m=>m.name===state.selected)||null;}
     function syncInputs(write=true){
       $("ambientValue").textContent=`${fmt(state.ambient,1)} ℃`;$("coolingValue").textContent=`${fmt(state.cooling,2)} ×`;$("trafficValue").textContent=`${fmt(state.traffic,2)} ×`;
-      $("inputMode").textContent=`${activeWorkloadCount()} 个工况 · ${chosenIterations()} 次迭代`;$("seedSummary").textContent=`seed ${state.seed}`;$("workloadSummary").textContent=`${activeWorkloadCount()} 工况加权`;
+      $("inputMode").textContent=`${activeWorkloadCount()} 个工况 · ${chosenIterations()} 次迭代`;$("seedSummary").textContent=`seed ${state.seed}`;$("workloadSummary").textContent=`${activeWorkloadCount()} 工况已启用`;
       if(write){$("seedInput").value=state.seed;$("budgetSelect").value=state.budget;$("moduleSelect").value=state.selected;}
-      $("workloadPreset").value=matchingPreset();state.weights.forEach((v,i)=>{const input=$(WORKLOADS[i]?`weight-${WORKLOADS[i][0]}`:"");if(input)input.value=Math.round(v*100);const output=$(`weightValue-${i}`);if(output)output.textContent=Math.round(v*100);});
+      $("workloadPreset").value=matchingPreset();state.workloadEnabled.forEach((enabled,i)=>{const button=$(WORKLOADS[i]?`workloadToggle-${WORKLOADS[i][0]}`:"");if(!button)return;button.classList.toggle("enabled",enabled);button.setAttribute("aria-pressed",String(enabled));button.textContent=enabled?"已纳入评价":"未纳入评价";});
       const m=selectedModule(),layout=currentLayoutModule();if(m){if(write){$("moduleWidth").value=m.w;$("moduleHeight").value=m.h;$("modulePower").value=m.power;}$("moduleMeta").textContent=`${m.type} · ${m.domain} · footprint ${fmt(m.w,2)} × ${fmt(m.h,2)} mm · ${fmt(m.power,2)} W${layout?` · ${layout.rotated?"已旋转":"未旋转"}`:""}`;}
       if(layout){$("moduleX").value=fmt(layout.x,3);$("moduleY").value=fmt(layout.y,3);}else{$("moduleX").value="";$("moduleY").value="";}setManualControls();renderWorkloadImpact();renderWorkloadResults();
     }
@@ -758,7 +765,7 @@
       $("ambientSlider").oninput=e=>{state.ambient=Number(e.target.value);markStale("环境温度已改变");};
       $("coolingSlider").oninput=e=>{state.cooling=Number(e.target.value);markStale("散热能力已改变");};
       $("trafficSlider").oninput=e=>{state.traffic=Number(e.target.value);markStale("通信强度已改变");};
-      $("workloadPreset").onchange=e=>{if(e.target.value==="custom")return;state.weights=[...WORKLOAD_PRESETS[e.target.value]];const first=state.weights.findIndex(v=>v>0);if(first>=0)state.focusWorkload=first;markStale("工作负载预设已改变");};
+      $("workloadPreset").onchange=e=>{if(e.target.value==="custom")return;state.workloadEnabled=[...WORKLOAD_PRESETS[e.target.value]];const first=state.workloadEnabled.findIndex(Boolean);if(first>=0)state.focusWorkload=first;markStale("参与鲁棒评价的工况集合已改变");};
       const commitSeed=e=>{const raw=e.target.value.trim();if(raw===""){e.target.setCustomValidity("请输入整数");return;}const value=Number(raw);if(!Number.isInteger(value)){e.target.setCustomValidity("请输入整数");return;}e.target.setCustomValidity("");if(state.seed===value)return;state.seed=value;markStale("随机种子已改变");};$("seedInput").oninput=commitSeed;$("seedInput").onchange=commitSeed;
       $("budgetSelect").onchange=e=>{state.budget=e.target.value;markStale("搜索预算已改变");};
       $("moduleSelect").onchange=e=>selectModule(e.target.value);
@@ -778,8 +785,8 @@
       $("workloadView").onchange=e=>{state.viewWorkload=e.target.value;const index=WORKLOAD_PROFILES.findIndex(w=>w.name===state.viewWorkload);if(index>=0)state.focusWorkload=index;draw();renderWorkloadImpact();renderWorkloadResults();};$("flowToggle").onchange=e=>{state.showFlows=e.target.checked;draw();};
       $("solveBtn").onclick=startSolve;$("cancelBtn").onclick=cancelSolve;$("resetBtn").onclick=resetDefaults;$("exportBtn").onclick=exportResult;
     }
-    function resetDefaults(){if(state.solving)return;state.modules=defaultModules();state.ambient=0;state.cooling=1;state.traffic=1;state.weights=[1,1,1,1,1,1];state.seed=7;state.budget="auto";state.selected="GPU";state.activeAlgorithm=3;state.focusWorkload=0;state.lastLayout=[];$("ambientSlider").value=0;$("coolingSlider").value=1;$("trafficSlider").value=1;markStale("已恢复默认参数");syncInputs();}
-    function exportResult(){if(!performanceAvailable())return;const payload={generated_at:new Date().toISOString(),input:{modules:state.modules,ambient_offset_degC:state.ambient,cooling_scale:state.cooling,traffic_scale:state.traffic,workload_weights:Object.fromEntries(WORKLOADS.map(([key],i)=>[key,state.weights[i]])),seed:state.seed,iterations:chosenIterations()},result:state.current};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));const a=document.createElement("a");a.href=url;a.download=`thermoplace_${state.current.algorithm}_seed${state.seed}.json`;a.click();URL.revokeObjectURL(url);}
+    function resetDefaults(){if(state.solving)return;state.modules=defaultModules();state.ambient=0;state.cooling=1;state.traffic=1;state.workloadEnabled=[true,true,true,true,true,true];state.seed=7;state.budget="260";state.selected="GPU";state.activeAlgorithm=3;state.focusWorkload=0;state.lastLayout=[];$("ambientSlider").value=0;$("coolingSlider").value=1;$("trafficSlider").value=1;markStale("已恢复默认参数");syncInputs();}
+    function exportResult(){if(!performanceAvailable())return;const payload={generated_at:new Date().toISOString(),input:{modules:state.modules,ambient_offset_degC:state.ambient,cooling_scale:state.cooling,traffic_scale:state.traffic,workload_selection:Object.fromEntries(WORKLOADS.map(([key],i)=>[key,state.workloadEnabled[i]])),seed:state.seed,iterations:chosenIterations()},result:state.current};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));const a=document.createElement("a");a.href=url;a.download=`thermoplace_${state.current.algorithm}_seed${state.seed}.json`;a.click();URL.revokeObjectURL(url);}
     function init(){state.modules=defaultModules();$("moduleSelect").innerHTML=state.modules.map(m=>`<option>${m.name}</option>`).join("");renderWorkloadControls();bindInputs();syncInputs();updateStrategies();renderComparison();renderConstraints();draw();createWorker();}
     init();
   </script>
