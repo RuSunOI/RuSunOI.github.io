@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091923"><style>:root{font-family:'Segoe UI','Microsoft YaHei',sans-serif;color:#deebec;background:#091923;font-synthesis:none;--bg:#091923;--panel:#102832;--ink:#e8f5f1;--muted:#8ca9b3;--mint:#62e7b1;--red:#ff807d;--blue:#78baff;--amber:#f6c379;--line:#25414c}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:#17343e;padding:10px 15px;transition:background .16s,transform .16s}button:hover:not(:disabled){background:#24515b;transform:translateY(-1px)}button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid #f6c379;outline-offset:3px}button:disabled{opacity:.42;cursor:default}button.primary{background:var(--mint);border-color:var(--mint);color:#05251c;font-weight:800}button.ghost{background:transparent}button.danger{color:var(--red)}button.small{font-size:12px;padding:7px 10px}input{background:#091e28;color:var(--ink);border:1px solid var(--line);padding:10px;border-radius:7px}h1,h2,h3,p{margin:0}h2{font-size:24px}h3{font-size:16px}p{line-height:1.65}small,.muted{color:var(--muted)}.eyebrow{font:700 11px 'Consolas',monospace;letter-spacing:3px;color:var(--mint)}.shell{max-width:1920px;margin:auto}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 30px;background:#0b202a}.brand{display:flex;align-items:center;gap:13px}.brand-icon{width:38px;height:38px;background:#163c3f;border:1px solid #2b6c5b;border-radius:10px;display:grid;place-items:center;color:var(--mint);font-weight:900;font-size:24px}.brand strong{font-size:19px;letter-spacing:2px}.brand small{display:block;font:10px Consolas;letter-spacing:3px;margin-top:4px}.nav{display:flex;align-items:center;gap:8px}.nav button{padding:8px 11px;background:transparent;border-color:transparent;font-size:13px}.nav button.active{background:#173f3d;color:var(--mint)}.credit{color:var(--amber);font:700 14px Consolas;white-space:nowrap;margin-right:10px}.home{padding:36px 42px;max-width:1550px;margin:auto}.hero{min-height:345px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative;background:radial-gradient(ellipse at 75% 10%,#173b3a,transparent 70%)}.hero h1{font-size:clamp(38px,4vw,64px);letter-spacing:6px;line-height:1.16;margin:22px 0 17px}.hero h1 em{font-style:normal;color:var(--mint)}.hero p{max-width:530px;color:#a5c0c7;font-size:15px}.hero-actions{display:flex;gap:12px;margin-top:26px}.hero-art{height:315px;position:relative;overflow:hidden;border:1px solid #284950;border-radius:15px;background:#0d222b}.hero-art svg{width:100%;height:100%;position:absolute}.scanline{background:linear-gradient(transparent,rgba(98,231,177,.12),transparent);height:80px;position:absolute;left:0;right:0;animation:scan 6s linear infinite}.artlabel{position:absolute;top:19px;left:22px;font:11px Consolas;color:var(--mint);letter-spacing:2px}.artstatus{position:absolute;bottom:18px;left:22px;right:22px;display:flex;justify-content:space-between;font:12px Consolas;color:#9bc6c0}.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin:26px 0 32px}.stat{padding:0 25px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat strong{font:700 25px Consolas;color:var(--mint)}.stat small{display:block;margin-top:7px;font-size:12px}.sectionbar{display:flex;justify-content:space-between;align-items:center;margin:24px 0 17px}.chapter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.chapter{border:1px solid var(--line);padding:23px;border-radius:11px;background:linear-gradient(135deg,#133039,#0d242e);text-align:left;min-height:175px}.chapter.locked{opacity:.65}.chapter-head{display:flex;justify-content:space-between}.chapter h3{font-size:19px;margin:17px 0 9px}.chapter p{font-size:13px;color:var(--muted)}.progress-track{height:3px;background:#243e46;margin-top:18px}.progress-track i{display:block;height:100%;background:var(--mint)}.case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:23px}.case-card{padding:18px;text-align:left;min-height:146px;background:#102b34}.case-card strong{display:block;margin:12px 0 8px}.case-card .num{font:22px Consolas;color:var(--mint)}.case-card small{line-height:1.5}.stars{color:var(--amber);font-size:14px;letter-spacing:2px}.workarea{padding:19px 22px 24px}.case-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;gap:12px}.case-title h2{font-size:23px;margin-top:8px}.case-title p{font-size:13px;color:var(--muted);margin-top:8px;max-width:900px}.timer{font:700 28px Consolas;color:var(--amber)}.timer small{font:10px Consolas;display:block;text-align:right;letter-spacing:2px}.game-grid{display:grid;grid-template-columns:260px minmax(420px,1fr) 298px;gap:15px;align-items:start}.panel{border:1px solid var(--line);background:#102630;border-radius:10px;overflow:hidden}.panel-head{border-bottom:1px solid var(--line);padding:15px 17px;display:flex;justify-content:space-between;align-items:center}.panel-head h3{font-size:13px;letter-spacing:1px}.panel-body{padding:16px}.inspector-name{font-size:21px;color:var(--mint);margin-bottom:7px}.inspector-info{font-size:12px;color:var(--muted);line-height:1.7}.tool{display:block;width:100%;text-align:left;margin-top:9px;padding:11px;background:#0e2530}.tool.current{border-color:var(--mint);background:#163d3b}.tool strong{font-size:13px}.tool small{display:block;font-size:11px;margin-top:5px;line-height:1.5}.tool .delta{display:flex;gap:13px;font:11px Consolas;margin-top:6px;color:var(--amber)}.board-wrap{background:radial-gradient(ellipse at center,#16323b,#0b2029);position:relative}.board{width:100%;height:min(48vh,480px);min-height:325px;display:block;background-image:radial-gradient(#32505b 1px,transparent 1px);background-size:24px 24px}.board .edge{stroke:#5c8390;stroke-width:3;fill:none}.board .edge.changed{stroke:var(--mint)}.board .edge.path{stroke:var(--amber);stroke-width:5}.board .hit{stroke:transparent;stroke-width:23;fill:none;cursor:pointer}.board .gate rect{fill:#173843;stroke:#608895;stroke-width:1.7}.board .gate.changed rect{stroke:var(--mint);fill:#18473f}.board .gate.selected rect{stroke:var(--amber);stroke-width:3}.board .gate.source rect{fill:#1a4145;stroke:var(--mint)}.board .gate.sink rect{fill:#263740;stroke:var(--blue)}.board .gate text{fill:#edf6f5;font-size:12px;font-family:'Microsoft YaHei';pointer-events:none}.board .gate .tiny{font-size:9px;fill:#a7c1c6}.board .gate{cursor:pointer}.board .edgebadge{fill:#183a3d;stroke:#468577}.board .edgetext{fill:#8ff0c6;font:10px Consolas;pointer-events:none}.board-caption{padding:11px 16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:11px;gap:12px}.toolbar{padding:12px;display:flex;gap:7px;flex-wrap:wrap;border-bottom:1px solid var(--line);background:#0d252e}.toolbar button{font-size:12px;padding:7px 11px}.readings{display:grid;grid-template-columns:1fr 1fr;gap:10px}.reading{padding:14px;background:#0d222b;border:1px solid var(--line);border-radius:8px}.reading small{font-size:11px;display:block}.reading strong{display:block;font:24px Consolas;margin:8px 0}.good{color:var(--mint)}.bad{color:var(--red)}.reading p{font-size:11px;color:var(--muted)}.meter{margin:14px 0}.meter-title{display:flex;justify-content:space-between;font-size:12px}.meter .progress-track{margin-top:8px;height:5px}.meter .over{background:var(--red)}.issues{font-size:12px;line-height:1.65;color:var(--red);margin-top:12px}.path-list{max-height:216px;overflow:auto;padding:7px}.path-button{display:block;width:100%;text-align:left;font-size:12px;margin-bottom:6px;border-color:transparent;background:#0c242e}.path-button.selected{border-color:var(--amber)}.path-button small{display:block;font:11px Consolas;margin-top:4px}.timeline{margin-top:15px}.timeline-row{display:grid;grid-template-columns:80px 1fr 90px;gap:8px;align-items:center;font-size:11px;margin:10px 0}.timeline-track{height:18px;background:#0a1d26;position:relative;border-radius:4px;overflow:hidden}.window-band{position:absolute;background:#2d685a;height:100%;opacity:.45}.arrival-band{position:absolute;top:6px;height:6px;background:var(--mint);border-radius:4px;min-width:4px}.arrival-band.fail{background:var(--red)}.timeline-row .label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.briefbox{padding:14px 17px;margin-top:14px;background:#132e35;border-left:3px solid var(--mint);font-size:12px;line-height:1.75;color:#a9c6c9}.footer-controls{display:flex;justify-content:space-between;gap:10px;padding:15px 0;flex-wrap:wrap}.hints{font-size:13px;line-height:1.8;padding:16px}.hints p{margin-bottom:10px}.modal-backdrop{position:fixed;inset:0;z-index:30;background:rgba(2,12,18,.79);display:grid;place-items:center;backdrop-filter:blur(6px);padding:30px}.modal{width:min(720px,100%);max-height:90vh;overflow:auto;border:1px solid #3b655f;border-radius:14px;background:#102b33;padding:30px;box-shadow:0 25px 100px #0007}.modal h2{margin:12px 0 16px;font-size:29px}.modal p{font-size:14px;color:#a8c4c8;margin:13px 0}.modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px;flex-wrap:wrap}.modal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.modal-grid div{padding:15px;border:1px solid var(--line);border-radius:8px}.modal-grid strong{display:block;color:var(--mint);font-size:25px;margin:8px 0}.modal-grid small{font-size:11px}.tutorial-step{padding:15px 0;border-bottom:1px solid var(--line);display:flex;gap:18px}.tutorial-step span{font:25px Consolas;color:var(--mint)}.tutorial-step p{margin:0;font-size:13px}.upgrade-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.upgrade{border:1px solid var(--line);border-radius:10px;padding:25px;background:#102a34}.upgrade h3{margin:12px 0}.upgrade p{font-size:13px;color:var(--muted);min-height:65px}.upgrade button{margin-top:17px}.settings-row{display:flex;justify-content:space-between;align-items:center;padding:17px 0;border-bottom:1px solid var(--line);gap:18px}.settings-row small{display:block;margin-top:7px;max-width:420px}.help-text{max-width:900px}.help-text h3{color:var(--mint);margin:25px 0 10px}.help-text p{color:#aac3c7;font-size:14px}.toast{position:fixed;bottom:23px;left:50%;transform:translateX(-50%);background:#1d5048;border:1px solid var(--mint);padding:12px 23px;border-radius:10px;z-index:70;font-size:13px;box-shadow:0 4px 30px #0006;pointer-events:none}.empty{padding:30px;text-align:center;color:var(--muted)}.pulse{stroke-dasharray:6 12;animation:pulse 1.5s linear infinite}.no-motion *{animation:none!important;transition:none!important}.high-contrast{--muted:#b9d8de;--line:#557985}.blockers{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.blockers span{border:1px solid #644447;background:#392a30;color:#ffaaaa;padding:4px 6px;border-radius:4px;font-size:10px}.chip{display:inline-block;padding:4px 8px;border-radius:5px;background:#183e3b;color:var(--mint);font-size:11px}.history-item{padding:17px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:20px}.history-item strong{display:block}.history-item small{display:block;margin-top:7px}.history-actions{display:flex;align-items:center;gap:7px}.endless-card{border:1px solid var(--line);border-radius:13px;display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:30px;margin-top:26px;background:linear-gradient(120deg,#16343c,#0d242e)}.endless-card h2{margin:12px 0}.endless-card p{font-size:13px;color:var(--muted)}.endless-card label{display:block;font-size:12px;margin-bottom:8px}.endless-card input{width:100%;margin-bottom:13px}.badge-row{display:flex;gap:7px;margin-top:15px;flex-wrap:wrap}.rank{color:var(--amber);font:12px Consolas}.fit-note{font-size:11px;color:var(--muted);margin-top:12px}@keyframes scan{from{top:-80px}to{top:100%}}@keyframes pulse{to{stroke-dashoffset:-36}}@media(min-width:1650px){.game-grid{grid-template-columns:295px minmax(650px,1fr) 340px}.board{height:510px}.tool{padding:14px}.path-list{max-height:275px}.workarea{padding:25px 32px}}@media(max-width:1250px){.topbar{padding:0 18px}.game-grid{grid-template-columns:220px minmax(370px,1fr) 255px;gap:10px}.workarea{padding:14px}.panel-body{padding:12px}.nav button{padding:8px}.home{padding:25px}.tool small{font-size:10px}.board{min-height:300px}.hero{gap:25px}.hero h1{font-size:44px}.brand strong{font-size:17px}.case-title h2{font-size:20px}}@media(max-width:1020px){.game-grid{grid-template-columns:220px 1fr}.monitor-panel{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.monitor-panel .panel-head{grid-column:1/-1}.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding:15px}.hero{grid-template-columns:1fr}.hero-art{display:none}.chapter-grid{grid-template-columns:repeat(2,1fr)}.case-grid{grid-template-columns:repeat(2,1fr)}.nav{flex-wrap:wrap}.stats-strip{gap:10px}.stat{padding:0 10px}}@media(max-width:650px){.game-grid{grid-template-columns:1fr}.hero h1{font-size:35px}.chapter-grid,.upgrade-grid,.endless-card{grid-template-columns:1fr}.home{padding:22px}.stats-strip{grid-template-columns:repeat(2,1fr);gap:20px}.brand{margin-bottom:10px}.case-title{align-items:start}.modal{padding:22px}.modal-grid{grid-template-columns:1fr}.board{height:330px}.inspector-panel{order:2}.monitor-panel{display:block;order:3}.nav .credit{display:none}}
+
+.board g[data-action="select-edge"]{cursor:pointer}
+
+.timeline-values{line-height:1.45}.timeline-values small{display:block;font-size:9px}
+</style><title>时序急救室 · Timing ER</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c2932'/%3E%3Cpath d='M8 34h10l6-18 9 34 7-16h16' fill='none' stroke='%234ce4ae' stroke-width='5'/%3E%3C/svg%3E"></head><body><div id="app"></div><script>'use strict';
+const __modules={};
+__modules.engine=(()=>{
+/** Deterministic, bounded static timing model used by the UI and all validators. */
+const EPSILON = 1e-8;
+const DEFAULT_CORNER = Object.freeze({ id: 'typ', label: '常温', minFactor: 1, maxFactor: 1, wireFactor: 1 });
+const freezeParts = parts => Object.freeze(parts.map(part => Object.freeze(part)));
+
+const GATE_PARTS = freezeParts([
+  { id: 'normal', label: '标准门', description: '均衡门。恢复病例原装型号不消耗预算。', cost: 1, area: 1, power: 0.6, min: 1, max: 1, minFactor: 1, maxFactor: 1, inputCap: 1, drive: 1 },
+  { id: 'strong', label: '强驱动门', description: '本门更快，但输入负载增大，可能拖慢上游或造成过早到达。', cost: 4, area: 1.4, power: 1.5, min: 0.55, max: 0.58, minFactor: 0.55, maxFactor: 0.58, inputCap: 2.4, drive: 2.5 },
+  { id: 'eco', label: '轻载节能门', description: '本门较慢、功耗低，较小输入负载可以救活共享上游。', cost: 2, area: 0.7, power: 0.3, min: 1.3, max: 1.35, minFactor: 1.3, maxFactor: 1.35, inputCap: 0.6, drive: 0.7 },
+  { id: 'precision', label: '精密门', description: '压缩最慢延迟，同时保留最早延迟，适合窄到达窗口。', cost: 5, area: 1.3, power: 0.8, min: 1.05, max: 0.78, minFactor: 1.05, maxFactor: 0.78, inputCap: 1.15, drive: 1.3 },
+]);
+
+const EDGE_PARTS = freezeParts([
+  { id: 'none', label: '原装连接', description: '普通连接，无附加零件。', cost: 0, area: 0, power: 0, min: 0.45, max: 1, wireMin: 0.45, wireMax: 1, wireCap: 0.12, inputCap: 0, isolation: false },
+  { id: 'delay', label: '延迟片', description: '最早增加 1.10，最晚增加 1.30；修复过快路径，也会让最慢路径变慢。', cost: 3, area: 1, power: 0.2, min: 0.45, max: 1, wireMin: 0.45, wireMax: 1, wireCap: 0.12, inputCap: 0.15, addMin: 1.1, addMax: 1.3, isolation: false },
+  { id: 'buffer', label: '隔离缓冲器', description: '隔离下游重负载；自己新增延迟，适合扇出与长线。', cost: 4, area: 1.2, power: 0.8, min: 0.3, max: 0.7, wireMin: 0.3, wireMax: 0.7, wireCap: 0.042, inputCap: 0.6, addMin: 0.35, addMax: 0.65, isolation: true },
+  { id: 'copper', label: '快线', description: '降低线延迟，较大的线电容会拖慢驱动门。', cost: 3, area: 0.2, power: 0.05, min: 0.25, max: 0.45, wireMin: 0.25, wireMax: 0.45, wireCap: 0.22, inputCap: 0, isolation: false },
+  { id: 'shield', label: '屏蔽线', description: '抵消 80% 的线环境波动；更大的电容有上游代价。', cost: 4, area: 0.9, power: 0.1, min: 0.5, max: 0.9, wireMin: 0.5, wireMax: 0.9, wireCap: 0.18, inputCap: 0.12, immunity: 0.8, isolation: false },
+]);
+
+const gateById = new Map(GATE_PARTS.map(part => [part.id, part]));
+const edgeById = new Map(EDGE_PARTS.map(part => [part.id, part]));
+const allParts = new Set([...gateById.keys(), ...edgeById.keys()]);
+const own = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
+const isObject = object => object !== null && typeof object === 'object' && !Array.isArray(object);
+const number = value => typeof value === 'number' && Number.isFinite(value);
+const nonnegative = value => number(value) && value >= 0;
+const safeId = value => typeof value === 'string' && /^[A-Za-z][A-Za-z0-9_-]{0,63}$/.test(value) && !['constructor', 'prototype'].includes(value);
+const rounded = value => Math.round(value * 1e9) / 1e9;
+
+/** Clone only state data; never mutate a caller's save, level or history entry. */
+function cloneState(state) {
+  return { gates: { ...(isObject(state?.gates) ? state.gates : {}) }, edges: { ...(isObject(state?.edges) ? state.edges : {}) } };
+}
+
+/** Missing initial entries mean standard gates and original connections. */
+function newState(level) {
+  const state = { gates: {}, edges: {} };
+  for (const node of Array.isArray(level?.nodes) ? level.nodes : []) if (node?.kind === 'gate' && safeId(node.id)) state.gates[node.id] = level.initial?.gates?.[node.id] ?? 'normal';
+  for (const edge of Array.isArray(level?.edges) ? level.edges : []) if (safeId(edge?.id)) state.edges[edge.id] = level.initial?.edges?.[edge.id] ?? 'none';
+  return state;
+}
+
+function inspectLevel(level) {
+  const errors = [];
+  const fail = message => errors.push(message);
+  if (!isObject(level)) return { errors: ['病例格式错误。'] };
+  if (!Array.isArray(level.nodes) || level.nodes.length < 2 || level.nodes.length > 128) fail('病例必须有 2 至 128 个节点。');
+  if (!Array.isArray(level.edges) || level.edges.length < 1 || level.edges.length > 512) fail('病例必须有 1 至 512 条连接。');
+  if (errors.length) return { errors };
+  const nodes = new Map(), edges = new Map(), incoming = new Map(), outgoing = new Map();
+  for (const node of level.nodes) {
+    if (!isObject(node) || !safeId(node.id)) { fail('节点编号非法。'); continue; }
+    if (nodes.has(node.id)) { fail(`节点编号重复：${node.id}`); continue; }
+    if (!['source', 'gate', 'sink'].includes(node.kind)) fail(`节点 ${node.id} 类型非法。`);
+    if (node.kind !== 'sink' && (!nonnegative(node.min) || !nonnegative(node.max) || node.max < node.min)) fail(`节点 ${node.id} 的最小/最大延迟非法。`);
+    if (node.kind === 'sink' && ((node.min !== undefined && node.min !== 0) || (node.max !== undefined && node.max !== 0))) fail(`接收端 ${node.id} 不能另加门延迟。`);
+    if (node.load !== undefined && !nonnegative(node.load)) fail(`节点 ${node.id} 的负载非法。`);
+    nodes.set(node.id, node); incoming.set(node.id, []); outgoing.set(node.id, []);
+  }
+  for (const edge of level.edges) {
+    if (!isObject(edge) || !safeId(edge.id)) { fail('连接编号非法。'); continue; }
+    if (edges.has(edge.id)) { fail(`连接编号重复：${edge.id}`); continue; }
+    if (!nodes.has(edge.from) || !nodes.has(edge.to)) { fail(`连接 ${edge.id} 端点不存在。`); continue; }
+    if (!nonnegative(edge.wire)) fail(`连接 ${edge.id} 的线延迟非法。`);
+    if (edge.from === edge.to) fail(`连接 ${edge.id} 自环。`);
+    edges.set(edge.id, edge); outgoing.get(edge.from).push(edge); incoming.get(edge.to).push(edge);
+  }
+  const sources = level.nodes.filter(node => node?.kind === 'source' && nodes.has(node.id));
+  const sinks = level.nodes.filter(node => node?.kind === 'sink' && nodes.has(node.id));
+  if (!sources.length || !sinks.length) fail('病例需要至少一个发射端和接收端。');
+  for (const node of nodes.values()) {
+    if (node.kind === 'source' && incoming.get(node.id).length) fail(`发射端 ${node.id} 不能有输入。`);
+    if (node.kind === 'sink' && outgoing.get(node.id).length) fail(`接收端 ${node.id} 不能有输出。`);
+    if (node.kind !== 'source' && !incoming.get(node.id).length) fail(`节点 ${node.id} 未被驱动。`);
+    if (node.kind !== 'sink' && !outgoing.get(node.id).length) fail(`节点 ${node.id} 没有通往接收端的连接。`);
+  }
+  const degrees = new Map([...nodes.keys()].map(id => [id, incoming.get(id).length]));
+  const queue = [...nodes.keys()].filter(id => degrees.get(id) === 0), order = [];
+  for (let index = 0; index < queue.length; index++) {
+    const id = queue[index]; order.push(id);
+    for (const edge of outgoing.get(id)) { degrees.set(edge.to, degrees.get(edge.to) - 1); if (degrees.get(edge.to) === 0) queue.push(edge.to); }
+  }
+  if (order.length !== nodes.size) fail('组合网络含环，不能进行时序检查。');
+  if (order.length === nodes.size) {
+    const fromSource = new Set(sources.map(node => node.id));
+    for (const id of order) if (fromSource.has(id)) for (const edge of outgoing.get(id)) fromSource.add(edge.to);
+    const toSink = new Set(sinks.map(node => node.id));
+    for (const id of [...order].reverse()) if (outgoing.get(id).some(edge => toSink.has(edge.to))) toSink.add(id);
+    for (const id of nodes.keys()) if (!fromSource.has(id) || !toSink.has(id)) fail(`节点 ${id} 不在完整的发射—接收路径上。`);
+  }
+  const windows = new Map();
+  if (!Array.isArray(level.windows) || level.windows.length !== sinks.length) fail('必须为每个接收端指定一个到达窗口。');
+  else for (const window of level.windows) {
+    if (!isObject(window) || !nodes.has(window.sink) || nodes.get(window.sink).kind !== 'sink') { fail('到达窗口接收端非法。'); continue; }
+    if (windows.has(window.sink)) fail(`接收端 ${window.sink} 的窗口重复。`);
+    if (!nonnegative(window.early) || !nonnegative(window.late) || window.late < window.early) fail(`接收端 ${window.sink} 的窗口非法。`);
+    windows.set(window.sink, window);
+  }
+  for (const sink of sinks) if (!windows.has(sink.id)) fail(`接收端 ${sink.id} 缺少到达窗口。`);
+  const corners = level.corners === undefined ? [DEFAULT_CORNER] : level.corners;
+  if (!Array.isArray(corners) || !corners.length || corners.length > 8) fail('检查环境必须有 1 至 8 项。');
+  else {
+    const ids = new Set();
+    for (const corner of corners) {
+      if (!isObject(corner) || !safeId(corner.id) || ids.has(corner.id)) { fail('检查环境编号非法或重复。'); continue; }
+      ids.add(corner.id);
+      if (!number(corner.minFactor) || corner.minFactor <= 0 || !number(corner.maxFactor) || corner.maxFactor <= 0 || (corner.wireFactor !== undefined && (!number(corner.wireFactor) || corner.wireFactor <= 0))) fail(`环境 ${corner.id} 的缩放系数非法。`);
+    }
+  }
+  if (!isObject(level.limits)) fail('病例缺少硬预算。');
+  else for (const key of ['cost', 'edits', 'area', 'power', 'time']) if (level.limits[key] !== undefined && !nonnegative(level.limits[key])) fail(`预算 ${key} 非法。`);
+  if (isObject(level.limits) && (!nonnegative(level.limits.cost) || !nonnegative(level.limits.edits))) fail('病例必须限制成本和最终修改数。');
+  if (level.allowedParts !== undefined && (!Array.isArray(level.allowedParts) || level.allowedParts.some(id => !allParts.has(id)))) fail('病例的允许零件列表非法。');
+  return { errors, nodes, edges, incoming, outgoing, sources, sinks, order, windows, corners };
+}
+
+function inspectState(level, state, model, equipment) {
+  const errors = [];
+  if (!isObject(state) || !isObject(state.gates) || !isObject(state.edges)) return ['方案格式错误：需要 gates 和 edges 两张零件表。'];
+  for (const key of Object.keys(state)) if (!['gates', 'edges'].includes(key)) errors.push(`方案含未知字段：${key}`);
+  const initial = newState(level);
+  const allowed = new Set(level.allowedParts ?? allParts);
+  const unlockedList = Array.isArray(equipment) ? equipment : equipment?.unlockedParts ?? equipment?.parts;
+  if (unlockedList !== undefined) {
+    if (!Array.isArray(unlockedList) || unlockedList.some(id => !allParts.has(id))) errors.push('已持有工具列表非法。');
+    else for (const id of unlockedList) allowed.add(id);
+  }
+  for (const [id, partId] of Object.entries(state.gates)) {
+    const node = model.nodes.get(id);
+    if (!node || node.kind !== 'gate') { errors.push(`方案含未知逻辑门：${id}`); continue; }
+    if (!gateById.has(partId)) { errors.push(`门 ${id} 的零件非法：${String(partId)}`); continue; }
+    if (partId !== initial.gates[id]) {
+      if (node.locked) errors.push(`门 ${id} 被锁定。`);
+      if (!allowed.has(partId)) errors.push(`本病例未允许门零件：${partId}`);
+    }
+  }
+  for (const [id, partId] of Object.entries(state.edges)) {
+    const edge = model.edges.get(id);
+    if (!edge) { errors.push(`方案含未知连接：${id}`); continue; }
+    if (!edgeById.has(partId)) { errors.push(`连接 ${id} 的零件非法：${String(partId)}`); continue; }
+    if (partId !== initial.edges[id]) {
+      if (edge.locked) errors.push(`连接 ${id} 被锁定。`);
+      if (!allowed.has(partId)) errors.push(`本病例未允许线零件：${partId}`);
+    }
+  }
+  for (const node of model.nodes.values()) if (node.kind === 'gate' && !own(state.gates, node.id)) errors.push(`方案缺少门：${node.id}`);
+  for (const edge of model.edges.values()) if (!own(state.edges, edge.id)) errors.push(`方案缺少连接：${edge.id}`);
+  for (const [id, part] of Object.entries(initial.gates)) if (!gateById.has(part)) errors.push(`初始门 ${id} 型号非法。`);
+  for (const [id, part] of Object.entries(initial.edges)) if (!edgeById.has(part)) errors.push(`初始连接 ${id} 型号非法。`);
+  if (level.initial !== undefined) {
+    if (!isObject(level.initial) || (level.initial.gates !== undefined && !isObject(level.initial.gates)) || (level.initial.edges !== undefined && !isObject(level.initial.edges))) errors.push('初始方案格式非法。');
+    else {
+      for (const id of Object.keys(level.initial.gates ?? {})) if (!model.nodes.has(id) || model.nodes.get(id).kind !== 'gate') errors.push(`初始方案含未知门：${id}`);
+      for (const id of Object.keys(level.initial.edges ?? {})) if (!model.edges.has(id)) errors.push(`初始方案含未知连接：${id}`);
+    }
+  }
+  return errors;
+}
+
+/** Structural validation. Budget and timing failures are valid, playable states. */
+function validateState(level, state, equipment) {
+  const model = inspectLevel(level);
+  const errors = model.errors.length ? model.errors : inspectState(level, state, model, equipment);
+  return { valid: errors.length === 0, errors };
+}
+
+const invalidResult = errors => ({ valid: false, passed: false, errors, violations: [], budgetPassed: false, timingPassed: false, timePassed: false, cost: 0, edits: 0, area: 0, power: 0, minSlack: null, maxSlack: null, holdSlack: null, setupSlack: null, worstSlack: null, paths: [], nodeMetrics: [], edgeMetrics: [], changed: { gates: [], edges: [] } });
+
+/**
+ * equipment optionally contains { unlockedParts: string[], elapsedSeconds: number }.
+ * Clock ownership is outside this pure function; supplied elapsed time is a hard condition.
+ */
+function evaluate(level, state, equipment) {
+  const model = inspectLevel(level);
+  if (model.errors.length) return invalidResult(model.errors);
+  const stateErrors = inspectState(level, state, model, equipment);
+  if (stateErrors.length) return invalidResult(stateErrors);
+  if (equipment?.elapsedSeconds !== undefined && !nonnegative(equipment.elapsedSeconds)) return invalidResult(['抢救计时非法。']);
+  const initial = newState(level), changed = { gates: [], edges: [] };
+  let cost = 0, edits = 0, area = 0, power = 0;
+  for (const [kind, parts] of [['gates', gateById], ['edges', edgeById]]) for (const [id, partId] of Object.entries(state[kind])) {
+    if (partId === initial[kind][id]) continue;
+    changed[kind].push(id); edits++;
+    const part = parts.get(partId); cost += part.cost; area += part.area; power += part.power;
+  }
+  cost = rounded(cost); area = rounded(area); power = rounded(power);
+  const loadOf = node => node.kind === 'gate' ? gateById.get(state.gates[node.id]).inputCap : node.kind === 'sink' ? 1 : 0;
+  const loads = new Map();
+  for (const node of model.nodes.values()) {
+    let load = node.load ?? 0;
+    for (const edge of model.outgoing.get(node.id)) {
+      const part = edgeById.get(state.edges[edge.id]);
+      load += part.inputCap + edge.wire * part.wireCap + (part.isolation ? 0 : loadOf(model.nodes.get(edge.to)));
+    }
+    loads.set(node.id, load);
+  }
+  const paths = [], nodeMetrics = [], edgeMetrics = [];
+  for (const corner of model.corners) {
+    const arrivals = new Map(), wireFactor = corner.wireFactor ?? 1;
+    const edgeDelays = new Map();
+    for (const edge of model.edges.values()) {
+      const part = edgeById.get(state.edges[edge.id]);
+      const downstream = loadOf(model.nodes.get(edge.to));
+      const wf = 1 + (wireFactor - 1) * (1 - (part.immunity ?? 0));
+      const min = edge.wire * part.wireMin * wf + ((part.addMin ?? 0) + (part.isolation ? 0.04 * downstream : 0)) * corner.minFactor;
+      const max = edge.wire * part.wireMax * wf + ((part.addMax ?? 0) + (part.isolation ? 0.14 * downstream : 0)) * corner.maxFactor;
+      if (max + EPSILON < min) return invalidResult([`环境 ${corner.id} 使连接 ${edge.id} 的最大延迟小于最小延迟。`]);
+      edgeDelays.set(edge.id, { min, max });
+      edgeMetrics.push({ id: edge.id, corner: corner.id, min: rounded(min), max: rounded(max), delayMin: rounded(min), delayMax: rounded(max), inputLoad: rounded(part.inputCap + edge.wire * part.wireCap + (part.isolation ? 0 : downstream)), isolated: part.isolation });
+    }
+    for (const id of model.order) {
+      const node = model.nodes.get(id), load = loads.get(id);
+      let delayMin = 0, delayMax = 0;
+      if (node.kind === 'gate') {
+        const part = gateById.get(state.gates[id]);
+        delayMin = (node.min * part.minFactor + load * 0.08 / part.drive) * corner.minFactor;
+        const intrinsicMax = Math.max(node.min * part.minFactor, node.max * part.maxFactor);
+        delayMax = (intrinsicMax + load * 0.30 / part.drive) * corner.maxFactor;
+      } else if (node.kind === 'source') { delayMin = node.min * corner.minFactor; delayMax = node.max * corner.maxFactor; }
+      if (delayMax + EPSILON < delayMin) return invalidResult([`环境 ${corner.id} 使节点 ${id} 的最大延迟小于最小延迟。`]);
+      let arrival;
+      if (node.kind === 'source') arrival = { min: delayMin, max: delayMax, minNodes: [id], maxNodes: [id], minEdges: [], maxEdges: [] };
+      else {
+        let fast = null, slow = null;
+        for (const edge of model.incoming.get(id)) {
+          const upstream = arrivals.get(edge.from), wire = edgeDelays.get(edge.id);
+          const candidateMin = upstream.min + wire.min + delayMin, candidateMax = upstream.max + wire.max + delayMax;
+          if (!fast || candidateMin < fast.value - EPSILON) fast = { value: candidateMin, upstream, edge };
+          if (!slow || candidateMax > slow.value + EPSILON) slow = { value: candidateMax, upstream, edge };
+        }
+        arrival = { min: fast.value, max: slow.value, minNodes: [...fast.upstream.minNodes, id], maxNodes: [...slow.upstream.maxNodes, id], minEdges: [...fast.upstream.minEdges, fast.edge.id], maxEdges: [...slow.upstream.maxEdges, slow.edge.id] };
+      }
+      arrivals.set(id, arrival);
+      nodeMetrics.push({ id, corner: corner.id, min: rounded(arrival.min), max: rounded(arrival.max), load: rounded(load), delayMin: rounded(delayMin), delayMax: rounded(delayMax), part: state.gates[id] ?? null });
+    }
+    for (const sink of model.sinks) {
+      const arrival = arrivals.get(sink.id), window = model.windows.get(sink.id);
+      const hold = arrival.min - window.early, setup = window.late - arrival.max;
+      paths.push({ id: `${sink.id}:${corner.id}`, sink: sink.id, corner: corner.id, label: `${sink.label ?? sink.id} · ${corner.label ?? corner.id}`, nodes: arrival.maxNodes, edges: arrival.maxEdges, maxNodes: arrival.maxNodes, maxEdges: arrival.maxEdges, minNodes: arrival.minNodes, minEdges: arrival.minEdges, min: rounded(arrival.min), max: rounded(arrival.max), early: window.early, late: window.late, hold: rounded(hold), setup: rounded(setup), holdPassed: hold >= -EPSILON, setupPassed: setup >= -EPSILON, passed: hold >= -EPSILON && setup >= -EPSILON });
+    }
+  }
+  const violations = [];
+  for (const [key, value, label] of [['cost', cost, '材料'], ['edits', edits, '最终修改'], ['area', area, '替换面积'], ['power', power, '新增器材功耗']]) {
+    const limit = level.limits[key];
+    if (limit !== undefined && value > limit + EPSILON) violations.push({ type: 'budget', key, value, limit, message: `${label}超预算：${value} / ${limit}` });
+  }
+  const elapsed = equipment?.elapsedSeconds;
+  const timePassed = elapsed === undefined || level.limits.time === undefined || elapsed <= level.limits.time + EPSILON;
+  if (!timePassed) violations.push({ type: 'time', key: 'time', value: elapsed, limit: level.limits.time, message: `抢救超时：${Math.ceil(elapsed)} / ${level.limits.time} 秒` });
+  for (const path of paths) {
+    if (!path.holdPassed) violations.push({ type: 'hold', path: path.id, sink: path.sink, corner: path.corner, value: path.min, limit: path.early, message: `${path.label} 到达过早 ${rounded(-path.hold)}。` });
+    if (!path.setupPassed) violations.push({ type: 'setup', path: path.id, sink: path.sink, corner: path.corner, value: path.max, limit: path.late, message: `${path.label} 到达过晚 ${rounded(-path.setup)}。` });
+  }
+  const budgetPassed = !violations.some(violation => violation.type === 'budget');
+  const timingPassed = paths.every(path => path.passed);
+  const holdSlack = Math.min(...paths.map(path => path.hold)), setupSlack = Math.min(...paths.map(path => path.setup));
+  return { valid: true, passed: budgetPassed && timingPassed && timePassed, errors: [], violations, budgetPassed, timingPassed, timePassed, cost, edits, area, power, minSlack: holdSlack, maxSlack: setupSlack, holdSlack, setupSlack, worstSlack: Math.min(holdSlack, setupSlack), paths, nodeMetrics, edgeMetrics, changed };
+}
+
+return {GATE_PARTS,EDGE_PARTS,cloneState,newState,validateState,evaluate};
+})();
+__modules.levels=(()=>{
+const { evaluate, newState }=__modules.engine;
+
+const CHAPTERS = [
+  { id: 1, title: '值班第一夜', subtitle: '先分清太早与太晚，再开处方', theme: '#48d7be', unlockTool: 'strong' },
+  { id: 2, title: '重负载病区', subtitle: '一针隔离，救下公共上游', theme: '#57b9eb', unlockTool: 'buffer' },
+  { id: 3, title: '低功耗处方', subtitle: '温和的零件也能改变关键路径', theme: '#b0d668', unlockTool: 'eco' },
+  { id: 4, title: '长线手术室', subtitle: '铜线让远端提速，也让近端更危险', theme: '#e2a35a', unlockTool: 'copper' },
+  { id: 5, title: '温差会诊', subtitle: '冷、热与噪声下都要稳定', theme: '#bd91ed', unlockTool: 'shield' },
+  { id: 6, title: '总院大抢救', subtitle: '多源汇合与精密零件的最终会诊', theme: '#ef808c', unlockTool: 'precision' },
+];
+
+const CHAPTER_PARTS = {
+  1: ['normal', 'strong', 'none', 'delay'],
+  2: ['normal', 'strong', 'none', 'delay', 'buffer'],
+  3: ['normal', 'strong', 'eco', 'none', 'delay', 'buffer'],
+  4: ['normal', 'strong', 'eco', 'none', 'delay', 'buffer', 'copper'],
+  5: ['normal', 'strong', 'eco', 'none', 'delay', 'buffer', 'copper', 'shield'],
+  6: ['normal', 'strong', 'eco', 'precision', 'none', 'delay', 'buffer', 'copper', 'shield'],
+};
+
+const PART_LABELS = { normal: '标准门', strong: '强驱动', eco: '节能门', precision: '精密门', none: '原线', delay: '延迟片', buffer: '隔离器', copper: '铜线', shield: '屏蔽线' };
+const NOMINAL = [{ id: 'nominal', label: '常温', minFactor: 1, maxFactor: 1, wireFactor: 1 }];
+const CLINICAL = [
+  { id: 'cold', label: '低温快角', minFactor: 0.86, maxFactor: 0.93, wireFactor: 0.9 },
+  { id: 'hot', label: '高温慢角', minFactor: 1.06, maxFactor: 1.17, wireFactor: 1.2 },
+];
+const STORM = [
+  ...CLINICAL,
+  { id: 'noise', label: '线噪声角', minFactor: 0.98, maxFactor: 1.08, wireFactor: 1.55 },
+];
+
+/* These are authored cases, not difficulty-scaled copies. Every link is a directed
+   data dependency; a reconvergent sink observes both its shortest and longest path. */
+const CASES = [
+  { title: '迟到的第一声脉搏', links: 's>a:1 a>o1:1', refG: { a: 'strong' }, focus: 'setup', brief: '监护器只报“太晚”。先修复一颗门，认识最晚到达时间。', lesson: 'setup 是最晚到达的红线。', triage: '单条迟到路径', hints: ['这一关没有过早风险。先看红色最晚路径。', '唯一的逻辑门占了主要延迟，换强驱动即可。'] },
+  { title: '心跳抢跑', links: 's>a:0.5 a>o1:0.3', refE: { 'a-o1': 'delay' }, focus: 'hold', brief: '数据来得太早。抢救有时需要让脉搏慢一点。', lesson: 'hold 看最早到达，延迟片只加在需要等待的支路。', triage: '单条过早路径', hints: ['看蓝色最早路径，太早也不能出院。', '在门 A 后面放延迟片，不必强化门。'] },
+  { title: '双床分诊', links: 's>a:1 a>o1:2 s>b:0.3 b>o2:0.4', refG: { a: 'strong' }, refE: { 'b-o2': 'delay' }, focus: { o1: 'setup', o2: 'hold' }, brief: '两张病床同时告警：一位迟到，一位抢跑。两张处方不能互换。', lesson: '先按终点分诊，再分别加速或减速。', triage: '相反故障并存', hints: ['O1 报太晚，O2 报太早，各自有独立支路。', 'A 换强驱动；B→O2 放延迟片。'] },
+  { title: '末端不是病因', links: 's>a:1 a>b:3 b>o1:1', refG: { a: 'strong' }, focus: 'setup', profiles: { b: [0.25, 0.55] }, brief: '末端门很快，但中间长线拖住了上游。把唯一的强驱动留在真正的瓶颈。', lesson: '强驱动降低本门的输出负载延迟，也会增加前级负载。', triage: '上游瓶颈', hints: ['点击 A 和 B，比较各自的最大延迟。', 'B 本来很快；A 才在驱动长线。'] },
+  { title: '升级的副作用', links: 's>a:0.5 a>b:1 b>o1:0.5 a>c:1 c>o2:1', initialG: { b: 'strong' }, refG: { a: 'strong', b: 'normal' }, focus: 'setup', profiles: { b: [0.2, 0.4], a: [1.2, 2.9] }, brief: '前班把末端换成了大门，公共上游反而更吃力。撤回误诊，再治疗病因。', lesson: '大门的输入负载会拖慢上游；复原初始以外的零件也算一次最终差异。', triage: '不恰当的已有升级', hints: ['B 的大门给 A 增加了输入负载，却没有多少本门收益。', '将 B 恢复标准门，并强化公共门 A。'] },
+  { title: '第三位病人', links: 's>a:1 a>b:1 b>o1:1 a>o2:0.5 s>c:1 c>d:1 d>o3:1', refG: { a: 'strong', d: 'strong' }, refE: { 'a-o2': 'delay' }, focus: { o1: 'setup', o2: 'hold', o3: 'setup' }, brief: '公共门救活长支路后，短支路会抢跑；另一张病床还在独立等药。', lesson: '共享修改和局部修改有不同影响范围。', triage: '共享分支与独立病床', hints: ['先修 A 分叉，再检查 O2 的最早到达。O3 与这次修改无关。', 'A、D 用强驱动，A→O2 用延迟片。'] },
+  { title: '关键路径换班', links: 's>a:1 a>b:0.5 b>o1:1 s>c:2 c>d:0.7 d>o1:0.5', refG: { a: 'strong', c: 'strong' }, focus: 'setup', profiles: { a: [1.3, 2.9], c: [0.7, 2.7] }, brief: '两条路径汇入同一监护器。修好一条后，另一条就会接管红色告警。', lesson: '终点必须同时接住所有路径；最坏路径会切换。', triage: '重汇聚双路径', hints: ['O1 有两个前驱。单独强化 A 后，再看哪条路径变成最晚。', '两条入院通道都要加速：A 与 C。'] },
+  { title: '夜班交接考核', links: 's>a:0.8 a>b:1.5 b>o1:1 a>c:0.5 c>o2:0.4 c>d:1 d>o3:1 s>e:1 e>o3:2 e>o4:1', refG: { a: 'strong', d: 'strong', e: 'strong' }, refE: { 'c-o2': 'delay' }, focus: { o1: 'setup', o2: 'hold', o3: 'setup', o4: 'setup' }, brief: '第一次完整交接：四个终点、共享分支与重汇聚。每张床都绿灯才算出院。', lesson: '预算看最终不同的零件，撤销与来回试药不永久消耗。', triage: '基础综合考核', hints: ['O2 的短支路需要等待；O3 的两条输入都要复诊。', '先强化 A、D、E，再给 C→O2 增加延迟。'] },
+
+  { title: '隔离重症', links: 's>a:1 a>b:4 b>o1:1', refE: { 'a-b': 'buffer' }, focus: 'setup', initialG: { b: 'strong' }, refG: { b: 'strong' }, profiles: { a: [0.5, 1.5] }, brief: '末端强驱动正在压住前级。新到的隔离器可以把输入负载挡在边界外。', lesson: '隔离器增加自身延迟，但显著降低上游看见的负载。', triage: '高输入负载', hints: ['A 驱动着 B 的大输入。隔离器应放在这两个门之间。', '保留 B 的强驱动，在 A→B 放隔离器。'] },
+  { title: '一针救两床', links: 's>a:0.8 a>b:4 b>c:1 c>o1:1 b>d:1 d>o2:1', initialG: { c: 'strong', d: 'strong' }, refG: { c: 'strong', d: 'strong', b: 'strong' }, refE: { 'a-b': 'buffer' }, focus: 'setup', brief: 'B 要同时驱动两台设备。加大 B 会压住 A，隔离针要放在它的上游。', lesson: '隔离的位置决定保护哪一级。', triage: '共享驱动隔离', hints: ['强化 B 有共同收益，但会增加 A 的负载。', 'B 换强驱动，再在 A→B 放隔离器。'] },
+  { title: '保护旁床', links: 's>a:1 a>b:4 b>o1:2 a>c:0.2 c>o2:0.5', refG: { b: 'strong' }, refE: { 'a-b': 'buffer', 'c-o2': 'delay' }, focus: { o1: 'setup', o2: 'hold' }, profiles: { a: [0.7, 1.3] }, brief: '只让重症支路卸载，旁床的短路径仍需要独立稳定。', lesson: '隔离一个分支不会断开公共依赖。', triage: '局部隔离与短路径', hints: ['B 是长支路的末端；C 支路不能照抄同样处方。', '强化 B，A→B 隔离，C→O2 延迟。'] },
+  { title: '移错的隔离针', links: 's>a:1 a>b:4 b>c:1 c>o1:1 a>o2:0.3', initialE: { 'c-o1': 'buffer' }, refE: { 'c-o1': 'none', 'a-b': 'buffer', 'a-o2': 'delay' }, refG: { b: 'strong' }, focus: { o1: 'setup', o2: 'hold' }, brief: '隔离器放在末端，既没保护 A，又让 O1 更迟。将它搬回重负载入口。', lesson: '插入与移除各占一个最终差异；错误位置会浪费预算。', triage: '已有器材迁移', hints: ['末端隔离器没有阻隔 B 给 A 的负载。', '拆掉 C→O1 隔离器，在 A→B 插入；强化 B，并稳住 O2。'] },
+  { title: '回流会诊', links: 's>a:1 a>b:4 a>c:1 b>d:1 c>d:1 d>o1:1', refG: { b: 'strong', d: 'strong' }, refE: { 'a-b': 'buffer' }, focus: 'both', profiles: { c: [0.4, 0.9], b: [1.3, 3] }, brief: '快慢两条支路重新汇合。隔离慢支路，仍要照顾最快的那条输入。', lesson: '重汇聚的 hold 与 setup 可能来自不同路径。', triage: '快慢支路重汇聚', hints: ['B 是慢路，C 是快路；同一终点的两条告警不一定同源。', '强化 B 与 D，将 A→B 隔离。'] },
+  { title: '呼吸机阵列', links: 's>a:1 a>b:4 a>c:4 a>d:1 b>o1:1 c>o2:1 d>o3:1', initialG: { b: 'strong', c: 'strong', d: 'strong' }, refG: { b: 'strong', c: 'strong', d: 'strong', a: 'strong' }, refE: { 'a-b': 'buffer', 'a-c': 'buffer' }, focus: 'setup', brief: '三台强输入设备共用 A。预算只够隔离两台，最后一台由强驱动承担。', lesson: '隔离与驱动可以组合，不能无限加器材。', triage: '三扇出负载分配', hints: ['A 的总负载来自三台设备。先观察隔离一个输入后的变化。', '强化 A，给 A→B 与 A→C 隔离；D 保持原接法。'] },
+  { title: '两位值班源', links: 's>a:0.5 a>c:1 s2>b:1 b>c:4 c>d:1 d>o1:1 b>o2:0.3 a>o3:2', refG: { a: 'strong', c: 'strong' }, refE: { 'b-c': 'buffer', 'b-o2': 'delay' }, focus: { o1: 'setup', o2: 'hold', o3: 'setup' }, brief: '两位发起者汇入同一设备，任何一条迟到都会让抢救失败。', lesson: '多个数据源使用同一固定时钟窗口，不是重新做时钟树。', triage: '双源汇入', hints: ['O1 同时依赖 S 和 S2；O2 只看 B。', '强化 A、C，B→C 隔离，B→O2 延迟。'] },
+  { title: '重症病区交接', links: 's>a:1 a>b:4 b>c:1 c>o1:1 a>d:0.5 d>e:4 e>o2:1 d>o3:0.3 b>e:1 s2>f:1 f>e:1 f>o4:1', refG: { b: 'strong', e: 'strong', f: 'strong' }, refE: { 'a-b': 'buffer', 'd-e': 'buffer', 'd-o3': 'delay' }, focus: { o1: 'setup', o2: 'setup', o3: 'hold', o4: 'setup' }, brief: '一张会诊单覆盖两个数据源、一个交叉依赖与一张短路径病床。', lesson: '先保护公共上游，再追踪重汇聚剩下的关键路径。', triage: '隔离综合考核', hints: ['B、E 是重负载核心，O3 是独立短路；F 是另一位发起者。', '强化 B、E、F；A→B 与 D→E 隔离，D→O3 延迟。'] },
+
+  { title: '温和也能止血', links: 's>a:1 a>o1:0.5', refG: { a: 'eco' }, focus: 'hold', brief: '节能门速度较慢、输入负载小。这里慢一点正好稳住过早脉搏。', lesson: '节能门是侧向选择：省电、低输入负载、较慢输出。', triage: '低功耗 hold 处方', hints: ['这张床只需要晚一点到达。比较节能门与延迟片的功耗和成本。', 'A 换节能门即可。'] },
+  { title: '卸下无关的重量', links: 's>a:1 a>b:1 b>o1:1 a>c:0.5 c>o2:1', initialG: { c: 'strong' }, refG: { c: 'eco' }, focus: { o1: 'setup', o2: 'hold' }, profiles: { c: [0.3, 0.7] }, brief: 'O1 的慢路没法直接动。把另一分支的大输入换轻，公共门 A 就能恢复。', lesson: '非关键分支也会通过输入负载影响关键路径。', triage: '旁支卸负载', hints: ['C 不在 O1 路径里，却是 A 的一个重输入。', '把 C 从强驱动换成节能门，同时稳住 O2。'] },
+  { title: '两种慢药', links: 's>a:0.8 a>b:0.6 b>o1:0.4 a>c:1 c>o2:1', refG: { b: 'eco', c: 'strong' }, focus: { o1: 'hold', o2: 'setup' }, brief: '一边要慢、一边要快。节能门降低共用门的负载，给另一边的强驱动腾出余地。', lesson: '节能和强驱动可以搭配，不能按门的档次排序。', triage: '节能与强化组合', hints: ['B 支路需要等待，C 支路需要提速。', 'B 用节能门，C 用强驱动。'] },
+  { title: '功率告急', links: 's>a:1 a>b:1 b>o1:1 a>c:1 c>o2:1 a>d:1 d>o3:1', refG: { a: 'strong', c: 'eco', d: 'eco' }, focus: { o1: 'setup', o2: 'hold', o3: 'hold' }, brief: '公用电源只够一颗强驱动。其余两张床用低输入负载处方，释放共同上游。', lesson: '功耗是硬条件，全部强化并非有效方案。', triage: '低功耗三扇出', hints: ['共同门 A 有三路负载；C 和 D 的短路不应继续加速。', '强化 A，C 与 D 换节能门。'] },
+  { title: '撤回过量用药', links: 's>a:0.7 a>b:1 b>c:1 c>o1:1 b>o2:0.4', initialG: { a: 'strong', b: 'strong' }, refG: { a: 'eco', b: 'strong' }, refE: { 'b-o2': 'delay' }, focus: { o1: 'both', o2: 'hold' }, brief: '两级都用强驱动，最快路径越过了安全线。保留真正的输出驱动，温和处理前级。', lesson: '初始装着的强零件不代表正确处方。', triage: '已有强驱动回撤', hints: ['B 仍需驱动长路，但 A 的过度加速伤害了最早路径。', 'A 换节能门，B 保留强驱动，短支路加延迟。'] },
+  { title: '轻输入接力', links: 's>a:1 a>b:1 b>c:4 c>o1:1 a>d:0.4 d>o2:0.5 s2>e:1 e>c:0.7 b>o3:0.5 e>o4:1', refG: { b: 'eco', c: 'strong', d: 'eco', e: 'strong' }, refE: { 'b-c': 'buffer' }, focus: { o1: 'both', o2: 'hold', o3: 'hold', o4: 'setup' }, brief: '双源接力中，把中间门换轻能卸掉前级负载；最后一棒仍需要足够驱动。', lesson: '输入轻和输出强可以在不同级上分工。', triage: '双源低功耗接力', hints: ['B 与 D 能替 A 减负；C 的汇入和输出不能过弱。', 'B、D 用节能，C、E 用强驱动，并隔离 B→C。'] },
+  { title: '固定设备的会诊', links: 's>a:1 a>b:4 b>o1:1 a>c:1 c>d:0.5 d>o2:0.7 c>o3:0.3', lockedG: ['a'], refG: { b: 'strong', c: 'eco' }, refE: { 'a-b': 'buffer', 'c-o3': 'delay' }, focus: { o1: 'setup', o2: 'both', o3: 'hold' }, brief: 'A 的封装不能拆。只能从它下游的输入负载和分支等待入手。', lesson: '锁定门也受邻接负载影响；不能换它不代表无法救它。', triage: '锁定公共门', hints: ['A 虽锁定，但 B、C 的输入仍决定它的输出延迟。', 'B 强化并隔离 A→B；C 换节能，C→O3 延迟。'] },
+  { title: '节能病区结业', links: 's>a:1 a>b:4 a>c:0.5 b>d:1 c>d:0.5 d>e:4 e>o1:1 c>f:0.4 f>o2:0.5 b>g:1 g>o3:1 s2>h:1 h>e:1', refG: { b: 'strong', c: 'eco', e: 'strong', f: 'eco', h: 'strong' }, refE: { 'a-b': 'buffer', 'd-e': 'buffer' }, focus: { o1: 'setup', o2: 'hold', o3: 'both' }, brief: '同时处理功率、负载和重汇聚。节能处方给两处强驱动腾出稳定的输入环境。', lesson: '最好的药单有分工：输入、输出、等待和隔离各司其职。', triage: '低功耗综合考核', hints: ['C、F 是温和区域；B、E、H 服务长路。不要给所有门加大。', 'B、E、H 强化，C、F 节能；A→B 与 D→E 隔离。'] },
+
+  { title: '远端铜线', links: 's>a:1 a>b:6 b>o1:1', refE: { 'a-b': 'copper' }, focus: 'setup', brief: '门不算慢，长连接才是主要等待。今天的手术对象是线材。', lesson: '铜线降低线延迟，但带来更高线负载。', triage: '单条长线瓶颈', hints: ['比较 A→B 的线延迟与两颗门的延迟。', '将 A→B 换铜线。'] },
+  { title: '一快一慢的距离', links: 's>a:1 a>b:5 b>o1:1 a>c:0.5 c>o2:0.5', refE: { 'a-b': 'copper', 'c-o2': 'delay' }, focus: { o1: 'setup', o2: 'hold' }, brief: '远端要快，近端要等。换线并不能替所有病床统一加速。', lesson: '长线提速与短路 hold 要分别管理。', triage: '长短距离分诊', hints: ['O1 的长边值得铜线；O2 是短路径。', 'A→B 用铜线，C→O2 用延迟片。'] },
+  { title: '铜线的上游代价', links: 's>a:0.5 a>b:7 b>c:1 c>o1:1 a>o2:0.5', refG: { a: 'strong' }, refE: { 'a-b': 'copper', 'a-o2': 'delay' }, focus: { o1: 'setup', o2: 'hold' }, brief: '长铜线的电容压住公共门。让 A 负责驱动，同时把近端等待安排好。', lesson: '低线延迟仍可能有高驱动负担。', triage: '铜线与驱动组合', hints: ['换铜后 A 的负载会上升，查看门的分解延迟。', '强化 A，A→B 铜线，A→O2 延迟。'] },
+  { title: '长线后的隔离', links: 's>a:1 a>b:5 b>c:2 c>o1:1 b>d:2 d>o2:1', initialG: { c: 'strong', d: 'strong' }, refG: { c: 'strong', d: 'strong', b: 'strong' }, refE: { 'a-b': 'buffer', 'b-c': 'copper' }, focus: 'setup', brief: '不是每条长线都适合铜：A 要隔离大门输入，B 的一个远端才需要低延迟线。', lesson: '铜线和隔离器承担不同任务。', triage: '线材选择题', hints: ['A→B 的主要病因是 B 的输入重量；B→C 是长支路等待。', 'A→B 隔离，B→C 铜线，并强化 B。'] },
+  { title: '不对称重汇聚', links: 's>a:1 a>b:6 b>d:1 s>c:1 c>d:2 d>o1:1 c>o2:0.4', refE: { 'a-b': 'copper', 'c-o2': 'delay' }, refG: { d: 'strong', c: 'eco' }, focus: { o1: 'both', o2: 'hold' }, brief: '两条输入跨度不同。远端铜线救迟到，近端节能处方保护最快输入。', lesson: '不同路径长度需要不同零件；重汇聚仍取全路径最早与最晚。', triage: '长短路重汇聚', hints: ['O1 最晚从 A 经过长线来，最早从 C 来。', 'A→B 铜线、D 强化；C 节能并给 C→O2 延迟。'] },
+  { title: '旧线不可拆', links: 's>a:1 a>b:5 b>c:1 c>o1:1 a>d:1 d>e:4 e>o2:1 d>o3:0.5', lockedE: ['a-b'], refG: { a: 'strong', c: 'strong', d: 'eco' }, refE: { 'd-e': 'copper', 'd-o3': 'delay' }, focus: { o1: 'setup', o2: 'setup', o3: 'hold' }, brief: '一条旧线封存，另一条允许手术。不能拆的那侧用门尺寸补救。', lesson: '硬锁定是局部条件，处方必须沿允许的部位展开。', triage: '局部封存长线', hints: ['A→B 锁定，不能两侧照抄铜线处方。', 'A、C 强化；D 节能，D→E 铜线，D→O3 延迟。'] },
+  { title: '跨院转运', links: 's>a:1 a>c:5 s2>b:0.5 b>d:4 c>e:1 d>e:1 e>o1:1 c>o2:0.6 d>o3:0.5', refG: { e: 'strong', b: 'eco' }, refE: { 'a-c': 'copper', 'b-d': 'copper', 'd-o3': 'delay' }, focus: { o1: 'setup', o2: 'both', o3: 'hold' }, brief: '两位发起者从不同院区远程汇诊。一条短末梢要等待，汇合后的核心要快。', lesson: '多源边界各自独立，终点窗口统一验收。', triage: '双源长距离', hints: ['长运输位于 A→C 和 B→D；核心是 E。', '两条运输线用铜，E 强化，B 节能，D→O3 延迟。'] },
+  { title: '手术室会诊考核', links: 's>a:1 a>b:6 a>c:0.5 b>d:1 c>d:1 d>e:4 e>o1:1 c>f:1 f>o2:0.5 b>g:2 g>o3:1 s2>h:1 h>g:3', refG: { a: 'strong', c: 'eco', e: 'strong', h: 'strong' }, refE: { 'a-b': 'copper', 'd-e': 'buffer', 'c-f': 'delay', 'h-g': 'copper' }, focus: { o1: 'setup', o2: 'hold', o3: 'setup' }, brief: '跨院会诊第一次同时需要驱动、温和处方、隔离、铜线和等待。', lesson: '逐条看病因，零件类型各有不同而明确的收益。', triage: '长线综合考核', hints: ['A→B、H→G 是长线；D→E 是重输入；C 分支需要慢下来。', 'A、E、H 强化，C 节能；A→B、H→G 铜线，D→E 隔离，C→F 延迟。'] },
+
+  { title: '冷暖同时出院', links: 's>a:1 a>b:5 b>o1:1', refE: { 'a-b': 'shield' }, focus: 'both', corners: STORM, brief: '常温一切正常并不够。线噪声角把最晚等待放大，屏蔽能稳定这条长连接。', lesson: '屏蔽线削弱环境对线延迟的放大；所有温差角都要通过。', triage: '长线波动', hints: ['切换角落查看 A→B：噪声角的线延迟明显增加。', '将 A→B 换屏蔽线。'] },
+  { title: '冷角抢跑', links: 's>a:0.5 a>b:4 b>o1:0.5 a>c:0.3 c>o2:0.4', refE: { 'a-b': 'shield', 'c-o2': 'delay' }, focus: { o1: 'both', o2: 'hold' }, corners: STORM, brief: '高温慢路与低温短路分头告警。屏蔽远端之后仍需给短路等待。', lesson: '最坏 hold 常在低温快角；最坏 setup 常在慢角。', triage: '冷暖相反故障', hints: ['O2 先看冷角，O1 先看噪声角。', 'A→B 屏蔽，C→O2 延迟。'] },
+  { title: '铜与盾的选择', links: 's>a:1 a>b:5 b>o1:1 s>c:1 c>d:5 d>o2:1', refE: { 'a-b': 'copper', 'c-d': 'shield' }, focus: { o1: 'setup', o2: 'both' }, corners: STORM, profiles: { c: [0.2, 0.6], d: [0.2, 0.6] }, brief: '相同长度的线，在不同窗口下需要不同药单。一床只求快，另一床必须守住过早下限。', lesson: '屏蔽稳住变化，铜线追求提速，选择取决于窗口。', triage: '同长线不同窗口', hints: ['O2 的逻辑很短，照抄铜线可能让低温路径抢跑。', 'A→B 用铜，C→D 用屏蔽。'] },
+  { title: '噪声穿过共用门', links: 's>a:1 a>b:6 b>c:4 c>o1:1 b>d:0.5 d>o2:0.5', refG: { b: 'strong', d: 'eco' }, refE: { 'a-b': 'shield', 'b-c': 'buffer' }, focus: { o1: 'setup', o2: 'hold' }, corners: STORM, brief: '屏蔽公共运输线，隔离下游大输入，再把近端脉搏放慢。', lesson: '环境、输入负载和最快路径是三种不同病因。', triage: '屏蔽与隔离分工', hints: ['A→B 受线噪声影响；B→C 要降低 B 的输出负载。', 'A→B 屏蔽、B→C 隔离，B 强化、D 节能。'] },
+  { title: '三角会诊单', links: 's>a:0.8 a>b:4 b>e:1 a>c:1 c>d:3 d>e:1 e>o1:0.5 c>o2:0.5 b>o3:0.3', refG: { c: 'eco', e: 'strong' }, refE: { 'a-b': 'shield', 'c-d': 'copper', 'b-o3': 'delay' }, focus: { o1: 'both', o2: 'hold', o3: 'hold' }, corners: STORM, brief: '一条重汇聚路径绕过长运输，另一条经过中转；两张近端床各有自己的最低到达要求。', lesson: '切换角查看最快与最慢路径，不能只看一条红线。', triage: '多角重汇聚', hints: ['A→B 稳定波动，C→D 缩短运输；近端 O2、O3 不能继续加速。', 'C 节能、E 强化；A→B 屏蔽、C→D 铜线、B→O3 延迟。'] },
+  { title: '封存区温控', links: 's>a:1 a>b:5 b>c:1 c>o1:1 a>d:3 d>e:1 e>o2:1 d>o3:0.3', lockedG: ['b'], lockedE: ['b-c'], refG: { a: 'strong', e: 'strong', d: 'eco' }, refE: { 'a-b': 'shield', 'a-d': 'shield', 'd-o3': 'delay' }, focus: { o1: 'setup', o2: 'setup', o3: 'hold' }, corners: STORM, brief: '中部封存区无法动刀。屏蔽进入封存区的边界，借上下游驱动修复所有温差。', lesson: '锁定区里的延迟仍被环境影响，但可从边界保护。', triage: '环境与封存区', hints: ['先找可编辑的长线入口，锁定部件不能改。', 'A、E 强化、D 节能；A→B、A→D 屏蔽，D→O3 延迟。'] },
+  { title: '远近四床会诊', links: 's>a:1 a>b:6 b>o1:1 a>c:0.5 c>o2:0.5 s2>d:1 d>e:4 e>o3:1 d>f:1 f>o4:0.3', refG: { a: 'strong', c: 'eco', f: 'eco' }, refE: { 'a-b': 'copper', 'd-e': 'shield', 'c-o2': 'delay', 'f-o4': 'delay' }, focus: { o1: 'setup', o2: 'hold', o3: 'both', o4: 'hold' }, corners: STORM, brief: '两处独立病区使用同一张多角验收单。第一处追求速度，第二处追求稳态。', lesson: '局部窗口不同，处方不能批量复制。', triage: '双源四终点', hints: ['O1 的迟到要大幅提速；O3 需要抑制环境波动。O2、O4 都在短支路。', 'A 强化，C、F 节能；A→B 铜、D→E 盾，两条短末端延迟。'] },
+  { title: '暴风夜总会诊', links: 's>a:1 a>b:5 a>c:1 b>d:1 c>d:1 d>e:4 e>o1:1 c>f:0.5 f>o2:0.4 b>g:3 g>o3:1 s2>h:1 h>g:4 g>i:1 i>o4:0.5', refG: { a: 'strong', c: 'eco', e: 'strong', i: 'eco' }, refE: { 'a-b': 'shield', 'd-e': 'buffer', 'h-g': 'copper', 'f-o2': 'delay', 'i-o4': 'delay' }, focus: { o1: 'setup', o2: 'hold', o3: 'setup', o4: 'hold' }, corners: STORM, brief: '三个环境、两位发起者、四张病床。暴风夜需要稳线、卸载和局部等待一起到位。', lesson: '一份合格方案必须在每个环境里同时满足资源与时序。', triage: '多角综合考核', hints: ['先保护 A→B；D→E 的重输入用隔离。两条短末端需要等待。', 'A、E 强化，C、I 节能；A→B 盾、H→G 铜、D→E 隔离，F→O2、I→O4 延迟。'] },
+
+  { title: '精密处方', links: 's>a:1 a>b:1 b>o1:1', refG: { b: 'precision' }, focus: 'both', brief: '最快路径还需要保持，最慢路径却必须缩短。精密门专门收窄本门延迟跨度。', lesson: '精密门并非所有时刻都更快：它抬高最小值并降低最大值。', triage: '收窄到达区间', hints: ['强驱动会同时压低最小和最大值；这里最早值不能降低太多。', 'B 换精密门。'] },
+  { title: '精密隔离接力', links: 's>a:1 a>b:4 b>c:1 c>o1:1 a>d:0.5 d>o2:0.5', refG: { b: 'precision', d: 'eco' }, refE: { 'a-b': 'buffer', 'd-o2': 'delay' }, focus: { o1: 'both', o2: 'hold' }, corners: CLINICAL, brief: '精密门收窄重症范围，隔离器保护它的前级；旁床保持温和等待。', lesson: '精密与隔离搭配，仍需要为短路单独开药。', triage: '精密门输入保护', hints: ['B 收窄慢路的跨度，A→B 隔离减轻输入；D 负责近端。', 'B 精密、D 节能，A→B 隔离，D→O2 延迟。'] },
+  { title: '四路汇入', links: 's>a:1 a>e:4 s>b:1 b>e:1 s2>c:1 c>f:2 s2>d:0.5 d>f:1 e>g:1 f>g:4 g>o1:1 b>o2:0.3 d>o3:0.3', refG: { e: 'precision', f: 'strong', b: 'eco', d: 'eco' }, refE: { 'a-e': 'copper', 'f-g': 'buffer', 'b-o2': 'delay' }, focus: { o1: 'both', o2: 'hold', o3: 'hold' }, corners: STORM, brief: '四条输入最终汇为一个终点。最短路与最长路从不同发起者进院。', lesson: '大汇聚先定位两条极端路径，再处理公共尾部。', triage: '双源四路汇聚', hints: ['A 的运输很长，B、D 的近端很短。E 需要收窄跨度，F 需要输出驱动。', 'E 精密、F 强化、B/D 节能；A→E 铜，F→G 隔离，B→O2 延迟。'] },
+  { title: '封存的十字路口', links: 's>a:1 a>b:4 a>c:1 b>d:1 c>d:1 d>e:3 d>f:1 e>o1:1 f>o2:0.4 c>g:0.5 g>o3:0.3 s2>h:1 h>e:2', lockedG: ['d'], lockedE: ['d-e'], refG: { b: 'precision', c: 'eco', e: 'strong', h: 'strong', f: 'eco' }, refE: { 'a-b': 'shield', 'h-e': 'copper', 'g-o3': 'delay' }, focus: { o1: 'setup', o2: 'hold', o3: 'hold' }, corners: STORM, brief: '公共汇聚封存。用入口精密与稳线、出口的温和处方分担急救任务。', lesson: '锁定公共节点时，可以改变其输入和输出负载。', triage: '大型封存区', hints: ['D 不可换，但 B/C 输入和 E/F 输出仍可调整。另一源 H 支持 O1。', 'B 精密，C/F 节能，E/H 强化；A→B 盾、H→E 铜、G→O3 延迟。'] },
+  { title: '五床不同处方', links: 's>a:1 a>b:5 b>o1:1 a>c:0.5 c>o2:0.3 a>d:2 d>e:4 e>o3:1 s2>f:1 f>g:4 g>o4:1 f>h:0.6 h>o5:0.3 d>g:1', refG: { a: 'strong', c: 'eco', e: 'precision', h: 'eco' }, refE: { 'a-b': 'copper', 'f-g': 'shield', 'd-e': 'buffer', 'c-o2': 'delay', 'h-o5': 'delay' }, focus: { o1: 'setup', o2: 'hold', o3: 'both', o4: 'setup', o5: 'hold' }, corners: STORM, brief: '五张床没有同一处方：速度、等待、跨度、环境和重汇聚分别占一席。', lesson: '多终点综合的第一步是读懂每张床的窗口。', triage: '五类故障并存', hints: ['O1 铜线提速，O3 要收窄区间，O4 关心线噪声，O2/O5 要等。', 'A 强化、C/H 节能、E 精密；A→B 铜、F→G 盾、D→E 隔离，两个短末端延迟。'] },
+  { title: '两层会诊网', links: 's>a:1 s>b:1 s2>c:1 a>d:4 b>d:1 b>e:1 c>e:3 d>f:1 e>f:4 d>g:1 g>o1:1 f>h:2 h>o2:1 e>i:0.4 i>o3:0.3 c>j:0.5 j>o4:0.4', refG: { d: 'precision', f: 'strong', i: 'eco', j: 'eco' }, refE: { 'a-d': 'copper', 'c-e': 'shield', 'e-f': 'buffer', 'i-o3': 'delay', 'j-o4': 'delay' }, focus: { o1: 'both', o2: 'setup', o3: 'hold', o4: 'hold' }, corners: STORM, brief: '两层重汇聚把错误放大到多个终点。先稳定入口，再处理第二层共享驱动。', lesson: '共享路径每次改动都可能更换别的终点的关键路径。', triage: '两级重汇聚', hints: ['D/E 第一层会诊，F 第二层；I/J 是短末端。', 'D 精密、F 强化、I/J 节能；A→D 铜、C→E 盾、E→F 隔离，两条短末端延迟。'] },
+  { title: '最后一班转运', links: 's>a:1 a>b:5 b>c:1 c>d:1 d>o1:1 a>e:1 e>f:3 f>g:4 g>o2:1 e>h:0.5 h>o3:0.3 b>i:2 i>g:1 s2>j:1 j>i:4 i>k:0.5 k>o4:0.3 s2>l:1 l>d:2', initialE: { 'c-d': 'delay' }, lockedG: ['i'], refG: { a: 'strong', e: 'eco', d: 'precision', g: 'strong', k: 'eco' }, refE: { 'c-d': 'none', 'a-b': 'shield', 'e-f': 'copper', 'j-i': 'copper', 'f-g': 'buffer', 'h-o3': 'delay' }, focus: { o1: 'both', o2: 'setup', o3: 'hold', o4: 'hold' }, corners: STORM, brief: '旧处方需要撤回，封存节点不能动。两位发起者分别为两处综合会诊补上最后一棒。', lesson: '大型修复包含拆错药、替换与局部保护，不只是添新器材。', triage: '旧处方与锁定区综合', hints: ['C→D 原延迟片让重症迟到；I 封存，长入口可换线。', '撤回 C→D 延迟；A/G 强化、E/K 节能、D 精密；长线盾/铜、F→G 隔离、H→O3 等待。'] },
+  { title: '总院主任的夜班', links: 's>a:1 s>b:1 s2>c:1 s2>d:1 a>e:5 b>e:1 b>f:1 c>f:4 d>g:3 e>h:1 f>h:1 f>i:1 g>i:1 h>j:4 j>o1:1 i>k:4 k>o2:1 e>l:0.5 l>o3:0.3 g>m:0.5 m>o4:0.3 d>n:0.4 n>o5:0.3 h>k:1', refG: { e: 'precision', h: 'strong', k: 'precision', l: 'eco', m: 'eco', n: 'eco' }, refE: { 'a-e': 'copper', 'c-f': 'shield', 'd-g': 'shield', 'h-j': 'buffer', 'i-k': 'buffer', 'l-o3': 'delay', 'n-o5': 'delay' }, focus: { o1: 'setup', o2: 'both', o3: 'hold', o4: 'hold', o5: 'hold' }, corners: STORM, brief: '双源、十四颗门、五张病床、两层交叉会诊。所有工具都要有明确用途，预算不接受无差别强化。', lesson: '总院最终考核：同一正式判定覆盖每条极端路径、每个环境和每项资源。', triage: '总院最终综合', hints: ['先稳定三条长入口，再收窄 E/K 的跨度，保护 H 与 K 的重输入，最后安顿短末梢。', 'E/K 精密、H 强化、L/M/N 节能；A→E 铜，C→F、D→G 盾；H→J、I→K 隔离；L→O3、N→O5 延迟。'] },
+];
+
+// Independent bedside checks keep a source-branch treatment meaningful even
+// when a longer reconvergent path dominates the main ward's setup reading.
+CASES[23].links += ' h>o4:1';
+CASES[23].focus.o4 = 'setup';
+CASES[23].brief += '第四张病床还要独立验收另一位发起者。';
+CASES[31].links += ' h>o4:3';
+CASES[31].focus.o4 = 'setup';
+delete CASES[31].refE['h-g'];
+CASES[31].refE['h-o4'] = 'copper';
+CASES[31].hints = ['A→B 是核心长线，H→O4 是独立远端；D→E 是重输入，C 分支需要等待。', 'A、E、H 强化，C 节能；A→B、H→O4 铜线，D→E 隔离，C→F 延迟。'];
+CASES[39].links += ' h>o5:4';
+CASES[39].focus.o5 = 'setup';
+delete CASES[39].refE['h-g'];
+CASES[39].refE['h-o5'] = 'copper';
+CASES[39].brief = CASES[39].brief.replace('四张病床', '五张病床');
+CASES[39].hints[1] = 'A、E 强化，C、I 节能；A→B 盾、H→O5 铜、D→E 隔离，F→O2、I→O4 延迟。';
+CASES[42].links += ' e>o4:1';
+CASES[42].focus.o4 = 'both';
+CASES[42].brief = '四条输入最终汇入核心病床，前级另有三张独立病床。最短路与最长路从不同发起者进院，E 的精密处方必须通过前级独立验收。';
+CASES[43].links += ' h>o4:6';
+CASES[43].focus.o4 = 'setup';
+delete CASES[43].refE['h-e'];
+CASES[43].refE['h-o4'] = 'copper';
+CASES[43].hints[1] = 'B 精密，C/F 节能，E/H 强化；A→B 盾、H→O4 铜、G→O3 延迟。';
+CASES[44].focus.o4 = 'both';
+CASES[44].links += ' f>o4:4';
+delete CASES[44].refE['f-g'];
+CASES[44].refE['f-o4'] = 'shield';
+CASES[44].hints[1] = 'A 强化、C/H 节能、E 精密；A→B 铜、F→O4 盾、D→E 隔离，两个短末端延迟。';
+CASES[46].links += ' j>o5:4';
+CASES[46].focus.o5 = 'setup';
+delete CASES[46].refE['j-i'];
+CASES[46].refE['j-o5'] = 'copper';
+CASES[46].brief += '第五张床独立验收 J 的长线转运。';
+CASES[46].hints[1] = '撤回 C→D 延迟；A/G 强化、E/K 节能、D 精密；A→B 盾，E→F 与 J→O5 铜，F→G 隔离，H→O3 等待。';
+CASES[47].focus.o3 = 'both';
+
+function parseLinks(links) {
+  return links.trim().split(/\s+/).map((token) => {
+    const [ends, wireText] = token.split(':');
+    const [from, to] = ends.split('>');
+    return { id: `${from}-${to}`, from, to, wire: Number(wireText) };
+  });
+}
+
+function diagramNodes(edges, profiles = {}, locked = []) {
+  const ids = [...new Set(edges.flatMap((edge) => [edge.from, edge.to]))];
+  const depth = Object.fromEntries(ids.map((id) => [id, 0]));
+  for (let pass = 0; pass < ids.length; pass++) {
+    for (const edge of edges) depth[edge.to] = Math.max(depth[edge.to], depth[edge.from] + 1);
+  }
+  const deepest = Math.max(...Object.values(depth));
+  return ids.map((id) => {
+    const kind = /^s\d*$/.test(id) ? 'source' : /^o\d+$/.test(id) ? 'sink' : 'gate';
+    const peers = ids.filter((peer) => depth[peer] === depth[id]);
+    const profile = profiles[id] || (kind === 'source' ? [0.12, 0.2] : [0.8, 2.1]);
+    return {
+      id, kind, label: kind === 'source' ? id.toUpperCase() : kind === 'sink' ? `病床 ${id.slice(1)}` : id.toUpperCase(),
+      min: kind === 'sink' ? 0 : profile[0], max: kind === 'sink' ? 0 : profile[1],
+      load: kind === 'sink' || kind === 'source' ? 0 : (profile[2] ?? 0.25),
+      locked: locked.includes(id),
+      x: 65 + depth[id] / deepest * 920,
+      y: peers.length === 1 ? 280 : 70 + peers.indexOf(id) / (peers.length - 1) * 420,
+    };
+  });
+}
+
+function completeState(level, gates = {}, edges = {}) {
+  const state = newState(level);
+  Object.assign(state.gates, gates);
+  Object.assign(state.edges, edges);
+  return state;
+}
+
+// Exposed for the verified endless generator. Windows are an envelope over all
+// declared environmental corners, with absolute slack rather than rounding tricks.
+function finishCase(level, focus = 'both', slack = 0.16) {
+  level.windows = level.nodes.filter((node) => node.kind === 'sink').map((node) => ({ sink: node.id, early: 0, late: 1e5 }));
+  level.limits = { cost: 1e5, edits: 1e5, area: 1e5, power: 1e5, time: level.limits?.time ?? 300 };
+  const witness = evaluate(level, level.reference);
+  const paths = witness.paths;
+  level.windows = level.windows.map((window) => {
+    const arrivals = paths.filter((path) => path.sink === window.sink);
+    const earliest = Math.min(...arrivals.map((path) => path.min));
+    const latest = Math.max(...arrivals.map((path) => path.max));
+    const mode = typeof focus === 'string' ? focus : (focus[window.sink] || 'both');
+    return { sink: window.sink, early: mode === 'setup' ? 0 : Math.max(0, earliest - slack), late: mode === 'hold' ? latest + 3 : latest + slack };
+  });
+  const resources = witness;
+  level.limits = {
+    cost: resources.cost + (level.number % 8 === 0 ? 2 : 1),
+    edits: resources.edits + (level.number % 8 === 0 ? 1 : 0),
+    area: resources.area + 0.35,
+    power: resources.power + 0.2,
+    time: level.limits.time,
+  };
+  const verified = evaluate(level, level.reference);
+  if (!verified.passed) throw new Error(`Reference failed for ${level.id}: ${JSON.stringify(verified.errors)}`);
+  if (evaluate(level, level.initial).passed) throw new Error(`Initial state already passes for ${level.id}`);
+  return level;
+}
+
+const LEVELS = CASES.map((spec, index) => {
+  const number = index + 1;
+  const chapter = Math.floor(index / 8) + 1;
+  const edges = parseLinks(spec.links).map((edge) => ({ ...edge, locked: (spec.lockedE || []).includes(edge.id) }));
+  const level = {
+    id: `case-${String(number).padStart(2, '0')}`, number, chapter, title: spec.title,
+    brief: spec.brief, lesson: spec.lesson, triage: spec.triage, hints: spec.hints,
+    nodes: diagramNodes(edges, spec.profiles, spec.lockedG), edges,
+    corners: spec.corners || NOMINAL.map((corner) => ({ ...corner })),
+    allowedParts: [...CHAPTER_PARTS[chapter]],
+    limits: { time: 150 + chapter * 40 + (number % 8 === 0 ? 90 : 0) },
+    reward: 24 + chapter * 8 + (number % 8 === 0 ? 18 : 0),
+  };
+  level.initial = completeState(level, spec.initialG, spec.initialE);
+  level.reference = completeState(level, { ...spec.initialG, ...spec.refG }, { ...spec.initialE, ...spec.refE });
+  const prescriptions = [
+    ...Object.entries(level.reference.gates).filter(([id, part]) => part !== level.initial.gates[id]).map(([id, part]) => `门 ${id.toUpperCase()} → ${PART_LABELS[part]}`),
+    ...Object.entries(level.reference.edges).filter(([id, part]) => part !== level.initial.edges[id]).map(([id, part]) => `${id.replace('-', ' → ').toUpperCase()} → ${PART_LABELS[part]}`),
+  ];
+  level.hints = [spec.hints[0], spec.hints[1], `一份已验证处方：${prescriptions.join('；')}。预算只按最终差异计费。`];
+  return finishCase(level, spec.focus, chapter === 1 ? 0.16 : 0.2);
+});
+
+function getLevel(id) { return LEVELS.find((level) => level.id === id); }
+
+return {CHAPTERS,CHAPTER_PARTS,finishCase,LEVELS,getLevel};
+})();
+__modules.endless=(()=>{
+const { evaluate, newState }=__modules.engine;
+const { finishCase }=__modules.levels;
+
+const ALL = ['normal', 'strong', 'eco', 'precision', 'none', 'delay', 'buffer', 'copper', 'shield'];
+const BASE = ['normal', 'strong', 'none', 'delay'];
+const PART_LABELS = { normal: '标准门', strong: '强驱动', eco: '节能门', precision: '精密门', none: '原线', delay: '延迟片', buffer: '隔离器', copper: '铜线', shield: '屏蔽线' };
+
+function seedHash(seed) {
+  const text = String(seed ?? 'timing-er');
+  let value = 2166136261;
+  for (let i = 0; i < text.length; i++) value = Math.imul(value ^ text.charCodeAt(i), 16777619);
+  return value >>> 0;
+}
+
+function rngFor(seed) {
+  let value = seedHash(seed);
+  return () => {
+    value += 0x6d2b79f5;
+    let mixed = value;
+    mixed = Math.imul(mixed ^ (mixed >>> 15), mixed | 1);
+    mixed ^= mixed + Math.imul(mixed ^ (mixed >>> 7), mixed | 61);
+    return ((mixed ^ (mixed >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function heldParts(equipment) {
+  const list = Array.isArray(equipment) ? equipment : equipment?.unlockedParts ?? equipment?.parts ?? BASE;
+  return [...new Set([...BASE, ...(Array.isArray(list) ? list : [])])].filter((id) => ALL.includes(id)).sort();
+}
+
+function tightenWitness(level) {
+  // Remove any treatment that can be rolled back without losing the declared
+  // timing windows. Keep windows fixed, then reduce resource allowances with
+  // the shortened prescription. Initial failure therefore remains genuine.
+  let removed;
+  do {
+    removed = false;
+    for (const kind of ['gates', 'edges']) {
+      for (const [id, part] of Object.entries(level.reference[kind])) {
+        if (part === level.initial[kind][id]) continue;
+        const trial = { gates: { ...level.reference.gates }, edges: { ...level.reference.edges } };
+        trial[kind][id] = level.initial[kind][id];
+        if (!evaluate(level, trial).passed) continue;
+        level.reference = trial;
+        const actual = evaluate(level, trial);
+        level.limits = { ...level.limits, cost: actual.cost + 1, edits: actual.edits, area: actual.area + 0.35, power: actual.power + 0.2 };
+        removed = true;
+      }
+    }
+  } while (removed);
+  return level;
+}
+
+function generateAttempt(seed, round, parts, attempt) {
+  const random = rngFor(`${seed}:${round}:${attempt}:${parts.join(',')}`);
+  const pick = (array) => array[Math.floor(random() * array.length)];
+  const gateCount = Math.min(16, 4 + Math.floor(round / 2));
+  const sinkCount = Math.min(5, 2 + Math.floor(round / 5));
+  const sourceCount = round < 4 ? 1 : 2;
+  const nodes = [];
+  const layers = [];
+  const sources = Array.from({ length: sourceCount }, (_, index) => `s${index + 1}`);
+  for (const [index, id] of sources.entries()) nodes.push({ id, label: `转运 ${index + 1}`, kind: 'source', min: 0.12, max: 0.2, load: 0.25, x: 65, y: sourceCount === 1 ? 280 : 140 + index * 280 });
+  let remaining = gateCount;
+  let serial = 0;
+  while (remaining > 0) {
+    const width = Math.min(remaining, 1 + Math.floor(random() * (round < 6 ? 2 : 3)));
+    const layer = [];
+    for (let index = 0; index < width; index++) {
+      const id = `g${++serial}`;
+      const intrinsic = pick([[0.6, 1.75], [0.8, 2.1], [1.1, 2.65], [0.35, 1.35]]);
+      nodes.push({ id, label: `G${serial}`, kind: 'gate', min: intrinsic[0], max: intrinsic[1], load: 0.1 + Math.floor(random() * 5) * 0.1 });
+      layer.push(id);
+    }
+    layers.push(layer);
+    remaining -= width;
+  }
+  const edges = [];
+  const pairs = new Set();
+  function connect(from, to, wire) {
+    const id = `${from}-${to}`;
+    if (pairs.has(id)) return;
+    pairs.add(id);
+    edges.push({ id, from, to, wire: wire ?? (0.6 + Math.floor(random() * (round < 8 ? 12 : 23)) * 0.25) });
+  }
+  let previous = sources;
+  for (const layer of layers) {
+    // Every node has an input and an output; extra edges create shared burdens
+    // and reconvergence without ever allowing a cycle.
+    for (const from of previous) connect(from, pick(layer));
+    for (const to of layer) connect(pick(previous), to);
+    for (const from of previous) for (const to of layer) if (random() < Math.min(0.45, 0.15 + round * 0.01)) connect(from, to);
+    previous = layer;
+  }
+  const sinks = [];
+  for (let index = 0; index < sinkCount; index++) {
+    const id = `o${index + 1}`;
+    nodes.push({ id, label: `急诊 ${index + 1}`, kind: 'sink', min: 0, max: 0, load: 1.2 });
+    sinks.push(id);
+    const layerIndex = index === 0 ? layers.length - 1 : Math.max(0, Math.floor(random() * layers.length));
+    connect(pick(layers[layerIndex]), id, 0.4 + Math.floor(random() * 8) * 0.25);
+  }
+  for (const id of previous) connect(id, pick(sinks));
+  if (round >= 7 && layers.length >= 3) {
+    for (let index = 0; index < Math.min(4, Math.floor(round / 6)); index++) {
+      const start = Math.floor(random() * (layers.length - 2));
+      const end = start + 2 + Math.floor(random() * (layers.length - start - 2));
+      connect(pick(layers[start]), pick(layers[end]));
+    }
+  }
+  for (const node of nodes) {
+    if (node.kind === 'gate') {
+      const depth = layers.findIndex((layer) => layer.includes(node.id));
+      const peers = layers[depth];
+      node.x = 65 + (depth + 1) / (layers.length + 1) * 920;
+      node.y = peers.length === 1 ? 280 : 70 + peers.indexOf(node.id) / (peers.length - 1) * 420;
+    }
+    if (node.kind === 'sink') {
+      node.x = 985;
+      node.y = sinkCount === 1 ? 280 : 70 + sinks.indexOf(node.id) / (sinkCount - 1) * 420;
+    }
+  }
+  const corners = round < 7 ? [{ id: 'nominal', label: '常温', minFactor: 1, maxFactor: 1, wireFactor: 1 }] : [
+    { id: 'cold', label: '低温快角', minFactor: 0.88, maxFactor: 0.96, wireFactor: 0.9 },
+    { id: 'hot', label: '高温慢角', minFactor: 1.06, maxFactor: 1.15, wireFactor: 1.22 },
+  ];
+  if (round >= 14) corners.push({ id: 'noise', label: '转运线噪声', minFactor: 0.98, maxFactor: 1.07, wireFactor: 1.5 });
+  const level = {
+    id: `endless-${seedHash(seed).toString(16)}-${round}-${seedHash(parts.join(',')).toString(16)}`,
+    number: round, chapter: 0, title: `第 ${round} 轮 · ${pick(['夜间转运', '突发会诊', '远端抢救', '多床协作', '联合值班'])}`,
+    brief: `转运编号 ${String(seed)}。${sourceCount} 位发起者、${gateCount} 颗逻辑门、${sinkCount} 张病床。所有路径与预算都通过才可接收下一轮。`,
+    lesson: '无限抢救固定种子、当前器材与轮次；失败后可原样重试。规模最多 16 门、5 终点、3 环境。',
+    triage: round < 7 ? '限时常温分诊' : round < 14 ? '双角限时抢救' : '三角联合抢救',
+    nodes, edges, corners, allowedParts: parts,
+    limits: { time: Math.min(480, 140 + round * 12) },
+    reward: 8 + Math.min(round, 20), seed: String(seed), round, endless: true,
+    generatorVersion: 1, generatorAttempt: attempt, generatorEquipment: [...parts],
+  };
+  level.initial = newState(level);
+  level.reference = newState(level);
+  const gateTools = parts.filter((id) => ['strong', 'eco', 'precision'].includes(id));
+  const edgeTools = parts.filter((id) => ['delay', 'buffer', 'copper', 'shield'].includes(id));
+  for (const node of nodes.filter((node) => node.kind === 'gate')) {
+    if (random() < 0.3 + Math.min(round, 20) * 0.006) level.reference.gates[node.id] = pick(gateTools);
+  }
+  for (const edge of edges) if (random() < 0.16 + Math.min(round, 20) * 0.004) level.reference.edges[edge.id] = pick(edgeTools);
+  // A deliberate waiting treatment on one bedside always creates a real
+  // initial diagnosis. It is not a hidden special-case pass condition.
+  const bedside = pick(edges.filter((edge) => sinks.includes(edge.to)));
+  level.reference.edges[bedside.id] = 'delay';
+  level.reference.gates[layers[0][0]] = 'strong';
+  const focus = Object.fromEntries(sinks.map((id, index) => [id, index === 0 && round < 5 ? 'setup' : 'both']));
+  level.hints = [
+    '先逐张病床读“过早/过晚”，再点击对应最快/最慢路径；同一条共享门会影响多个终点。',
+    '先修影响多张病床的公共瓶颈，再为短末梢安排等待。当前预算允许的修改数是有限的。',
+    '',
+  ];
+  tightenWitness(finishCase(level, focus, 0.22));
+  const prescription = [
+    ...Object.entries(level.reference.gates).filter(([id, part]) => part !== level.initial.gates[id]).map(([id, part]) => `门 ${id.toUpperCase()} → ${PART_LABELS[part]}`),
+    ...Object.entries(level.reference.edges).filter(([id, part]) => part !== level.initial.edges[id]).map(([id, part]) => `线 ${id.replace('-', '→').toUpperCase()} → ${PART_LABELS[part]}`),
+  ];
+  level.hints[2] = `已验证参考处方：${prescription.join('；')}。可通过处方按钮载入后逐项比较。`;
+  // Explicit second validation includes the owned kit and the actual finite
+  // deadline. This is the same evaluator that accepts a player's submission.
+  if (!evaluate(level, level.reference, { unlockedParts: parts, elapsedSeconds: 0 }).passed) throw new Error('Endless witness rejected');
+  return level;
+}
+
+/** Deterministic, bounded, ownership-aware generation. No network or runtime AI. */
+function generateEmergency(seed, round = 1, equipment) {
+  const normalizedRound = Math.max(1, Math.min(9999, Math.trunc(Number(round) || 1)));
+  const normalizedSeed = String(seed ?? 'night-shift').slice(0, 80);
+  const parts = heldParts(equipment);
+  for (let attempt = 0; attempt < 24; attempt++) {
+    try { return generateAttempt(normalizedSeed, normalizedRound, parts, attempt); } catch { /* next deterministic attempt */ }
+  }
+  // A verified baseline fallback retains round, seed, time and finite resources.
+  // It never introduces an unowned tool to rescue a bad generated case.
+  const level = {
+    id: `endless-${seedHash(normalizedSeed).toString(16)}-${normalizedRound}-${seedHash(parts.join(',')).toString(16)}`, number: normalizedRound,
+    chapter: 0, title: `第 ${normalizedRound} 轮 · 应急转运`, endless: true,
+    seed: normalizedSeed, round: normalizedRound, generatorVersion: 1, generatorAttempt: 24, generatorEquipment: [...parts],
+    brief: '该转运采用已验证的应急病例。修好迟到长路与过早短路，继续夜班。',
+    lesson: '应急回退仍遵守相同正式判定与当前工具。', triage: '应急分诊', reward: 8 + Math.min(normalizedRound, 20),
+    nodes: [
+      { id: 's1', label: '转运源', kind: 'source', min: 0.12, max: 0.2, x: 65, y: 280 },
+      { id: 'a', label: 'A', kind: 'gate', min: 0.8, max: 2.1, load: 0.25, x: 500, y: 150 },
+      { id: 'b', label: 'B', kind: 'gate', min: 0.8, max: 2.1, load: 0.25, x: 500, y: 410 },
+      { id: 'o1', label: '急诊 1', kind: 'sink', x: 985, y: 150 },
+      { id: 'o2', label: '急诊 2', kind: 'sink', x: 985, y: 410 },
+    ],
+    edges: [ { id: 's1-a', from: 's1', to: 'a', wire: 1 }, { id: 'a-o1', from: 'a', to: 'o1', wire: 2 }, { id: 's1-b', from: 's1', to: 'b', wire: 0.4 }, { id: 'b-o2', from: 'b', to: 'o2', wire: 0.4 } ],
+    allowedParts: parts, corners: [{ id: 'nominal', label: '常温', minFactor: 1, maxFactor: 1, wireFactor: 1 }],
+    limits: { time: Math.min(480, 140 + normalizedRound * 12) },
+    hints: ['一张床迟到，一张床抢跑。', '长支路强化，短支路等待。', 'A 换强驱动；B→O2 放延迟片。'],
+  };
+  level.initial = newState(level);
+  level.reference = newState(level);
+  level.reference.gates.a = 'strong';
+  level.reference.edges['b-o2'] = 'delay';
+  return finishCase(level, { o1: 'setup', o2: 'hold' }, 0.22);
+}
+
+return {seedHash,generateEmergency};
+})();
+__modules.progress=(()=>{
+const { evaluate, newState }=__modules.engine;
+
+/** Stable namespace; schema versions belong in the payload so backups survive upgrades. */
+const SAVE_KEY = 'eda.timing-emergency.save';
+const SAVE_BACKUP_KEY = `${SAVE_KEY}.backup`;
+const SAVE_VERSION = 2;
+const UPGRADES = Object.freeze([
+  { id: 'analyzer', name: '全景预诊分析仪', price: 100, description: '展开所有工况的路径，并快速定位最危险的瓶颈。', effect: 'analyzer' },
+  { id: 'precision', name: '精密门提前研发', price: 180, description: '在章节配发前使用精密门，开辟窄窗口的新解法；病例预算照常计算。', effect: 'precision' },
+  { id: 'shield', name: '屏蔽线提前研发', price: 260, description: '在章节配发前使用屏蔽线，提前处理环境波动；病例预算照常计算。', effect: 'shield' },
+  { id: 'notebook', name: '档案助手', price: 160, description: '每个病例额外保存一份试验方案，跨重试恢复，方便比较不同思路。', effect: 'notebook' },
+].map(upgrade => Object.freeze(upgrade)));
+
+const upgradeIds = new Set(UPGRADES.map(upgrade => upgrade.id));
+const gateIds = new Set(['normal', 'strong', 'eco', 'precision']);
+const edgeIds = new Set(['none', 'delay', 'buffer', 'copper', 'shield']);
+const partIds = new Set([...gateIds, ...edgeIds]);
+const own = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
+const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+const number = value => typeof value === 'number' && Number.isFinite(value);
+const integer = (value, min = 0, max = 1e9) => Number.isInteger(value) && value >= min && value <= max;
+const bounded = (value, min = 0, max = 1e9) => number(value) && value >= min && value <= max;
+const safeId = value => typeof value === 'string' && /^[A-Za-z0-9][A-Za-z0-9_-]{0,80}$/.test(value) && !['constructor', 'prototype', '__proto__'].includes(value);
+const clone = value => JSON.parse(JSON.stringify(value));
+
+function defaultSave() {
+  return {
+    version: SAVE_VERSION,
+    credits: 0,
+    completed: {},
+    purchases: [],
+    settings: { sound: true, motion: true, contrast: false, timeAssist: false },
+    tutorialSeen: false,
+    notebook: {},
+    endless: { bestRound: 0, bestScore: 0, lastSeed: '' },
+    draft: null,
+  };
+}
+
+/** State recovery is intentionally strict; foreign node IDs are checked again by evaluate at load time. */
+function cleanState(value) {
+  if (!object(value) || !object(value.gates) || !object(value.edges)) return null;
+  if (Object.keys(value).some(key => !['gates', 'edges'].includes(key))) return null;
+  const state = { gates: {}, edges: {} };
+  for (const [kind, allowed, maximum] of [['gates', gateIds, 128], ['edges', edgeIds, 512]]) {
+    const entries = Object.entries(value[kind]);
+    if (entries.length > maximum) return null;
+    for (const [id, part] of entries) {
+      if (!safeId(id) || !allowed.has(part)) return null;
+      state[kind][id] = part;
+    }
+  }
+  return state;
+}
+
+function cleanMetrics(value) {
+  if (!object(value) || !integer(value.edits, 0, 640) || !bounded(value.cost) || !bounded(value.margin)) return null;
+  const metrics = { edits: value.edits, cost: value.cost, margin: value.margin };
+  for (const key of ['area', 'power', 'minSlack', 'maxSlack']) if (bounded(value[key], -1e-8)) metrics[key] = value[key];
+  return metrics;
+}
+
+function cleanBest(value) {
+  if (!object(value)) return null;
+  const state = cleanState(value.state), metrics = cleanMetrics(value.metrics);
+  if (!state || !metrics) return null;
+  return { state, metrics, seconds: bounded(value.seconds, 0, 86400) ? value.seconds : 0, assisted: value.assisted === true };
+}
+
+function parseSave(raw) {
+  let source = raw;
+  if (typeof raw === 'string') {
+    if (raw.length > 2_000_000) return null;
+    try { source = JSON.parse(raw); } catch { return null; }
+  }
+  if (!object(source) || ![1, SAVE_VERSION].includes(source.version)) return null;
+  if (!integer(source.credits, 0, 100_000) || !object(source.completed) || !Array.isArray(source.purchases) || !object(source.settings)) return null;
+  const save = defaultSave();
+  save.credits = integer(source.credits, 0, 100_000) ? source.credits : 0;
+  if (Array.isArray(source.purchases)) save.purchases = [...new Set(source.purchases.filter(id => upgradeIds.has(id)))];
+  if (object(source.settings)) for (const key of Object.keys(save.settings)) if (typeof source.settings[key] === 'boolean') save.settings[key] = source.settings[key];
+  save.tutorialSeen = source.tutorialSeen === true;
+  if (object(source.completed)) for (const [id, value] of Object.entries(source.completed).slice(0, 128)) {
+    if (!safeId(id) || !object(value) || !integer(value.stars, 1, 3)) continue;
+    const record = { stars: value.stars, rewardedStars: value.stars, best: {}, seconds: bounded(value.seconds, 0, 86400) ? value.seconds : 0 };
+    // Treat every recovered star as already paid: missing/low rewardedStars cannot mint replay rewards.
+    if (object(value.best)) for (const category of ['edits', 'cost', 'margin']) {
+      const best = cleanBest(value.best[category]);
+      if (best) record.best[category] = best;
+    }
+    save.completed[id] = record;
+  }
+  if (object(source.notebook)) for (const [id, value] of Object.entries(source.notebook).slice(0, 128)) {
+    const state = cleanState(value?.state);
+    if (safeId(id) && state) save.notebook[id] = { state };
+  }
+  if (object(source.endless)) {
+    save.endless.bestRound = integer(source.endless.bestRound, 0, 10_000) ? source.endless.bestRound : 0;
+    save.endless.bestScore = integer(source.endless.bestScore, 0, 1e9) ? source.endless.bestScore : 0;
+    if (typeof source.endless.lastSeed === 'string') save.endless.lastSeed = source.endless.lastSeed.slice(0, 64);
+  }
+  const draft = source.draft;
+  if (object(draft) && safeId(draft.levelId) && ['campaign', 'endless'].includes(draft.mode) && bounded(draft.remaining, 0, 7200)) {
+    const state = cleanState(draft.state);
+    if (state) save.draft = {
+      levelId: draft.levelId,
+      state,
+      remaining: draft.remaining,
+      mode: draft.mode,
+      seed: typeof draft.seed === 'string' ? draft.seed.slice(0, 64) : '',
+      round: integer(draft.round, 0, 10_000) ? draft.round : 0,
+      assisted: draft.assisted === true,
+      hints: integer(draft.hints, 0, 100) ? draft.hints : 0,
+      runScore: integer(draft.runScore, 0, 1e9) ? draft.runScore : 0,
+      roundAwarded: draft.roundAwarded === true,
+      heldTools: Array.isArray(draft.heldTools)?[...new Set(draft.heldTools.filter(id=>partIds.has(id)))]:[],
+    };
+  }
+  return save;
+}
+
+/** Recover a known version field by field; malformed and unsupported payloads safely become a fresh save. */
+function recoverSave(raw) {
+  try { return parseSave(raw) ?? defaultSave(); } catch { return defaultSave(); }
+}
+
+function read(storage, key) {
+  try { return storage?.getItem(key) ?? null; } catch { return null; }
+}
+
+function loadProgress(storage) {
+  for (const key of [SAVE_KEY, SAVE_BACKUP_KEY]) {
+    const raw = read(storage, key);
+    try { const save = parseSave(raw); if (save) return save; } catch { /* Try the independent backup. */ }
+  }
+  return defaultSave();
+}
+
+/** Preserve the last valid primary before committing; a failed storage write never throws into play. */
+function saveProgress(storage, save) {
+  const clean = recoverSave(save), previous = read(storage, SAVE_KEY);
+  try {
+    if (!storage || typeof storage.setItem !== 'function') return false;
+    let prior = null;
+    try { prior = parseSave(previous); } catch { /* Corrupt primaries must not overwrite a good backup. */ }
+    let backup = null;
+    try { backup = parseSave(read(storage, SAVE_BACKUP_KEY)); } catch { /* Initialize missing or invalid backup. */ }
+    if (prior || !backup) { try { storage.setItem(SAVE_BACKUP_KEY, JSON.stringify(prior ?? clean)); } catch { /* A full backup quota need not block a primary update. */ } }
+    storage.setItem(SAVE_KEY, JSON.stringify(clean));
+    return true;
+  } catch { return false; }
+}
+
+function availableEquipment(save, level) {
+  const available = new Set(['normal', 'none']);
+  for (const id of Array.isArray(level?.allowedParts) ? level.allowedParts : partIds) if (partIds.has(id)) available.add(id);
+  const initial = newState(level);
+  for (const kind of ['gates', 'edges']) for (const id of Object.values(initial[kind])) if (partIds.has(id)) available.add(id);
+  for (const id of save?.purchases ?? []) if (['precision', 'shield'].includes(id)) available.add(id);
+  return [...available];
+}
+
+/** All chapters grant their own required tools, so spending choices cannot soft-lock a campaign. */
+function unlockedIndex(save, levels) {
+  if (!Array.isArray(levels) || !levels.length) return 0;
+  let index = 0;
+  while (index < levels.length - 1 && integer(save?.completed?.[levels[index]?.id]?.stars, 1, 3)) index++;
+  return index;
+}
+
+function starTargets(level) {
+  const budget = level.limits.edits;
+  return {
+    edits: integer(level.starEdits, 0, 640) ? level.starEdits : Math.max(1, Math.floor(budget * 0.75)),
+    margin: bounded(level.starMargin) ? level.starMargin : 0.12,
+  };
+}
+function starsFor(level, metrics, assisted) {
+  if (assisted) return 1;
+  const goals = starTargets(level);
+  return 1 + Number(metrics.edits <= goals.edits) + Number(metrics.margin >= goals.margin);
+}
+
+function better(category, candidate, previous) {
+  if (!previous) return true;
+  const c = candidate.metrics, p = previous.metrics;
+  if (Math.abs(c[category] - p[category]) > 1e-8) return category === 'margin' ? c[category] > p[category] : c[category] < p[category];
+  if (c.edits !== p.edits) return c.edits < p.edits;
+  if (Math.abs(c.cost - p.cost) > 1e-8) return c.cost < p.cost;
+  if (Math.abs(c.margin - p.margin) > 1e-8) return c.margin > p.margin;
+  if (candidate.assisted !== previous.assisted) return !candidate.assisted;
+  return candidate.seconds < previous.seconds;
+}
+
+/** A caller's claimed pass/metrics cannot award money: the complete plan is rechecked by the official model. */
+function awardCase(save, level, state, result, seconds) {
+  const next = recoverSave(save);
+  if (!safeId(level?.id) || level.endless === true || level.mode === 'endless' || level.id.startsWith('endless') || !bounded(seconds, 0, 86400)) return next;
+  if (!result?.valid || !result?.passed || result.timerExpired) return next;
+  const equipment = availableEquipment(next, level);
+  const checkedLevel = { ...level, limits: { ...level.limits } };
+  if (next.settings.timeAssist && number(checkedLevel.limits.time)) checkedLevel.limits.time *= 2;
+  const checked = evaluate(checkedLevel, state, { unlockedParts: equipment, elapsedSeconds: seconds });
+  if (!checked.valid || !checked.passed) return next;
+  const metrics = {
+    edits: checked.edits,
+    cost: checked.cost,
+    margin: Math.max(0, Math.min(checked.minSlack, checked.maxSlack)),
+    area: checked.area,
+    power: checked.power,
+    minSlack: checked.minSlack,
+    maxSlack: checked.maxSlack,
+  };
+  const stars = starsFor(level, metrics, result.assisted === true), previous = next.completed[level.id];
+  const oldStars = previous?.rewardedStars ?? previous?.stars ?? 0;
+  const rewardFor = count => count ? 100 + (count - 1) * 15 : 0;
+  const paidStars = Math.max(oldStars, stars);
+  next.credits += rewardFor(paidStars) - rewardFor(oldStars);
+  const best = {};
+  for (const category of ['edits', 'cost', 'margin']) {
+    const prior = previous?.best?.[category];
+    if (!prior) continue;
+    const priorResult = evaluate(checkedLevel, prior.state, { unlockedParts: equipment, elapsedSeconds: prior.seconds });
+    if (!priorResult.valid || !priorResult.passed) continue;
+    best[category] = {
+      state: clone(prior.state),
+      metrics: {
+        edits: priorResult.edits, cost: priorResult.cost, margin: Math.max(0, Math.min(priorResult.minSlack, priorResult.maxSlack)),
+        area: priorResult.area, power: priorResult.power, minSlack: priorResult.minSlack, maxSlack: priorResult.maxSlack,
+      },
+      seconds: prior.seconds,
+      assisted: prior.assisted,
+    };
+  }
+  const candidate = { state: clone(state), metrics, seconds, assisted: result.assisted === true };
+  for (const category of ['edits', 'cost', 'margin']) if (better(category, candidate, best[category])) best[category] = clone(candidate);
+  next.completed[level.id] = { stars: Math.max(previous?.stars ?? 0, stars), rewardedStars: paidStars, best, seconds: previous ? Math.min(previous.seconds, seconds) : seconds };
+  next.draft = null;
+  return next;
+}
+
+function buyUpgrade(save, id) {
+  const next = recoverSave(save), upgrade = UPGRADES.find(item => item.id === id);
+  if (!upgrade || next.purchases.includes(id) || next.credits < upgrade.price) return next;
+  next.credits -= upgrade.price;
+  next.purchases.push(id);
+  return next;
+}
+
+return {SAVE_KEY,SAVE_BACKUP_KEY,SAVE_VERSION,UPGRADES,defaultSave,recoverSave,loadProgress,saveProgress,availableEquipment,unlockedIndex,starTargets,awardCase,buyUpgrade};
+})();
+__modules.main=(()=>{
+const { GATE_PARTS, EDGE_PARTS, newState, evaluate, cloneState }=__modules.engine;
+const { LEVELS, CHAPTERS }=__modules.levels;
+const { generateEmergency }=__modules.endless;
+const { defaultSave, loadProgress, saveProgress, awardCase, buyUpgrade, UPGRADES, availableEquipment, unlockedIndex, starTargets }=__modules.progress;
+
+const app=document.querySelector('#app');
+let save=loadProgress(localStorage),screen='home',chapter=1,current=null,state=null,selection=null,pathSelection=null,undo=[],redo=[],remaining=0,elapsed=0,modal=null,hintCount=0,assisted=false,mode='campaign',seed='ER-2026',round=1,runScore=0,roundAwarded=false,allPaths=false,toastTimer,lastTick=Date.now(),audio=null;
+const esc=x=>String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const fmt=x=>Number.isFinite(x)?x.toFixed(2):'—';
+const name=x=>x?.label??x?.name??x?.title??x?.id;
+const iconParts={normal:'N',strong:'↑',eco:'E',precision:'P',none:'—',delay:'+t',buffer:'B',copper:'Cu',shield:'SH'};
+function equipment(){return availableEquipment(save,current);}
+function result(s=state){const l={...current,limits:{...current.limits,time:timerLimit(current)}};return evaluate(l,s,{unlockedParts:equipment(),elapsedSeconds:isTimed()?elapsed:0});}
+function persist(){try{saveProgress(localStorage,save);}catch{}}
+function syncDraft(){if(current&&state){save.draft={levelId:current.id,state:cloneState(state),remaining,mode,seed,round,assisted,hints:hintCount,runScore,roundAwarded,heldTools:current.generatorEquipment};persist();}}
+function toast(message){clearTimeout(toastTimer);document.querySelector('.toast')?.remove();const e=document.createElement('div');e.className='toast';e.setAttribute('role','status');e.textContent=message;document.body.append(e);toastTimer=setTimeout(()=>e.remove(),3500);}
+function sound(kind='click'){if(!save.settings.sound)return;try{audio??=new(window.AudioContext||window.webkitAudioContext)();audio.resume();const tones=kind==='success'?[440,554,659,880]:kind==='fail'?[180,135]:[620];tones.forEach((f,i)=>{const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*.10;o.type=kind==='fail'?'triangle':'sine';o.frequency.value=f;g.gain.setValueAtTime(.045,t);g.gain.exponentialRampToValueAtTime(.001,t+.13);o.connect(g);g.connect(audio.destination);o.start(t);o.stop(t+.14);});}catch{}}
+function isTimed(){return mode==='endless'||current?.timed||current?.number%8===0;}
+function timerLimit(l){return l.limits.time*(mode==='campaign'&&save.settings.timeAssist?2:1);}
+function startLevel(l,restore=null){current=l;mode=restore?.mode??'campaign';seed=restore?.seed??seed;round=restore?.round??1;runScore=restore?.runScore??(mode==='endless'?runScore:0);roundAwarded=restore?.roundAwarded??false;state=cloneState(restore?.state??newState(l));remaining=restore?.remaining??timerLimit(l);elapsed=Math.max(0,timerLimit(l)-remaining);selection={type:'node',id:l.nodes.find(n=>n.kind==='gate')?.id??l.nodes[0].id};pathSelection=null;allPaths=false;undo=[];redo=[];hintCount=restore?.hints??0;assisted=restore?.assisted??false;modal=null;screen='game';lastTick=Date.now();syncDraft();if(!save.tutorialSeen){modal='tutorial';}render();}
+function endlessEquipment(){return [...new Set([...availableEquipment(save,LEVELS[unlock()]),'normal','strong','none','delay','buffer'])];}
+function startEndless(s=seed,r=1){seed=s||'ER-2026';round=r;mode='endless';const l=generateEmergency(seed,round,endlessEquipment());startLevel(l,{mode:'endless',seed,round,runScore});}
+function resumeDraft(){const d=save.draft;if(!d)return;mode=d.mode==='endless'?'endless':'campaign';const l=mode==='endless'?generateEmergency(d.seed,d.round,d.heldTools?.length?d.heldTools:endlessEquipment()):LEVELS.find(l=>l.id===d.levelId);if(!l){save.draft=null;persist();toast('旧病例已归档，请重新分诊');return;}const check=evaluate(l,d.state,availableEquipment(save,l));if(!check.valid){startLevel(l);toast('草稿异常，已恢复病例初始电路');return;}startLevel(l,d);if(remaining<=0&&isTimed())modal='timeout';else if(result().passed&&(mode==='endless'?roundAwarded:save.completed[l.id]))modal='success';render();}
+function update(next){if(modal||remaining<=0&&isTimed()||JSON.stringify(next)===JSON.stringify(state))return;undo.push(cloneState(state));if(undo.length>150)undo.shift();redo=[];state=next;sound();syncDraft();render();}
+function changePart(id){if(!selection)return;const n=current.nodes.find(n=>n.id===selection.id);const e=current.edges.find(e=>e.id===selection.id);if(selection.type==='node'&&(n?.kind!=='gate'||n.locked)||selection.type==='edge'&&e?.locked){toast('此元件已封装，不能替换');return;}const next=cloneState(state);(selection.type==='node'?next.gates:next.edges)[selection.id]=id;update(next);}
+function button(label,action,attrs='',cl=''){return `<button class="${cl}" data-action="${action}" ${attrs}>${label}</button>`;}
+function nav(){const items=[['home','分诊大厅'],['workshop','器材研发'],['records','病案档案'],['help','值班手册'],['settings','设置']];return `<header class="topbar"><div class="brand"><div class="brand-icon">✚</div><div><strong>时序急救室</strong><small>TIMING EMERGENCY ROOM</small></div></div><nav class="nav" aria-label="主导航"><span class="credit">◈ ${save.credits} 研发点</span>${items.map(([id,n])=>button(n,'nav',`data-screen="${id}"`,screen===id?'active':'')).join('')}${screen==='game'?button('Ⅱ 暂停','pause'):''}</nav></header>`;}
+function chapterData(id){return CHAPTERS.find(c=>c.id===id)||CHAPTERS[id-1]||{title:`第 ${id} 章`,subtitle:''};}
+function completedCount(){return LEVELS.filter(l=>save.completed[l.id]).length;}
+function unlock(){return Math.min(LEVELS.length-1,Math.max(0,unlockedIndex(save,LEVELS)));}
+function heroArt(){return `<div class="hero-art" aria-label="电路心电监护仪"><div class="artlabel">EMERGENCY / CIRCUIT VITALS</div><svg viewBox="0 0 550 310"><defs><pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#24434b" stroke-width=".5"/></pattern></defs><rect width="550" height="310" fill="url(#grid)"/><path d="M0 172H76l17-10 16 10 20-70 22 136 22-67h77l15-13 15 13 19-50 19 100 20-49H550" fill="none" stroke="#61e7b1" stroke-width="3"/><g fill="#14383d" stroke="#567e84"><rect x="55" y="69" width="62" height="35" rx="6"/><rect x="234" y="69" width="65" height="35" rx="6"/><rect x="423" y="69" width="66" height="35" rx="6"/></g><g fill="none" stroke="#5b8a90" stroke-width="2"><path d="M117 86H234M299 86H423M266 104V125M86 104v22M456 104v24"/></g><g fill="#b7dad8" font-family="Consolas" font-size="12"><text x="71" y="92">DFF</text><text x="248" y="92">GATE</text><text x="438" y="92">DFF</text></g><circle cx="456" cy="171" r="6" fill="#61e7b1"/></svg><div class="scanline"></div><div class="artstatus"><span>SETUP / HOLD</span><span>01 : 14 : 48</span><span>● LOCAL SYSTEM</span></div></div>`;}
+function home(){const ix=unlock(),next=LEVELS[ix],draft=save.draft,draftLevel=draft?.mode==='campaign'?LEVELS.find(l=>l.id===draft.levelId):null,finishedDraft=!!(draftLevel&&save.completed[draftLevel.id]&&evaluate(draftLevel,draft.state,availableEquipment(save,draftLevel)).passed),pendingDraft=!!draft&&!finishedDraft,mainLabel=pendingDraft?'继续值班':completedCount()===0?'开始第一台手术':completedCount()===LEVELS.length?'进入终章复诊':'接诊下一病例';return `<main class="home"><section class="hero"><div><div class="eyebrow">有限处方 · 连锁反应 · 电路抢救</div><h1>每一拍，<br>都<em>不能错过。</em></h1><p>电路送到了急诊。太慢赶不上下一拍，太快又闯进上一拍。找出病灶，用有限的器材和替换次数，让所有信号回到安全窗口。</p><div class="hero-actions">${button(mainLabel,pendingDraft?'resume':'continue','','primary')}${finishedDraft?button('继续优化上一病例','resume','','ghost'):''}${button('查看病例','chapter','data-chapter="1"','ghost')}</div></div>${heroArt()}</section><section class="stats-strip"><div class="stat"><strong>${completedCount()} / ${LEVELS.length}</strong><small>已抢救病例</small></div><div class="stat"><strong>6</strong><small>诊疗科室 / 递进机制</small></div><div class="stat"><strong>${Object.values(save.completed).reduce((a,c)=>a+(c.stars||0),0)}</strong><small>精良处方星章</small></div><div class="stat"><strong>${save.endless?.bestRound||0}</strong><small>连续急诊最佳轮次</small></div></section><div class="sectionbar"><h2>今日分诊</h2><small>下一病例 · ${esc(next.title)}</small></div><section class="chapter-grid">${CHAPTERS.map((c,i)=>{const ls=LEVELS.filter(l=>l.chapter===c.id),done=ls.filter(l=>save.completed[l.id]).length,locked=LEVELS.indexOf(ls[0])>ix;return `<button class="chapter ${locked?'locked':''}" data-action="chapter" data-chapter="${c.id}" ${locked?'disabled':''}><div class="chapter-head"><span class="eyebrow">WARD 0${i+1}</span><small>${done} / ${ls.length}${locked?' · 待轮转':''}</small></div><h3>${esc(c.title)}</h3><p>${esc(c.subtitle??c.theme??'诊断新的时序病灶')}</p><div class="progress-track"><i style="width:${100*done/ls.length}%"></i></div></button>`;}).join('')}</section><section class="endless-card"><div><div class="eyebrow">NIGHT SHIFT / SEEDED SURVIVAL</div><h2>夜班无尽急诊</h2><p>每轮病例经过正式判定验证。有限处方、限时手术，电路随轮次扩展。相同编号可重复挑战；暂停和重试保留当前病例。</p><div class="badge-row"><span class="chip">确定种子</span><span class="chip">规模封顶</span><span class="chip">持有器材可解</span></div></div><div><label for="seed-input">值班编号</label><input id="seed-input" value="${esc(seed)}" maxlength="48" placeholder="输入任意编号"><div>${button('开始夜班','endless','','primary')} <small>最高积分 ${save.endless?.bestScore||0}</small></div><p class="fit-note">夜班积分独立计算。研发点由首次病例救治与星章进阶获得。</p></div></section></main>`;}
+function chapterScreen(){const c=chapterData(chapter);return `<main class="home"><div class="sectionbar"><div><div class="eyebrow">WARD 0${chapter} / CASE FILES</div><h2 style="margin-top:12px">${esc(c.title)}</h2><p class="muted" style="margin-top:10px">${esc(c.subtitle??c.theme)}</p></div>${button('返回大厅','nav','data-screen="home"','ghost')}</div><section class="case-grid">${LEVELS.filter(l=>l.chapter===chapter).map(l=>{const locked=LEVELS.indexOf(l)>unlock(),rec=save.completed[l.id];return `<button class="case-card" data-action="case" data-level="${l.id}" ${locked?'disabled':''}><div class="chapter-head"><span class="num">${String(l.number).padStart(2,'0')}</span><span class="stars">${rec?'★'.repeat(rec.stars)+'☆'.repeat(3-rec.stars):locked?'待轮转':'未诊断'}</span></div><strong>${esc(l.title)}</strong><small>${esc(l.lesson)}</small><div class="badge-row"><span class="chip">${l.limits.edits} 次替换</span>${l.number%8===0?'<span class="chip">限时抢救</span>':''}</div></button>`;}).join('')}</section><div class="briefbox">病例奖励只在首次救治和星章进阶时发放。每台手术都有材料、面积、功耗与最终差异上限；试错和撤销不会永久消耗替换次数。</div></main>`;}
+function coords(){const xs=current.nodes.map(n=>n.x),ys=current.nodes.map(n=>n.y);return {w:Math.max(560,...xs)+90,h:Math.max(260,...ys)+85};}
+function selectedPath(r){return r.paths.find(p=>p.id===pathSelection);}
+function board(r){const {w,h}=coords(),path=selectedPath(r),ns=new Map(current.nodes.map(n=>[n.id,n]));return `<svg class="board" viewBox="0 0 ${w} ${h}" aria-label="病例电路图"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#70949f"/></marker></defs>${current.edges.map(e=>{const a=ns.get(e.from),b=ns.get(e.to),x=(a.x+b.x)/2,y=(a.y+b.y)/2,part=state.edges[e.id]??'none',changed=part!==(current.initial.edges[e.id]??'none'),highlight=(path?.edges??[]).includes(e.id)||(path?.minEdges??[]).includes(e.id);return `<g data-action="select-edge" data-id="${e.id}"><path class="edge ${changed?'changed':''} ${highlight?'path':''} ${save.settings.motion?'pulse':''}" d="M${a.x+31} ${a.y} C${x} ${a.y} ${x} ${b.y} ${b.x-32} ${b.y}" marker-end="url(#arrow)"/><path class="hit" tabindex="0" role="button" aria-label="选择线路 ${e.id} ${e.from} 至 ${e.to}" data-action="select-edge" data-id="${e.id}" d="M${a.x+31} ${a.y} C${x} ${a.y} ${x} ${b.y} ${b.x-32} ${b.y}"/><rect class="edgebadge" x="${x-19}" y="${y-12}" width="38" height="20" rx="5"/><text class="edgetext" x="${x}" y="${y+2}" text-anchor="middle">${part==='none'?esc(e.id):iconParts[part]}</text></g>`;}).join('')}${current.nodes.map(n=>{const p=state.gates[n.id]??'normal',changed=n.kind==='gate'&&p!==(current.initial.gates[n.id]??'normal'),sel=selection?.type==='node'&&selection.id===n.id;return `<g class="gate ${n.kind} ${changed?'changed':''} ${sel?'selected':''}" transform="translate(${n.x},${n.y})" tabindex="0" role="button" aria-label="选择元件 ${esc(n.label||n.id)}" data-action="select-node" data-id="${n.id}"><rect x="-33" y="-23" width="66" height="46" rx="${n.kind==='gate'?8:4}"/><text y="-2" text-anchor="middle">${esc(n.label||n.id)}</text><text class="tiny" y="14" text-anchor="middle">${n.locked?'▣ ':''}${n.kind==='source'?'发射端':n.kind==='sink'?'接收端':`${iconParts[p]||p} · ${n.id}`}</text></g>`;}).join('')}</svg>`;}
+function inspector(r){if(!selection)return '<div class="empty">选择元件或线路</div>';const isNode=selection.type==='node',obj=(isNode?current.nodes:current.edges).find(n=>n.id===selection.id),part=(isNode?state.gates:state.edges)[obj.id]??(isNode?'normal':'none'),metric=r.nodeMetrics?.find(m=>m.id===obj.id),editable=!obj.locked&&(!isNode||obj.kind==='gate'),all=isNode?GATE_PARTS:EDGE_PARTS,allowed=equipment();return `<div class="panel-body"><div class="eyebrow">${isNode?'CELL DIAGNOSIS':'WIRE PROCEDURE'}</div><div class="inspector-name" style="margin-top:10px">${esc(obj.label||obj.id)}</div><div class="inspector-info">${isNode?`${obj.kind==='source'?'固定发射寄存器':obj.kind==='sink'?'固定接收寄存器':'逻辑功能保持不变，只替换型号'}${metric?`<br>本门负载 ${fmt(metric.load)}<br>最早 ${fmt(metric.min)} / 最晚 ${fmt(metric.max)}`:''}`:`${esc(obj.from)} → ${esc(obj.to)}<br>线路长度 / 电容系数 ${fmt(obj.wire)}`}<br>${obj.locked?'▣ 已封装：禁止改动':'相对入院处方计费；恢复初始部件不计替换'}</div>${editable?all.filter(p=>allowed.includes(p.id)||p.id===part).map((p,i)=>{const next=cloneState(state);(isNode?next.gates:next.edges)[obj.id]=p.id;const rr=result(next);return `<button class="tool ${p.id===part?'current':''}" data-action="part" data-part="${p.id}" ${p.id===part?'aria-pressed="true"':''}><strong>${i+1} · ${esc(name(p))} ${p.id===part?'✓':''}</strong><small>${esc(p.description)}</small><div class="delta"><span>材料 ${fmt(rr.cost-r.cost).replace(/^0\.00$/,'±0')}</span><span>晚裕 ${fmt(rr.maxSlack)}</span><span>早裕 ${fmt(rr.minSlack)}</span></div></button>`;}).join(''):'<div class="briefbox">点击右侧监护路径，查看与此寄存器相关的信号窗口。</div>'}</div>`;}
+function meter(label,val,max){return `<div class="meter"><div class="meter-title"><span>${label}</span><span class="${val>max?'bad':''}">${fmt(val)} / ${max}</span></div><div class="progress-track"><i class="${val>max?'over':''}" style="width:${Math.min(100,100*val/(max||1))}%"></i></div></div>`;}
+function monitors(r){const hasAnalyzer=save.purchases.includes('analyzer'),sorted=[...r.paths].sort((a,b)=>Math.min(a.setup,a.hold)-Math.min(b.setup,b.hold)),paths=hasAnalyzer||allPaths?sorted:sorted.slice(0,4);return `<aside class="panel monitor-panel"><div class="panel-head"><h3>生命体征 / 裕量</h3><span class="chip">${r.passed?'可出院':'待抢救'}</span></div><div class="panel-body"><div class="readings"><div class="reading"><small>最晚 · setup</small><strong class="${r.maxSlack>=0?'good':'bad'}">${fmt(r.maxSlack)}</strong><p>${r.maxSlack>=0?'✓ 没有迟到':'! 到达太晚'}</p></div><div class="reading"><small>最早 · hold</small><strong class="${r.minSlack>=0?'good':'bad'}">${fmt(r.minSlack)}</strong><p>${r.minSlack>=0?'✓ 没有抢拍':'! 到达太早'}</p></div></div>${meter('最终替换差异',r.edits,current.limits.edits)}${meter('材料点',r.cost,current.limits.cost)}${meter('器材面积',r.area,current.limits.area)}${meter('器材功耗',r.power,current.limits.power)}${(r.errors?.length||r.violations?.some(v=>v.type==='budget'))?`<div class="issues">${[...(r.errors||[]),...(r.violations||[]).filter(v=>v.type==='budget').map(v=>v.message)].map(esc).join('<br>')}</div>`:''}</div><div><div class="panel-head"><h3>危险路径 · 点击追踪</h3></div><div class="path-list">${paths.map(p=>`<button class="path-button ${pathSelection===p.id?'selected':''}" data-action="path" data-id="${p.id}"><span>${esc(p.label||p.sink)} · ${esc(p.corner)}</span><small class="${p.setup<0||p.hold<0?'bad':'good'}">早 ${fmt(p.min)} / 晚 ${fmt(p.max)} · ${p.hold<0?'抢拍':p.setup<0?'迟到':'安全'}</small></button>`).join('')}</div>${!hasAnalyzer&&sorted.length>4?`<div style="padding:0 14px 12px">${button(allPaths?'收起路径':`手动查看全部 ${sorted.length} 条`,'all-paths','','small')}<small style="display:block;margin-top:7px">分析仪可自动展开全部工况。</small></div>`:''}</div></aside>`;}
+function timeline(r){const ps=r.paths.filter(p=>p.corner===r.paths[0]?.corner),max=Math.max(1,...ps.map(p=>Math.max(p.max,p.late)))*1.12;return `<div class="panel-body timeline"><div class="eyebrow">SAFE ARRIVAL WINDOWS · ${esc(current.corners?.find(c=>c.id===ps[0]?.corner)?.label??ps[0]?.corner??'常温')}</div>${ps.map(p=>`<div class="timeline-row"><span class="label">${esc(p.sink)}</span><div class="timeline-track"><div class="window-band" style="left:${100*p.early/max}%;width:${100*(p.late-p.early)/max}%"></div><div class="arrival-band ${p.setup<0||p.hold<0?'fail':''}" style="left:${100*p.min/max}%;width:${100*(p.max-p.min)/max}%"></div></div><span class="timeline-values">${fmt(p.min)}–${fmt(p.max)}<small>窗 ${fmt(p.early)}–${fmt(p.late)}</small></span></div>`).join('')}<small>背景为安全窗口；亮条为最小—最大到达时间。单位为游戏时间单位。</small></div>`;}
+function game(){const r=result(),c=chapterData(current.chapter);return `<main class="workarea"><div class="case-title"><div><div class="eyebrow">${mode==='endless'?`NIGHT SHIFT · ROUND ${round} · SCORE ${runScore}`:`WARD 0${current.chapter} · CASE ${String(current.number).padStart(2,'0')} · ${esc(c.title)}`}</div><h2>${esc(current.title)} <span class="chip">${esc(current.triage||'时序诊断')}</span></h2><p>${esc(current.brief)}</p></div><div class="timer" id="timer-display">${isTimed()?timeString(remaining):'∞'}<small>${isTimed()?'手术剩余 / SEC':'常规诊疗 · 自由推敲'}</small></div></div><div class="game-grid"><aside class="panel inspector-panel"><div class="panel-head"><h3>处方器材 / 替换预览</h3><small>1–9</small></div>${inspector(r)}</aside><section><div class="panel"><div class="toolbar">${button('↶ 撤销','undo',undo.length?'':'disabled')}${button('↷ 重做','redo',redo.length?'':'disabled')}${button('恢复入院','reset')}${button('⊙ 最危险路径','worst')}${button('Ⅱ 暂停','pause')}</div><div class="board-wrap">${board(r)}</div><div class="board-caption"><span>点击门或线路 → 选择处方 · 金色路径＝当前追踪</span><span>▣ 封装固定</span></div>${timeline(r)}</div><div class="briefbox"><strong>主治医嘱：</strong>${esc(current.lesson)}${selectedPath(r)?`<br>追踪：最晚 ${esc(selectedPath(r).nodes?.join(' → '))}；最早 ${esc(selectedPath(r).minNodes?.join(' → '))}`:''}</div><div class="footer-controls"><div>${button('会诊提示','hint')} ${save.purchases.includes('notebook')?button('保存试验','notebook-save')+' '+button('载入试验','notebook-load',save.notebook?.[current.id]?'':'disabled'):''}</div>${button('复检 · 申请出院','submit','','primary')}</div><small class="muted">${assisted?'已使用演示会诊，本次星章上限 1 星。':'预算按最终差异计。任何一条路径违规或资源超限，均不能出院。'} ${isTimed()?'切出窗口自动暂停；时间耗尽可重试同一病例。':''}</small></section>${monitors(r)}</div></main>`;}
+function timeString(n){return `${Math.floor(Math.max(0,n)/60).toString().padStart(2,'0')}:${Math.floor(Math.max(0,n)%60).toString().padStart(2,'0')}`;}
+function workshop(){return `<main class="home"><div class="eyebrow">RESEARCH / SIDEWAYS STRATEGIES</div><h2 style="margin:15px 0">器材研发</h2><p class="muted" style="margin-bottom:25px">新器材提供诊断便利或新的处方。章节轮转会自动提供必需工具；购买不会扩大任何病例的预算。</p><section class="upgrade-grid">${UPGRADES.map(u=>{const owned=save.purchases.includes(u.id);return `<article class="upgrade"><div class="eyebrow">${owned?'INSTALLED / 已装配':'R&D / 待研发'}</div><h3>${esc(name(u))}</h3><p>${esc(u.description)}</p>${button(owned?'已研发':`研发 · ${u.price} 点`,'buy',`data-id="${u.id}" ${owned||save.credits<u.price?'disabled':''}`,owned?'':'primary')}</article>`;}).join('')}</section><div class="briefbox">材料点是病例内资源，研发点是科室成长奖励。最强驱动也会增加上游负载；精密器材有面积与功耗代价。旧器材仍能成为更好的处方。</div></main>`;}
+function records(){const records=LEVELS.filter(l=>save.completed[l.id]);return `<main class="home"><div class="eyebrow">ARCHIVE / PERSONAL BEST</div><h2 style="margin:15px 0 25px">病案档案</h2><section class="panel">${records.length?records.map(l=>{const c=save.completed[l.id];return `<div class="history-item"><div><strong>${String(l.number).padStart(2,'0')} · ${esc(l.title)} <span class="stars">${'★'.repeat(c.stars)}</span></strong><small>三类个人最佳保存完整电路，载入后重新复检。</small></div><div class="history-actions">${[['edits','少改'],['cost','省料'],['margin','稳健']].map(([k,n])=>button(n,'record',`data-level="${l.id}" data-kind="${k}" ${c.best?.[k]?'':'disabled'}`,'small')).join('')}</div></div>`;}).join(''):'<div class="empty">尚未归档病例。完成第一台手术即可建立档案。</div>'}</section></main>`;}
+function settings(){return `<main class="home help-text"><div class="eyebrow">PREFERENCES / LOCAL SAVE</div><h2 style="margin:15px 0">值班设置</h2>${[['sound','操作与复检音效','本地合成音效，无外部音频资源。'],['motion','监护动画','关闭扫描线与路径流动，减轻动态干扰。'],['contrast','增强文字对比','提高边框与说明文字的可读性。'],['timeAssist','战役计时辅助','战役限时病例给予两倍时间，重新入院后生效。夜班保留原计时。']].map(([k,n,d])=>`<div class="settings-row"><div><strong>${n}</strong><small>${d}</small></div>${button(save.settings[k]?'已开启':'已关闭','setting',`data-id="${k}" aria-pressed="${!!save.settings[k]}"`)}</div>`).join('')}<div class="settings-row"><div><strong>存档备份</strong><small>自动保存在本机，并保留上一份有效档案；可导出 JSON 转移到桌面版。</small></div><div>${button('导出存档','export')} ${button('导入存档','import')}</div></div><input type="file" id="import-file" accept="application/json,.json" hidden><div class="settings-row"><div><strong>重新轮转</strong><small>清除战役进度、研发与个人最佳。</small></div>${button('清空进度','wipe','','danger')}</div></main>`;}
+function help(){return `<main class="home help-text"><div class="eyebrow">ON-CALL MANUAL / READ THE SIGNAL</div><h2 style="margin:15px 0">值班手册</h2><h3>01 · 先看哪种病</h3><p>setup 裕量小于零，说明某条信号到得太晚，需要加速。hold 裕量小于零，说明信号到得太早，需要在短路径增加延迟。同一电路可能同时有两种病，必须全部治好。</p><h3>02 · 点击病灶，比较处方</h3><p>点击电路中的门或线路，再选择左侧部件。每个候选都会预览替换后的全局早、晚裕量。强驱动让本门更快，却让它的输入变重，可能拖慢上游及其他支路。buffer 增加自己的延迟，同时隔离下游负载。延迟片修复抢拍；铜线适合长线提速；屏蔽线用于降低多工况波动；精密门缩小最早与最晚的区间。</p><h3>03 · 一张合格处方要满足所有上限</h3><p>全部接收端、全部工况的最小与最大到达时间都必须在窗口内，最终替换差异、材料点、器材面积和器材功耗也必须达标。预算按当前处方相对入院电路计，换回初始部件会返还预算。撤销与重做免费。接口处列出的面积与功耗是本次手术新增代价。</p><h3>04 · 轮转与夜班</h3><p>六章共 ${LEVELS.length} 个病例，逐例解锁。每章末有计时综合抢救；常规病例允许自由推敲。器材研发能提前提供侧向新解法，必需工具会随章节自动配发。夜班采用确定种子，生成器对持有装备的见证处方作正式复检，并随轮次增加规模与组合难度。</p><h3>05 · 会诊、个人最佳和快捷键</h3><p>会诊提示逐层展开，最后可请主治演示下一次替换。演示会诊将本次星章上限设为一星。少改、省料、稳健三类档案各自保存完整有效方案。快捷键：Ctrl+Z 撤销，Ctrl+Y / Ctrl+Shift+Z 重做；1–9 选择处方；空格暂停；方向键轮换可编辑门；Enter 复检。所有元件和线路也可 Tab 聚焦、Enter 选择。</p><h3>模型说明</h3><p>这是固定时钟的简化寄存器间时序游戏，分别传播最小/最大到达时间，并计算门输入电容、输出负载、线路电容及器材隔离。多工况给固定倍率，不引入运行时随机判定。模型用于游戏与直观教学，不代替真实芯片签核。</p><div style="margin-top:28px">${button('开始值班','continue','','primary')}</div></main>`;}
+function modalHTML(){if(!modal)return '';let html='';if(modal==='tutorial')html=`<div class="eyebrow">入职值班 / 60秒读懂</div><h2>先诊断，再开处方。</h2><div class="tutorial-step"><span>01</span><p><strong>读监护数值。</strong><br>晚裕量负数＝迟到；早裕量负数＝抢拍。两者都要达到零以上。</p></div><div class="tutorial-step"><span>02</span><p><strong>点击门或线路。</strong><br>左侧选择替换器材，候选显示整张电路的预测变化。先尝试第一关的强驱动门。</p></div><div class="tutorial-step"><span>03</span><p><strong>预算达标，再复检。</strong><br>资源与最终差异是硬条件。撤销免费；复检通过才能出院。</p></div><div class="modal-actions">${button('开始接诊','close-modal','','primary')}</div>`;
+else if(modal==='paused')html=`<div class="eyebrow">SURGERY PAUSED</div><h2>手术已暂停</h2><p>计时与处方均已冻结。切出窗口也会自动暂停。</p><div class="modal-actions">${button('返回分诊大厅','nav','data-screen="home"')}${button('继续手术','close-modal','','primary')}</div>`;
+else if(modal==='timeout')html=`<div class="eyebrow">TIMEOUT / SAME CASE RETRY</div><h2>抢救时间耗尽</h2><p>病例与编号保留。可用相同预算重新诊断；本次处方仍可在重试前查看。</p><div class="modal-actions">${button('返回大厅','nav','data-screen="home"')}${button('重试同一病例','retry','','primary')}</div>`;
+else if(modal==='hints')html=`<div class="eyebrow">CONSULTATION / ${hintCount}级</div><h2>主治会诊</h2><div class="hints">${current.hints.slice(0,hintCount).map((h,i)=>`<p><strong>${i+1}.</strong> ${esc(h)}</p>`).join('')}</div><div class="modal-actions">${button('返回手术','close-modal')}${hintCount<3?button('进一步会诊','hint','','primary'):button('演示下一次替换','demonstrate','','primary')}</div><p><small>提示免费。主动选择演示后，本次星章上限为一星。</small></p>`;
+else if(modal==='failed'){const r=result();html=`<div class="eyebrow">RECHECK / NEEDS INTERVENTION</div><h2>尚未达到出院条件</h2><p>${r.minSlack<0?'存在抢拍路径。 ':''}${r.maxSlack<0?'存在迟到路径。 ':''}${[...(r.errors||[]),...(r.violations||[]).map(v=>v.message)].map(esc).join('；')||'检查右侧资源上限与每条路径。'}</p><p>点击“最危险路径”查看连锁反应，再用有限处方修复。</p><div class="modal-actions">${button('继续诊疗','close-modal','','primary')}</div>`;}
+else if(modal==='success'){const r=result(),rec=save.completed[current.id],goals=starTargets(current);html=`<div class="eyebrow">DISCHARGED / ALL VITALS STABLE</div><h2>病例抢救成功</h2><div class="stars" style="font-size:30px">${mode==='campaign'?'★'.repeat(rec?.stars||1)+'☆'.repeat(3-(rec?.stars||1)):'✦ 夜班继续'}</div><p>全部信号、全部工况回到安全窗口，处方资源也在硬上限内。</p>${mode==='campaign'?`<div class="briefbox"><strong>星章目标</strong><br>✓ 出院星：所有硬条件达标。<br>${r.edits<=goals.edits?'✓':'○'} 少改星：最多 ${goals.edits} 次替换；本次 ${r.edits} 次。<br>${Math.min(r.minSlack,r.maxSlack)>=goals.margin?'✓':'○'} 稳健星：共同裕量至少 ${fmt(goals.margin)}；本次 ${fmt(Math.min(r.minSlack,r.maxSlack))}。${assisted?'<br>本次使用演示会诊，星章上限为 1。':''}</div>`:''}<div class="modal-grid"><div><small>最终替换</small><strong>${r.edits}</strong><small>上限 ${current.limits.edits}</small></div><div><small>材料点</small><strong>${fmt(r.cost)}</strong><small>上限 ${current.limits.cost}</small></div><div><small>最坏裕量</small><strong>${fmt(Math.min(r.minSlack,r.maxSlack))}</strong><small>早与晚全部达标</small></div></div><p>${mode==='campaign'?`病案已保存，研发点 ${save.credits}。尝试减少替换或提高余量，可更新个人最佳。`:`本轮积分累计 ${runScore}，下一轮规模和组合复杂度继续递进。`}</p><div class="modal-actions">${button('继续优化','close-modal')}${button(mode==='endless'?'下一轮急诊':LEVELS.indexOf(current)===LEVELS.length-1?'完成轮转':'下一病例','next','','primary')}</div>`;}
+else if(modal==='wipe')html=`<div class="eyebrow">LOCAL ARCHIVE RESET</div><h2>清空全部进度</h2><p>将清除本机战役、研发和个人最佳。建议先在设置导出存档。</p><div class="modal-actions">${button('保留进度','close-modal')}${button('确定清空','wipe-confirm','','danger')}</div>`;
+return `<div class="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-label="${modal}">${html}</section></div>`;}
+function render(){document.body.classList.toggle('no-motion',!save.settings.motion);document.body.classList.toggle('high-contrast',!!save.settings.contrast);app.innerHTML=`<div class="shell">${nav()}${screen==='home'?home():screen==='chapter'?chapterScreen():screen==='game'?game():screen==='workshop'?workshop():screen==='records'?records():screen==='settings'?settings():help()}</div>${modalHTML()}`;}
+function submit(){if(modal||remaining<=0&&isTimed())return;const r=result();if(!r.passed){modal='failed';sound('fail');render();return;}if(mode==='campaign'){const before=save.credits;save=awardCase(save,current,state,{...r,assisted},elapsed);toast(`复检通过 · 获得 ${save.credits-before} 研发点`);}else if(!roundAwarded){roundAwarded=true;runScore+=100+Math.max(0,Math.floor(remaining/5))+Math.max(0,current.limits.edits-r.edits)*15;save.endless??={bestRound:0,bestScore:0,lastSeed:''};save.endless.bestRound=Math.max(save.endless.bestRound,round);save.endless.bestScore=Math.max(save.endless.bestScore,runScore);save.endless.lastSeed=seed;}syncDraft();modal='success';sound('success');render();}
+function nextCase(){if(mode==='endless'){startEndless(seed,round+1);return;}const ix=LEVELS.indexOf(current);if(ix+1<LEVELS.length)startLevel(LEVELS[ix+1]);else{screen='home';modal=null;save.draft=null;persist();render();toast('六科轮转完成。大师病例与无尽夜班等待更精良的处方。');}}
+function action(a,el){switch(a){case'nav':syncDraft();screen=el.dataset.screen;modal=null;render();break;case'continue':mode='campaign';startLevel(LEVELS[unlock()]);break;case'resume':resumeDraft();break;case'chapter':syncDraft();chapter=Number(el.dataset.chapter);screen='chapter';modal=null;render();break;case'case':mode='campaign';startLevel(LEVELS.find(l=>l.id===el.dataset.level));break;case'endless':seed=document.querySelector('#seed-input')?.value??seed;runScore=0;startEndless(seed,1);break;case'select-node':selection={type:'node',id:el.dataset.id};render();break;case'select-edge':selection={type:'edge',id:el.dataset.id};render();break;case'part':changePart(el.dataset.part);break;case'undo':if(undo.length&&!modal){redo.push(cloneState(state));state=undo.pop();syncDraft();render();}break;case'redo':if(redo.length&&!modal){undo.push(cloneState(state));state=redo.pop();syncDraft();render();}break;case'reset':update(newState(current));break;case'path':pathSelection=el.dataset.id;render();break;case'all-paths':allPaths=!allPaths;render();break;case'worst':{const p=[...result().paths].sort((a,b)=>Math.min(a.setup,a.hold)-Math.min(b.setup,b.hold))[0];pathSelection=p?.id;render();break;}case'pause':modal='paused';syncDraft();render();break;case'close-modal':if(modal==='tutorial'){save.tutorialSeen=true;persist();}modal=null;lastTick=Date.now();render();break;case'hint':hintCount=Math.min(3,hintCount+1);modal='hints';syncDraft();render();break;case'demonstrate':{modal=null;assisted=true;const gg=Object.keys(current.reference.gates).find(id=>state.gates[id]!==current.reference.gates[id]),ee=Object.keys(current.reference.edges).find(id=>state.edges[id]!==current.reference.edges[id]);if(gg||ee){selection={type:gg?'node':'edge',id:gg||ee};const n=cloneState(state);(gg?n.gates:n.edges)[gg||ee]=(gg?current.reference.gates:current.reference.edges)[gg||ee];update(n);toast('主治已演示一次替换，请观察前后裕量再自行复检');}else{render();toast('参考处方已就绪，请复检');}break;}case'submit':submit();break;case'next':nextCase();break;case'retry':startLevel(current,{mode,seed,round,runScore,roundAwarded,assisted,hints:hintCount});break;case'buy':{const old=save;const b=buyUpgrade(save,el.dataset.id);save=b.save??b;if(save.credits<old.credits)toast('器材研发完成');else toast('研发点不足或器材已经装配');persist();render();break;}case'record':{const l=LEVELS.find(l=>l.id===el.dataset.level),b=save.completed[l.id]?.best?.[el.dataset.kind];if(b){if(!evaluate(l,b.state,availableEquipment(save,l)).valid){toast('旧档案结构失效，请重新诊断');break;}startLevel(l,{state:b.state,mode:'campaign',assisted:b.assisted});toast('已载入完整个人最佳，请重新复检');}break;}case'setting':save.settings[el.dataset.id]=!save.settings[el.dataset.id];persist();render();break;case'notebook-save':save.notebook??={};save.notebook[current.id]={state:cloneState(state)};persist();toast('试验处方已保存，可跨重试载入');render();break;case'notebook-load':if(save.notebook?.[current.id])update(cloneState(save.notebook[current.id].state));break;case'export':{const blob=new Blob([JSON.stringify(save,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='TimingER-save.json';link.click();URL.revokeObjectURL(url);toast('存档已导出');break;}case'import':document.querySelector('#import-file').click();break;case'wipe':modal='wipe';render();break;case'wipe-confirm':save=defaultSave();persist();persist();screen='home';current=null;modal=null;render();toast('轮转进度已重置');break;}}
+document.addEventListener('click',e=>{const el=e.target.closest('[data-action]');if(el&&!el.disabled)action(el.dataset.action,el);});
+document.addEventListener('change',async e=>{if(e.target.id==='import-file'&&e.target.files[0]){try{const raw=await e.target.files[0].text();const {recoverSave}=__modules.progress;const restored=recoverSave(raw);if(!restored||![1,2].includes(JSON.parse(raw).version))throw new Error();save=restored.save??restored;persist();screen='home';current=null;modal=null;render();toast('存档已恢复');}catch{toast('存档无法读取，当前进度保持不变');}}});
+document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea'))return;if(e.key==='Enter'&&e.target.dataset.action){e.preventDefault();action(e.target.dataset.action,e.target);return;}if(screen!=='game')return;if(e.code==='Space'){e.preventDefault();modal=modal==='paused'?null:'paused';lastTick=Date.now();syncDraft();render();return;}if(modal)return;if(e.ctrlKey&&(e.key.toLowerCase()==='z'||e.key.toLowerCase()==='y')){e.preventDefault();action(e.key.toLowerCase()==='y'||e.shiftKey?'redo':'undo',document.body);return;}if(/^[1-9]$/.test(e.key)){const buttons=[...document.querySelectorAll('.tool')];buttons[Number(e.key)-1]?.click();}if(e.key==='Enter'&&e.target===document.body)submit();if(e.key.startsWith('Arrow')){const nodes=current.nodes.filter(n=>n.kind==='gate'&&!n.locked);const ix=nodes.findIndex(n=>n.id===selection?.id);selection={type:'node',id:nodes[(ix+(e.key==='ArrowLeft'||e.key==='ArrowUp'?-1:1)+nodes.length)%nodes.length]?.id};e.preventDefault();render();}});
+window.addEventListener('blur',()=>{if(screen==='game'&&!modal&&isTimed()){modal='paused';syncDraft();render();}});
+window.addEventListener('beforeunload',syncDraft);
+setInterval(()=>{const now=Date.now(),delta=(now-lastTick)/1000;lastTick=now;if(screen!=='game'||modal||!isTimed())return;remaining=Math.max(0,remaining-delta);elapsed+=delta;const display=document.querySelector('#timer-display');if(display){display.firstChild.textContent=timeString(remaining);display.classList.toggle('bad',remaining<30);}if(remaining<=0){modal='timeout';sound('fail');syncDraft();render();}else if(Math.floor(remaining)%5===0)syncDraft();},250);
+render();
+
+return {};
+})();
+</script></body></html>

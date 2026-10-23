@@ -1,0 +1,13 @@
+{
+  "product": "Timing ER",
+  "version": "1.0.0",
+  "modules": [
+    "engine",
+    "levels",
+    "endless",
+    "progress",
+    "main"
+  ],
+  "runtimeDependencies": [],
+  "bytes": 135270
+}

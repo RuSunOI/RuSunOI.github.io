@@ -1,0 +1,15 @@
+{
+  "name": "chiplet-islands-offline",
+  "version": "1.0.0",
+  "builtAt": "2026-10-22T10:04:35.156Z",
+  "files": {
+    "index.html": "69b0159ad35a2382d45a7165331ba30f5516c76f07673f2de0c8177f6d35e840",
+    "src/briefs.js": "a14cb18c2b4747a6e1f09917a5e52eb86d2e9a43835d9896b3339506f8824ff9",
+    "src/icon.svg": "7feaa10adc1e38010b29d32014bb460b63a676e106105acd4f608e912fe025b1",
+    "src/levels.js": "9e1b5dcc18a695d7772e636e8b7a37ba61a598d8c3cb450a3a0f2cd7a41b678e",
+    "src/model.js": "2a96f9cb8a6049e8fbfe6a7f8c0e13077a11b3aa503cbfb95b2c3cd79d77a4c3",
+    "src/save.js": "19d3b21dfe13a3c1456cf72dad86d45a6c0e73e1f6543d57efa711052e24dca1",
+    "src/style.css": "c75dc3a6654d63bde430170767535a4b150c9e390fa0cde4adc85d58e55507d2",
+    "src/ui.js": "398ecd46a198a678fa82573f9d87f3e35ac6d35d03d90a268bc8c939c421acd9"
+  }
+}
