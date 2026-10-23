@@ -4,6 +4,8 @@
 .board g[data-action="select-edge"]{cursor:pointer}
 
 .timeline-values{line-height:1.45}.timeline-values small{display:block;font-size:9px}
+/* Review revision: static timing windows, isolated candidates, and replayable guide. */
+.timeline-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.corner-tabs{display:flex;gap:5px;flex-wrap:wrap}.corner-tabs button{font-size:10px;padding:5px 7px}.corner-tabs .active{border-color:var(--mint);color:var(--mint)}.timeline-legend{display:flex;gap:10px;flex-wrap:wrap;color:#bad0d2;font-size:10px;margin:12px 0}.timeline-track{height:30px;border-radius:3px}.forbidden-band{height:100%;position:absolute;background:repeating-linear-gradient(135deg,#a4555545 0,#a4555545 3px,#a4555515 3px,#a4555515 7px)}.window-band{opacity:.7;background:#285748}.window-bound{position:absolute;height:100%;width:1px;background:#a1ceb4}.arrival-band{top:8px;height:5px;min-width:2px}.candidate-band{position:absolute;top:17px;height:9px;min-width:3px;border:1.5px dashed #e9c47b;background:#f6c37925;border-radius:2px}.candidate-band.fail{border-color:#ff9794;background:#ff807d22}.candidate-value{color:var(--amber)}.preview-instruction{font-size:11px;color:var(--muted);margin-top:9px}.preview-summary{border:1px dashed var(--amber);border-radius:6px;background:#302e2538;padding:10px;margin-top:12px;font-size:11px;line-height:1.7}.preview-summary strong{color:var(--amber);display:block}.preview-actions{display:flex;gap:8px;margin-top:7px}.tool.previewing{border-color:var(--amber);box-shadow:inset 3px 0 var(--amber)}.board g.related .edge{stroke:#8bbdd0;stroke-width:4}.board g.related .edge.path{stroke:var(--amber);stroke-width:5}.board .gate.related rect{stroke:#8bbdd0;stroke-width:2.5}.board .gate.endpoint rect{stroke:#a1d8e6;stroke-width:3}.board .gate.path-node rect{stroke:var(--amber)}.board .gate.selected rect{stroke:var(--amber);stroke-width:3.5}.path-button.related{background:#183b47}.comparison{border:1px solid var(--line);border-radius:8px;margin-top:14px;background:#102630;padding:12px}.comparison summary{cursor:pointer;font-size:12px;color:var(--mint)}.comparison-scroll{overflow:auto;margin:12px 0}.comparison table,.shortcut-table{width:100%;border-collapse:collapse;font-size:11px;white-space:nowrap}.comparison th,.comparison td{padding:7px;text-align:right;border-bottom:1px solid var(--line)}.comparison th:first-child{text-align:left}.comparison small{font-size:10px}.blueprint-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.blueprint-actions small{font-size:10px}.guide-links{display:flex;gap:10px;margin-top:20px}.guide-intro{line-height:1.8}.guide-scene{margin:20px 0 24px}.guide-clock-labels{display:flex;justify-content:space-between;font-size:11px;margin-bottom:8px;color:#c2dad8}.guide-rail{display:grid;grid-template-columns:25% 50% 25%;border:1px solid #52756e;border-radius:6px;overflow:hidden}.guide-band{padding:14px 5px;text-align:center}.guide-band b,.guide-band span{display:block;font-size:12px}.guide-band span{font-size:10px;margin-top:5px}.guide-band-hold,.guide-band-late{background:repeating-linear-gradient(135deg,#643a3b 0,#643a3b 4px,#4b3032 4px,#4b3032 9px)}.guide-band-safe{background:#1e5245}.guide-boundaries{display:flex;justify-content:space-between;font-size:9px;margin-top:7px;color:var(--muted)}.guide-reading-progress{height:3px;background:#1b4145;margin-top:13px}.guide-reading-progress i{display:block;width:100%;height:100%;background:var(--mint)}.animated .guide-reading-progress i{animation:guide-read var(--guide-duration) linear both}.guide-phases{display:grid;gap:10px}.guide-phase{position:relative;padding:15px 15px 15px 50px;border:1px solid var(--line);border-radius:8px;background:#102630}.guide-phase h3{font-size:14px}.guide-phase p{font-size:12px;margin:8px 0 0}.guide-phase-number{position:absolute;left:14px;top:15px;font:20px Consolas;color:var(--mint)}.animated .guide-phase{animation:guide-phase 3.333s linear var(--phase-delay) 1}.guide-rule{font-size:12px!important;border-left:3px solid var(--mint);padding:8px 12px}.guide-footnote p{font-size:11px!important;line-height:1.7}.shortcut-table{white-space:normal;font-size:12px}.shortcut-table caption{text-align:left;color:var(--muted);margin:8px 0}.shortcut-table th,.shortcut-table td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);line-height:1.65}.shortcut-table th{width:43%}kbd{font:11px Consolas;padding:2px 4px;border:1px solid #52747b;border-radius:4px;background:#0a202a}.settings-row>div:last-child{display:flex;gap:8px;flex-wrap:wrap}.no-motion .guide-reading-progress i{width:100%}@keyframes guide-read{from{width:0}to{width:100%}}@keyframes guide-phase{0%,95%{border-color:var(--mint);background:#163e39}100%{border-color:var(--line);background:#102630}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.guide-reading-progress i{width:100%}}@media(max-width:650px){.timeline-row{grid-template-columns:48px 1fr 85px}.timeline-legend{gap:7px}.guide-band span{font-size:9px}.comparison table{font-size:10px}.settings-row{align-items:start;flex-wrap:wrap}}
 </style><title>时序急救室 · Timing ER</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c2932'/%3E%3Cpath d='M8 34h10l6-18 9 34 7-16h16' fill='none' stroke='%234ce4ae' stroke-width='5'/%3E%3C/svg%3E"></head><body><div id="app"></div><script>'use strict';
 const __modules={};
 __modules.engine=(()=>{
@@ -790,12 +792,19 @@ function parseSave(raw) {
   }
   if (object(source.notebook)) for (const [id, value] of Object.entries(source.notebook).slice(0, 128)) {
     const state = cleanState(value?.state);
-    if (safeId(id) && state) save.notebook[id] = { state };
+    if (safeId(id) && state) {
+      save.notebook[id] = { state };
+      // Night notebooks need a reproducible case descriptor: their ID contains
+      // one-way hashes, so a state alone cannot be safely checked when shared.
+      if (id.startsWith('endless-') && typeof value.seed === 'string' && value.seed.length <= 80 && integer(value.round, 1, 9999) && Array.isArray(value.heldTools) && value.heldTools.every(part => partIds.has(part)) && new Set(value.heldTools).size === value.heldTools.length) {
+        Object.assign(save.notebook[id], { seed: value.seed, round: value.round, heldTools: [...value.heldTools] });
+      }
+    }
   }
   if (object(source.endless)) {
     save.endless.bestRound = integer(source.endless.bestRound, 0, 10_000) ? source.endless.bestRound : 0;
     save.endless.bestScore = integer(source.endless.bestScore, 0, 1e9) ? source.endless.bestScore : 0;
-    if (typeof source.endless.lastSeed === 'string') save.endless.lastSeed = source.endless.lastSeed.slice(0, 64);
+    if (typeof source.endless.lastSeed === 'string') save.endless.lastSeed = source.endless.lastSeed.slice(0, 80);
   }
   const draft = source.draft;
   if (object(draft) && safeId(draft.levelId) && ['campaign', 'endless'].includes(draft.mode) && bounded(draft.remaining, 0, 7200)) {
@@ -805,7 +814,7 @@ function parseSave(raw) {
       state,
       remaining: draft.remaining,
       mode: draft.mode,
-      seed: typeof draft.seed === 'string' ? draft.seed.slice(0, 64) : '',
+      seed: typeof draft.seed === 'string' ? draft.seed.slice(0, 80) : '',
       round: integer(draft.round, 0, 10_000) ? draft.round : 0,
       assisted: draft.assisted === true,
       hints: integer(draft.hints, 0, 100) ? draft.hints : 0,
@@ -947,14 +956,476 @@ function buyUpgrade(save, id) {
 
 return {SAVE_KEY,SAVE_BACKUP_KEY,SAVE_VERSION,UPGRADES,defaultSave,recoverSave,loadProgress,saveProgress,availableEquipment,unlockedIndex,starTargets,awardCase,buyUpgrade};
 })();
+__modules.preview=(()=>{
+const { cloneState, evaluate, GATE_PARTS, EDGE_PARTS }=__modules.engine;
+
+/** A candidate is evaluated on an isolated copy; callers decide whether to apply it. */
+function previewPart(level, state, selection, part, equipment = {}) {
+  const errors = [];
+  const node = selection?.type === 'node';
+  const edge = selection?.type === 'edge';
+  const object = (node ? level.nodes : edge ? level.edges : []).find(item => item.id === selection?.id);
+  const parts = node ? GATE_PARTS : EDGE_PARTS;
+  const unlocked = Array.isArray(equipment) ? equipment : equipment.unlockedParts ?? [];
+  if (!object || (!node && !edge)) errors.push('请选择有效元件或线路');
+  else if (object.locked || (node && object.kind !== 'gate')) errors.push('固定元件不能替换');
+  if (!parts.some(item => item.id === part)) errors.push('未知器材');
+  if (![...(level.allowedParts ?? []), ...unlocked].includes(part)) errors.push('此器材尚未配发');
+  if (errors.length) return { valid: false, errors };
+  const next = cloneState(state);
+  (node ? next.gates : next.edges)[selection.id] = part;
+  const baseline = evaluate(level, cloneState(state), equipment);
+  const candidate = evaluate(level, next, equipment);
+  if (!baseline.valid || !candidate.valid) return { valid: false, errors: candidate.errors.length ? candidate.errors : baseline.errors };
+  const changedPaths = candidate.paths.filter(path => {
+    const old = baseline.paths.find(item => item.id === path.id);
+    return !old || ['min', 'max', 'hold', 'setup'].some(key => Math.abs(path[key] - old[key]) > 1e-9);
+  }).map(path => path.id);
+  return { valid: true, errors: [], state: next, baseline, candidate, changedPaths };
+}
+
+/**
+ * Structural highlighting only: all complete source-to-sink routes passing
+ * through a selected node/edge, including routes that are not timing extrema.
+ * Does not read or change a prescription, timing result, or resource budget.
+ */
+function relatedCircuit(level, target) {
+  const empty = () => ({ nodes: [], edges: [], sinks: [] });
+  if (!Array.isArray(level?.nodes) || !Array.isArray(level?.edges)) return empty();
+  const nodes = new Map(level.nodes.map(node => [node.id, node]));
+  const edges = level.edges.filter(edge => nodes.has(edge.from) && nodes.has(edge.to));
+  const incoming = new Map([...nodes.keys()].map(id => [id, []]));
+  const outgoing = new Map([...nodes.keys()].map(id => [id, []]));
+  for (const edge of edges) { incoming.get(edge.to).push(edge); outgoing.get(edge.from).push(edge); }
+  const walk = (starts, direction) => {
+    const seen = new Set(), queue = [...starts];
+    while (queue.length) {
+      const id = queue.pop();
+      if (!nodes.has(id) || seen.has(id)) continue;
+      seen.add(id);
+      for (const edge of (direction === 'up' ? incoming : outgoing).get(id)) queue.push(direction === 'up' ? edge.from : edge.to);
+    }
+    return seen;
+  };
+  const sourceReach = walk(level.nodes.filter(node => node.kind === 'source').map(node => node.id), 'down');
+  const sinkReach = walk(level.nodes.filter(node => node.kind === 'sink').map(node => node.id), 'up');
+  let first, last, chosenEdge;
+  if (target?.type === 'node' && nodes.has(target.id)) first = last = target.id;
+  else if (target?.type === 'edge') {
+    chosenEdge = edges.find(edge => edge.id === target.id);
+    if (chosenEdge) { first = chosenEdge.from; last = chosenEdge.to; }
+  }
+  if (!first || !last || !sourceReach.has(first) || !sinkReach.has(last)) return empty();
+  const ancestors = new Set([...walk([first], 'up')].filter(id => sourceReach.has(id)));
+  const descendants = new Set([...walk([last], 'down')].filter(id => sinkReach.has(id)));
+  const relatedNodes = new Set([...ancestors, ...descendants]);
+  const relatedEdges = edges.filter(edge => edge === chosenEdge ||
+    ancestors.has(edge.from) && ancestors.has(edge.to) ||
+    descendants.has(edge.from) && descendants.has(edge.to));
+  return {
+    nodes: level.nodes.filter(node => relatedNodes.has(node.id)).map(node => node.id),
+    edges: relatedEdges.map(edge => edge.id),
+    sinks: level.nodes.filter(node => node.kind === 'sink' && relatedNodes.has(node.id)).map(node => node.id),
+  };
+}
+
+return {previewPart,relatedCircuit};
+})();
+__modules.guide=(()=>{
+/**
+ * Read-only, synchronous guide markup. Animations are decorative CSS only;
+ * this module never reads a clock, circuit, save, or browser state.
+ */
+function guideHTML({ motion = true } = {}) {
+  return `<section class="guide-demo ${motion ? 'animated' : 'static'}" aria-labelledby="guide-title" style="--guide-duration:10s">
+    <span class="eyebrow">10 秒闸口小课 · 可随时跳过</span>
+    <h2 id="guide-title">为什么太快也会出问题？</h2>
+    <p class="guide-intro">把接收端想成按固定节拍取样的闸口：<strong>旧值先稳住，新值再按时交接。</strong>下面只借闸口说明时间先后。</p>
+    <div class="guide-scene" aria-hidden="true">
+      <div class="guide-clock-labels"><span>本拍采样沿</span><span>下一拍采样沿</span></div>
+      <div class="guide-rail">
+        <div class="guide-band guide-band-hold"><b>太早</b><span>旧值还需保持</span></div>
+        <div class="guide-band guide-band-safe"><b>安全到达窗</b><span>可以交接新值</span></div>
+        <div class="guide-band guide-band-late"><b>太晚</b><span>下拍来不及准备</span></div>
+      </div>
+      <div class="guide-boundaries"><span>本拍</span><span>hold 边界</span><span>setup 截止</span><span>下一拍</span></div>
+      <div class="guide-reading-progress"><i></i></div>
+    </div>
+    <div class="guide-phases">
+      <article class="guide-phase" data-guide-phase="1" style="--phase-delay:0s">
+        <span class="guide-phase-number">01</span>
+        <h3>本拍采样后，先守住旧值</h3>
+        <p>接收端输入的旧值，需要在本拍采样沿附近保持稳定，直到 <strong>hold（保持）边界</strong>。若新值过早抵达，可能让本拍采样不可靠。</p>
+      </article>
+      <article class="guide-phase" data-guide-phase="2" style="--phase-delay:3.333s">
+        <span class="guide-phase-number">02</span>
+        <h3>越过保持边界，再交接</h3>
+        <p>最快路径决定新值最早何时可能抵达。最早到达时间不得早于保持边界；必要时增加适当延迟，才能留够这段稳定时间。</p>
+      </article>
+      <article class="guide-phase" data-guide-phase="3" style="--phase-delay:6.666s">
+        <span class="guide-phase-number">03</span>
+        <h3>下拍前，新值也要准备好</h3>
+        <p>最慢路径决定新值最晚何时才会抵达。它必须赶在下一拍的 <strong>setup（建立）截止</strong>前准备好；加延迟也可能使这一侧超时。</p>
+      </article>
+    </div>
+    <p class="guide-rule"><strong>两边一起检查：</strong>最早到达 ≥ hold 边界；最晚到达 ≤ setup 截止。器材可能同时改变两边，请看病例的全部时序角与资源预算。</p>
+    <footer class="guide-footnote">
+      <p>“闸口”只比喻接收端的取样约束；太快不表示上游数据被冲毁，也不表示数据碰撞或破坏。</p>
+      <p>游戏采用固定时钟、无环组合网络（DAG）的静态最小/最大到达时间模型，不进行动态波形或物理闸门仿真。病例数值以游戏时间单位表示；本图无比例、无病例数值，仅说明时间先后。阅读高亮约 10 秒，三个阶段各约 3.3 秒，文字始终可读；静态模式展示同样内容。</p>
+    </footer>
+  </section>`;
+}
+
+function shortcutsHTML() {
+  return `<section class="shortcut-guide" aria-labelledby="shortcuts-title">
+    <span class="eyebrow">随时可查</span>
+    <h2 id="shortcuts-title">操作快捷键</h2>
+    <table class="shortcut-table">
+      <caption>病例操作与键盘导航</caption>
+      <thead><tr><th scope="col">按键</th><th scope="col">操作</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><kbd>?</kbd></th><td>打开此快捷键说明</td></tr>
+        <tr><th scope="row"><kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>Z</kbd></th><td>撤销上一次器材修改</td></tr>
+        <tr><th scope="row"><kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd><br><kbd>Ctrl</kbd> + <kbd>Y</kbd></th><td>重做已撤销的器材修改</td></tr>
+        <tr><th scope="row"><kbd>1</kbd>–<kbd>9</kbd></th><td>选择左侧对应序号的器材；普通模式直接应用，点选预览模式只预览</td></tr>
+        <tr><th scope="row"><kbd>空格</kbd></th><td>暂停 / 继续病例</td></tr>
+        <tr><th scope="row"><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd></th><td>按页面顺序向后 / 向前移动焦点</td></tr>
+        <tr><th scope="row"><kbd>Enter</kbd></th><td>激活有焦点的控件；焦点在病例页面空白处时提交检查</td></tr>
+        <tr><th scope="row"><kbd>←</kbd> <kbd>↑</kbd> <kbd>→</kbd> <kbd>↓</kbd></th><td>切换选择可编辑逻辑门</td></tr>
+        <tr><th scope="row"><kbd>Esc</kbd></th><td>关闭引导或快捷键说明；取消候选器材预览</td></tr>
+      </tbody>
+    </table>
+    <p class="fit-note">病例修改键仅在病例操作中生效。输入框、下拉选择和可编辑文字区域内保留原有文字编辑与导航行为；Tab 始终用于移动焦点。普通模式点击器材或使用数字键应用修改；点选预览模式只用于比较，需明确点击“应用此处方”才会应用修改。</p>
+  </section>`;
+}
+
+return {guideHTML,shortcutsHTML};
+})();
+__modules.exchange=(()=>{
+const { evaluate, validateState, cloneState, GATE_PARTS, EDGE_PARTS }=__modules.engine;
+const { LEVELS }=__modules.levels;
+const { generateEmergency }=__modules.endless;
+const { SAVE_KEY, SAVE_BACKUP_KEY, SAVE_VERSION, defaultSave, availableEquipment, unlockedIndex, UPGRADES }=__modules.progress;
+
+const EXCHANGE_GAME = 'timing-emergency-room';
+const IMPORT_RECOVERY_KEY = `${SAVE_KEY}.before-import`;
+const FORMAT_VERSION = 1;
+const MAX_BYTES = 2_000_000;
+const PARTS = new Set([...GATE_PARTS, ...EDGE_PARTS].map(part => part.id));
+const UPGRADES_SET = new Set(UPGRADES.map(upgrade => upgrade.id));
+const LEVEL_BY_ID = new Map(LEVELS.map(level => [level.id, level]));
+const FORBIDDEN = new Set(['__proto__', 'constructor', 'prototype']);
+const object = value => value !== null && typeof value === 'object' && !Array.isArray(value) && [Object.prototype, null].includes(Object.getPrototypeOf(value));
+const finite = (value, min = 0, max = 1e9) => typeof value === 'number' && Number.isFinite(value) && value >= min && value <= max;
+const integer = (value, min = 0, max = 1e9) => Number.isInteger(value) && finite(value, min, max);
+const own = (value, key) => Object.prototype.hasOwnProperty.call(value, key);
+const clone = value => JSON.parse(JSON.stringify(value));
+const reject = message => { throw new Error(message); };
+const errorText = (error, fallback) => String(error?.message ?? fallback).slice(0, 2000);
+const tooLarge = text => text.length > MAX_BYTES || new TextEncoder().encode(text).byteLength > MAX_BYTES;
+
+function fields(value, allowed, label) {
+  if (!object(value)) reject(`${label}必须是对象。`);
+  for (const key of Object.keys(value)) if (FORBIDDEN.has(key) || !allowed.includes(key)) reject(`${label}含未知字段：${key}。`);
+}
+
+function readJSON(raw) {
+  if (typeof raw === 'string') {
+    if (!raw.length || tooLarge(raw)) reject('文件为空或超过 2 MB 限制。');
+    try { return JSON.parse(raw); } catch { reject('文件不是完整的 JSON。'); }
+  }
+  // Object callers use the same validation as files. Never mutate caller-owned data.
+  if (!object(raw)) reject('文件根节点必须是对象。');
+  let serialized;
+  try { serialized = JSON.stringify(raw); } catch { reject('文件包含无法序列化的数据。'); }
+  if (!serialized || tooLarge(serialized)) reject('文件超过 2 MB 限制。');
+  return raw;
+}
+
+function boolean(value, fallback, label) {
+  if (value === undefined) return fallback;
+  if (typeof value !== 'boolean') reject(`${label}必须为布尔值。`);
+  return value;
+}
+
+function numeric(value, fallback, min, max, label, whole = false) {
+  if (value === undefined && fallback !== undefined) return fallback;
+  if (!(whole ? integer(value, min, max) : finite(value, min, max))) reject(`${label}数值超出范围。`);
+  return value;
+}
+
+function text(value, fallback, max, label, nonempty = false) {
+  if (value === undefined) return fallback;
+  if (typeof value !== 'string' || value.length > max || (nonempty && !value.length)) reject(`${label}格式错误。`);
+  return value;
+}
+
+function toolList(value, label) {
+  if (!Array.isArray(value) || value.length > PARTS.size || value.some(id => !PARTS.has(id)) || new Set(value).size !== value.length) reject(`${label}含未知或重复器材。`);
+  return [...value];
+}
+
+function validatePlan(level, state, equipment, label) {
+  const validation = validateState(level, state, equipment);
+  if (!validation.valid) reject(`${label}非法：${validation.errors.join(' ')}`);
+  return cloneState(state);
+}
+
+function metricsFor(result, clamp = false) {
+  return {
+    edits: result.edits, cost: result.cost, margin: clamp ? Math.max(0, Math.min(result.minSlack, result.maxSlack)) : Math.min(result.minSlack, result.maxSlack),
+    area: result.area, power: result.power, minSlack: result.minSlack, maxSlack: result.maxSlack,
+  };
+}
+
+function checkMetrics(value, label, allowNegativeMargin = false) {
+  fields(value, ['edits', 'cost', 'margin', 'area', 'power', 'minSlack', 'maxSlack'], label);
+  numeric(value.edits, undefined, 0, 640, `${label}替换数`, true);
+  numeric(value.cost, undefined, 0, 1e9, `${label}材料`);
+  numeric(value.margin, undefined, allowNegativeMargin ? -1e9 : 0, 1e9, `${label}裕量`);
+  for (const key of ['area', 'power']) if (own(value, key)) numeric(value[key], undefined, 0, 1e9, `${label}${key}`);
+  for (const key of ['minSlack', 'maxSlack']) if (own(value, key)) numeric(value[key], undefined, -1e9, 1e9, `${label}${key}`);
+}
+
+function recalculateMetrics(supplied, result, label, warnings, clamp = false) {
+  checkMetrics(supplied, label, !clamp);
+  const metrics = metricsFor(result, clamp);
+  if (Object.keys(supplied).some(key => Math.abs(supplied[key] - metrics[key]) > 1e-8)) warnings.push(`${label}已按本机正式判定重算。`);
+  return metrics;
+}
+
+function nightKit(save) {
+  const level = LEVELS[unlockedIndex(save, LEVELS)];
+  return [...new Set([...availableEquipment(save, level), 'normal', 'strong', 'none', 'delay', 'buffer'])];
+}
+
+function nightDescriptor(value, save, label, legacy = false) {
+  const seed = text(value.seed, undefined, 80, `${label}编号`, true);
+  if (seed === undefined) reject(`${label}缺少编号。`);
+  const round = numeric(value.round, undefined, 1, 9999, `${label}轮次`, true);
+  const heldTools = value.heldTools === undefined && legacy ? nightKit(save) : toolList(value.heldTools, `${label}器材快照`);
+  const owned = new Set(nightKit(save));
+  if (heldTools.some(id => !owned.has(id))) reject(`${label}包含尚未拥有的器材。`);
+  const level = generateEmergency(seed, round, heldTools);
+  if (level.id !== value.levelId) reject(`${label}编号、轮次或器材与病例不匹配。`);
+  return { level, seed, round, heldTools: [...level.generatorEquipment] };
+}
+
+function cleanSave(source, warnings) {
+  fields(source, ['version', 'credits', 'completed', 'purchases', 'settings', 'tutorialSeen', 'notebook', 'endless', 'draft'], '存档');
+  if (![1, SAVE_VERSION].includes(source.version)) reject('不支持此存档版本。');
+  const save = defaultSave();
+  save.credits = numeric(source.credits, undefined, 0, 100_000, '研发点', true);
+  if (!Array.isArray(source.purchases) || source.purchases.length > UPGRADES.length || source.purchases.some(id => !UPGRADES_SET.has(id)) || new Set(source.purchases).size !== source.purchases.length) reject('研发列表含未知或重复项目。');
+  save.purchases = [...source.purchases];
+  fields(source.settings, Object.keys(save.settings), '设置');
+  for (const key of Object.keys(save.settings)) save.settings[key] = boolean(source.settings[key], save.settings[key], `设置 ${key}`);
+  save.tutorialSeen = boolean(source.tutorialSeen, false, '教学标记');
+  fields(source.completed, [...LEVEL_BY_ID.keys()], '病例记录');
+  for (const [id, value] of Object.entries(source.completed)) {
+    fields(value, ['stars', 'rewardedStars', 'best', 'seconds'], `病例 ${id}`);
+    const stars = numeric(value.stars, undefined, 1, 3, `病例 ${id}星章`, true);
+    const paid = numeric(value.rewardedStars, stars, 0, 3, `病例 ${id}奖励标记`, true);
+    // Legacy unpaid markers are normalized upward: importing/replaying never pays twice.
+    if (paid !== stars) warnings.push(`病例 ${id}的已领奖标记已保守合并。`);
+    const record = { stars: Math.max(stars, paid), rewardedStars: Math.max(stars, paid), best: {}, seconds: numeric(value.seconds, 0, 0, 86400, `病例 ${id}用时`) };
+    fields(value.best === undefined ? {} : value.best, ['edits', 'cost', 'margin'], `病例 ${id}个人最佳`);
+    const level = LEVEL_BY_ID.get(id), equipment = availableEquipment(save, level);
+    for (const [category, best] of Object.entries(value.best ?? {})) {
+      fields(best, ['state', 'metrics', 'seconds', 'assisted'], `病例 ${id}的 ${category}方案`);
+      const state = validatePlan(level, best.state, equipment, `病例 ${id}的 ${category}方案`);
+      const seconds = numeric(best.seconds, 0, 0, 86400, `病例 ${id}最佳用时`);
+      // A historical record may have used the finite 2x campaign time assist.
+      // Current preference changes must not invalidate an earned old record.
+      const historical = { ...level, limits: { ...level.limits, time: level.limits.time * 2 } };
+      const result = evaluate(historical, state, { unlockedParts: equipment, elapsedSeconds: seconds });
+      if (!result.valid || !result.passed) reject(`病例 ${id}的 ${category}个人最佳未通过正式时序、预算或计时检查。`);
+      record.best[category] = { state, metrics: recalculateMetrics(best.metrics, result, `病例 ${id}的 ${category}指标`, warnings, true), seconds, assisted: boolean(best.assisted, false, '演示会诊标记') };
+    }
+    save.completed[id] = record;
+  }
+  if (source.endless !== undefined) {
+    fields(source.endless, ['bestRound', 'bestScore', 'lastSeed'], '夜班纪录');
+    save.endless = {
+      bestRound: numeric(source.endless.bestRound, 0, 0, 9999, '夜班最佳轮次', true),
+      bestScore: numeric(source.endless.bestScore, 0, 0, 1e9, '夜班最佳积分', true),
+      lastSeed: text(source.endless.lastSeed, '', 80, '夜班编号'),
+    };
+  }
+  if (source.notebook !== undefined) {
+    if (!object(source.notebook) || Object.keys(source.notebook).length > 128) reject('试验笔记格式错误或条目过多。');
+    for (const [id, value] of Object.entries(source.notebook)) {
+      if (FORBIDDEN.has(id)) reject('试验笔记含非法病例编号。');
+      fields(value, ['state', 'seed', 'round', 'heldTools'], `笔记 ${id}`);
+      let level = LEVEL_BY_ID.get(id), descriptor;
+      if (!level) {
+        if (!/^endless-[a-f0-9]+-[1-9][0-9]{0,3}-[a-f0-9]+$/.test(id)) reject(`试验笔记含未知病例：${id}。`);
+        if (value.seed === undefined && value.round === undefined && value.heldTools === undefined) {
+          // Old night notebooks stored only a one-way hash ID. There is no safe
+          // way to reconstruct their network; discard explicitly, never trust it.
+          warnings.push(`旧夜班笔记 ${id}缺少可重建的编号与器材，未导入；其他档案保留。`);
+          continue;
+        }
+        descriptor = nightDescriptor({ ...value, levelId: id }, save, `笔记 ${id}`);
+        level = descriptor.level;
+      } else if (['seed', 'round', 'heldTools'].some(key => value[key] !== undefined)) reject(`战役笔记 ${id}包含多余夜班数据。`);
+      const state = validatePlan(level, value.state, availableEquipment(save, level), `笔记 ${id}`);
+      save.notebook[id] = { state, ...(descriptor ? { seed: descriptor.seed, round: descriptor.round, heldTools: descriptor.heldTools } : {}) };
+    }
+  }
+  if (source.draft !== undefined && source.draft !== null) {
+    const draft = source.draft;
+    fields(draft, ['levelId', 'state', 'remaining', 'mode', 'seed', 'round', 'assisted', 'hints', 'runScore', 'roundAwarded', 'heldTools'], '手术草稿');
+    if (!['campaign', 'endless'].includes(draft.mode)) reject('草稿模式错误。');
+    let level, descriptor;
+    if (draft.mode === 'campaign') {
+      level = LEVEL_BY_ID.get(draft.levelId);
+      if (!level) reject('草稿含未知战役病例。');
+    } else { descriptor = nightDescriptor(draft, save, '夜班草稿', source.version === 1); level = descriptor.level; }
+    const limit = level.limits.time * (draft.mode === 'campaign' && save.settings.timeAssist ? 2 : 1);
+    save.draft = {
+      levelId: level.id,
+      state: validatePlan(level, draft.state, availableEquipment(save, level), '草稿方案'),
+      remaining: numeric(draft.remaining, undefined, 0, limit, '草稿剩余时间'), mode: draft.mode,
+      seed: descriptor?.seed ?? text(draft.seed, '', 80, '草稿编号'),
+      round: descriptor?.round ?? numeric(draft.round, 0, 0, 9999, '草稿轮次', true),
+      assisted: boolean(draft.assisted, false, '草稿演示标记'),
+      hints: numeric(draft.hints, 0, 0, 3, '草稿会诊提示数', true),
+      runScore: numeric(draft.runScore, 0, 0, 1e9, '草稿累计积分', true),
+      roundAwarded: boolean(draft.roundAwarded, false, '草稿本轮领奖标记'),
+      heldTools: descriptor?.heldTools ?? (draft.heldTools === undefined ? [] : toolList(draft.heldTools, '草稿器材')),
+    };
+    if (draft.mode === 'campaign' && (save.draft.runScore !== 0 || save.draft.roundAwarded || save.draft.heldTools.length)) reject('战役草稿含夜班积分、领奖或器材快照。');
+    if (draft.mode === 'endless' && save.draft.roundAwarded && (save.draft.runScore < 100 || save.endless.bestRound < save.draft.round || save.endless.bestScore < save.draft.runScore)) reject('夜班领奖标记与积分纪录不一致。');
+  }
+  return save;
+}
+
+/** Strict file import. Errors never silently become a fresh save. */
+function prepareSaveImport(raw) {
+  const warnings = [];
+  try {
+    let source = readJSON(raw);
+    if (own(source, 'game') || own(source, 'format') || own(source, 'save')) {
+      fields(source, ['game', 'format', 'version', 'save'], '存档文件');
+      if (source.game !== EXCHANGE_GAME || source.format !== 'save') reject('这不是《时序急救室》的独立存档。');
+      if (source.version !== FORMAT_VERSION) reject('不支持此交换文件版本。');
+      source = source.save;
+    }
+    const save = cleanSave(source, warnings);
+    return { ok: true, save, errors: [], warnings };
+  } catch (error) { return { ok: false, errors: [errorText(error, '存档无法验证。')], warnings }; }
+}
+
+function exportSave(save) {
+  const checked = prepareSaveImport(save);
+  if (!checked.ok) reject(checked.errors.join(' '));
+  return JSON.stringify({ game: EXCHANGE_GAME, format: 'save', version: FORMAT_VERSION, save: checked.save }, null, 2);
+}
+
+/** Dedicated recovery survives any number of ordinary autosaves/backups. */
+function importWithRecovery(storage, currentSave, raw) {
+  const incoming = prepareSaveImport(raw);
+  if (!incoming.ok) return incoming;
+  const before = prepareSaveImport(currentSave);
+  if (!before.ok) return { ok: false, errors: ['当前档案无法建立可靠的恢复快照，导入已取消。', ...before.errors], warnings: [] };
+  try {
+    if (typeof storage?.setItem !== 'function') reject('本机存储不可写。');
+    storage.setItem(IMPORT_RECOVERY_KEY, exportSave(before.save));
+    storage.setItem(SAVE_BACKUP_KEY, JSON.stringify(before.save));
+    storage.setItem(SAVE_KEY, JSON.stringify(incoming.save));
+    return { ...incoming, warnings: [...incoming.warnings, ...before.warnings.map(message => `恢复快照：${message}`)] };
+  } catch (error) { return { ok: false, errors: [`导入未完成，当前游戏进度未替换：${errorText(error, '存储失败')}`], warnings: incoming.warnings }; }
+}
+
+function restoreBeforeImport(storage) {
+  let raw;
+  try { raw = storage?.getItem(IMPORT_RECOVERY_KEY); } catch { return { ok: false, errors: ['无法读取导入前快照。'], warnings: [] }; }
+  if (raw == null) return { ok: false, errors: ['尚无导入前快照。'], warnings: [] };
+  const checked = prepareSaveImport(raw);
+  if (!checked.ok) return checked;
+  try {
+    if (typeof storage?.setItem !== 'function') reject('本机存储不可写。');
+    const current = prepareSaveImport(storage.getItem(SAVE_KEY));
+    if (current.ok) storage.setItem(SAVE_BACKUP_KEY, JSON.stringify(current.save));
+    storage.setItem(SAVE_KEY, JSON.stringify(checked.save));
+    return checked;
+  } catch (error) { return { ok: false, errors: [`恢复未完成：${errorText(error, '存储失败')}`], warnings: checked.warnings }; }
+}
+
+function stable(value) {
+  if (Array.isArray(value)) return `[${value.map(stable).join(',')}]`;
+  if (object(value)) return `{${Object.keys(value).sort().filter(key => value[key] !== undefined).map(key => `${JSON.stringify(key)}:${stable(value[key])}`).join(',')}}`;
+  return JSON.stringify(value);
+}
+
+/** Model fingerprint is a mismatch guard, not an authenticity/security signature. */
+function caseFingerprint(level) {
+  const content = stable({
+    id: level.id,
+    nodes: level.nodes.map(node => Object.fromEntries(['id', 'kind', 'min', 'max', 'load', 'locked'].filter(key => node[key] !== undefined).map(key => [key, node[key]]))),
+    edges: level.edges.map(edge => Object.fromEntries(['id', 'from', 'to', 'wire', 'locked'].filter(key => edge[key] !== undefined).map(key => [key, edge[key]]))),
+    windows: level.windows, corners: level.corners, limits: level.limits, initial: level.initial, allowedParts: level.allowedParts,
+  });
+  let hash = 0xcbf29ce484222325n;
+  for (let index = 0; index < content.length; index++) hash = BigInt.asUintN(64, (hash ^ BigInt(content.charCodeAt(index))) * 0x100000001b3n);
+  return `sta-v1-${hash.toString(16).padStart(16, '0')}`;
+}
+
+function officialLevel(level) {
+  if (!object(level)) reject('请先打开一个病例。');
+  let official = LEVEL_BY_ID.get(level.id);
+  if (!official && level.endless === true) {
+    if (typeof level.seed !== 'string' || level.seed.length > 80 || !integer(level.round, 1, 9999)) reject('当前夜班病例描述错误。');
+    official = generateEmergency(level.seed, level.round, toolList(level.generatorEquipment, '夜班生成器材'));
+  }
+  if (!official || official.id !== level.id || caseFingerprint(official) !== caseFingerprint(level)) reject('仅支持当前版本的正式病例蓝图。');
+  return official;
+}
+
+function exportBlueprint(level, state, equipment) {
+  const official = officialLevel(level), clean = validatePlan(official, state, equipment, '蓝图方案');
+  const result = evaluate(official, clean, equipment);
+  const generator = official.endless ? { seed: official.seed, round: official.round, heldTools: [...official.generatorEquipment] } : undefined;
+  return JSON.stringify({ game: EXCHANGE_GAME, format: 'blueprint', version: FORMAT_VERSION, levelId: official.id, caseFingerprint: caseFingerprint(official), state: clean, metrics: metricsFor(result), ...(generator ? { generator } : {}) }, null, 2);
+}
+
+/** Loads a plan only. The UI must apply it through its ordinary edit/undo path. */
+function prepareBlueprintImport(raw, currentLevel, equipment) {
+  const warnings = [];
+  try {
+    const value = readJSON(raw);
+    fields(value, ['game', 'format', 'version', 'levelId', 'caseFingerprint', 'state', 'metrics', 'generator'], '蓝图');
+    if (value.game !== EXCHANGE_GAME || value.format !== 'blueprint' || value.version !== FORMAT_VERSION) reject('不支持此游戏、格式或版本的蓝图。');
+    const level = officialLevel(currentLevel);
+    if (value.levelId !== level.id || value.caseFingerprint !== caseFingerprint(level)) reject('蓝图与当前病例或规则版本不匹配，请打开对应病例。');
+    if (level.endless) {
+      fields(value.generator, ['seed', 'round', 'heldTools'], '蓝图夜班描述');
+      const heldTools = toolList(value.generator.heldTools, '蓝图夜班器材');
+      if (value.generator.seed !== level.seed || value.generator.round !== level.round) reject('蓝图夜班编号或轮次与当前病例不匹配。');
+      const regenerated = generateEmergency(value.generator.seed, value.generator.round, heldTools);
+      if (regenerated.id !== level.id || caseFingerprint(regenerated) !== value.caseFingerprint) reject('蓝图夜班器材与当前病例不匹配。');
+    } else if (value.generator !== undefined) reject('战役蓝图不应包含夜班生成信息。');
+    const state = validatePlan(level, value.state, equipment, '蓝图方案');
+    const result = evaluate(level, state, equipment);
+    if (value.metrics !== undefined) recalculateMetrics(value.metrics, result, '蓝图指标', warnings);
+    return { ok: true, state, result, errors: [], warnings };
+  } catch (error) { return { ok: false, errors: [errorText(error, '蓝图无法验证。')], warnings }; }
+}
+
+return {EXCHANGE_GAME,IMPORT_RECOVERY_KEY,prepareSaveImport,exportSave,importWithRecovery,restoreBeforeImport,caseFingerprint,exportBlueprint,prepareBlueprintImport};
+})();
 __modules.main=(()=>{
 const { GATE_PARTS, EDGE_PARTS, newState, evaluate, cloneState }=__modules.engine;
 const { LEVELS, CHAPTERS }=__modules.levels;
 const { generateEmergency }=__modules.endless;
+const { previewPart, relatedCircuit }=__modules.preview;
+const { guideHTML, shortcutsHTML }=__modules.guide;
+const { exportSave, importWithRecovery, restoreBeforeImport, exportBlueprint, prepareBlueprintImport }=__modules.exchange;
 const { defaultSave, loadProgress, saveProgress, awardCase, buyUpgrade, UPGRADES, availableEquipment, unlockedIndex, starTargets }=__modules.progress;
 
 const app=document.querySelector('#app');
-let save=loadProgress(localStorage),screen='home',chapter=1,current=null,state=null,selection=null,pathSelection=null,undo=[],redo=[],remaining=0,elapsed=0,modal=null,hintCount=0,assisted=false,mode='campaign',seed='ER-2026',round=1,runScore=0,roundAwarded=false,allPaths=false,toastTimer,lastTick=Date.now(),audio=null;
+let save=loadProgress(localStorage),screen='home',chapter=1,current=null,state=null,selection=null,pathSelection=null,undo=[],redo=[],remaining=0,elapsed=0,modal=null,hintCount=0,assisted=false,mode='campaign',seed='ER-2026',round=1,runScore=0,roundAwarded=false,allPaths=false,toastTimer,lastTick=Date.now(),audio=null,preview=null,previewMode=false,timelineCorner=null,hoverTarget=null,modalReturn=null;
 const esc=x=>String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const fmt=x=>Number.isFinite(x)?x.toFixed(2):'—';
 const name=x=>x?.label??x?.name??x?.title??x?.id;
@@ -967,11 +1438,11 @@ function toast(message){clearTimeout(toastTimer);document.querySelector('.toast'
 function sound(kind='click'){if(!save.settings.sound)return;try{audio??=new(window.AudioContext||window.webkitAudioContext)();audio.resume();const tones=kind==='success'?[440,554,659,880]:kind==='fail'?[180,135]:[620];tones.forEach((f,i)=>{const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*.10;o.type=kind==='fail'?'triangle':'sine';o.frequency.value=f;g.gain.setValueAtTime(.045,t);g.gain.exponentialRampToValueAtTime(.001,t+.13);o.connect(g);g.connect(audio.destination);o.start(t);o.stop(t+.14);});}catch{}}
 function isTimed(){return mode==='endless'||current?.timed||current?.number%8===0;}
 function timerLimit(l){return l.limits.time*(mode==='campaign'&&save.settings.timeAssist?2:1);}
-function startLevel(l,restore=null){current=l;mode=restore?.mode??'campaign';seed=restore?.seed??seed;round=restore?.round??1;runScore=restore?.runScore??(mode==='endless'?runScore:0);roundAwarded=restore?.roundAwarded??false;state=cloneState(restore?.state??newState(l));remaining=restore?.remaining??timerLimit(l);elapsed=Math.max(0,timerLimit(l)-remaining);selection={type:'node',id:l.nodes.find(n=>n.kind==='gate')?.id??l.nodes[0].id};pathSelection=null;allPaths=false;undo=[];redo=[];hintCount=restore?.hints??0;assisted=restore?.assisted??false;modal=null;screen='game';lastTick=Date.now();syncDraft();if(!save.tutorialSeen){modal='tutorial';}render();}
+function startLevel(l,restore=null){current=l;mode=restore?.mode??'campaign';seed=restore?.seed??seed;round=restore?.round??1;runScore=restore?.runScore??(mode==='endless'?runScore:0);roundAwarded=restore?.roundAwarded??false;state=cloneState(restore?.state??newState(l));remaining=restore?.remaining??timerLimit(l);elapsed=Math.max(0,timerLimit(l)-remaining);selection={type:'node',id:l.nodes.find(n=>n.kind==='gate')?.id??l.nodes[0].id};pathSelection=null;timelineCorner=null;preview=null;hoverTarget=null;allPaths=false;undo=[];redo=[];hintCount=restore?.hints??0;assisted=restore?.assisted??false;modal=null;screen='game';lastTick=Date.now();syncDraft();if(!save.tutorialSeen){modal='tutorial';}render();}
 function endlessEquipment(){return [...new Set([...availableEquipment(save,LEVELS[unlock()]),'normal','strong','none','delay','buffer'])];}
 function startEndless(s=seed,r=1){seed=s||'ER-2026';round=r;mode='endless';const l=generateEmergency(seed,round,endlessEquipment());startLevel(l,{mode:'endless',seed,round,runScore});}
 function resumeDraft(){const d=save.draft;if(!d)return;mode=d.mode==='endless'?'endless':'campaign';const l=mode==='endless'?generateEmergency(d.seed,d.round,d.heldTools?.length?d.heldTools:endlessEquipment()):LEVELS.find(l=>l.id===d.levelId);if(!l){save.draft=null;persist();toast('旧病例已归档，请重新分诊');return;}const check=evaluate(l,d.state,availableEquipment(save,l));if(!check.valid){startLevel(l);toast('草稿异常，已恢复病例初始电路');return;}startLevel(l,d);if(remaining<=0&&isTimed())modal='timeout';else if(result().passed&&(mode==='endless'?roundAwarded:save.completed[l.id]))modal='success';render();}
-function update(next){if(modal||remaining<=0&&isTimed()||JSON.stringify(next)===JSON.stringify(state))return;undo.push(cloneState(state));if(undo.length>150)undo.shift();redo=[];state=next;sound();syncDraft();render();}
+function update(next){if(modal||remaining<=0&&isTimed()||JSON.stringify(next)===JSON.stringify(state))return;undo.push(cloneState(state));if(undo.length>150)undo.shift();redo=[];state=next;preview=null;hoverTarget=null;sound();syncDraft();render();}
 function changePart(id){if(!selection)return;const n=current.nodes.find(n=>n.id===selection.id);const e=current.edges.find(e=>e.id===selection.id);if(selection.type==='node'&&(n?.kind!=='gate'||n.locked)||selection.type==='edge'&&e?.locked){toast('此元件已封装，不能替换');return;}const next=cloneState(state);(selection.type==='node'?next.gates:next.edges)[selection.id]=id;update(next);}
 function button(label,action,attrs='',cl=''){return `<button class="${cl}" data-action="${action}" ${attrs}>${label}</button>`;}
 function nav(){const items=[['home','分诊大厅'],['workshop','器材研发'],['records','病案档案'],['help','值班手册'],['settings','设置']];return `<header class="topbar"><div class="brand"><div class="brand-icon">✚</div><div><strong>时序急救室</strong><small>TIMING EMERGENCY ROOM</small></div></div><nav class="nav" aria-label="主导航"><span class="credit">◈ ${save.credits} 研发点</span>${items.map(([id,n])=>button(n,'nav',`data-screen="${id}"`,screen===id?'active':'')).join('')}${screen==='game'?button('Ⅱ 暂停','pause'):''}</nav></header>`;}
@@ -979,7 +1450,7 @@ function chapterData(id){return CHAPTERS.find(c=>c.id===id)||CHAPTERS[id-1]||{ti
 function completedCount(){return LEVELS.filter(l=>save.completed[l.id]).length;}
 function unlock(){return Math.min(LEVELS.length-1,Math.max(0,unlockedIndex(save,LEVELS)));}
 function heroArt(){return `<div class="hero-art" aria-label="电路心电监护仪"><div class="artlabel">EMERGENCY / CIRCUIT VITALS</div><svg viewBox="0 0 550 310"><defs><pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#24434b" stroke-width=".5"/></pattern></defs><rect width="550" height="310" fill="url(#grid)"/><path d="M0 172H76l17-10 16 10 20-70 22 136 22-67h77l15-13 15 13 19-50 19 100 20-49H550" fill="none" stroke="#61e7b1" stroke-width="3"/><g fill="#14383d" stroke="#567e84"><rect x="55" y="69" width="62" height="35" rx="6"/><rect x="234" y="69" width="65" height="35" rx="6"/><rect x="423" y="69" width="66" height="35" rx="6"/></g><g fill="none" stroke="#5b8a90" stroke-width="2"><path d="M117 86H234M299 86H423M266 104V125M86 104v22M456 104v24"/></g><g fill="#b7dad8" font-family="Consolas" font-size="12"><text x="71" y="92">DFF</text><text x="248" y="92">GATE</text><text x="438" y="92">DFF</text></g><circle cx="456" cy="171" r="6" fill="#61e7b1"/></svg><div class="scanline"></div><div class="artstatus"><span>SETUP / HOLD</span><span>01 : 14 : 48</span><span>● LOCAL SYSTEM</span></div></div>`;}
-function home(){const ix=unlock(),next=LEVELS[ix],draft=save.draft,draftLevel=draft?.mode==='campaign'?LEVELS.find(l=>l.id===draft.levelId):null,finishedDraft=!!(draftLevel&&save.completed[draftLevel.id]&&evaluate(draftLevel,draft.state,availableEquipment(save,draftLevel)).passed),pendingDraft=!!draft&&!finishedDraft,mainLabel=pendingDraft?'继续值班':completedCount()===0?'开始第一台手术':completedCount()===LEVELS.length?'进入终章复诊':'接诊下一病例';return `<main class="home"><section class="hero"><div><div class="eyebrow">有限处方 · 连锁反应 · 电路抢救</div><h1>每一拍，<br>都<em>不能错过。</em></h1><p>电路送到了急诊。太慢赶不上下一拍，太快又闯进上一拍。找出病灶，用有限的器材和替换次数，让所有信号回到安全窗口。</p><div class="hero-actions">${button(mainLabel,pendingDraft?'resume':'continue','','primary')}${finishedDraft?button('继续优化上一病例','resume','','ghost'):''}${button('查看病例','chapter','data-chapter="1"','ghost')}</div></div>${heroArt()}</section><section class="stats-strip"><div class="stat"><strong>${completedCount()} / ${LEVELS.length}</strong><small>已抢救病例</small></div><div class="stat"><strong>6</strong><small>诊疗科室 / 递进机制</small></div><div class="stat"><strong>${Object.values(save.completed).reduce((a,c)=>a+(c.stars||0),0)}</strong><small>精良处方星章</small></div><div class="stat"><strong>${save.endless?.bestRound||0}</strong><small>连续急诊最佳轮次</small></div></section><div class="sectionbar"><h2>今日分诊</h2><small>下一病例 · ${esc(next.title)}</small></div><section class="chapter-grid">${CHAPTERS.map((c,i)=>{const ls=LEVELS.filter(l=>l.chapter===c.id),done=ls.filter(l=>save.completed[l.id]).length,locked=LEVELS.indexOf(ls[0])>ix;return `<button class="chapter ${locked?'locked':''}" data-action="chapter" data-chapter="${c.id}" ${locked?'disabled':''}><div class="chapter-head"><span class="eyebrow">WARD 0${i+1}</span><small>${done} / ${ls.length}${locked?' · 待轮转':''}</small></div><h3>${esc(c.title)}</h3><p>${esc(c.subtitle??c.theme??'诊断新的时序病灶')}</p><div class="progress-track"><i style="width:${100*done/ls.length}%"></i></div></button>`;}).join('')}</section><section class="endless-card"><div><div class="eyebrow">NIGHT SHIFT / SEEDED SURVIVAL</div><h2>夜班无尽急诊</h2><p>每轮病例经过正式判定验证。有限处方、限时手术，电路随轮次扩展。相同编号可重复挑战；暂停和重试保留当前病例。</p><div class="badge-row"><span class="chip">确定种子</span><span class="chip">规模封顶</span><span class="chip">持有器材可解</span></div></div><div><label for="seed-input">值班编号</label><input id="seed-input" value="${esc(seed)}" maxlength="48" placeholder="输入任意编号"><div>${button('开始夜班','endless','','primary')} <small>最高积分 ${save.endless?.bestScore||0}</small></div><p class="fit-note">夜班积分独立计算。研发点由首次病例救治与星章进阶获得。</p></div></section></main>`;}
+function home(){const ix=unlock(),next=LEVELS[ix],draft=save.draft,draftLevel=draft?.mode==='campaign'?LEVELS.find(l=>l.id===draft.levelId):null,finishedDraft=!!(draftLevel&&save.completed[draftLevel.id]&&evaluate(draftLevel,draft.state,availableEquipment(save,draftLevel)).passed),pendingDraft=!!draft&&!finishedDraft,mainLabel=pendingDraft?'继续值班':completedCount()===0?'开始第一台手术':completedCount()===LEVELS.length?'进入终章复诊':'接诊下一病例';return `<main class="home"><section class="hero"><div><div class="eyebrow">有限处方 · 连锁反应 · 电路抢救</div><h1>每一拍，<br>都<em>不能错过。</em></h1><p>电路送到了急诊。太慢赶不上下一拍，太快可能打破本拍采样后的保持要求。找出病灶，用有限的器材和替换次数，让所有信号回到安全窗口。</p><div class="hero-actions">${button(mainLabel,pendingDraft?'resume':'continue','','primary')}${finishedDraft?button('继续优化上一病例','resume','','ghost'):''}${button('查看病例','chapter','data-chapter="1"','ghost')}</div></div>${heroArt()}</section><section class="stats-strip"><div class="stat"><strong>${completedCount()} / ${LEVELS.length}</strong><small>已抢救病例</small></div><div class="stat"><strong>6</strong><small>诊疗科室 / 递进机制</small></div><div class="stat"><strong>${Object.values(save.completed).reduce((a,c)=>a+(c.stars||0),0)}</strong><small>精良处方星章</small></div><div class="stat"><strong>${save.endless?.bestRound||0}</strong><small>连续急诊最佳轮次</small></div></section><div class="sectionbar"><h2>今日分诊</h2><small>下一病例 · ${esc(next.title)}</small></div><section class="chapter-grid">${CHAPTERS.map((c,i)=>{const ls=LEVELS.filter(l=>l.chapter===c.id),done=ls.filter(l=>save.completed[l.id]).length,locked=LEVELS.indexOf(ls[0])>ix;return `<button class="chapter ${locked?'locked':''}" data-action="chapter" data-chapter="${c.id}" ${locked?'disabled':''}><div class="chapter-head"><span class="eyebrow">WARD 0${i+1}</span><small>${done} / ${ls.length}${locked?' · 待轮转':''}</small></div><h3>${esc(c.title)}</h3><p>${esc(c.subtitle??c.theme??'诊断新的时序病灶')}</p><div class="progress-track"><i style="width:${100*done/ls.length}%"></i></div></button>`;}).join('')}</section><section class="endless-card"><div><div class="eyebrow">NIGHT SHIFT / SEEDED SURVIVAL</div><h2>夜班无尽急诊</h2><p>每轮病例经过正式判定验证。有限处方、限时手术，电路随轮次扩展。相同编号可重复挑战；暂停和重试保留当前病例。</p><div class="badge-row"><span class="chip">确定种子</span><span class="chip">规模封顶</span><span class="chip">持有器材可解</span></div></div><div><label for="seed-input">值班编号</label><input id="seed-input" value="${esc(seed)}" maxlength="48" placeholder="输入任意编号"><div>${button('开始夜班','endless','','primary')} <small>最高积分 ${save.endless?.bestScore||0}</small></div><p class="fit-note">夜班积分独立计算。研发点由首次病例救治与星章进阶获得。</p></div></section></main>`;}
 function chapterScreen(){const c=chapterData(chapter);return `<main class="home"><div class="sectionbar"><div><div class="eyebrow">WARD 0${chapter} / CASE FILES</div><h2 style="margin-top:12px">${esc(c.title)}</h2><p class="muted" style="margin-top:10px">${esc(c.subtitle??c.theme)}</p></div>${button('返回大厅','nav','data-screen="home"','ghost')}</div><section class="case-grid">${LEVELS.filter(l=>l.chapter===chapter).map(l=>{const locked=LEVELS.indexOf(l)>unlock(),rec=save.completed[l.id];return `<button class="case-card" data-action="case" data-level="${l.id}" ${locked?'disabled':''}><div class="chapter-head"><span class="num">${String(l.number).padStart(2,'0')}</span><span class="stars">${rec?'★'.repeat(rec.stars)+'☆'.repeat(3-rec.stars):locked?'待轮转':'未诊断'}</span></div><strong>${esc(l.title)}</strong><small>${esc(l.lesson)}</small><div class="badge-row"><span class="chip">${l.limits.edits} 次替换</span>${l.number%8===0?'<span class="chip">限时抢救</span>':''}</div></button>`;}).join('')}</section><div class="briefbox">病例奖励只在首次救治和星章进阶时发放。每台手术都有材料、面积、功耗与最终差异上限；试错和撤销不会永久消耗替换次数。</div></main>`;}
 function coords(){const xs=current.nodes.map(n=>n.x),ys=current.nodes.map(n=>n.y);return {w:Math.max(560,...xs)+90,h:Math.max(260,...ys)+85};}
 function selectedPath(r){return r.paths.find(p=>p.id===pathSelection);}
@@ -987,14 +1458,41 @@ function board(r){const {w,h}=coords(),path=selectedPath(r),ns=new Map(current.n
 function inspector(r){if(!selection)return '<div class="empty">选择元件或线路</div>';const isNode=selection.type==='node',obj=(isNode?current.nodes:current.edges).find(n=>n.id===selection.id),part=(isNode?state.gates:state.edges)[obj.id]??(isNode?'normal':'none'),metric=r.nodeMetrics?.find(m=>m.id===obj.id),editable=!obj.locked&&(!isNode||obj.kind==='gate'),all=isNode?GATE_PARTS:EDGE_PARTS,allowed=equipment();return `<div class="panel-body"><div class="eyebrow">${isNode?'CELL DIAGNOSIS':'WIRE PROCEDURE'}</div><div class="inspector-name" style="margin-top:10px">${esc(obj.label||obj.id)}</div><div class="inspector-info">${isNode?`${obj.kind==='source'?'固定发射寄存器':obj.kind==='sink'?'固定接收寄存器':'逻辑功能保持不变，只替换型号'}${metric?`<br>本门负载 ${fmt(metric.load)}<br>最早 ${fmt(metric.min)} / 最晚 ${fmt(metric.max)}`:''}`:`${esc(obj.from)} → ${esc(obj.to)}<br>线路长度 / 电容系数 ${fmt(obj.wire)}`}<br>${obj.locked?'▣ 已封装：禁止改动':'相对入院处方计费；恢复初始部件不计替换'}</div>${editable?all.filter(p=>allowed.includes(p.id)||p.id===part).map((p,i)=>{const next=cloneState(state);(isNode?next.gates:next.edges)[obj.id]=p.id;const rr=result(next);return `<button class="tool ${p.id===part?'current':''}" data-action="part" data-part="${p.id}" ${p.id===part?'aria-pressed="true"':''}><strong>${i+1} · ${esc(name(p))} ${p.id===part?'✓':''}</strong><small>${esc(p.description)}</small><div class="delta"><span>材料 ${fmt(rr.cost-r.cost).replace(/^0\.00$/,'±0')}</span><span>晚裕 ${fmt(rr.maxSlack)}</span><span>早裕 ${fmt(rr.minSlack)}</span></div></button>`;}).join(''):'<div class="briefbox">点击右侧监护路径，查看与此寄存器相关的信号窗口。</div>'}</div>`;}
 function meter(label,val,max){return `<div class="meter"><div class="meter-title"><span>${label}</span><span class="${val>max?'bad':''}">${fmt(val)} / ${max}</span></div><div class="progress-track"><i class="${val>max?'over':''}" style="width:${Math.min(100,100*val/(max||1))}%"></i></div></div>`;}
 function monitors(r){const hasAnalyzer=save.purchases.includes('analyzer'),sorted=[...r.paths].sort((a,b)=>Math.min(a.setup,a.hold)-Math.min(b.setup,b.hold)),paths=hasAnalyzer||allPaths?sorted:sorted.slice(0,4);return `<aside class="panel monitor-panel"><div class="panel-head"><h3>生命体征 / 裕量</h3><span class="chip">${r.passed?'可出院':'待抢救'}</span></div><div class="panel-body"><div class="readings"><div class="reading"><small>最晚 · setup</small><strong class="${r.maxSlack>=0?'good':'bad'}">${fmt(r.maxSlack)}</strong><p>${r.maxSlack>=0?'✓ 没有迟到':'! 到达太晚'}</p></div><div class="reading"><small>最早 · hold</small><strong class="${r.minSlack>=0?'good':'bad'}">${fmt(r.minSlack)}</strong><p>${r.minSlack>=0?'✓ 没有抢拍':'! 到达太早'}</p></div></div>${meter('最终替换差异',r.edits,current.limits.edits)}${meter('材料点',r.cost,current.limits.cost)}${meter('器材面积',r.area,current.limits.area)}${meter('器材功耗',r.power,current.limits.power)}${(r.errors?.length||r.violations?.some(v=>v.type==='budget'))?`<div class="issues">${[...(r.errors||[]),...(r.violations||[]).filter(v=>v.type==='budget').map(v=>v.message)].map(esc).join('<br>')}</div>`:''}</div><div><div class="panel-head"><h3>危险路径 · 点击追踪</h3></div><div class="path-list">${paths.map(p=>`<button class="path-button ${pathSelection===p.id?'selected':''}" data-action="path" data-id="${p.id}"><span>${esc(p.label||p.sink)} · ${esc(p.corner)}</span><small class="${p.setup<0||p.hold<0?'bad':'good'}">早 ${fmt(p.min)} / 晚 ${fmt(p.max)} · ${p.hold<0?'抢拍':p.setup<0?'迟到':'安全'}</small></button>`).join('')}</div>${!hasAnalyzer&&sorted.length>4?`<div style="padding:0 14px 12px">${button(allPaths?'收起路径':`手动查看全部 ${sorted.length} 条`,'all-paths','','small')}<small style="display:block;margin-top:7px">分析仪可自动展开全部工况。</small></div>`:''}</div></aside>`;}
-function timeline(r){const ps=r.paths.filter(p=>p.corner===r.paths[0]?.corner),max=Math.max(1,...ps.map(p=>Math.max(p.max,p.late)))*1.12;return `<div class="panel-body timeline"><div class="eyebrow">SAFE ARRIVAL WINDOWS · ${esc(current.corners?.find(c=>c.id===ps[0]?.corner)?.label??ps[0]?.corner??'常温')}</div>${ps.map(p=>`<div class="timeline-row"><span class="label">${esc(p.sink)}</span><div class="timeline-track"><div class="window-band" style="left:${100*p.early/max}%;width:${100*(p.late-p.early)/max}%"></div><div class="arrival-band ${p.setup<0||p.hold<0?'fail':''}" style="left:${100*p.min/max}%;width:${100*(p.max-p.min)/max}%"></div></div><span class="timeline-values">${fmt(p.min)}–${fmt(p.max)}<small>窗 ${fmt(p.early)}–${fmt(p.late)}</small></span></div>`).join('')}<small>背景为安全窗口；亮条为最小—最大到达时间。单位为游戏时间单位。</small></div>`;}
-function game(){const r=result(),c=chapterData(current.chapter);return `<main class="workarea"><div class="case-title"><div><div class="eyebrow">${mode==='endless'?`NIGHT SHIFT · ROUND ${round} · SCORE ${runScore}`:`WARD 0${current.chapter} · CASE ${String(current.number).padStart(2,'0')} · ${esc(c.title)}`}</div><h2>${esc(current.title)} <span class="chip">${esc(current.triage||'时序诊断')}</span></h2><p>${esc(current.brief)}</p></div><div class="timer" id="timer-display">${isTimed()?timeString(remaining):'∞'}<small>${isTimed()?'手术剩余 / SEC':'常规诊疗 · 自由推敲'}</small></div></div><div class="game-grid"><aside class="panel inspector-panel"><div class="panel-head"><h3>处方器材 / 替换预览</h3><small>1–9</small></div>${inspector(r)}</aside><section><div class="panel"><div class="toolbar">${button('↶ 撤销','undo',undo.length?'':'disabled')}${button('↷ 重做','redo',redo.length?'':'disabled')}${button('恢复入院','reset')}${button('⊙ 最危险路径','worst')}${button('Ⅱ 暂停','pause')}</div><div class="board-wrap">${board(r)}</div><div class="board-caption"><span>点击门或线路 → 选择处方 · 金色路径＝当前追踪</span><span>▣ 封装固定</span></div>${timeline(r)}</div><div class="briefbox"><strong>主治医嘱：</strong>${esc(current.lesson)}${selectedPath(r)?`<br>追踪：最晚 ${esc(selectedPath(r).nodes?.join(' → '))}；最早 ${esc(selectedPath(r).minNodes?.join(' → '))}`:''}</div><div class="footer-controls"><div>${button('会诊提示','hint')} ${save.purchases.includes('notebook')?button('保存试验','notebook-save')+' '+button('载入试验','notebook-load',save.notebook?.[current.id]?'':'disabled'):''}</div>${button('复检 · 申请出院','submit','','primary')}</div><small class="muted">${assisted?'已使用演示会诊，本次星章上限 1 星。':'预算按最终差异计。任何一条路径违规或资源超限，均不能出院。'} ${isTimed()?'切出窗口自动暂停；时间耗尽可重试同一病例。':''}</small></section>${monitors(r)}</div></main>`;}
+function timeline(r){
+ const corners=[...new Set(r.paths.map(p=>p.corner))];
+ if(!corners.includes(timelineCorner))timelineCorner=corners[0];
+ const ps=r.paths.filter(p=>p.corner===timelineCorner),candidate=preview?.candidate;
+ const max=Math.max(1,...ps.map(p=>Math.max(p.max,p.late,candidate?.paths.find(q=>q.id===p.id)?.max??0)))*1.12;
+ const pct=n=>Math.max(0,Math.min(100,100*n/max));
+ return `<div class="panel-body timeline"><div class="timeline-heading"><div class="eyebrow">最早—最晚到达区间</div><div class="corner-tabs" aria-label="查看工况">${corners.map(c=>button(current.corners?.find(q=>q.id===c)?.label??c,'corner',`data-id="${esc(c)}" aria-pressed="${c===timelineCorner}"`,c===timelineCorner?'small active':'small')).join('')}</div></div><div class="timeline-legend"><span>▧ 太早 / hold 禁区</span><span>□ 安全窗口</span><span>▧ 太晚 / setup 禁区</span><span>━ 当前</span><span>┄ 候选</span></div>${ps.map(p=>{const q=candidate?.paths.find(q=>q.id===p.id);return `<div class="timeline-row" data-path="${esc(p.id)}" data-min="${p.min}" data-max="${p.max}" data-early="${p.early}" data-late="${p.late}"><span class="label">${esc(p.sink)}</span><div class="timeline-track" role="img" aria-label="${esc(p.sink)} 安全窗 ${fmt(p.early)} 至 ${fmt(p.late)}，当前最早 ${fmt(p.min)} 最晚 ${fmt(p.max)}${q?`，候选最早 ${fmt(q.min)} 最晚 ${fmt(q.max)}`:''}"><div class="forbidden-band early" style="width:${pct(p.early)}%"></div><div class="window-band" style="left:${pct(p.early)}%;width:${pct(p.late)-pct(p.early)}%"></div><div class="forbidden-band late" style="left:${pct(p.late)}%;width:${100-pct(p.late)}%"></div><div class="window-bound early-bound" style="left:${pct(p.early)}%"></div><div class="window-bound late-bound" style="left:${pct(p.late)}%"></div><div class="arrival-band ${p.passed?'':'fail'}" style="left:${pct(p.min)}%;width:${pct(p.max)-pct(p.min)}%"></div>${q?`<div data-min="${q.min}" data-max="${q.max}" class="candidate-band ${q.passed?'':'fail'}" style="left:${pct(q.min)}%;width:${pct(q.max)-pct(q.min)}%"></div>`:''}</div><span class="timeline-values">${fmt(p.min)}–${fmt(p.max)}<small>窗 ${fmt(p.early)}–${fmt(p.late)}</small>${q?`<small class="candidate-value">候 ${fmt(q.min)}–${fmt(q.max)}</small>`:''}</span></div>`;}).join('')}<small>hold 下界 ≤ 最早到达；最晚到达 ≤ setup 上界。全部工况都须满足，单位为游戏时间单位。</small>${preview?`<div class="preview-summary" role="status"><strong>虚线候选 · ${esc([...GATE_PARTS,...EDGE_PARTS].find(p=>p.id===preview.part)?.label??preview.part)} · 尚未应用</strong><div>早裕 ${fmt(candidate.minSlack)} / 晚裕 ${fmt(candidate.maxSlack)} · ${candidate.timingPassed?'时序达标':'仍有时序违规'} · ${candidate.budgetPassed?'资源达标':'资源超限'}${candidate.timePassed?'':' · 已超时'}</div><small>正式模型重算最小/最大区间，包含上游负载与路径切换；不是动态波形。</small>${previewMode?`<div class="preview-actions">${button('应用此处方','apply-preview','','small primary')}${button('取消候选','cancel-preview','','small')}</div>`:''}</div>`:'<p class="preview-instruction">悬停或聚焦器材可看虚线；开启「点选预览」后可先比较，再应用。</p>'}</div>`;
+}
+function clearPreview(){preview=null;document.querySelectorAll('.tool.previewing').forEach(el=>el.classList.remove('previewing'));if(screen==='game'&&state){const host=document.querySelector('#timing-preview');if(host)host.innerHTML=timeline(result());}highlightRelated();}
+function setPreview(part){if(screen!=='game'||modal||!selection)return;if((selection.type==='node'?state.gates:state.edges)[selection.id]===part){clearPreview();return;}const evaluated=previewPart({...current,limits:{...current.limits,time:timerLimit(current)}},state,selection,part,{unlockedParts:equipment(),elapsedSeconds:isTimed()?elapsed:0});if(!evaluated.valid)return;preview={...evaluated,part,base:JSON.stringify(state),selection:JSON.stringify(selection)};const host=document.querySelector('#timing-preview');if(host)host.innerHTML=timeline(result());document.querySelectorAll('.tool').forEach(el=>el.classList.toggle('previewing',el.dataset.part===part));highlightRelated();}
+function highlightRelated(){
+ if(screen!=='game'||!current||!state)return;
+ const r=result(),target=hoverTarget??selection,chosen=selectedPath(r);
+ let paths=[],related={nodes:[],edges:[],sinks:[]};
+ if(preview?.changedPaths?.length){paths=[...r.paths,...preview.candidate.paths].filter(p=>preview.changedPaths.includes(p.id));related={nodes:paths.flatMap(p=>[...p.maxNodes,...p.minNodes,p.sink]),edges:paths.flatMap(p=>[...p.maxEdges,...p.minEdges]),sinks:paths.map(p=>p.sink)};}
+ else if(target?.type==='path'){paths=r.paths.filter(p=>p.id===target.id);related={nodes:paths.flatMap(p=>[...p.maxNodes,...p.minNodes,p.sink]),edges:paths.flatMap(p=>[...p.maxEdges,...p.minEdges]),sinks:paths.map(p=>p.sink)};}
+ else if(target){related=relatedCircuit(current,target);paths=r.paths.filter(p=>related.sinks.includes(p.sink));}
+ const nodes=new Set(related.nodes),edges=new Set(related.edges);
+ document.querySelectorAll('.board [data-action="select-node"]').forEach(el=>{el.classList.toggle('related',nodes.has(el.dataset.id));el.classList.toggle('endpoint',nodes.has(el.dataset.id)&&current.nodes.find(n=>n.id===el.dataset.id)?.kind!=='gate');el.classList.toggle('path-node',!!chosen&&[...chosen.maxNodes,...chosen.minNodes].includes(el.dataset.id));});
+ document.querySelectorAll('.board g[data-action="select-edge"]').forEach(el=>el.classList.toggle('related',edges.has(el.dataset.id)));
+ document.querySelectorAll('.path-button').forEach(el=>el.classList.toggle('related',paths.some(p=>p.id===el.dataset.id)));
+}
+function comparison(r){const completed=save.completed[current.id],rows=[['入院',evaluate(current,newState(current),equipment())],['当前',r]];for(const [key,label]of [['edits','个人少改'],['cost','个人省料'],['margin','个人稳健']]){const b=completed?.best?.[key];if(b){const rr=evaluate(current,b.state,equipment());if(rr.valid)rows.push([label,rr]);}}return `<details class="comparison"><summary>处方对照 · 入院 / 当前 / 个人最佳</summary><div class="comparison-scroll"><table><thead><tr><th>方案</th><th>替换</th><th>材料</th><th>器材面积</th><th>器材功耗</th><th>早裕</th><th>晚裕</th></tr></thead><tbody>${rows.map(([label,q])=>`<tr><th>${label}</th>${[q.edits,q.cost,q.area,q.power,q.minSlack,q.maxSlack].map(v=>`<td>${fmt(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><small>正式判定器重算；面积/功耗为相对入院的替换器材代价。个人记录仅保存在本机。</small></details>`;}
+function downloadJSON(text,filename){const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=filename;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function openAuxiliary(which){if(modal&& !['paused','tutorial','guide','shortcuts'].includes(modal))return;modalReturn=modal==='guide'||modal==='shortcuts'?modalReturn:modal;modal=which;preview=null;render();}
+
+function game(){const r=result(),c=chapterData(current.chapter);return `<main class="workarea"><div class="case-title"><div><div class="eyebrow">${mode==='endless'?`NIGHT SHIFT · ROUND ${round} · SCORE ${runScore}`:`WARD 0${current.chapter} · CASE ${String(current.number).padStart(2,'0')} · ${esc(c.title)}`}</div><h2>${esc(current.title)} <span class="chip">${esc(current.triage||'时序诊断')}</span></h2><p>${esc(current.brief)}</p></div><div class="timer" id="timer-display">${isTimed()?timeString(remaining):'∞'}<small>${isTimed()?'手术剩余 / SEC':'常规诊疗 · 自由推敲'}</small></div></div><div class="game-grid"><aside class="panel inspector-panel"><div class="panel-head"><h3>处方器材 / 替换预览</h3><small>1–9 · 悬停预览</small></div>${inspector(r)}</aside><section><div class="panel"><div class="toolbar">${button('↶ 撤销','undo',undo.length?'':'disabled')}${button('↷ 重做','redo',redo.length?'':'disabled')}${button('恢复入院','reset')}${button('⊙ 最危险路径','worst')}${button('Ⅱ 暂停','pause')}${button(previewMode?'点选预览：开':'点选预览：关','pin-preview',`aria-pressed="${previewMode}"`)}${button('10秒看懂','guide')}${button('? 快捷键','shortcuts')}</div><div class="board-wrap">${board(r)}</div><div class="board-caption"><span>点击门或线路 → 选择处方 · 金色路径＝当前追踪</span><span>▣ 封装固定</span></div><div id="timing-preview">${timeline(r)}</div></div>${comparison(r)}<div class="blueprint-actions">${button('导出处方蓝图','blueprint-export','','small')}${button('载入处方蓝图','blueprint-import','','small')}<small>共享JSON仅含器材方案；载入按会诊计，本次最多1星。</small><input type="file" id="blueprint-file" accept="application/json,.json" hidden></div><div class="briefbox"><strong>主治医嘱：</strong>${esc(current.lesson)}${selectedPath(r)?`<br>追踪：最晚 ${esc(selectedPath(r).nodes?.join(' → '))}；最早 ${esc(selectedPath(r).minNodes?.join(' → '))}`:''}</div><div class="footer-controls"><div>${button('会诊提示','hint')} ${save.purchases.includes('notebook')?button('保存试验','notebook-save')+' '+button('载入试验','notebook-load',save.notebook?.[current.id]?'':'disabled'):''}</div>${button('复检 · 申请出院','submit','','primary')}</div><small class="muted">${assisted?'已使用演示会诊，本次星章上限 1 星。':'预算按最终差异计。任何一条路径违规或资源超限，均不能出院。'} ${isTimed()?'切出窗口自动暂停；时间耗尽可重试同一病例。':''}</small></section>${monitors(r)}</div></main>`;}
 function timeString(n){return `${Math.floor(Math.max(0,n)/60).toString().padStart(2,'0')}:${Math.floor(Math.max(0,n)%60).toString().padStart(2,'0')}`;}
 function workshop(){return `<main class="home"><div class="eyebrow">RESEARCH / SIDEWAYS STRATEGIES</div><h2 style="margin:15px 0">器材研发</h2><p class="muted" style="margin-bottom:25px">新器材提供诊断便利或新的处方。章节轮转会自动提供必需工具；购买不会扩大任何病例的预算。</p><section class="upgrade-grid">${UPGRADES.map(u=>{const owned=save.purchases.includes(u.id);return `<article class="upgrade"><div class="eyebrow">${owned?'INSTALLED / 已装配':'R&D / 待研发'}</div><h3>${esc(name(u))}</h3><p>${esc(u.description)}</p>${button(owned?'已研发':`研发 · ${u.price} 点`,'buy',`data-id="${u.id}" ${owned||save.credits<u.price?'disabled':''}`,owned?'':'primary')}</article>`;}).join('')}</section><div class="briefbox">材料点是病例内资源，研发点是科室成长奖励。最强驱动也会增加上游负载；精密器材有面积与功耗代价。旧器材仍能成为更好的处方。</div></main>`;}
 function records(){const records=LEVELS.filter(l=>save.completed[l.id]);return `<main class="home"><div class="eyebrow">ARCHIVE / PERSONAL BEST</div><h2 style="margin:15px 0 25px">病案档案</h2><section class="panel">${records.length?records.map(l=>{const c=save.completed[l.id];return `<div class="history-item"><div><strong>${String(l.number).padStart(2,'0')} · ${esc(l.title)} <span class="stars">${'★'.repeat(c.stars)}</span></strong><small>三类个人最佳保存完整电路，载入后重新复检。</small></div><div class="history-actions">${[['edits','少改'],['cost','省料'],['margin','稳健']].map(([k,n])=>button(n,'record',`data-level="${l.id}" data-kind="${k}" ${c.best?.[k]?'':'disabled'}`,'small')).join('')}</div></div>`;}).join(''):'<div class="empty">尚未归档病例。完成第一台手术即可建立档案。</div>'}</section></main>`;}
-function settings(){return `<main class="home help-text"><div class="eyebrow">PREFERENCES / LOCAL SAVE</div><h2 style="margin:15px 0">值班设置</h2>${[['sound','操作与复检音效','本地合成音效，无外部音频资源。'],['motion','监护动画','关闭扫描线与路径流动，减轻动态干扰。'],['contrast','增强文字对比','提高边框与说明文字的可读性。'],['timeAssist','战役计时辅助','战役限时病例给予两倍时间，重新入院后生效。夜班保留原计时。']].map(([k,n,d])=>`<div class="settings-row"><div><strong>${n}</strong><small>${d}</small></div>${button(save.settings[k]?'已开启':'已关闭','setting',`data-id="${k}" aria-pressed="${!!save.settings[k]}"`)}</div>`).join('')}<div class="settings-row"><div><strong>存档备份</strong><small>自动保存在本机，并保留上一份有效档案；可导出 JSON 转移到桌面版。</small></div><div>${button('导出存档','export')} ${button('导入存档','import')}</div></div><input type="file" id="import-file" accept="application/json,.json" hidden><div class="settings-row"><div><strong>重新轮转</strong><small>清除战役进度、研发与个人最佳。</small></div>${button('清空进度','wipe','','danger')}</div></main>`;}
-function help(){return `<main class="home help-text"><div class="eyebrow">ON-CALL MANUAL / READ THE SIGNAL</div><h2 style="margin:15px 0">值班手册</h2><h3>01 · 先看哪种病</h3><p>setup 裕量小于零，说明某条信号到得太晚，需要加速。hold 裕量小于零，说明信号到得太早，需要在短路径增加延迟。同一电路可能同时有两种病，必须全部治好。</p><h3>02 · 点击病灶，比较处方</h3><p>点击电路中的门或线路，再选择左侧部件。每个候选都会预览替换后的全局早、晚裕量。强驱动让本门更快，却让它的输入变重，可能拖慢上游及其他支路。buffer 增加自己的延迟，同时隔离下游负载。延迟片修复抢拍；铜线适合长线提速；屏蔽线用于降低多工况波动；精密门缩小最早与最晚的区间。</p><h3>03 · 一张合格处方要满足所有上限</h3><p>全部接收端、全部工况的最小与最大到达时间都必须在窗口内，最终替换差异、材料点、器材面积和器材功耗也必须达标。预算按当前处方相对入院电路计，换回初始部件会返还预算。撤销与重做免费。接口处列出的面积与功耗是本次手术新增代价。</p><h3>04 · 轮转与夜班</h3><p>六章共 ${LEVELS.length} 个病例，逐例解锁。每章末有计时综合抢救；常规病例允许自由推敲。器材研发能提前提供侧向新解法，必需工具会随章节自动配发。夜班采用确定种子，生成器对持有装备的见证处方作正式复检，并随轮次增加规模与组合难度。</p><h3>05 · 会诊、个人最佳和快捷键</h3><p>会诊提示逐层展开，最后可请主治演示下一次替换。演示会诊将本次星章上限设为一星。少改、省料、稳健三类档案各自保存完整有效方案。快捷键：Ctrl+Z 撤销，Ctrl+Y / Ctrl+Shift+Z 重做；1–9 选择处方；空格暂停；方向键轮换可编辑门；Enter 复检。所有元件和线路也可 Tab 聚焦、Enter 选择。</p><h3>模型说明</h3><p>这是固定时钟的简化寄存器间时序游戏，分别传播最小/最大到达时间，并计算门输入电容、输出负载、线路电容及器材隔离。多工况给固定倍率，不引入运行时随机判定。模型用于游戏与直观教学，不代替真实芯片签核。</p><div style="margin-top:28px">${button('开始值班','continue','','primary')}</div></main>`;}
-function modalHTML(){if(!modal)return '';let html='';if(modal==='tutorial')html=`<div class="eyebrow">入职值班 / 60秒读懂</div><h2>先诊断，再开处方。</h2><div class="tutorial-step"><span>01</span><p><strong>读监护数值。</strong><br>晚裕量负数＝迟到；早裕量负数＝抢拍。两者都要达到零以上。</p></div><div class="tutorial-step"><span>02</span><p><strong>点击门或线路。</strong><br>左侧选择替换器材，候选显示整张电路的预测变化。先尝试第一关的强驱动门。</p></div><div class="tutorial-step"><span>03</span><p><strong>预算达标，再复检。</strong><br>资源与最终差异是硬条件。撤销免费；复检通过才能出院。</p></div><div class="modal-actions">${button('开始接诊','close-modal','','primary')}</div>`;
+function settings(){return `<main class="home help-text"><div class="eyebrow">PREFERENCES / LOCAL SAVE</div><h2 style="margin:15px 0">值班设置</h2>${[['sound','操作与复检音效','本地合成音效，无外部音频资源。'],['motion','监护动画','关闭扫描线与路径流动，减轻动态干扰。'],['contrast','增强文字对比','提高边框与说明文字的可读性。'],['timeAssist','战役计时辅助','战役限时病例给予两倍时间；切换时立即调整上限并保留已用时间。夜班保留原计时。']].map(([k,n,d])=>`<div class="settings-row"><div><strong>${n}</strong><small>${d}</small></div>${button(save.settings[k]?'已开启':'已关闭','setting',`data-id="${k}" aria-pressed="${!!save.settings[k]}"`)}</div>`).join('')}<div class="settings-row"><div><strong>存档备份</strong><small>只读写本游戏档案。导入严格校验并保存导入前恢复点；损坏或其他游戏文件会拒绝。可导出 JSON 转移到桌面版。</small></div><div>${button('导出存档','export')} ${button('导入存档','import')} ${button('恢复导入前进度','restore-import')}</div></div><input type="file" id="import-file" accept="application/json,.json" hidden><div class="settings-row"><div><strong>重新轮转</strong><small>清除战役进度、研发与个人最佳。</small></div>${button('清空进度','wipe','','danger')}</div></main>`;}
+function help(){return `<main class="home help-text"><div class="eyebrow">ON-CALL MANUAL / READ THE SIGNAL</div><h2 style="margin:15px 0">值班手册</h2><h3>01 · 先看哪种病</h3><p>setup 裕量小于零，说明某条信号到得太晚，需要加速。hold 裕量小于零，说明信号到得太早，需要在短路径增加延迟。同一电路可能同时有两种病，必须全部治好。</p><h3>02 · 点击病灶，比较处方</h3><p>点击电路中的门或线路，再选择左侧部件。悬停或聚焦候选，会以半透明虚线显示正式模型重算的到达区间；点选预览模式支持先比较再应用。可切换查看全部工况。强驱动让本门更快，却让它的输入变重，可能拖慢上游及其他支路。buffer 增加自己的延迟，同时隔离下游负载。延迟片修复抢拍；铜线适合长线提速；屏蔽线用于降低多工况波动；精密门缩小最早与最晚的区间。</p><h3>03 · 一张合格处方要满足所有上限</h3><p>全部接收端、全部工况的最小与最大到达时间都必须在窗口内，最终替换差异、材料点、器材面积和器材功耗也必须达标。预算按当前处方相对入院电路计，换回初始部件会返还预算。撤销与重做免费。接口处列出的面积与功耗是本次手术新增代价。</p><h3>04 · 轮转与夜班</h3><p>六章共 ${LEVELS.length} 个病例，逐例解锁。每章末有计时综合抢救；常规病例允许自由推敲。器材研发能提前提供侧向新解法，必需工具会随章节自动配发。夜班采用确定种子，生成器对持有装备的见证处方作正式复检，并随轮次增加规模与组合难度。</p><h3>05 · 会诊、个人最佳和快捷键</h3><p>会诊提示逐层展开，最后可请主治演示下一次替换。演示会诊将本次星章上限设为一星。少改、省料、稳健三类档案各自保存完整有效方案。快捷键：? 打开快捷键；Ctrl/Cmd+Z 撤销，Ctrl+Y / Ctrl/Cmd+Shift+Z 重做；1–9 选择处方；空格暂停；方向键轮换可编辑门；Enter 复检。所有元件和线路也可 Tab 聚焦、Enter 选择。</p><h3>模型说明</h3><p>这是固定时钟的简化寄存器间时序游戏，分别传播最小/最大到达时间，并计算门输入电容、输出负载、线路电容及器材隔离。多工况给固定倍率，不引入运行时随机判定。模型用于游戏与直观教学，不代替真实芯片签核。</p><div class="guide-links">${button('重播10秒时序引导','guide')}${button('? 快捷键','shortcuts')}</div><div style="margin-top:28px">${button('开始值班','continue','','primary')}</div></main>`;}
+function modalHTML(){if(!modal)return '';let html='';if(modal==='tutorial')html=`<div class="eyebrow">入职值班 / 快速入职</div><h2>先诊断，再开处方。</h2><div class="tutorial-step"><span>01</span><p><strong>读监护数值。</strong><br>晚裕量负数＝迟到；早裕量负数＝抢拍。两者都要达到零以上。</p></div><div class="tutorial-step"><span>02</span><p><strong>点击门或线路。</strong><br>左侧选择替换器材，候选显示整张电路的预测变化。先尝试第一关的强驱动门。</p></div><div class="tutorial-step"><span>03</span><p><strong>预算达标，再复检。</strong><br>资源与最终差异是硬条件。撤销免费；复检通过才能出院。</p></div><div class="modal-actions">${button('10秒理解为什么不能太快','guide')}${button('开始接诊','close-modal','','primary')}</div>`;
+else if(modal==='guide')html=guideHTML({motion:save.settings.motion&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches})+`<div class="modal-actions">${button('跳过 / 返回','close-aux','','primary')}</div>`;
+else if(modal==='shortcuts')html=shortcutsHTML()+`<div class="modal-actions">${button('返回','close-aux','','primary')}</div>`;
 else if(modal==='paused')html=`<div class="eyebrow">SURGERY PAUSED</div><h2>手术已暂停</h2><p>计时与处方均已冻结。切出窗口也会自动暂停。</p><div class="modal-actions">${button('返回分诊大厅','nav','data-screen="home"')}${button('继续手术','close-modal','','primary')}</div>`;
 else if(modal==='timeout')html=`<div class="eyebrow">TIMEOUT / SAME CASE RETRY</div><h2>抢救时间耗尽</h2><p>病例与编号保留。可用相同预算重新诊断；本次处方仍可在重试前查看。</p><div class="modal-actions">${button('返回大厅','nav','data-screen="home"')}${button('重试同一病例','retry','','primary')}</div>`;
 else if(modal==='hints')html=`<div class="eyebrow">CONSULTATION / ${hintCount}级</div><h2>主治会诊</h2><div class="hints">${current.hints.slice(0,hintCount).map((h,i)=>`<p><strong>${i+1}.</strong> ${esc(h)}</p>`).join('')}</div><div class="modal-actions">${button('返回手术','close-modal')}${hintCount<3?button('进一步会诊','hint','','primary'):button('演示下一次替换','demonstrate','','primary')}</div><p><small>提示免费。主动选择演示后，本次星章上限为一星。</small></p>`;
@@ -1002,13 +1500,45 @@ else if(modal==='failed'){const r=result();html=`<div class="eyebrow">RECHECK / 
 else if(modal==='success'){const r=result(),rec=save.completed[current.id],goals=starTargets(current);html=`<div class="eyebrow">DISCHARGED / ALL VITALS STABLE</div><h2>病例抢救成功</h2><div class="stars" style="font-size:30px">${mode==='campaign'?'★'.repeat(rec?.stars||1)+'☆'.repeat(3-(rec?.stars||1)):'✦ 夜班继续'}</div><p>全部信号、全部工况回到安全窗口，处方资源也在硬上限内。</p>${mode==='campaign'?`<div class="briefbox"><strong>星章目标</strong><br>✓ 出院星：所有硬条件达标。<br>${r.edits<=goals.edits?'✓':'○'} 少改星：最多 ${goals.edits} 次替换；本次 ${r.edits} 次。<br>${Math.min(r.minSlack,r.maxSlack)>=goals.margin?'✓':'○'} 稳健星：共同裕量至少 ${fmt(goals.margin)}；本次 ${fmt(Math.min(r.minSlack,r.maxSlack))}。${assisted?'<br>本次使用演示会诊，星章上限为 1。':''}</div>`:''}<div class="modal-grid"><div><small>最终替换</small><strong>${r.edits}</strong><small>上限 ${current.limits.edits}</small></div><div><small>材料点</small><strong>${fmt(r.cost)}</strong><small>上限 ${current.limits.cost}</small></div><div><small>最坏裕量</small><strong>${fmt(Math.min(r.minSlack,r.maxSlack))}</strong><small>早与晚全部达标</small></div></div><p>${mode==='campaign'?`病案已保存，研发点 ${save.credits}。尝试减少替换或提高余量，可更新个人最佳。`:`本轮积分累计 ${runScore}，下一轮规模和组合复杂度继续递进。`}</p><div class="modal-actions">${button('继续优化','close-modal')}${button(mode==='endless'?'下一轮急诊':LEVELS.indexOf(current)===LEVELS.length-1?'完成轮转':'下一病例','next','','primary')}</div>`;}
 else if(modal==='wipe')html=`<div class="eyebrow">LOCAL ARCHIVE RESET</div><h2>清空全部进度</h2><p>将清除本机战役、研发和个人最佳。建议先在设置导出存档。</p><div class="modal-actions">${button('保留进度','close-modal')}${button('确定清空','wipe-confirm','','danger')}</div>`;
 return `<div class="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-label="${modal}">${html}</section></div>`;}
-function render(){document.body.classList.toggle('no-motion',!save.settings.motion);document.body.classList.toggle('high-contrast',!!save.settings.contrast);app.innerHTML=`<div class="shell">${nav()}${screen==='home'?home():screen==='chapter'?chapterScreen():screen==='game'?game():screen==='workshop'?workshop():screen==='records'?records():screen==='settings'?settings():help()}</div>${modalHTML()}`;}
+function render(){
+ const active=document.activeElement,focus=active?.dataset?.action?{action:active.dataset.action,id:active.dataset.id,part:active.dataset.part}:null;
+ if(screen!=='game'||preview&&(preview.base!==JSON.stringify(state)||preview.selection!==JSON.stringify(selection)))preview=null;
+ hoverTarget=null;document.body.classList.toggle('no-motion',!save.settings.motion);document.body.classList.toggle('high-contrast',!!save.settings.contrast);app.innerHTML=`<div class="shell">${nav()}${screen==='home'?home():screen==='chapter'?chapterScreen():screen==='game'?game():screen==='workshop'?workshop():screen==='records'?records():screen==='settings'?settings():help()}</div>${modalHTML()}`;
+ highlightRelated();const dialog=document.querySelector('.modal');if(dialog){dialog.querySelector('button')?.focus({preventScroll:true});}else if(focus){const match=[...document.querySelectorAll('button[data-action],[tabindex][data-action]')].find(el=>el.dataset.action===focus.action&&el.dataset.id===focus.id&&el.dataset.part===focus.part);match?.focus({preventScroll:true});}
+}
+
 function submit(){if(modal||remaining<=0&&isTimed())return;const r=result();if(!r.passed){modal='failed';sound('fail');render();return;}if(mode==='campaign'){const before=save.credits;save=awardCase(save,current,state,{...r,assisted},elapsed);toast(`复检通过 · 获得 ${save.credits-before} 研发点`);}else if(!roundAwarded){roundAwarded=true;runScore+=100+Math.max(0,Math.floor(remaining/5))+Math.max(0,current.limits.edits-r.edits)*15;save.endless??={bestRound:0,bestScore:0,lastSeed:''};save.endless.bestRound=Math.max(save.endless.bestRound,round);save.endless.bestScore=Math.max(save.endless.bestScore,runScore);save.endless.lastSeed=seed;}syncDraft();modal='success';sound('success');render();}
-function nextCase(){if(mode==='endless'){startEndless(seed,round+1);return;}const ix=LEVELS.indexOf(current);if(ix+1<LEVELS.length)startLevel(LEVELS[ix+1]);else{screen='home';modal=null;save.draft=null;persist();render();toast('六科轮转完成。大师病例与无尽夜班等待更精良的处方。');}}
-function action(a,el){switch(a){case'nav':syncDraft();screen=el.dataset.screen;modal=null;render();break;case'continue':mode='campaign';startLevel(LEVELS[unlock()]);break;case'resume':resumeDraft();break;case'chapter':syncDraft();chapter=Number(el.dataset.chapter);screen='chapter';modal=null;render();break;case'case':mode='campaign';startLevel(LEVELS.find(l=>l.id===el.dataset.level));break;case'endless':seed=document.querySelector('#seed-input')?.value??seed;runScore=0;startEndless(seed,1);break;case'select-node':selection={type:'node',id:el.dataset.id};render();break;case'select-edge':selection={type:'edge',id:el.dataset.id};render();break;case'part':changePart(el.dataset.part);break;case'undo':if(undo.length&&!modal){redo.push(cloneState(state));state=undo.pop();syncDraft();render();}break;case'redo':if(redo.length&&!modal){undo.push(cloneState(state));state=redo.pop();syncDraft();render();}break;case'reset':update(newState(current));break;case'path':pathSelection=el.dataset.id;render();break;case'all-paths':allPaths=!allPaths;render();break;case'worst':{const p=[...result().paths].sort((a,b)=>Math.min(a.setup,a.hold)-Math.min(b.setup,b.hold))[0];pathSelection=p?.id;render();break;}case'pause':modal='paused';syncDraft();render();break;case'close-modal':if(modal==='tutorial'){save.tutorialSeen=true;persist();}modal=null;lastTick=Date.now();render();break;case'hint':hintCount=Math.min(3,hintCount+1);modal='hints';syncDraft();render();break;case'demonstrate':{modal=null;assisted=true;const gg=Object.keys(current.reference.gates).find(id=>state.gates[id]!==current.reference.gates[id]),ee=Object.keys(current.reference.edges).find(id=>state.edges[id]!==current.reference.edges[id]);if(gg||ee){selection={type:gg?'node':'edge',id:gg||ee};const n=cloneState(state);(gg?n.gates:n.edges)[gg||ee]=(gg?current.reference.gates:current.reference.edges)[gg||ee];update(n);toast('主治已演示一次替换，请观察前后裕量再自行复检');}else{render();toast('参考处方已就绪，请复检');}break;}case'submit':submit();break;case'next':nextCase();break;case'retry':startLevel(current,{mode,seed,round,runScore,roundAwarded,assisted,hints:hintCount});break;case'buy':{const old=save;const b=buyUpgrade(save,el.dataset.id);save=b.save??b;if(save.credits<old.credits)toast('器材研发完成');else toast('研发点不足或器材已经装配');persist();render();break;}case'record':{const l=LEVELS.find(l=>l.id===el.dataset.level),b=save.completed[l.id]?.best?.[el.dataset.kind];if(b){if(!evaluate(l,b.state,availableEquipment(save,l)).valid){toast('旧档案结构失效，请重新诊断');break;}startLevel(l,{state:b.state,mode:'campaign',assisted:b.assisted});toast('已载入完整个人最佳，请重新复检');}break;}case'setting':save.settings[el.dataset.id]=!save.settings[el.dataset.id];persist();render();break;case'notebook-save':save.notebook??={};save.notebook[current.id]={state:cloneState(state)};persist();toast('试验处方已保存，可跨重试载入');render();break;case'notebook-load':if(save.notebook?.[current.id])update(cloneState(save.notebook[current.id].state));break;case'export':{const blob=new Blob([JSON.stringify(save,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='TimingER-save.json';link.click();URL.revokeObjectURL(url);toast('存档已导出');break;}case'import':document.querySelector('#import-file').click();break;case'wipe':modal='wipe';render();break;case'wipe-confirm':save=defaultSave();persist();persist();screen='home';current=null;modal=null;render();toast('轮转进度已重置');break;}}
+function nextCase(){if(mode==='endless'){if(round>=9999){screen='home';modal=null;save.draft=null;current=null;state=null;undo=[];redo=[];preview=null;persist();render();toast('本次夜班已达9999轮上限，成绩已归档');return;}startEndless(seed,round+1);return;}const ix=LEVELS.indexOf(current);if(ix+1<LEVELS.length)startLevel(LEVELS[ix+1]);else{screen='home';modal=null;save.draft=null;persist();render();toast('六科轮转完成。大师病例与无尽夜班等待更精良的处方。');}}
+function action(a,el){switch(a){case'nav':syncDraft();screen=el.dataset.screen;modal=null;render();break;case'continue':mode='campaign';startLevel(LEVELS[unlock()]);break;case'resume':resumeDraft();break;case'chapter':syncDraft();chapter=Number(el.dataset.chapter);screen='chapter';modal=null;render();break;case'case':mode='campaign';startLevel(LEVELS.find(l=>l.id===el.dataset.level));break;case'endless':seed=document.querySelector('#seed-input')?.value??seed;runScore=0;startEndless(seed,1);break;case'select-node':preview=null;selection={type:'node',id:el.dataset.id};render();break;case'select-edge':preview=null;selection={type:'edge',id:el.dataset.id};render();break;case'part':if(previewMode)setPreview(el.dataset.part);else changePart(el.dataset.part);break;case'pin-preview':previewMode=!previewMode;preview=null;render();break;case'apply-preview':if(preview){const part=preview.part;preview=null;changePart(part);}break;case'cancel-preview':clearPreview();break;case'corner':timelineCorner=el.dataset.id;document.querySelector('#timing-preview').innerHTML=timeline(result());break;case'guide':openAuxiliary('guide');break;case'shortcuts':openAuxiliary('shortcuts');break;case'close-aux':modal=modalReturn;modalReturn=null;lastTick=Date.now();render();break;case'undo':if(undo.length&&!modal){redo.push(cloneState(state));state=undo.pop();preview=null;syncDraft();render();}break;case'redo':if(redo.length&&!modal){undo.push(cloneState(state));state=redo.pop();preview=null;syncDraft();render();}break;case'reset':update(newState(current));break;case'path':pathSelection=el.dataset.id;timelineCorner=result().paths.find(p=>p.id===pathSelection)?.corner;render();break;case'all-paths':allPaths=!allPaths;render();break;case'worst':{const p=[...result().paths].sort((a,b)=>Math.min(a.setup,a.hold)-Math.min(b.setup,b.hold))[0];pathSelection=p?.id;render();break;}case'pause':if(!modal){modal='paused';preview=null;syncDraft();render();}break;case'close-modal':if(modal==='tutorial'){save.tutorialSeen=true;persist();}modal=null;lastTick=Date.now();render();break;case'hint':hintCount=Math.min(3,hintCount+1);modal='hints';syncDraft();render();break;case'demonstrate':{modal=null;assisted=true;const gg=Object.keys(current.reference.gates).find(id=>state.gates[id]!==current.reference.gates[id]),ee=Object.keys(current.reference.edges).find(id=>state.edges[id]!==current.reference.edges[id]);if(gg||ee){selection={type:gg?'node':'edge',id:gg||ee};const n=cloneState(state);(gg?n.gates:n.edges)[gg||ee]=(gg?current.reference.gates:current.reference.edges)[gg||ee];update(n);toast('主治已演示一次替换，请观察前后裕量再自行复检');}else{render();toast('参考处方已就绪，请复检');}break;}case'submit':submit();break;case'next':nextCase();break;case'retry':startLevel(current,{mode,seed,round,runScore,roundAwarded,assisted,hints:hintCount});break;case'buy':{const old=save;const b=buyUpgrade(save,el.dataset.id);save=b.save??b;if(save.credits<old.credits)toast('器材研发完成');else toast('研发点不足或器材已经装配');persist();render();break;}case'record':{const l=LEVELS.find(l=>l.id===el.dataset.level),b=save.completed[l.id]?.best?.[el.dataset.kind];if(b){if(!evaluate(l,b.state,availableEquipment(save,l)).valid){toast('旧档案结构失效，请重新诊断');break;}startLevel(l,{state:b.state,mode:'campaign',assisted:b.assisted});toast('已载入完整个人最佳，请重新复检');}break;}case'setting':{const id=el.dataset.id,oldAssist=save.settings.timeAssist;save.settings[id]=!save.settings[id];if(id==='timeAssist'&&save.draft?.mode==='campaign'){const l=LEVELS.find(l=>l.id===save.draft.levelId);if(l){const expired=save.draft.remaining<=0,used=Math.max(0,l.limits.time*(oldAssist?2:1)-save.draft.remaining);save.draft.remaining=expired?0:Math.max(0,l.limits.time*(save.settings.timeAssist?2:1)-used);if(current?.id===l.id&&mode==='campaign'){remaining=save.draft.remaining;elapsed=used;}}}persist();render();break;}case'notebook-save':save.notebook??={};save.notebook[current.id]={state:cloneState(state),...(mode==='endless'?{seed,round,heldTools:current.generatorEquipment}: {})};persist();toast('试验处方已保存，可跨重试载入');render();break;case'notebook-load':if(save.notebook?.[current.id])update(cloneState(save.notebook[current.id].state));break;case'export':try{syncDraft();downloadJSON(exportSave(save),'TimingER-save.json');toast('存档已导出');}catch(error){toast(`导出失败：${error.message}`);}break;case'import':document.querySelector('#import-file').click();break;case'restore-import':{const restored=restoreBeforeImport(localStorage);if(!restored.ok){toast(`无法恢复：${restored.errors.join('；')}`);break;}save=restored.save;screen='home';current=null;state=null;undo=[];redo=[];preview=null;modal=null;render();toast('已恢复导入前进度');break;}case'blueprint-export':try{downloadJSON(exportBlueprint(current,state,equipment()),`TimingER-${current.id}-blueprint.json`);toast('处方蓝图已导出');}catch(error){toast(`无法导出：${error.message}`);}break;case'blueprint-import':modal='paused';syncDraft();render();document.querySelector('#blueprint-file').click();break;case'wipe':modal='wipe';render();break;case'wipe-confirm':save=defaultSave();persist();persist();screen='home';current=null;modal=null;render();toast('轮转进度已重置');break;}}
 document.addEventListener('click',e=>{const el=e.target.closest('[data-action]');if(el&&!el.disabled)action(el.dataset.action,el);});
-document.addEventListener('change',async e=>{if(e.target.id==='import-file'&&e.target.files[0]){try{const raw=await e.target.files[0].text();const {recoverSave}=__modules.progress;const restored=recoverSave(raw);if(!restored||![1,2].includes(JSON.parse(raw).version))throw new Error();save=restored.save??restored;persist();screen='home';current=null;modal=null;render();toast('存档已恢复');}catch{toast('存档无法读取，当前进度保持不变');}}});
-document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea'))return;if(e.key==='Enter'&&e.target.dataset.action){e.preventDefault();action(e.target.dataset.action,e.target);return;}if(screen!=='game')return;if(e.code==='Space'){e.preventDefault();modal=modal==='paused'?null:'paused';lastTick=Date.now();syncDraft();render();return;}if(modal)return;if(e.ctrlKey&&(e.key.toLowerCase()==='z'||e.key.toLowerCase()==='y')){e.preventDefault();action(e.key.toLowerCase()==='y'||e.shiftKey?'redo':'undo',document.body);return;}if(/^[1-9]$/.test(e.key)){const buttons=[...document.querySelectorAll('.tool')];buttons[Number(e.key)-1]?.click();}if(e.key==='Enter'&&e.target===document.body)submit();if(e.key.startsWith('Arrow')){const nodes=current.nodes.filter(n=>n.kind==='gate'&&!n.locked);const ix=nodes.findIndex(n=>n.id===selection?.id);selection={type:'node',id:nodes[(ix+(e.key==='ArrowLeft'||e.key==='ArrowUp'?-1:1)+nodes.length)%nodes.length]?.id};e.preventDefault();render();}});
+document.addEventListener('change',async e=>{
+ if(!['import-file','blueprint-file'].includes(e.target.id)||!e.target.files?.[0])return;
+ try{const file=e.target.files[0];if(file.size>2_000_000)throw new Error('文件过大');const raw=await file.text();
+ if(e.target.id==='blueprint-file'){
+  if(screen!=='game'||modal&&modal!=='paused')throw new Error('请在病例中载入处方');
+  const checked=prepareBlueprintImport(raw,current,equipment());if(!checked.ok)throw new Error(checked.errors.join('；'));
+  const restoreModal=modal;modal=null;assisted=true;update(cloneState(checked.state));modal=restoreModal;syncDraft();render();toast('共享处方已载入，可撤销；本次星章上限1星，计时仍暂停');
+ }else{syncDraft();const checked=importWithRecovery(localStorage,save,raw);if(!checked.ok)throw new Error(checked.errors.join('；'));save=checked.save;screen='home';current=null;state=null;undo=[];redo=[];preview=null;modal=null;render();toast(`存档已恢复${checked.warnings?.length?' · '+checked.warnings.join('；'):''}`);}
+ }catch(error){toast(`未载入，当前进度保持：${error.message}`);}finally{e.target.value='';}
+});
+document.addEventListener('pointerover',e=>{const tool=e.target.closest('.tool');if(tool&& !tool.contains(e.relatedTarget)&&!previewMode)setPreview(tool.dataset.part);const el=e.target.closest('[data-action="select-node"],[data-action="select-edge"],[data-action="path"]');if(el){hoverTarget={type:el.dataset.action==='path'?'path':el.dataset.action==='select-edge'?'edge':'node',id:el.dataset.id};highlightRelated();}});
+document.addEventListener('pointerout',e=>{const tool=e.target.closest('.tool');if(tool&&!tool.contains(e.relatedTarget)&&!previewMode&&document.activeElement!==tool)clearPreview();const el=e.target.closest('[data-action="select-node"],[data-action="select-edge"],[data-action="path"]');if(el&&!el.contains(e.relatedTarget)){hoverTarget=null;highlightRelated();}});
+document.addEventListener('focusin',e=>{if(e.target.matches('.tool')&&!previewMode)setPreview(e.target.dataset.part);});
+document.addEventListener('focusout',e=>{if(e.target.matches('.tool')&&!previewMode&&!e.relatedTarget?.closest('.tool')&&!e.target.matches(':hover'))clearPreview();});
+document.addEventListener('keydown',e=>{
+ if(e.isComposing||e.target.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"])'))return;
+ if(e.key==='Escape'){if(['guide','shortcuts'].includes(modal)){e.preventDefault();action('close-aux',document.body);}else if(!modal&&preview){e.preventDefault();clearPreview();}return;}
+ if(e.key==='?'&&!e.ctrlKey&&!e.metaKey&&!e.altKey){e.preventDefault();openAuxiliary('shortcuts');return;}
+ if(e.key==='Tab'&&modal){const buttons=[...document.querySelectorAll('.modal button:not(:disabled),.modal [tabindex="0"]')];if(buttons.length&&(e.shiftKey&&e.target===buttons[0]||!e.shiftKey&&e.target===buttons.at(-1))){e.preventDefault();buttons[e.shiftKey?buttons.length-1:0].focus();}return;}
+ if(e.key==='Enter'&&e.target.dataset.action){e.preventDefault();action(e.target.dataset.action,e.target);return;}
+ if(screen!=='game')return;
+ if(e.code==='Space'&&!e.target.closest('button,[role="button"]')&&(!modal||modal==='paused')){e.preventDefault();if(modal==='paused')action('close-modal',document.body);else action('pause',document.body);return;}
+ if(modal)return;
+ if((e.ctrlKey||e.metaKey)&&!e.altKey&&['z','y'].includes(e.key.toLowerCase())){e.preventDefault();action(e.key.toLowerCase()==='y'||e.shiftKey?'redo':'undo',document.body);return;}
+ if(/^[1-9]$/.test(e.key)&&!e.ctrlKey&&!e.metaKey&&!e.altKey){const buttons=[...document.querySelectorAll('.tool')];buttons[Number(e.key)-1]?.click();}
+ if(e.key==='Enter'&&e.target===document.body)submit();
+ if(e.key.startsWith('Arrow')){const nodes=current.nodes.filter(n=>n.kind==='gate'&&!n.locked);if(!nodes.length)return;const ix=nodes.findIndex(n=>n.id===selection?.id);selection={type:'node',id:nodes[(ix+(e.key==='ArrowLeft'||e.key==='ArrowUp'?-1:1)+nodes.length)%nodes.length].id};preview=null;e.preventDefault();render();}
+});
 window.addEventListener('blur',()=>{if(screen==='game'&&!modal&&isTimed()){modal='paused';syncDraft();render();}});
 window.addEventListener('beforeunload',syncDraft);
 setInterval(()=>{const now=Date.now(),delta=(now-lastTick)/1000;lastTick=now;if(screen!=='game'||modal||!isTimed())return;remaining=Math.max(0,remaining-delta);elapsed+=delta;const display=document.querySelector('#timer-display');if(display){display.firstChild.textContent=timeString(remaining);display.classList.toggle('bad',remaining<30);}if(remaining<=0){modal='timeout';sound('fail');syncDraft();render();}else if(Math.floor(remaining)%5===0)syncDraft();},250);

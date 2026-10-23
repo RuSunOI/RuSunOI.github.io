@@ -24,6 +24,15 @@ export function effectiveModuleLoad(module,island,gear={}) {
   return {area,power,adjusted:area!==module.area||power!==module.power};
 }
 
+/** 一条超边的正式计费；同岛成员不展开为两两连线。 */
+export function netCharge(net,islandIds,gear={}) {
+  const islands=[...new Set(islandIds)],crossings=Math.max(0,islands.length-1),equipped=gear.equipped||[];
+  const weight=equipped.includes('trunk')&&net.members.length>=3?Math.max(1,net.weight-1):net.weight;
+  const penalty=equipped.includes('express')?Math.max(0,(net.critical||0)-2):(net.critical||0);
+  const base=weight*crossings,critical=crossings?penalty:0,tax=crossings&&equipped.includes('cargo')?1:0;
+  return {islands,crossings,weight,base,critical,tax,cost:base+critical+tax,portUnits:equipped.includes('trunk')&&net.members.length>=3?2:1};
+}
+
 export function evaluate(level, assignment, gear={}) {
   const violations=[];
   const result={valid:false,passed:false,cut:0,moves:0,migration:0,loads:Object.create(null),netCosts:[],violations};
@@ -87,15 +96,10 @@ export function evaluate(level, assignment, gear={}) {
   }
   for(const n of level.nets) {
     const occupied=[...new Set(n.members.map(m=>assignment[m]).filter(i=>islands.has(i)))];
-    const crossings=Math.max(0,occupied.length-1);
-    let weight=n.weight,critical=n.critical||0;
-    if(has('trunk')&&n.members.length>=3) weight=Math.max(1,weight-1);
-    if(has('express')) critical=Math.max(0,critical-2);
-    const base=weight*crossings, penalty=crossings?critical:0, tax=crossings&&has('cargo')?1:0;
-    const cost=base+penalty+tax;
-    result.netCosts.push({id:n.id,name:n.name,islands:occupied,crossings,cost,base,critical:penalty,tax,members:n.members});
-    result.cut+=cost;
-    if(crossings) for(const id of occupied) result.loads[id].ports+=has('trunk')&&n.members.length>=3?2:1;
+    const charge=netCharge(n,occupied,gear);
+    result.netCosts.push({id:n.id,name:n.name,...charge,members:n.members});
+    result.cut+=charge.cost;
+    if(charge.crossings) for(const id of occupied) result.loads[id].ports+=charge.portUnits;
   }
   for(const i of level.islands) {
     const l=result.loads[i.id];

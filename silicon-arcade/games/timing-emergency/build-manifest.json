@@ -1,13 +1,18 @@
 {
   "product": "Timing ER",
   "version": "1.0.0",
+  "revision": "review-2026-10-23",
+  "sourceSha256": "06b12e6856beec9de9375acb6de421eb9478fdb579df03d51b8df1c7f57154a1",
   "modules": [
     "engine",
     "levels",
     "endless",
     "progress",
+    "preview",
+    "guide",
+    "exchange",
     "main"
   ],
   "runtimeDependencies": [],
-  "bytes": 135270
+  "bytes": 184034
 }

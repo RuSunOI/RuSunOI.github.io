@@ -1,15 +1,19 @@
 {
   "name": "chiplet-islands-offline",
   "version": "1.0.0",
-  "builtAt": "2026-10-22T10:04:35.156Z",
+  "builtAt": "2026-10-23T15:55:54.497Z",
   "files": {
     "index.html": "69b0159ad35a2382d45a7165331ba30f5516c76f07673f2de0c8177f6d35e840",
+    "src/blueprint.js": "9d56bb9ce5caea0db85bebb3885a048eaeebbe9f0f2d63b0adf6e10607da3259",
     "src/briefs.js": "a14cb18c2b4747a6e1f09917a5e52eb86d2e9a43835d9896b3339506f8824ff9",
     "src/icon.svg": "7feaa10adc1e38010b29d32014bb460b63a676e106105acd4f608e912fe025b1",
+    "src/insights.js": "d795e679ec95f8614e15fba1673c5cc15037f95546b4cea14b345b08e037310b",
     "src/levels.js": "9e1b5dcc18a695d7772e636e8b7a37ba61a598d8c3cb450a3a0f2cd7a41b678e",
-    "src/model.js": "2a96f9cb8a6049e8fbfe6a7f8c0e13077a11b3aa503cbfb95b2c3cd79d77a4c3",
-    "src/save.js": "19d3b21dfe13a3c1456cf72dad86d45a6c0e73e1f6543d57efa711052e24dca1",
-    "src/style.css": "c75dc3a6654d63bde430170767535a4b150c9e390fa0cde4adc85d58e55507d2",
-    "src/ui.js": "398ecd46a198a678fa82573f9d87f3e35ac6d35d03d90a268bc8c939c421acd9"
+    "src/model.js": "0ebc2c15b8150eb00caddf9babde417852ed3814b822dec59dcc8aa9f3c5345d",
+    "src/review-ui.js": "549e94fbb0391e7bff410ad5abc0cf664733e0320f754c37ea81a5a90c250152",
+    "src/save.js": "e4e2a45270fb79487d5a58fbd76d584362eda3f58c158e0801f8ef6aad9a488f",
+    "src/style.css": "bb4af64aa194ae1426e19a4895b114613463492893463d7882f9e9755eadc2e3",
+    "src/timer.js": "18e04e064d98732980a38e9f337d0daa9950761e7448a3824ab70d96461ed122",
+    "src/ui.js": "7730ce64f06bd1ec64251402fa678095f9e5c28f05a28d5b50d1ffcebb05d4cd"
   }
 }

@@ -132,6 +132,7 @@ export function validateProfile(data) {
     // Zero means expired; absence means a new construction timer. Never conflate the two.
     if (finite(data.endless.remaining, 0, 3600)) result.endless.remaining = data.endless.remaining;
     if(typeof data.endless.paused==='boolean')result.endless.paused=data.endless.paused;
+    if(safeLevelId(data.endless.finishedLevelId)&&data.endless.finishedLevelId===`endless-${result.endless.seed}-${result.endless.round}`)result.endless.finishedLevelId=data.endless.finishedLevelId;
     return result;
   } catch {
     return null;
